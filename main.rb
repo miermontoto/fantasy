@@ -4,7 +4,7 @@ require_relative 'browser'
 browser = Browser.new
 scraper = Scraper.new
 
-endpoints = ['feed']
+endpoints = ['feed', 'market']
 action = ARGV[0] || 'feed'
 
 if endpoints.include?(action) then
