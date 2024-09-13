@@ -1,4 +1,5 @@
 require 'faraday'
+require_relative 'token'
 
 class Browser
   attr_accessor :conn
@@ -14,15 +15,19 @@ class Browser
     end
   end
 
-  def balance
-    @conn.get('/ajax/balance')
-  end
-
-  def communities
-    # self.class.get('/ajax/community-check', headers: @headers)
-  end
-
   def feed
     @conn.get('/feed')
+  end
+
+  def market
+    @conn.get('/market')
+  end
+
+  def team
+    @conn.get('/team')
+  end
+
+  def standings
+    @conn.get('/standings')
   end
 end
