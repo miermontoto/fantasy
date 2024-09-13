@@ -15,4 +15,8 @@ class Position
   def to_s
     @position
   end
+
+  def to_i
+    $POSITIONS.key(@position).split('-').last.to_i
+  end
 end

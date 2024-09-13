@@ -1,10 +1,11 @@
 require_relative 'position'
 
 $MARKET_NAME = 'Fantasy MARCA'
+$separator = ' | '.grey
+$transfer_name_length = 0
+$transfer_price_length = 0
 
 class Transfer
-  attr_accessor :player, :position, :from, :to, :price
-
   def initialize(info)
     @player = info[:player]
     @position = Position.new(info[:position])
@@ -12,21 +13,27 @@ class Transfer
     @to = info[:to]
     @price = format_num(info[:price]) + '€'
     @own = info[:user] == @to || info[:user] == @from
+    @date = info[:date]
+    @status = status(info[:status])
+
+    $transfer_name_length = @player.length if @player.length > $transfer_name_length
+    $transfer_price_length = @price.length if @price.length > $transfer_price_length
   end
 
   def to_s
-    target = "(#{@from} → #{@to})"
+    target = "#{@from} → #{@to}"
     if @from == $MARKET_NAME then
-      target = "(#{"+".green} #{@to})"
+      target = "#{"+".green} #{@to}"
     elsif @to == $MARKET_NAME then
-      target = "(#{"-".red} #{@from})"
-    end
-    string = "#{@position.to_s} #{@player.ljust(18)} #{@price.ljust(12)} #{target}"
-
-    if @own then
-      string = string.bold
+      target = "#{"-".red} #{@from}"
     end
 
-    string
+    info = "#{target}, #{@date}"
+
+    content = [@position.to_s, @player.ljust($transfer_name_length), @price.ljust($transfer_price_length), info]
+    if @own then # transferencia propia en negrita
+      content = content.map { |c| c.bold }
+    end
+    concat(content)
   end
 end

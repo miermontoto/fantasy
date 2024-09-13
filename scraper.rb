@@ -40,6 +40,8 @@ class Scraper
         from: transfer.css('.title em').first.text.strip,
         to: transfer.css('.title em').last.text.strip,
         price: transfer.css('.price').first.text.strip,
+        date: transfer.css('.date').text.strip,
+        status: transfer.css('.status use')&.attr('href')&.value&.split('#')&.last,
         user: user_name
       })
     end
@@ -69,12 +71,14 @@ class Scraper
         points: player.css('.points').text.strip.to_i,
         value: player.css('.underName').text.gsub(/[^0-9]/, '').to_i,
         trend: player.css('.value-arrow').text.strip,
-        average: player.css('.avg').text.strip.to_f,
+        average: player.css('.avg').text.strip,
         streak: player.css('.streak span').map { |span| span.text.strip },
         status: player.css('.status use')&.attr('href')&.value&.split('#')&.last,
         sale: player.css('.player-btns .btn-bid').text.gsub(/[^0-9]/, '').to_i
       })
     end
+
+    players = sort_players(players)
 
     footer_info = {
       current_balance: format_num(doc.css('.footer-sticky-market .balance-real-current').text.gsub(/\./, '').to_i),
