@@ -11,7 +11,7 @@ class Transfer
     @position = Position.new(info[:position])
     @from = info[:from]
     @to = info[:to]
-    @price = format_num(info[:price]) + '€'
+    @price = format_num(info[:price])
     @own = info[:user] == @to || info[:user] == @from
     @date = info[:date]
     @status = status(info[:status])

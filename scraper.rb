@@ -4,6 +4,7 @@ require 'colorize'
 require_relative 'helpers'
 require_relative 'models/player'
 require_relative 'models/transfer'
+require_relative 'models/user'
 
 class Scraper
   def feed(html)
@@ -102,6 +103,35 @@ class Scraper
   end
 
   def standings(html)
+    doc = Nokogiri::HTML(html)
 
+    total = doc.css('.panel-total li').map do |user|
+      User.new({
+        position: user.css('.position').text.strip,
+        name: user.css('.name').text.strip,
+        players: user.css('.played').text.split('·').first.strip.split(' ').first.to_i,
+        value: user.css('.played').text.split('·').last.strip.gsub(/[^0-9]/, '').to_i,
+        points: user.css('.points:not(span)').text.split(' ').first.strip.to_i,
+        diff: user.css('.diff').text.strip
+      })
+    end
+
+    gameweek = doc.css('.panel-gameweek li').map do |user|
+      User.new({
+        position: user.css('.position').text.strip,
+        name: user.css('.name').text.strip,
+        players: user.css('.played').text.split('·').first.strip.split(' ').first.to_i,
+        value: user.css('.played').text.split('·').last.strip.gsub(/[^0-9]/, '').to_i,
+        points: user.css('.points:not(span)').text.split(' ').first.strip.to_i,
+      })
+    end
+
+    jornada = doc.css('.top select option[selected]').text.strip
+
+    puts "clasificación general".grey.bold
+    total.each { |user| puts user }
+
+    puts "\nclasificación #{jornada.downcase}".grey.bold
+    gameweek.each { |user| puts user }
   end
 end

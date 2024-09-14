@@ -6,15 +6,15 @@ $max_points_length = 0
 $max_price_length = 0
 
 class Player
-  attr_reader :position, :value, :ppm
+  attr_reader :position, :value, :ppm, :average
 
   def initialize(info)
     @name = info[:name]
     @points = info[:points].to_s
     @team = info[:team]
     @position = Position.new(info[:position])
-    @value = format_num(info[:value]) + '€'
-    @sale = (format_num(info[:sale]) + '€') unless info[:sale].nil?
+    @value = format_num(info[:value])
+    @sale = format_num(info[:sale]) unless info[:sale].nil?
     @seller = info[:seller]
     @trend = info[:trend] == '↑' ? '↑ '.green : '↓ '.red
     @average = info[:average] ? info[:average].gsub!(',', '.').to_f.round(1) : ''
@@ -35,7 +35,7 @@ class Player
     name_offset = @status == '' ? 1 : 0
 
     content = [@position.to_s, @name.ljust($max_name_length + name_offset) + ' ' + @status, points, @price.ljust($max_price_length), @ppm.to_s]
-    if @ppm == 0 then
+    if @average == 0 then
       content = content.map { |c| c.grey }
     end
     concat(content)
@@ -44,5 +44,5 @@ end
 
 def sort_players(players)
   # sort first by position, then by ppm, then by price
-  players.sort_by { |player| [player.position.to_i, -player.ppm, player.value.to_i] }
+  players.sort_by { |player| [player.position.to_i, -player.average, player.value.to_i] }
 end
