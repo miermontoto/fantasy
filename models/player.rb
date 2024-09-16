@@ -1,4 +1,4 @@
-require_relative '../helpers'
+require_relative '../lib/helpers'
 require_relative 'position'
 
 $max_name_length = 0
@@ -42,10 +42,9 @@ class Player
   def to_s
     points = "#{@points.ljust($max_points_length)}#{" (#{@average})".rjust($max_average_length + 3) unless @average == ''}"
     name_offset = @status == '' ? 1 : 0
-    name = "#{@name.ljust($max_name_length + name_offset)}#{(' ' + @status) unless @status == '' or @status.nil?}"
 
-    content = [@position.to_s, name, points, @price.ljust($max_price_length), @ppm.to_s]
-    if @points == 0 then # jugadores de mierda
+    content = [@position.to_s, @name.ljust($max_name_length + name_offset) + ' ' + @status, points, @price.ljust($max_price_length), @ppm.to_s]
+    if @points.to_i == 0 then # jugadores de mierda
       content = content.map { |c| c.grey }
     elsif @own then
       content = content.map { |c| c.bold }

@@ -1,6 +1,6 @@
 require 'colorize'
 
-require_relative '../helpers'
+require_relative '../lib/helpers'
 
 class User
   def initialize(info)

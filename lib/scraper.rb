@@ -2,9 +2,9 @@ require 'nokogiri'
 require 'colorize'
 
 require_relative 'helpers'
-require_relative 'models/player'
-require_relative 'models/transfer'
-require_relative 'models/user'
+require_relative '../models/player'
+require_relative '../models/transfer'
+require_relative '../models/user'
 
 class Scraper
   def feed(html)
@@ -140,9 +140,6 @@ class Scraper
 
   def team(html)
     doc = Nokogiri::HTML(html)
-
-    gameweek = doc.css('.gameweek__name').text.strip
-    gameweek_status = doc.css('.gameweek__status').text.strip
 
     squad_players = doc.css('.player-list.list-team li').map do |player|
       Player.new({

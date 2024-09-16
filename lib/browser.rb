@@ -1,12 +1,12 @@
 require 'faraday'
-require_relative 'token'
+require_relative '../token'
 
 class Browser
   BASE_URL = 'fantasy.marca.com'
   BASIC_ENDPOINTS = %i[feed market team standings]
 
   def initialize
-    xauth = Token.new 'XAUTH'
+    # xauth = Token.new 'XAUTH'
     refresh = Token.new 'REFRESH'
 
     @conn = Faraday.new(url: "https://#{BASE_URL}") do |faraday|
@@ -15,7 +15,7 @@ class Browser
       faraday.headers['Cookie'] = "refresh-token=#{refresh.value}"
       faraday.headers['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8'
       faraday.headers['X-Requested-With'] = 'XMLHttpRequest'
-      faraday.headers['X-Auth'] = xauth.value
+      # faraday.headers['X-Auth'] = xauth.value
     end
   end
 

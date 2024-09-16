@@ -1,5 +1,5 @@
-require_relative 'scraper'
-require_relative 'browser'
+require_relative 'lib/scraper'
+require_relative 'lib/browser'
 
 browser = Browser.new
 scraper = Scraper.new
