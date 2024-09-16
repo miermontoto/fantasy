@@ -4,6 +4,7 @@ require_relative 'position'
 $max_name_length = 0
 $max_points_length = 0
 $max_price_length = 0
+$max_average_length = 0
 
 class Player
   attr_reader :position, :value, :ppm, :average
@@ -23,20 +24,24 @@ class Player
 
     # points per million
     @ppm = (@points.to_f * 1000000 / info[:value].to_f).round(2)
-    @price = @trend + (@sale != nil && @sale != @value ? "(#{@sale})" : @value)
+    @own = @sale == '0€'
+    @price = @trend + (@sale != nil && @sale != @value && !@own ? "(#{@sale})" : @value)
 
     $max_name_length = @name.length if @name.length > $max_name_length
     $max_points_length = @points.length if @points.length > $max_points_length
+    $max_average_length = @average.to_s.length if @average.to_s.length > $max_average_length
     $max_price_length = @price.length if @price.length > $max_price_length
   end
 
   def to_s
-    points = "#{@points.ljust($max_points_length)}#{" (#{@average})" unless @average == ''}"
+    points = "#{@points.ljust($max_points_length)}#{" (#{@average})".rjust($max_average_length + 3) unless @average == ''}"
     name_offset = @status == '' ? 1 : 0
 
     content = [@position.to_s, @name.ljust($max_name_length + name_offset) + ' ' + @status, points, @price.ljust($max_price_length), @ppm.to_s]
-    if @average == 0 then
+    if @average == 0 then # jugadores de mierda
       content = content.map { |c| c.grey }
+    elsif @own then
+      content = content.map { |c| c.bold }
     end
     concat(content)
   end

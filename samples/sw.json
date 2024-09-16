@@ -1,0 +1,507 @@
+{
+	"data": {
+		"away": [],
+		"home": {
+			"58986": {
+				"avg": 6.6667,
+				"id": 58986,
+				"points": 20
+			}
+		},
+		"next_match": {
+			"58986": {
+				"away": "Osasuna",
+				"awayLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/50.png?version=20240916",
+				"confirmed": 0,
+				"date": {
+					"format": "'Hoy' H:mm",
+					"text": "Hoy 21:00",
+					"ts": 1726513200
+				},
+				"home": "Rayo Vallecano",
+				"homeLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/14.png?version=20240916",
+				"id": 58986,
+				"id_away": 50,
+				"id_gameweek": 2862,
+				"id_home": 14,
+				"id_match": 26842,
+				"id_team": 50,
+				"place": "Fuera",
+				"status": "fixture"
+			}
+		},
+		"owners": [],
+		"player": {
+			"avg": 6.7,
+			"bid": {
+				"amount": 18146000,
+				"barter": [],
+				"days": null,
+				"input": 18146000,
+				"isActive": 1,
+				"type": "normal"
+			},
+			"bio": {
+				"age": 24,
+				"country": [],
+				"height": 188,
+				"weight": null
+			},
+			"clause": {
+				"default": 0,
+				"floor": 18146000,
+				"multiplier": 1.5,
+				"percentage": 50,
+				"shield": 0,
+				"shield1MonthSku": "shield_2",
+				"shield2WeeksSku": "shield_1",
+				"tier": 5,
+				"value": 27219000
+			},
+			"clausesRanking": 20,
+			"id": 58986,
+			"id_competition": 1,
+			"injury": [],
+			"isFavorite": 0,
+			"loan": [],
+			"market": {
+				"id": 335891223,
+				"isPublic": 1,
+				"loanable": 0,
+				"price": 18146000
+			},
+			"name": "Abel Bretones",
+			"owner": {
+				"avatar": {
+					"color": "#E57373",
+					"initials": "",
+					"pic": null
+				},
+				"id": null,
+				"id_community": null,
+				"name": null
+			},
+			"photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/58986.png?version=20240706083801",
+			"points": 20,
+			"position": 2,
+			"previousValue": 17529000,
+			"status": null,
+			"team": {
+				"id": 50,
+				"logoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/50.png?version=20240916",
+				"name": "Osasuna"
+			},
+			"transfer": {
+				"date": false,
+				"origin": null,
+				"price": null
+			},
+			"value": 18146000,
+			"videoFrame": null
+		},
+		"player_extra": {
+			"cards": 0,
+			"goals": 1,
+			"matches": 3
+		},
+		"points": [
+			{
+				"category": null,
+				"color": 4,
+				"events": [
+					"goal"
+				],
+				"gameweek": 4,
+				"id_gameweek": 2861,
+				"id_match": 26832,
+				"livePoints": null,
+				"livePointsColor": 0,
+				"points": 11,
+				"short": "J4",
+				"status": "played",
+				"type": "regular",
+				"width": 110
+			},
+			{
+				"category": null,
+				"color": 0,
+				"events": false,
+				"gameweek": 3,
+				"id_gameweek": 2860,
+				"id_match": 26818,
+				"livePoints": null,
+				"livePointsColor": 0,
+				"points": null,
+				"short": "J3",
+				"status": "played",
+				"type": "regular",
+				"width": 0
+			},
+			{
+				"category": null,
+				"color": 3,
+				"events": false,
+				"gameweek": 2,
+				"id_gameweek": 2859,
+				"id_match": 26813,
+				"livePoints": null,
+				"livePointsColor": 0,
+				"points": 5,
+				"short": "J2",
+				"status": "played",
+				"type": "regular",
+				"width": 50
+			},
+			{
+				"category": null,
+				"color": 2,
+				"events": [
+					"sub_out"
+				],
+				"gameweek": 1,
+				"id_gameweek": 2858,
+				"id_match": 26800,
+				"livePoints": null,
+				"livePointsColor": 0,
+				"points": 4,
+				"short": "J1",
+				"status": "played",
+				"type": "regular",
+				"width": 40
+			}
+		],
+		"points_history": [
+			{
+				"avg": 6.6667,
+				"points": 20,
+				"season": "24/25"
+			}
+		],
+		"starter": false,
+		"values": [
+			{
+				"change": 617000,
+				"sign": 617,
+				"time": "Un día",
+				"value": 17529000
+			},
+			{
+				"change": 3921000,
+				"sign": "+3.921.000",
+				"time": "Una semana",
+				"value": 14225000
+			},
+			{
+				"change": 11372000,
+				"sign": "+11.372.000",
+				"time": "Un mes",
+				"value": 6774000
+			}
+		],
+		"values_chart": {
+			"max": {
+				"date": "16 sept 2024",
+				"value": 18146000
+			},
+			"min": {
+				"date": "6 jul 2024",
+				"value": 2000000
+			},
+			"points": [
+				{
+					"date": "6 jul 2024",
+					"value": 2000000
+				},
+				{
+					"date": "7 jul 2024",
+					"value": 2000000
+				},
+				{
+					"date": "8 jul 2024",
+					"value": 2042000
+				},
+				{
+					"date": "9 jul 2024",
+					"value": 2110000
+				},
+				{
+					"date": "10 jul 2024",
+					"value": 2170000
+				},
+				{
+					"date": "11 jul 2024",
+					"value": 2242000
+				},
+				{
+					"date": "12 jul 2024",
+					"value": 2320000
+				},
+				{
+					"date": "13 jul 2024",
+					"value": 2388000
+				},
+				{
+					"date": "14 jul 2024",
+					"value": 2452000
+				},
+				{
+					"date": "15 jul 2024",
+					"value": 2517000
+				},
+				{
+					"date": "16 jul 2024",
+					"value": 2590000
+				},
+				{
+					"date": "17 jul 2024",
+					"value": 2703000
+				},
+				{
+					"date": "18 jul 2024",
+					"value": 2825000
+				},
+				{
+					"date": "19 jul 2024",
+					"value": 2954000
+				},
+				{
+					"date": "20 jul 2024",
+					"value": 3075000
+				},
+				{
+					"date": "21 jul 2024",
+					"value": 3197000
+				},
+				{
+					"date": "22 jul 2024",
+					"value": 3343000
+				},
+				{
+					"date": "23 jul 2024",
+					"value": 3521000
+				},
+				{
+					"date": "24 jul 2024",
+					"value": 3708000
+				},
+				{
+					"date": "25 jul 2024",
+					"value": 3889000
+				},
+				{
+					"date": "26 jul 2024",
+					"value": 4062000
+				},
+				{
+					"date": "27 jul 2024",
+					"value": 4128000
+				},
+				{
+					"date": "28 jul 2024",
+					"value": 4200000
+				},
+				{
+					"date": "29 jul 2024",
+					"value": 4276000
+				},
+				{
+					"date": "30 jul 2024",
+					"value": 4353000
+				},
+				{
+					"date": "31 jul 2024",
+					"value": 4438000
+				},
+				{
+					"date": "1 ago 2024",
+					"value": 4550000
+				},
+				{
+					"date": "2 ago 2024",
+					"value": 4672000
+				},
+				{
+					"date": "3 ago 2024",
+					"value": 4801000
+				},
+				{
+					"date": "4 ago 2024",
+					"value": 4942000
+				},
+				{
+					"date": "5 ago 2024",
+					"value": 5070000
+				},
+				{
+					"date": "6 ago 2024",
+					"value": 5210000
+				},
+				{
+					"date": "7 ago 2024",
+					"value": 5337000
+				},
+				{
+					"date": "8 ago 2024",
+					"value": 5473000
+				},
+				{
+					"date": "9 ago 2024",
+					"value": 5616000
+				},
+				{
+					"date": "10 ago 2024",
+					"value": 5753000
+				},
+				{
+					"date": "11 ago 2024",
+					"value": 5914000
+				},
+				{
+					"date": "12 ago 2024",
+					"value": 6066000
+				},
+				{
+					"date": "13 ago 2024",
+					"value": 6228000
+				},
+				{
+					"date": "14 ago 2024",
+					"value": 6409000
+				},
+				{
+					"date": "15 ago 2024",
+					"value": 6605000
+				},
+				{
+					"date": "16 ago 2024",
+					"value": 6774000
+				},
+				{
+					"date": "17 ago 2024",
+					"value": 6950000
+				},
+				{
+					"date": "18 ago 2024",
+					"value": 7107000
+				},
+				{
+					"date": "19 ago 2024",
+					"value": 7252000
+				},
+				{
+					"date": "20 ago 2024",
+					"value": 7412000
+				},
+				{
+					"date": "21 ago 2024",
+					"value": 7605000
+				},
+				{
+					"date": "22 ago 2024",
+					"value": 7818000
+				},
+				{
+					"date": "23 ago 2024",
+					"value": 8027000
+				},
+				{
+					"date": "24 ago 2024",
+					"value": 8207000
+				},
+				{
+					"date": "25 ago 2024",
+					"value": 8456000
+				},
+				{
+					"date": "26 ago 2024",
+					"value": 8779000
+				},
+				{
+					"date": "27 ago 2024",
+					"value": 9125000
+				},
+				{
+					"date": "28 ago 2024",
+					"value": 9488000
+				},
+				{
+					"date": "29 ago 2024",
+					"value": 9797000
+				},
+				{
+					"date": "30 ago 2024",
+					"value": 10057000
+				},
+				{
+					"date": "31 ago 2024",
+					"value": 10231000
+				},
+				{
+					"date": "1 sept 2024",
+					"value": 10318000
+				},
+				{
+					"date": "2 sept 2024",
+					"value": 10729000
+				},
+				{
+					"date": "3 sept 2024",
+					"value": 11211000
+				},
+				{
+					"date": "4 sept 2024",
+					"value": 11695000
+				},
+				{
+					"date": "5 sept 2024",
+					"value": 12183000
+				},
+				{
+					"date": "6 sept 2024",
+					"value": 12677000
+				},
+				{
+					"date": "7 sept 2024",
+					"value": 13189000
+				},
+				{
+					"date": "8 sept 2024",
+					"value": 13712000
+				},
+				{
+					"date": "9 sept 2024",
+					"value": 14225000
+				},
+				{
+					"date": "10 sept 2024",
+					"value": 14764000
+				},
+				{
+					"date": "11 sept 2024",
+					"value": 15291000
+				},
+				{
+					"date": "12 sept 2024",
+					"value": 15865000
+				},
+				{
+					"date": "13 sept 2024",
+					"value": 16434000
+				},
+				{
+					"date": "14 sept 2024",
+					"value": 16961000
+				},
+				{
+					"date": "15 sept 2024",
+					"value": 17529000
+				},
+				{
+					"date": "16 sept 2024",
+					"value": 18146000
+				}
+			]
+		}
+	},
+	"status": "ok"
+}

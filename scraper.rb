@@ -27,24 +27,27 @@ class Scraper
         # team: player.css('.team-logo')['src'],
         position: player.css('.icons i').attr('class').value,
         points: player.css('.points').text.strip,
-        value: player.css('.player-btns .btn-bid').text.strip,
+        value: player.css('.underName').text.gsub(/[^0-9]/, ''),
         average: player.css('.avg').text.strip,
         streak: player.css('.streak span').map { |span| span.text.strip }
       })
     end
 
     # transferencias recientes
-    recent_transfers = doc.css('.card-transfer').map do |transfer|
-      Transfer.new({
-        player: transfer.css('strong').first.text.strip,
-        position: transfer.css('.icons i').attr('class').value,
-        from: transfer.css('.title em').first.text.strip,
-        to: transfer.css('.title em').last.text.strip,
-        price: transfer.css('.price').first.text.strip,
-        date: transfer.css('.date').text.strip,
-        status: transfer.css('.status use')&.attr('href')&.value&.split('#')&.last,
-        user: user_name
-      })
+    recent_transfers = doc.css('.card-transfer').map do |block|
+      date = block.css('.date').text.strip
+      block.css('.player-list>li').map do |transfer|
+        Transfer.new({
+          player: transfer.css('.title strong').text.strip,
+          position: transfer.css('.player-row .icons i').attr('class').value,
+          from: transfer.css('.title em').first.text.strip,
+          to: transfer.css('.title em').last.text.strip,
+          price: transfer.css('.price').first.text.strip,
+          date: date,
+          status: transfer.css('.status use')&.attr('href')&.value&.split('#')&.last,
+          user: user_name
+        })
+      end
     end
 
     puts "información general".grey.bold

@@ -2,8 +2,8 @@ require 'faraday'
 require_relative 'token'
 
 class Browser
-  attr_accessor :conn
   BASE_URL = 'fantasy.marca.com'
+  BASIC_ENDPOINTS = %i[feed market team standings]
 
   def initialize
     token = Token.new 'TOKEN'
@@ -15,19 +15,15 @@ class Browser
     end
   end
 
-  def feed
-    @conn.get('/feed')
+  def method_missing(method_name, *args, &block)
+    if BASIC_ENDPOINTS.include?(method_name) then
+      @conn.get("/#{method_name}")
+    else
+      super
+    end
   end
 
-  def market
-    @conn.get('/market')
-  end
-
-  def team
-    @conn.get('/team')
-  end
-
-  def standings
-    @conn.get('/standings')
+  def respond_to_missing?(method_name, include_private = false)
+    BASIC_ENDPOINTS.include?(method_name) || super
   end
 end
