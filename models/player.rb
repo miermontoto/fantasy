@@ -10,6 +10,7 @@ class Player
   attr_reader :position, :value, :ppm, :average
 
   def initialize(info)
+    @id = info[:id] unless info[:id].nil?
     @name = info[:name]
     @points = info[:points].to_s
     @team = info[:team]
@@ -31,6 +32,11 @@ class Player
     $max_points_length = @points.length if @points.length > $max_points_length
     $max_average_length = @average.to_s.length if @average.to_s.length > $max_average_length
     $max_price_length = @price.length if @price.length > $max_price_length
+  end
+
+  def sw
+    if @id.nil? then; return; end
+    Browser.new.player(@id)
   end
 
   def to_s

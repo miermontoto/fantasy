@@ -6,12 +6,16 @@ class Browser
   BASIC_ENDPOINTS = %i[feed market team standings]
 
   def initialize
-    token = Token.new 'TOKEN'
+    xauth = Token.new 'XAUTH'
     refresh = Token.new 'REFRESH'
+
     @conn = Faraday.new(url: "https://#{BASE_URL}") do |faraday|
       faraday.headers['Host'] = BASE_URL
       faraday.headers['User-Agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
-      faraday.headers['Cookie'] = "token=#{token.value}; refresh-token=#{refresh.value}"
+      faraday.headers['Cookie'] = "refresh-token=#{refresh.value}"
+      faraday.headers['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8'
+      faraday.headers['X-Requested-With'] = 'XMLHttpRequest'
+      faraday.headers['X-Auth'] = xauth.value
     end
   end
 
@@ -25,5 +29,23 @@ class Browser
 
   def respond_to_missing?(method_name, include_private = false)
     BASIC_ENDPOINTS.include?(method_name) || super
+  end
+
+  def player(id)
+    @conn.post("/ajax/sw") do |req|
+      req.body = "post=players&id=#{id}"
+    end
+  end
+
+  def team(id)
+    @conn.post("/ajax/sw") do |req|
+      req.body = "post=teams&id=#{id}"
+    end
+  end
+
+  def players
+    @conn.post("/ajax/sw") do |req|
+      req.body = "post=players&order=0"
+    end
   end
 end

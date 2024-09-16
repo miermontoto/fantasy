@@ -18,10 +18,5 @@ class Token
     if @value.nil? || @value.empty? then
       raise 'Token is empty'
     end
-
-    # check if it begins with 'ey' and ends with '=='
-    if !@value.start_with?('ey') then
-      raise 'Token is not in the correct format'
-    end
   end
 end

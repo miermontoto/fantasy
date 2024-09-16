@@ -68,8 +68,8 @@ class Scraper
 
     players = doc.css('#list-on-sale li').map do |player|
       Player.new({
+        id: player.css('.player-pic.qd-player').attr('data-id_player').value,
         name: player.css('.name').text.strip,
-        # team: player.css('.team-logo')['src'],
         seller: player.css('.date').text.strip,
         position: player.css('.icons i').attr('class').value,
         points: player.css('.points').text.strip.to_i,
