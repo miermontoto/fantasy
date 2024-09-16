@@ -20,6 +20,17 @@ def status(original)
   end
 end
 
+def trend(original)
+  case original
+  when '↑'
+    '↑ '.green
+  when '↓'
+    '↓ '.red
+  else
+    '~ '.yellow
+  end
+end
+
 def concat(array)
   array.join($SEPARATOR)
 end

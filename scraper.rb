@@ -137,4 +137,26 @@ class Scraper
     puts "\nclasificación #{jornada.downcase}".grey.bold
     gameweek.each { |user| puts user }
   end
+
+  def team(html)
+    doc = Nokogiri::HTML(html)
+
+    gameweek = doc.css('.gameweek__name').text.strip
+    gameweek_status = doc.css('.gameweek__status').text.strip
+
+    squad_players = doc.css('.player-list.list-team li').map do |player|
+      Player.new({
+        name: player.css('.name').text.strip.gsub(/\s+/, ' '),
+        position: player.css('.icons i').attr('class').value,
+        points: player.css('.points').text.strip,
+        value: player.css('.underName').text.gsub(/[^\d]/, '').to_i,
+        average: player.css('.avg').text.strip,
+        streak: player.css('.streak span').map { |span| span.text.strip },
+        trend: player.css('.value-arrow').text.strip
+      })
+    end
+
+    puts "plantilla".grey.bold
+    squad_players.each { |player| puts player }
+  end
 end

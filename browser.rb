@@ -31,13 +31,13 @@ class Browser
     BASIC_ENDPOINTS.include?(method_name) || super
   end
 
-  def player(id)
+  def players(id)
     @conn.post("/ajax/sw") do |req|
       req.body = "post=players&id=#{id}"
     end
   end
 
-  def team(id)
+  def teams(id)
     @conn.post("/ajax/sw") do |req|
       req.body = "post=teams&id=#{id}"
     end

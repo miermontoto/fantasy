@@ -11,15 +11,15 @@ class Player
 
   def initialize(info)
     @id = info[:id] unless info[:id].nil?
-    @name = info[:name]
+    @name = info[:name].gsub('💥', '')
     @points = info[:points].to_s
     @team = info[:team]
     @position = Position.new(info[:position])
     @value = format_num(info[:value])
     @sale = format_num(info[:sale]) unless info[:sale].nil?
     @seller = info[:seller]
-    @trend = info[:trend] == '↑' ? '↑ '.green : '↓ '.red
-    @average = info[:average] ? info[:average].gsub!(',', '.').to_f.round(1) : ''
+    @trend = trend(info[:trend])
+    @average = info[:average] ? info[:average].to_s.gsub!(',', '.').to_f.round(1) : ''
     @streak = "[#{info[:streak]}.join(', ')]"
     @status = status(info[:status])
 
@@ -42,9 +42,10 @@ class Player
   def to_s
     points = "#{@points.ljust($max_points_length)}#{" (#{@average})".rjust($max_average_length + 3) unless @average == ''}"
     name_offset = @status == '' ? 1 : 0
+    name = "#{@name.ljust($max_name_length + name_offset)}#{(' ' + @status) unless @status == '' or @status.nil?}"
 
-    content = [@position.to_s, @name.ljust($max_name_length + name_offset) + ' ' + @status, points, @price.ljust($max_price_length), @ppm.to_s]
-    if @average == 0 then # jugadores de mierda
+    content = [@position.to_s, name, points, @price.ljust($max_price_length), @ppm.to_s]
+    if @points == 0 then # jugadores de mierda
       content = content.map { |c| c.grey }
     elsif @own then
       content = content.map { |c| c.bold }
