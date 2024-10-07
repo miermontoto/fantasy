@@ -1,5 +1,5 @@
 require 'nokogiri'
-require 'colorize'
+require 'curses'
 
 require_relative 'helpers'
 require_relative '../models/player'
@@ -29,7 +29,8 @@ class Scraper
         points: player.css('.points').text.strip,
         value: player.css('.underName').text.gsub(/[^0-9]/, ''),
         average: player.css('.avg').text.strip,
-        streak: player.css('.streak span').map { |span| span.text.strip }
+        streak: player.css('.streak span').map { |span| span.text.strip },
+        trend: player.css('.value-arrow').text.strip
       })
     end
 
@@ -42,7 +43,7 @@ class Scraper
           position: transfer.css('.player-row .icons i').attr('class').value,
           from: transfer.css('.title em').first.text.strip,
           to: transfer.css('.title em').last.text.strip,
-          price: transfer.css('.price').first.text.strip,
+          price: transfer.css('.price').first.text.strip || 0,
           date: date,
           status: transfer.css('.status use')&.attr('href')&.value&.split('#')&.last,
           user: user_name
@@ -50,17 +51,24 @@ class Scraper
       end
     end
 
-    puts "información general".grey.bold
-    puts "#{"liga:".bold} #{community_name}"
-    puts "#{"balance:".bold} #{user_balance}"
-    puts "#{"créditos:".bold} #{user_credits}"
-    puts "#{"jornada:".bold} #{gameweek} (#{gameweek_status})"
-
-    puts "\ntop jugadores en el mercado".grey.bold
-    market_players.each { |player| puts player }
-
-    puts "\ntransferencias recientes".grey.bold
-    recent_transfers.each { |transfer| puts transfer }
+    {
+      data: {
+        market_players: {
+          title: "top mercado",
+          content: market_players
+        },
+        recent_transfers: {
+          title: "movimientos recientes",
+          content: recent_transfers.flatten
+        }
+      },
+      footer_info: {
+        community: { title: "liga", data: community_name },
+        balance: { title: "balance", data: user_balance },
+        credits: { title: "créditos", data: user_credits },
+        gameweek: { title: "jornada", data: "#{gameweek} (#{gameweek_status})" }
+      }
+    }
   end
 
   def market(html)
@@ -87,22 +95,24 @@ class Scraper
     footer_info = {
       current_balance: format_num(doc.css('.footer-sticky-market .balance-real-current').text.gsub(/\./, '').to_i),
       future_balance: format_num(doc.css('.balance-real-future').text.gsub(/\./, '').to_i),
-      max_debt: format_num(doc.css('.balance-real-maxdebt').text.gsub(/\./, '').to_i)
+      max_debt: format_num(doc.css('.balance-real-maxdebt').text.gsub(/\./, '').to_i),
+      next_update: doc.css('.next-update').text.split('en').last.strip
     }
-    next_update = doc.css('.next-update').text.split('en').last.strip
 
-    puts "información general".grey.bold
-    puts "#{"balance:".bold} #{footer_info[:current_balance]}€"
-    puts "#{"balance futuro:".bold} #{footer_info[:future_balance]}€"
-    puts "#{"deuda máx.:".bold} #{footer_info[:max_debt]}€"
-    puts "#{"next update".bold} #{next_update}"
-
-    puts "\nmercado".grey.bold
-    players.each { |player| puts player }
-  end
-
-  def team(html)
-
+    {
+      data: {
+        players: {
+          title: "mercado",
+          content: sort_players(players)
+        }
+      },
+      footer_info: {
+        current_balance: { title: "balance actual", data: footer_info[:current_balance] },
+        future_balance: { title: "balance futuro", data: footer_info[:future_balance] },
+        max_debt: { title: "deuda máxima", data: footer_info[:max_debt] },
+        next_update: { title: "siguiente ciclo", data: footer_info[:next_update] }
+      }
+    }
   end
 
   def standings(html)
@@ -123,19 +133,29 @@ class Scraper
       User.new({
         position: user.css('.position').text.strip,
         name: user.css('.name').text.strip,
-        players: user.css('.played').text.split('·').first.strip.split(' ').first.to_i,
-        value: user.css('.played').text.split('·').last.strip.gsub(/[^0-9]/, '').to_i,
+        players: user.css('.played').text.split(' · ').first.strip,
+        value: user.css('.played').text.split(' · ').last.strip.gsub(/[^0-9]/, '').to_i,
         points: user.css('.points:not(span)').text.split(' ').first.strip.to_i,
       })
     end
 
     jornada = doc.css('.top select option[selected]').text.strip
 
-    puts "clasificación general".grey.bold
-    total.each { |user| puts user }
-
-    puts "\nclasificación #{jornada.downcase}".grey.bold
-    gameweek.each { |user| puts user }
+    {
+      data: {
+        total: {
+          title: "total",
+          content: total
+        },
+        gameweek: {
+          title: "jornada",
+          content: gameweek
+        }
+      },
+      footer_info: {
+        jornada: { title: "jornada actual", data: jornada }
+      }
+    }
   end
 
   def team(html)
@@ -153,7 +173,18 @@ class Scraper
       })
     end
 
-    puts "plantilla".grey.bold
-    squad_players.each { |player| puts player }
+    {
+      data: {
+        squad_players: {
+          title: "plantilla",
+          content: squad_players
+        }
+      },
+      footer_info: {
+        value: { title: "valor", data: doc.css('.squad-info .subtitle').text.split('·').last.strip },
+        average: { title: "media", data: doc.css('.team-avg span').first.text.strip },
+        player_count: { title: "jugadores", data: "#{doc.css('.squad-info .subtitle').text.split('·').first.strip.split(' ').first.to_i}" }
+      }
+    }
   end
 end

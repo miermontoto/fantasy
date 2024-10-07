@@ -10,4 +10,6 @@ gem "httparty", "~> 0.22.0"
 
 gem "faraday", "~> 2.11"
 
-gem "colorize", "~> 1.1"
+gem 'curses'
+
+gem "dotenv", "~> 3.1"

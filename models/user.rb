@@ -7,7 +7,7 @@ class User
     @position = info[:position]
     @name = info[:name]
     @points = info[:points]
-    @players = info[:players] || '-'.red
+    @players = info[:players] || '-'
     @value = format_num(info[:value])
     @diff = info[:diff]
   end
@@ -19,7 +19,7 @@ class User
       content << @value.to_s.rjust(6)
       content << diff.to_s.rjust(3)
     end
-    content = content.map { |c| c.bold } unless @diff.nil? if @diff.to_i == 0
-    concat(content)
+    # content = content.map { |c| c.bold } unless @diff.nil? if @diff.to_i == 0
+    content.join(' | ')
   end
 end

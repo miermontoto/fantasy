@@ -1,10 +1,8 @@
-require 'colorize'
-
 $POSITIONS = {
-  'pos-1' => '[PT]'.yellow,
-  'pos-2' => '[DF]'.cyan,
-  'pos-3' => '[MC]'.green,
-  'pos-4' => '[DL]'.red
+  'pos-1' => '[PT]',
+  'pos-2' => '[DF]',
+  'pos-3' => '[MC]',
+  'pos-4' => '[DL]'
 }
 
 class Position

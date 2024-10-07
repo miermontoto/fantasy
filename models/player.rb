@@ -44,12 +44,12 @@ class Player
     name_offset = @status == '' ? 1 : 0
 
     content = [@position.to_s, @name.ljust($max_name_length + name_offset) + ' ' + @status, points, @price.ljust($max_price_length), @ppm.to_s]
-    if @points.to_i == 0 then # jugadores de mierda
-      content = content.map { |c| c.grey }
-    elsif @own then
-      content = content.map { |c| c.bold }
-    end
-    concat(content)
+    # if @points.to_i == 0 then # jugadores de mierda
+    #   content = content.map { |c| c.grey }
+    # elsif @own then
+    #   content = content.map { |c| c.bold }
+    # end
+    content.join(' | ')
   end
 end
 

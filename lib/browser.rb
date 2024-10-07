@@ -21,7 +21,7 @@ class Browser
 
   def method_missing(method_name, *args, &block)
     if BASIC_ENDPOINTS.include?(method_name) then
-      @conn.get("/#{method_name}")
+      fetch("/#{method_name}")
     else
       super
     end
@@ -47,5 +47,20 @@ class Browser
     @conn.post("/ajax/sw") do |req|
       req.body = "post=players&order=0"
     end
+  end
+
+  def fetch(path)
+    Helpers.display_debug("→ /#{path}")
+    response = @conn.get(path)
+    Helpers.display_debug("← #{response.status}")
+
+    if response.status == 200
+      response.body
+    else
+      raise "HTTP Error: #{response.status}"
+    end
+  rescue Faraday::Error => e
+    Helpers.display_debug("x #{e.message}")
+    raise "Network Error: #{e.message}"
   end
 end
