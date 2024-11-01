@@ -1,0 +1,16 @@
+<h1>Fantasy MARCA Dashboard</h1>
+
+<div class="general-info">
+  <h2>Información General</h2>
+  <%= render 'shared/general_info', data: @feed_data %>
+</div>
+
+<div class="market-players">
+  <h2>Top Jugadores en el Mercado</h2>
+  <%= render 'shared/player_list', players: @market_players %>
+</div>
+
+<div class="recent-transfers">
+  <h2>Transferencias Recientes</h2>
+  <%= render 'shared/transfer_list', transfers: @recent_transfers %>
+</div>

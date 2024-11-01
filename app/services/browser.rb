@@ -1,5 +1,5 @@
 require 'faraday'
-require_relative '../token'
+require_relative 'token'
 
 class Browser
   BASE_URL = 'fantasy.marca.com'

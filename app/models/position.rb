@@ -8,6 +8,8 @@ $POSITIONS = {
 }
 
 class Position
+  attr_reader :position
+
   def initialize(str)
     @position = $POSITIONS[str]
   end

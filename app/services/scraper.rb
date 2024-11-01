@@ -1,12 +1,14 @@
 require 'nokogiri'
 require 'colorize'
 
-require_relative 'helpers'
-require_relative '../models/player'
-require_relative '../models/transfer'
-require_relative '../models/user'
-
+# Update model requires to use Rails autoloading
 class Scraper
+  include FantasyHelper
+
+  def initialize
+    @browser = Browser.new
+  end
+
   def feed(html)
     doc = Nokogiri::HTML(html)
 
