@@ -1,7 +1,6 @@
 require 'nokogiri'
 require 'colorize'
 
-# Update model requires to use Rails autoloading
 class Scraper
   include FantasyHelper
 
