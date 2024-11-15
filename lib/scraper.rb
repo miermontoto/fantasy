@@ -98,11 +98,7 @@ class Scraper
     puts "#{"next update".bold} #{next_update}"
 
     puts "\nmercado".grey.bold
-    players.each { |player| puts player }
-  end
-
-  def team(html)
-
+    players.filter { |player| !player.own }.each { |player| puts player }
   end
 
   def standings(html)

@@ -7,7 +7,7 @@ $max_price_length = 0
 $max_average_length = 0
 
 class Player
-  attr_reader :position, :value, :ppm, :average
+  attr_reader :position, :value, :ppm, :average, :own
 
   def initialize(info)
     @id = info[:id] unless info[:id].nil?
