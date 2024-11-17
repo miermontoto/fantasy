@@ -36,3 +36,6 @@ end
 group :development do
   gem "web-console"
 end
+
+# Add tailwindcss-rails gem
+gem "tailwindcss-rails", "~> 3.0"

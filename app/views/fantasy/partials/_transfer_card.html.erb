@@ -1,0 +1,17 @@
+<div class="flex flex-col items-center bg-gray-800 border border-gray-700 rounded-lg shadow my-2 md:flex-row md:max-w-xl hover:bg-gray-700">
+    <img class="ml-2 object-cover w-full h-16 rounded-t-lg md:h-16 md:w-16 md:rounded-none md:rounded-s-lg" src="<%= transfer.player_img%>" alt="Imagen del jugador <%= transfer.player %>">
+    <div class="flex flex-col justify-between p-4 leading-normal w-full">
+        <div>
+            <h1 class="text-white font-bold text-lg"><%= transfer.player %></h1>
+        </div>
+        <div class="flex items-center w-full">
+            <div class="mr-5 border-solid border-2">
+                <p class="p-1 <%= transfer.position.to_s[:color] %> text-bold text-sm text-black"><%= transfer.position.to_s[:position] %></p>
+            </div>
+            <p class="text-xl font-bold text-white text-gray-900"><%= transfer.price %> €</p>
+        </div>
+        <div class="flex items-center">
+            <%= render inline: transfer.transfer_div %>
+        </div>
+    </div>
+</div>

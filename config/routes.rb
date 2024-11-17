@@ -9,6 +9,13 @@ Rails.application.routes.draw do
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
+
+  # Define routes for each function in the application (market, standings, team, feed)
+  get "" => "fantasy#index"
+  get "market" => "fantasy#market"
+  get "standings" => "fantasy#standings"
+  get "team" => "fantasy#team"
+
   # Defines the root path route ("/")
   # root "posts#index"
 end

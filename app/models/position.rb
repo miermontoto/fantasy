@@ -1,24 +1,32 @@
-require 'colorize'
+require "colorize"
 
-$POSITIONS = {
-  'pos-1' => '[PT]'.yellow,
-  'pos-2' => '[DF]'.cyan,
-  'pos-3' => '[MC]'.green,
-  'pos-4' => '[DL]'.red
+$BROWSER_POSTIIONS = {
+  "pos-1" => { position: "PT", color: "bg-yellow-300" },
+  "pos-2" => { position: "DF", color: "bg-cyan-400" },
+  "pos-3" => { position: "MC", color: "bg-green-400" },
+  "pos-4" => { position: "DL", color: "bg-red-400" }
+}
+
+$TERMINAL_POSTIIONS = {
+  "pos-1" => "[PT]".yellow,
+  "pos-2" => "[DF]".cyan,
+  "pos-3" => "[MC]".green,
+  "pos-4" => "[DL]".red
 }
 
 class Position
-  attr_reader :position
+  attr_reader :browser, :terminal
 
   def initialize(str)
-    @position = $POSITIONS[str]
+    @browser = $BROWSER_POSTIIONS[str]
+    @terminal = $TERMINAL_POSTIIONS[str]
   end
 
   def to_s
-    @position
+    @browser
   end
 
   def to_i
-    $POSITIONS.key(@position).split('-').last.to_i
+    $BROWSER_POSTIIONS.key(@position).split("-").last.to_i
   end
 end
