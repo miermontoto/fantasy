@@ -1,0 +1,4 @@
+<%# _transfer_list.html.erb %>
+<% paginated_feed_data.each do |transfer| %>
+  <%= render partial: 'fantasy/partials/transfer_card', locals: { transfer: transfer } %>
+<% end %>

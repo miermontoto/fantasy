@@ -7,10 +7,22 @@ class FantasyController < ApplicationController
     @feed_data = Scraper.new.feed(browser.feed.body)[:transfers]
     @standings_data = Scraper.new.standings(browser.standings.body)
 
-    debugger
+    # Parametros de paginacion
+    page = params[:page].present? ? params[:page].to_i : 1
+    per_page = 5
 
-    respond_to do |format|
-      format.html
+    # Calcular el total de paginas y obtener los datos paginados
+    @total_pages = (@feed_data.size / per_page.to_f).ceil
+    @paginated_feed_data = @feed_data.slice((page - 1) * per_page, per_page) || []
+
+    # Si la peticion es AJAX, renderizar la vista parcial
+    if request.xhr?
+      render partial: "fantasy/partials/transfer_list", locals: { paginated_feed_data: @paginated_feed_data }
+    else
+      @current_page = page
+      respond_to do |format|
+        format.html
+      end
     end
   end
 

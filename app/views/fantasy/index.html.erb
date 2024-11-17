@@ -3,12 +3,19 @@
   <div class="grid gap-y-2 grid-cols-1 md:grid-cols-2 p-2 bg-[#121824] rounded-lg justify-items-stretch">
     <div class="grid gap-y-2 grid-cols-1 p-2 order-last md:order-first">
       <h1 class="text-center font-bold text-2xl mb-10">TRANSFERENCIAS</h1>
-      <%# For each transfer on @feed_data render a trasfer_card.html.erb %>
-      <% @feed_data.each do |transfer| %>
-        <%# <%= render 'fantasy/partials/transfer_card', data: transfer %>
-        <%= render partial: 'fantasy/partials/transfer_card', locals: { transfer: transfer } %>
-      <% end %> 
+
+      <div id="transfers-container">
+        <%= render partial: 'fantasy/partials/transfer_list', locals: { paginated_feed_data: @paginated_feed_data, page: @current_page } %>
+      </div>
+
+      <!-- Pagination Buttons -->
+      <div class="pagination">
+        <button id="previous" class="previous" data-page="<%= @current_page - 1 %>" <%= 'disabled' if @current_page <= 1 %>>Anterior</button>
+        <span class="page-number">Página <span id="current-page"><%= @current_page %></span> de <%= @total_pages %></span>
+        <button id="next" class="next" data-page="<%= @current_page + 1 %>" <%= 'disabled' if @current_page >= @total_pages %>>Siguiente</button>
+      </div>
     </div>
+
 
     <div class="p-2">
       <h1 class="text-center font-bold text-2xl">CLASIFICACIÓN</h1>
@@ -17,3 +24,38 @@
   </div>
 
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const transfersContainer = document.getElementById('transfers-container');
+    const currentPageElement = document.getElementById('current-page');
+    
+    function loadPage(page) {
+      fetch(`/?page=${page}`, {
+        headers: { 'X-Requested-With': 'XMLHttpRequest' }
+      })
+      .then(response => response.text())
+      .then(html => {
+        transfersContainer.innerHTML = html;
+        currentPageElement.textContent = page;
+        
+        document.getElementById('previous').dataset.page = page - 1;
+        document.getElementById('next').dataset.page = parseInt(page) + 1;
+
+        // Disable buttons if on first or last page
+        document.getElementById('previous').disabled = page <= 1;
+        document.getElementById('next').disabled = page >= <%= @total_pages %>;
+      });
+    }
+
+    document.getElementById('previous').addEventListener('click', function() {
+      const page = this.dataset.page;
+      loadPage(page);
+    });
+
+    document.getElementById('next').addEventListener('click', function() {
+      const page = this.dataset.page;
+      loadPage(page);
+    });
+  });
+</script>
