@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="bg-black text-white">
   <head>
     <title><%= content_for(:title) || "Fantasy" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -18,9 +18,26 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex flex-col">
+  <body >
+    
+    <main class="container mx-auto mt-6 px-5 flex flex-col">
+      <header>
+        <nav class="bg-gray-800 p-4 flex justify-between items-center rounded-lg mb-6">
+          <a href="/" class="text-white text-2xl font-bold">Fantasy</a>
+          <a href="/fantasy" class="text-white">Fantasy</a>
+          <a href="/fantasy/players" class="text-white">Players</a>
+          <a href="/fantasy/teams" class="text-white">Teams</a>
+          <a href="/fantasy/leagues" class="text-white">Leagues</a>
+        </nav>
+      </header>
+
       <%= yield %>
+
+      <footer class="bg-gray-800 p-4 text-center rounded-lg my-6">
+        <p class="text-white">Ligas fantasticas</p>
+      </footer>
     </main>
+
+    
   </body>
 </html>

@@ -10,6 +10,7 @@ class Scraper
 
   def feed(html)
     doc = Nokogiri::HTML(html)
+
     # general info
     community_name = doc.css(".feed-top-community .name span").text.strip
     user_name = doc.css(".header .name").text.strip
@@ -51,6 +52,8 @@ class Scraper
       end
     end
 
+    recent_transfers.flatten!
+
     puts "información general".grey.bold
     puts "#{"liga:".bold} #{community_name}"
     puts "#{"balance:".bold} #{user_balance}"
@@ -62,6 +65,14 @@ class Scraper
 
     puts "\ntransferencias recientes".grey.bold
     recent_transfers.flatten.each { |transfer| puts transfer }
+
+    { transfers: recent_transfers, market: market_players, info: {
+      community: community_name,
+      balance: user_balance,
+      credits: user_credits,
+      gameweek: gameweek,
+      status: gameweek_status
+    } }
   end
 
   def market(html)
@@ -103,9 +114,6 @@ class Scraper
     players.each { |player| puts player }
   end
 
-  def team(html)
-  end
-
   def standings(html)
     doc = Nokogiri::HTML(html)
 
@@ -137,6 +145,8 @@ class Scraper
 
     puts "\nclasificación #{jornada.downcase}".grey.bold
     gameweek.each { |user| puts user }
+
+    { total: total, gameweek: gameweek }
   end
 
   def team(html)

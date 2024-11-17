@@ -3,7 +3,11 @@ class FantasyController < ApplicationController
 
   def index
     browser = Browser.new
-    @feed_data = Scraper.new.feed(browser.feed.body)
+
+    @feed_data = Scraper.new.feed(browser.feed.body)[:transfers]
+    @standings_data = Scraper.new.standings(browser.standings.body)
+
+    debugger
 
     respond_to do |format|
       format.html

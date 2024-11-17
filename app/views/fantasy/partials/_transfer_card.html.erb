@@ -1,17 +1,21 @@
-<div class="flex flex-col items-center bg-gray-800 border border-gray-700 rounded-lg shadow my-2 md:flex-row md:max-w-xl hover:bg-gray-700">
-    <img class="ml-2 object-cover w-full h-16 rounded-t-lg md:h-16 md:w-16 md:rounded-none md:rounded-s-lg" src="<%= transfer.player_img%>" alt="Imagen del jugador <%= transfer.player %>">
-    <div class="flex flex-col justify-between p-4 leading-normal w-full">
-        <div>
-            <h1 class="text-white font-bold text-lg"><%= transfer.player %></h1>
-        </div>
-        <div class="flex items-center w-full">
-            <div class="mr-5 border-solid border-2">
-                <p class="p-1 <%= transfer.position.to_s[:color] %> text-bold text-sm text-black"><%= transfer.position.to_s[:position] %></p>
+<div class="flex w-full grow justify-center">
+    <div class="flex w-full flex-col shadow-2xl items-center bg-gray-800 border-2 border-gray-700 rounded-lg shadow m-2 md:flex-row md:max-w-xl hover:bg-gray-700">
+
+        <img class="object-cover w-20 h-20 rounded-t-lg mt-2 md:ml-2 md:mt-0 md:h-16 md:w-16 md:rounded-none md:rounded-s-lg" src="<%= transfer.player_img%>" alt="Imagen del jugador <%= transfer.player %>">
+
+        <div class="flex flex-col justify-between p-4 leading-normal w-full">
+            <div>
+                <h1 class="text-white font-bold text-lg"><%= transfer.player %></h1>
             </div>
-            <p class="text-xl font-bold text-white text-gray-900"><%= transfer.price %> €</p>
-        </div>
-        <div class="flex items-center">
-            <%= render inline: transfer.transfer_div %>
+            <div class="flex items-center w-full">
+                <div class="mr-5 <%= transfer.position.to_s[:color] %> border-solid border-2 skew-x-[-10deg]">
+                    <p class="p-1 text-bold text-sm text-black skew-x-[10deg]"><%= transfer.position.to_s[:position] %></p>
+                </div>
+                <p class="text-xl font-bold text-white text-gray-900"><%= transfer.price %> €</p>
+            </div>
+            <div class="flex items-center">
+                <%= render inline: transfer.transfer_div %>
+            </div>
         </div>
     </div>
 </div>
