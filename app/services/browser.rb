@@ -58,7 +58,7 @@ class Browser
   end
 
   def offers
-    @conn.post("/ajax/offers-received") do |req|
+    @conn.post("/ajax/sw/offers-received") do |req|
       req.body = "post=offers-received"
     end
   end

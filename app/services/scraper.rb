@@ -160,5 +160,6 @@ class Scraper
   end
 
   def offers(html)
+    puts html
   end
 end
