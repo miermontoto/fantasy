@@ -158,4 +158,7 @@ class Scraper
     puts "plantilla".grey.bold
     squad_players.each { |player| puts player }
   end
+
+  def offers(html)
+  end
 end
