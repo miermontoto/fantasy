@@ -1,0 +1,50 @@
+<div>
+    <%# Opciones del menu: Global | Jornada %>
+    <div class="flex justify-center mt-10">
+        <button id="general-tab" class="tab-button active px-4 py-2 mx-1 border border-gray-700 rounded-lg bg-white text-black" onclick="showContent('general')">
+            General
+        </button>
+        <button id="jornada-tab" class="tab-button px-4 py-2 mx-1 border border-gray-700 rounded-lg text-white hover:bg-gray-700" onclick="showContent('jornada')">
+            Jornada
+        </button>
+    </div>
+
+    <%# Standings globales %>
+    <div id="general-content" class="content mt-6 space-y-4 px-4 max-w-xl mx-auto">
+        <% @standings_data[:total].each_with_index do |player, index| %>
+            <%= render partial: "fantasy/partials/standings_card", locals: {player: player, index: index+1} %>
+        <% end %>
+    </div>
+
+
+    <%# Standings de la jornada %>
+    
+    <div id="jornada-content" class="content mt-6 space-y-4 px-4 max-w-xl mx-auto hidden">
+        <% @standings_data[:gameweek].each_with_index do |player, index| %>
+            <%= render partial: "fantasy/partials/standings_card", locals: {player: player, index: index+1} %>
+        <% end %>
+    </div>
+
+
+</div>
+
+<%# JS para activar el menu %>
+<script>
+    function showContent(tab) {
+        // Change active button 
+        var activeButton = document.querySelector('.active');
+        activeButton.classList.remove('bg-white', 'text-black', 'active');
+        activeButton.classList.add('text-white', 'hover:bg-gray-700');
+
+        // Get new active button
+        var newActiveButton = document.getElementById(tab + '-tab');
+        newActiveButton.classList.remove('text-white', 'hover:bg-gray-700');
+        newActiveButton.classList.add('bg-white', 'text-black', 'active');
+
+        document.querySelectorAll('.content').forEach(content => content.classList.add('hidden'));
+
+        // Add active class to selected tab and show the selected content
+        // document.getElementById(tab + '-tab').classList.add('bg-white', 'text-black');
+        document.getElementById(tab + '-content').classList.remove('hidden');
+    }
+</script>

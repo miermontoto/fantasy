@@ -1,0 +1,16 @@
+<div class="flex items-center p-4 bg-gray-800 rounded-lg">
+    <span class="text-xl font-bold mr-4"><%= index %></span>
+    <div class="flex items-center space-x-4">
+    <div class="min-w-10 min-h-10 w-10 h-10 bg-orange-300 text-black font-bold rounded-full flex items-center justify-center overflow-hidden">
+        <img class="w-full h-full object-cover" src="<%= player.user_img %>" alt="Imagen del usuario <%= player.name %>." />
+    </div>
+    <div>
+        <strong class="block text-white text-md md:text-lg"><%= player.name %></strong>
+        <p class="text-gray-400 text-sm"><%= player.players%> · <%= player.value %></p>
+    </div>
+    </div>
+    <div class="ml-auto text-right">
+    <p class="text-sm md:text-xl font-bold"><%= player.points%></p>
+    <p class="text-green-500 text-sm"><%= player.diff %></p>
+    </div>
+</div>

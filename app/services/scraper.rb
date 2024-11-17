@@ -1,5 +1,6 @@
 require "nokogiri"
 require "colorize"
+require "json"
 
 class Scraper
   include FantasyHelper
@@ -38,16 +39,17 @@ class Scraper
     recent_transfers = doc.css(".card-transfer").map do |block|
       date = block.css(".date").text.strip
       block.css(".player-list>li").map do |transfer|
-        Transfer.new({
-          player: transfer.css(".title strong").text.strip,
+        Player.new({
+          name: transfer.css(".title strong").text.strip,
           position: transfer.css(".player-row .icons i").attr("class").value,
           from: transfer.css(".title em").first.text.strip,
           to: transfer.css(".title em").last.text.strip,
-          price: transfer.css(".price").first.text.strip,
+          value: transfer.css(".price").first.text.strip,
           date: date,
           status: transfer.css(".status use")&.attr("href")&.value&.split("#")&.last,
           user: user_name,
-          player_img: transfer.css(".player-pic.qd-player img").attr("src").value
+          player_img: transfer.css(".player-pic.qd-player img").attr("src").value,
+          transfer: true
         })
       end
     end
@@ -82,7 +84,7 @@ class Scraper
       Player.new({
         id: player.css(".player-pic.qd-player").attr("data-id_player").value,
         name: player.css(".name").text.strip,
-        seller: player.css(".date").text.strip,
+        from: player.css(".date").text.strip.split(",").first,
         position: player.css(".icons i").attr("class").value,
         points: player.css(".points").text.strip.to_i,
         value: player.css(".underName").text.gsub(/[^0-9]/, "").to_i,
@@ -100,18 +102,20 @@ class Scraper
     footer_info = {
       current_balance: format_num(doc.css(".footer-sticky-market .balance-real-current").text.gsub(/\./, "").to_i),
       future_balance: format_num(doc.css(".balance-real-future").text.gsub(/\./, "").to_i),
-      max_debt: format_num(doc.css(".balance-real-maxdebt").text.gsub(/\./, "").to_i)
+      max_debt: format_num(doc.css(".balance-real-maxdebt").text.gsub(/\./, "").to_i),
+      next_update: doc.css(".next-update").text.split("en").last.strip
     }
-    next_update = doc.css(".next-update").text.split("en").last.strip
 
     puts "información general".grey.bold
     puts "#{"balance:".bold} #{footer_info[:current_balance]}€"
     puts "#{"balance futuro:".bold} #{footer_info[:future_balance]}€"
     puts "#{"deuda máx.:".bold} #{footer_info[:max_debt]}€"
-    puts "#{"next update".bold} #{next_update}"
+    puts "#{"next update".bold} #{footer_info[:next_update]}"
 
     puts "\nmercado".grey.bold
     players.each { |player| puts player }
+
+    { market: players, info: footer_info }
   end
 
   def standings(html)
@@ -124,7 +128,8 @@ class Scraper
         players: user.css(".played").text.split("·").first.strip.split(" ").first.to_i,
         value: user.css(".played").text.split("·").last.strip.gsub(/[^0-9]/, "").to_i,
         points: user.css(".points:not(span)").text.split(" ").first.strip.to_i,
-        diff: user.css(".diff").text.strip
+        diff: user.css(".diff").text.strip,
+        user_img: user.css("img").attr("src") ? user.css("img").attr("src").value : nil
       })
     end
 
@@ -134,7 +139,9 @@ class Scraper
         name: user.css(".name").text.strip,
         players: user.css(".played").text.split("·").first.strip.split(" ").first.to_i,
         value: user.css(".played").text.split("·").last.strip.gsub(/[^0-9]/, "").to_i,
-        points: user.css(".points:not(span)").text.split(" ").first.strip.to_i
+        points: user.css(".points:not(span)").text.split(" ").first.strip.to_i,
+        user_img: user.css("img").attr("src") ? user.css("img").attr("src").value : nil
+        # TODO: jugadores de la jornada que faltan por jugar
       })
     end
 
@@ -169,7 +176,10 @@ class Scraper
     squad_players.each { |player| puts player }
   end
 
-  def offers(html)
-    puts html
+  def offers(response)
+    content = JSON.parse(response)["data"]["offers"]
+
+    offers = content.map do |offer|
+    end
   end
 end

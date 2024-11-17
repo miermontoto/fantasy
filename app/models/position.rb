@@ -23,10 +23,10 @@ class Position
   end
 
   def to_s
-    @browser
+    @terminal
   end
 
   def to_i
-    $BROWSER_POSTIIONS.key(@position).split("-").last.to_i
+    $TERMINAL_POSTIIONS.key(@terminal).split("-").last.to_i
   end
 end

@@ -1,7 +1,8 @@
 <div class="flex flex-col">
 
-  <div class="grid gap-y-2 grid-cols-2 p-2 bg-[#121824] rounded-lg justify-items-stretch">
-    <div class="grid gap-y-2 grid-cols-1 p-2">
+  <div class="grid gap-y-2 grid-cols-1 md:grid-cols-2 p-2 bg-[#121824] rounded-lg justify-items-stretch">
+    <div class="grid gap-y-2 grid-cols-1 p-2 order-last md:order-first">
+      <h1 class="text-center font-bold text-2xl mb-10">TRANSFERENCIAS</h1>
       <%# For each transfer on @feed_data render a trasfer_card.html.erb %>
       <% @feed_data.each do |transfer| %>
         <%# <%= render 'fantasy/partials/transfer_card', data: transfer %>
@@ -9,9 +10,9 @@
       <% end %> 
     </div>
 
-    <div class="">
-      <p>Ranking</p>
-
+    <div class="p-2">
+      <h1 class="text-center font-bold text-2xl">CLASIFICACIÓN</h1>
+      <%= render partial: 'fantasy/partials/standings', locals: { stadings: @standings } %>
     </div>
   </div>
 

@@ -1,62 +1,46 @@
-require 'colorize'
+require "colorize"
 
 module ApplicationHelper
   # Constants
-  MARKET_NAME = 'Fantasy MARCA'
-  SEPARATOR = ' | '.grey
+  MARKET_NAME = "Fantasy MARCA"
+  SEPARATOR = " | ".grey
+  UNKNOWN = "UNKNOWN"
 
-  # Global variables (consider refactoring these into a state object)
-  def self.max_name_length
-    @max_name_length ||= 0
+  def parse_status(original)
+    case original
+    when "injury"
+      "+".red.bold
+    when "doubt"
+      "?".yellow.bold
+    when "red"
+      "◼".red.bold
+    else
+      ""
+    end
   end
 
-  def self.max_name_length=(value)
-    @max_name_length = value
+  def parse_trend(original)
+    case original
+    when "↑"
+      "↑".green
+    when "↓"
+      "↓".red
+    else
+      "~".yellow
+    end
   end
 
-  def self.max_points_length
-    @max_points_length ||= 0
-  end
+  def max(key, value = nil)
+    return @MAXES[key] if value.nil?
 
-  def self.max_points_length=(value)
-    @max_points_length = value
-  end
-
-  def self.max_average_length
-    @max_average_length ||= 0
-  end
-
-  def self.max_average_length=(value)
-    @max_average_length = value
-  end
-
-  def self.max_price_length
-    @max_price_length ||= 0
-  end
-
-  def self.max_price_length=(value)
-    @max_price_length = value
-  end
-
-  def self.transfer_name_length
-    @transfer_name_length ||= 0
-  end
-
-  def self.transfer_name_length=(value)
-    @transfer_name_length = value
-  end
-
-  def self.transfer_price_length
-    @transfer_price_length ||= 0
-  end
-
-  def self.transfer_price_length=(value)
-    @transfer_price_length = value
+    @MAXES ||= {}
+    length = value.to_s.length
+    @MAXES[key] = length if @MAXES[key].nil? || length > @MAXES[key]
   end
 
   # Helper methods
   def format_num(num)
-    return '-' if num.nil?
+    return "-" if num.nil?
     num.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1.').reverse
   end
 
