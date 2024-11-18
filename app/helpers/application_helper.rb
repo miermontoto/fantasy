@@ -45,6 +45,6 @@ module ApplicationHelper
   end
 
   def concat(arr)
-    arr.join(SEPARATOR)
+    arr.compact.join(SEPARATOR)
   end
 end

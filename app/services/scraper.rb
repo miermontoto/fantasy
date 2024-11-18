@@ -45,11 +45,12 @@ class Scraper
           from: transfer.css(".title em").first.text.strip,
           to: transfer.css(".title em").last.text.strip,
           value: transfer.css(".price").first.text.strip,
-          date: date,
+          date: date, # @todo fix: no se está obteniendo la fecha correctamente?
           status: transfer.css(".status use")&.attr("href")&.value&.split("#")&.last,
           user: user_name,
           player_img: transfer.css(".player-pic.qd-player img").attr("src").value,
-          transfer: true
+          transfer: true,
+          clause: transfer.css(".title").text.include?("por pago de cláusula")
         })
       end
     end
