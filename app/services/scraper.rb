@@ -177,9 +177,20 @@ class Scraper
   end
 
   def offers(response)
-    content = JSON.parse(response)["data"]["offers"]
+    content = JSON.parse(response)
+    status = content["status"]
 
-    offers = content.map do |offer|
+    if status == "error"
+      puts "no hay ofertas pendientes".red.bold
+      return {}
     end
+
+    offers = content["data"]["offers"]
+
+    offers.map do |offer|
+      # @todo parsear ofertas
+    end
+
+    { offers: offers }
   end
 end
