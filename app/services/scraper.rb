@@ -98,7 +98,7 @@ class Scraper
       })
     end
 
-    players = sort_players(players)
+    players = sort_players(players).filter { |player| !player.own }
 
     footer_info = {
       current_balance: format_num(doc.css(".footer-sticky-market .balance-real-current").text.gsub(/\./, "").to_i),
