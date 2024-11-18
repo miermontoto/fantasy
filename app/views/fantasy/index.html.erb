@@ -29,7 +29,7 @@
   document.addEventListener('DOMContentLoaded', function() {
     const transfersContainer = document.getElementById('transfers-container');
     const currentPageElement = document.getElementById('current-page');
-    
+
     function loadPage(page) {
       fetch(`/?page=${page}`, {
         headers: { 'X-Requested-With': 'XMLHttpRequest' }
@@ -38,7 +38,7 @@
       .then(html => {
         transfersContainer.innerHTML = html;
         currentPageElement.textContent = page;
-        
+
         document.getElementById('previous').dataset.page = page - 1;
         document.getElementById('next').dataset.page = parseInt(page) + 1;
 

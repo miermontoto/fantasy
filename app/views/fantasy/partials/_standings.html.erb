@@ -18,20 +18,17 @@
 
 
     <%# Standings de la jornada %>
-    
     <div id="jornada-content" class="content mt-6 space-y-4 px-4 max-w-xl mx-auto hidden">
         <% @standings_data[:gameweek].each_with_index do |player, index| %>
             <%= render partial: "fantasy/partials/standings_card", locals: {player: player, index: index+1} %>
         <% end %>
     </div>
-
-
 </div>
 
 <%# JS para activar el menu %>
 <script>
     function showContent(tab) {
-        // Change active button 
+        // Change active button
         var activeButton = document.querySelector('.active');
         activeButton.classList.remove('bg-white', 'text-black', 'active');
         activeButton.classList.add('text-white', 'hover:bg-gray-700');
