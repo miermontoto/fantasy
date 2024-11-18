@@ -33,6 +33,8 @@ class Browser
     BASIC_ENDPOINTS.include?(method_name) || super
   end
 
+  # todas las llamadas AJAX requieren el token XAUTH
+
   def players(id)
     @conn.post("/ajax/sw") do |req|
       req.body = "post=players&id=#{id}"
