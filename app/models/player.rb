@@ -5,7 +5,8 @@ class Player
 
   # @todo revisar si se puede usar attr_reader en vez de attr_accessor
   attr_accessor :position, :name, :points, :value, :average, :price, :ppm, :id,
-                :trend, :streak, :status, :own, :player_img, :transfer_div, :clause
+                :trend, :streak, :status, :own, :player_img, :team_img,
+                :transfer_div, :clause
 
   # Constructor de la clase, inicializa los atributos del jugador
   # a partir de un hash de atributos proporcionado por el scraper
@@ -24,6 +25,7 @@ class Player
     @own = attributes[:own] || false                                             # true si el jugador es del usuario
     @user = attributes[:user]                                                    # nombre del usuario
     @player_img = attributes[:player_img] || ""                                  # url de la imagen del jugador
+    @team_img = attributes[:team_img] || ""                                      # url de la imagen del equipo del jugador
 
     @is_transfer = attributes[:transfer] || false                                # en transferencia: true
     @from = attributes[:from] || ""                                              # en transferencia: origen

@@ -26,7 +26,7 @@ class Scraper
     market_players = doc.css(".card-market_unified .player-list li").map do |player|
       Player.new({
         name: player.css(".name").text.strip,
-        # team: player.css('.team-logo')['src'],
+        team_img: player.css("img.team-logo").attr("src").value,
         position: player.css(".icons i").attr("class").value,
         points: player.css(".points").text.strip,
         value: player.css(".underName").text.gsub(/[^0-9]/, ""),
@@ -42,6 +42,7 @@ class Scraper
         Player.new({
           name: transfer.css(".title strong").text.strip,
           position: transfer.css(".player-row .icons i").attr("class").value,
+          team_img: transfer.css("img.team-logo").attr("src").value,
           from: transfer.css(".title em").first.text.strip,
           to: transfer.css(".title em").last.text.strip,
           value: transfer.css(".price").first.text.strip,
@@ -85,6 +86,7 @@ class Scraper
       Player.new({
         id: player.css(".player-pic.qd-player").attr("data-id_player").value,
         name: player.css(".name").text.strip,
+        team_img: player.css("img.team-logo").attr("src").value,
         from: player.css(".date").text.strip.split(",").first,
         position: player.css(".icons i").attr("class").value,
         points: player.css(".points").text.strip.to_i,
@@ -142,7 +144,7 @@ class Scraper
         value: user.css(".played").text.split("·").last.strip.gsub(/[^0-9]/, "").to_i,
         points: user.css(".points:not(span)").text.split(" ").first.strip.to_i,
         user_img: user.css("img").attr("src") ? user.css("img").attr("src").value : nil
-        # TODO: jugadores de la jornada que faltan por jugar
+        # @todo jugadores de la jornada que faltan por jugar
       })
     end
 
@@ -169,7 +171,8 @@ class Scraper
         average: player.css(".avg").text.strip,
         streak: player.css(".streak span").map { |span| span.text.strip },
         trend: player.css(".value-arrow").text.strip,
-        player_img: player.css(".player-pic.qd-player img").attr("src").value
+        player_img: player.css(".player-pic.qd-player img").attr("src").value,
+        team_img: player.css("img.team-logo").attr("src").value
       })
     end
 
