@@ -4,22 +4,42 @@ class FantasyController < ApplicationController
   def index
     browser = Browser.new
 
-    @feed_data = Scraper.new.feed(browser.feed.body)[:transfers]
+    raw_data = Scraper.new.feed(browser.feed.body)
+
+    @market_data = raw_data[:market]
+    @feed_data = raw_data[:transfers]
     @standings_data = Scraper.new.standings(browser.standings.body)
 
-    # Parametros de paginacion
-    page = params[:page].present? ? params[:page].to_i : 1
-    per_page = 5
+    debugger
 
-    # Calcular el total de paginas y obtener los datos paginados
-    @total_pages = (@feed_data.size / per_page.to_f).ceil
-    @paginated_feed_data = @feed_data.slice((page - 1) * per_page, per_page) || []
+    # Pagination parameters for market data
+    market_page = params[:page_market].present? ? params[:page_market].to_i : 1
+    per_page_market = 5
+
+    @total_pages_market = (@market_data.size / per_page_market.to_f).ceil
+    @paginated_market_data = @market_data.slice((market_page - 1) * per_page_market, per_page_market) || []
+    @current_page_market = market_page
+
+    # Pagination parameters for feed data
+    feed_page = params[:page_feed].present? ? params[:page_feed].to_i : 1
+    per_page_feed = 5
+
+    @total_pages_feed = (@feed_data.size / per_page_feed.to_f).ceil
+    @paginated_feed_data = @feed_data.slice((feed_page - 1) * per_page_feed, per_page_feed) || []
+    @current_page_feed = feed_page
+
 
     # Si la peticion es AJAX, renderizar la vista parcial
     if request.xhr?
-      render partial: "fantasy/partials/transfer_list", locals: { paginated_feed_data: @paginated_feed_data }
+      render partial: "fantasy/partials/transfer_list", locals: {
+        paginated_feed_data: @paginated_feed_data,
+        paginated_market_data: @paginated_market_data,
+        current_page_feed: @current_page_feed,
+        total_pages_feed: @total_pages_feed,
+        current_page_market: @current_page_market,
+        total_pages_market: @total_pages_market
+      }
     else
-      @current_page = page
       respond_to do |format|
         format.html
       end

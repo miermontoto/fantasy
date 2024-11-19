@@ -30,14 +30,6 @@ module ApplicationHelper
     end
   end
 
-  def max(key, value = nil)
-    return @MAXES[key] if value.nil?
-
-    @MAXES ||= {}
-    length = value.to_s.length
-    @MAXES[key] = length if @MAXES[key].nil? || length > @MAXES[key]
-  end
-
   # Helper methods
   def format_num(num)
     return "-" if num.nil?
