@@ -181,20 +181,58 @@ class Scraper
   end
 
   def offers(response)
-    content = JSON.parse(response)
-    status = content["status"]
+    content = check_ajax_response(response)
 
-    if status == "error"
-      puts "no hay ofertas pendientes".red.bold
+    if content.empty? then; return {}; end
+
+    offers = content["offers"]
+
+    puts "ofertas".grey.bold
+
+    if offers.nil? then
+      puts "no hay ofertas pendientes"
       return {}
     end
-
-    offers = content["data"]["offers"]
 
     offers.map do |offer|
       # @todo parsear ofertas
     end
 
     { offers: offers }
+  end
+
+  def communities(response)
+    content = check_ajax_response(response)
+
+    if content.empty? then; return {}; end
+
+    communities = content["communities"].to_h.map do |id, community|
+      Community.new({
+        id: community["id"],
+        name: community["name"],
+        icon: community["community_icon"],
+        balance: community["balance"],
+        offers: community["offers"]
+      })
+    end
+
+    puts "comunidades".grey.bold
+    communities.each { |community| puts community }
+
+    { communities: communities }
+  end
+
+  private
+
+  def check_ajax_response(response)
+    content = JSON.parse(response)
+    status = content["status"]
+
+    if status == "error"
+      puts "error al obtener la información".red.bold
+      return {}
+    end
+
+    content["data"]
   end
 end

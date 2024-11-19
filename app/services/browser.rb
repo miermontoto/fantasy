@@ -64,4 +64,8 @@ class Browser
       req.body = "post=offers-received"
     end
   end
+
+  def communities
+    @conn.post("/ajax/community-check")
+  end
 end

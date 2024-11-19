@@ -8,7 +8,7 @@ else
   browser = Browser.new
   scraper = Scraper.new
 
-  endpoints = [ 'feed', 'market', 'standings', 'team', 'offers' ]
+  endpoints = [ 'feed', 'market', 'standings', 'team', 'offers', 'communities' ]
   action = ARGV[0] || 'feed'
 
   if endpoints.include?(action)
