@@ -52,11 +52,11 @@ class Player
 
   # Función que calcula la longitud máxima de un atributo
   def max(key, value = nil)
-    return @MAXES[key] if value.nil?
+    return @@MAXES[key] if value.nil?
 
-    @MAXES ||= {}
+    @@MAXES ||= {}
     length = value.to_s.length
-    @MAXES[key] = length if @MAXES[key].nil? || length > @MAXES[key]
+    @@MAXES[key] = length if @@MAXES[key].nil? || length > @@MAXES[key]
   end
 
   # Función que calcula los puntos por millón de un jugador
