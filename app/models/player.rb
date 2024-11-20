@@ -97,7 +97,7 @@ class Player
 
   # Función que convierte un jugador en transferencia a string
   def transfer_to_s
-    target = "#{@from} → #{@to}#{@clause ? " 💰" : ""}"
+    target = "#{@clause ? "💰" : ""} #{@from} → #{@to}"
     if @from_market then
       target = "#{"+".green} #{@to}"
     elsif @to_market then
