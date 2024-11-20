@@ -31,7 +31,8 @@ class Scraper
         points: player.css(".points").text.strip,
         value: player.css(".underName").text.gsub(/[^0-9]/, ""),
         average: player.css(".avg").text.strip,
-        streak: player.css(".streak span").map { |span| span.text.strip }
+        streak: player.css(".streak span").map { |span| span.text.strip },
+        player_img: player.css(".player-pic.qd-player img").attr("src").value
       })
     end
 
