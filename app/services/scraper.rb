@@ -59,6 +59,104 @@ class Scraper
 
     recent_transfers.flatten!
 
+    # gameweek start events
+    gameweek_starts = doc.css(".card-gameweek_start").map do |block|
+      {
+        type: :gameweek_start,
+        gameweek: block.css(".title").text.strip,
+        subtitle: block.css(".subtitle").text.strip,
+        date: block.css(".date").text.strip
+      }
+    end
+
+    # gameweek end events
+    gameweek_ends = doc.css(".card-gameweek_end").map do |block|
+      users = block.css(".user-list li").map do |user|
+        {
+          position: user.css(".position").text.strip,
+          name: user.css(".name").text.strip,
+          points: user.css(".points .value").text.strip.to_i,
+          profit: user.css(".info .green").text.strip,
+          user_img: user.css(".pic img").attr("src")&.value
+        }
+      end
+
+      {
+        type: :gameweek_end,
+        gameweek: block.css(".head .title strong").text.strip,
+        date: block.css(".head .date").text.strip,
+        rankings: users
+      }
+    end
+
+    # clause drops events
+    clause_drops = doc.css(".card-clauses_drops").map do |block|
+      players = block.css(".player-list li").map do |player|
+        {
+          name: player.css(".title strong").text.strip,
+          owner: player.css(".title em").text.strip,
+          team_img: player.css(".team-logo").attr("src").value,
+          position: player.css(".icons i").attr("class").value,
+          points: player.css(".points").text.strip.to_i,
+          old_price: player.css(".flow .price").last.text.strip,
+          new_price: player.css(".flow .price.red").text.strip,
+          player_img: player.css(".player-pic.qd-player img").attr("src").value
+        }
+      end
+
+      {
+        type: :clause_drops,
+        date: block.css(".head .date").text.strip,
+        players: players
+      }
+    end
+
+    # Combine all events into a single array with timestamps
+    all_events = []
+
+    # Add gameweek starts
+    gameweek_starts.each do |event|
+      all_events << {
+        type: :gameweek_start,
+        date: parse_date(event[:date]),
+        raw_date: event[:date],
+        data: event
+      }
+    end
+
+    # Add gameweek ends
+    gameweek_ends.each do |event|
+      all_events << {
+        type: :gameweek_end,
+        date: parse_date(event[:date]),
+        raw_date: event[:date],
+        data: event
+      }
+    end
+
+    # Add clause drops
+    clause_drops.each do |event|
+      all_events << {
+        type: :clause_drops,
+        date: parse_date(event[:date]),
+        raw_date: event[:date],
+        data: event
+      }
+    end
+
+    # Add transfers
+    recent_transfers.each do |transfer|
+      all_events << {
+        type: :transfer,
+        date: parse_date(transfer.date),
+        raw_date: transfer.date,
+        data: transfer
+      }
+    end
+
+    # Sort all events by date
+    all_events.sort_by! { |event| event[:date] }.reverse!
+
     puts "información general".grey.bold
     puts "#{"liga:".bold} #{community_name}"
     puts "#{"balance:".bold} #{user_balance}"
@@ -68,16 +166,41 @@ class Scraper
     puts "\ntop jugadores en el mercado".grey.bold
     market_players.each { |player| puts player }
 
-    puts "\ntransferencias recientes".grey.bold
-    recent_transfers.flatten.each { |transfer| puts transfer }
+    puts "\neventos".grey.bold
+    all_events.each do |event|
+      case event[:type]
+      when :gameweek_start
+        data = event[:data]
+        puts "#{event[:raw_date]} - #{data[:gameweek]} #{data[:subtitle]}"
+      when :gameweek_end
+        data = event[:data]
+        puts "#{event[:raw_date]} - Fin de #{data[:gameweek]}"
+        data[:rankings].each do |user|
+          puts "  #{user[:position]}. #{user[:name]} - #{user[:points]}pts (#{user[:profit]})"
+        end
+      when :clause_drops
+        data = event[:data]
+        puts "#{event[:raw_date]} - Bajadas de cláusulas"
+        data[:players].each do |player|
+          puts "  #{player[:name]} (#{player[:owner]}) - #{player[:new_price]} ← #{player[:old_price]}"
+        end
+      when :transfer
+        transfer = event[:data]
+        puts "#{event[:raw_date]} - #{transfer.name} transferido de #{transfer.from} a #{transfer.to} por #{transfer.value}"
+      end
+    end
 
-    { transfers: recent_transfers, market: market_players, info: {
-      community: community_name,
-      balance: user_balance,
-      credits: user_credits,
-      gameweek: gameweek,
-      status: gameweek_status
-    } }
+    {
+      events: all_events,
+      market: market_players,
+      info: {
+        community: community_name,
+        balance: user_balance,
+        credits: user_credits,
+        gameweek: gameweek,
+        status: gameweek_status
+      }
+    }
   end
 
   def market(html)
@@ -235,5 +358,11 @@ class Scraper
     end
 
     content["data"]
+  end
+
+  def parse_date(date_string)
+    # Add date parsing logic here - format will depend on your input
+    # This is just a placeholder - implement according to your date format
+    DateTime.parse(date_string) rescue DateTime.now
   end
 end
