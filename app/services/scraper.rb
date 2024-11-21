@@ -24,12 +24,16 @@ class Scraper
 
     # top market players
     market_players = doc.css(".card-market_unified .player-list li").map do |player|
+      # @remind no se puede añadir la tendencia aquí porque ocurren problemas
+      # de padding con el nombre al tener en cuenta los colores de las flechas
+      # aquí pero no tener tendencias en las transferencias de debajo.
       Player.new({
         name: player.css(".name").text.strip,
         team_img: player.css("img.team-logo").attr("src").value,
         position: player.css(".icons i").attr("class").value,
         points: player.css(".points").text.strip,
         value: player.css(".underName").text.gsub(/[^0-9]/, ""),
+        # trend: player.css(".value-arrow").text.strip,
         average: player.css(".avg").text.strip,
         streak: player.css(".streak span").map { |span| span.text.strip },
         player_img: player.css(".player-pic.qd-player img").attr("src").value
@@ -47,7 +51,7 @@ class Scraper
           from: transfer.css(".title em").first.text.strip,
           to: transfer.css(".title em").last.text.strip,
           value: transfer.css(".price").first.text.strip,
-          date: date, # @todo fix: no se está obteniendo la fecha correctamente?
+          date: date,
           status: transfer.css(".status use")&.attr("href")&.value&.split("#")&.last,
           user: user_name,
           player_img: transfer.css(".player-pic.qd-player img").attr("src").value,
@@ -195,9 +199,25 @@ class Scraper
       return {}
     end
 
-    offers.map do |offer|
-      # @todo parsear ofertas
+    offers = offers.map do |id, offer|
+      Player.new({
+        id: id,
+        name: offer["name"],
+        position: "pos-#{offer["position"]}",
+        average: offer["avg"],
+        value: offer["value"],
+        streak: offer["streak"],
+        date: offer["date"],
+        offer: true,
+        previous_value: offer["prev_value"],
+        best_bid: offer["bid"],
+        offered_by: offer["uname"],
+        bid_status: offer["bid_status"],
+        asked_price: offer["price"]
+      })
     end
+
+    offers.each { |offer| puts offer }
 
     { offers: offers }
   end
@@ -230,7 +250,7 @@ class Scraper
     status = content["status"]
 
     if status == "error"
-      puts "error al obtener la información".red.bold
+      puts "error al obtener la información (¿XAUTH inválido?)".red.bold
       return {}
     end
 
