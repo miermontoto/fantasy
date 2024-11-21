@@ -12,7 +12,7 @@ class Player
   # a partir de un hash de atributos proporcionado por el scraper
   def initialize(attributes = {})
     @position = Position.new(attributes[:position])                              # posición del jugador
-    @name = attributes[:name]                                                    # nombre del jugador
+    @name = attributes[:name].gsub('💥', '')                                     # nombre del jugador
     @points = attributes[:points].to_s || "0"                                    # puntos del jugador en toda la temporada actual
     @value = attributes[:value]                                                  # valor actual del jugador en el mercado
     @average = attributes[:average]                                              # media de puntos por partido
@@ -34,29 +34,45 @@ class Player
     @from_market = @from == ApplicationHelper::MARKET_NAME unless @from.nil?     # en transferencia: true si el origen es el mercado
     @to_market = @to == ApplicationHelper::MARKET_NAME unless @to.nil?           # en transferencia: true si el destino es el mercado
 
+    @is_offer = attributes[:offer] || false                                      # en oferta: true
+    @previous_value = attributes[:previous_value] || 0                           # en oferta: valor anterior del jugador
+    @best_bid = attributes[:best_bid] || 0                                       # en oferta: mejor oferta
+    @offered_by = attributes[:offered_by] || ""                                  # en oferta: nombre del usuario que ofrece el jugador
+    @bid_status = attributes[:bid_status] || ""                                  # en oferta: estado de la oferta
+    @asked_price = attributes[:asked_price] || 0                                 # en oferta: precio de la oferta
+
+    @variation = @value - @previous_value if @is_offer                           # en oferta: variación diaria del valor
+    @raw_difference = @best_bid - @value if @is_offer                            # en oferta: diferencia bruta entre el valor y la mejor oferta
+    @difference = (100 * ((@best_bid.to_f / @value) - 1)).round(2) if @is_offer  # en oferta: diferencia en porcentaje entre el valor y la mejor oferta
+    @increase_trend = increase_trend(@variation) if @variation
+    @difference_trend = difference_trend(@difference) if @difference
+
     @transfer_div = "
     <p class=\"text-sm #{@from_market ? 'text-gray-500 italic' : 'text-gray-200'}\">#{@from}</p>
     <span class=\"mx-2 text-xl #{@from_market ? 'text-green-500' : @to_market ? 'text-red-500' : 'text-white'}\">&rarr;</span>
     <p class=\"text-sm #{@to_market ? 'text-gray-500 italic' : 'text-gray-200'}\">#{@to}</p>
     " if @is_transfer
 
+    price_trend = @increase_trend ? @increase_trend : @trend
+    @price_string = price_trend == "" ? "" : "#{price_trend} "
+    @price_string += "#{@price}€"
+    @price_string += " (#{format_num(@variation)}€)" if @variation
+
     # calcular longitudes máximas de los atributos
-    # @todo fix: no se calcula correctamente, arreglar función max()
     max("name", @name)
     max("points", @points)
     max("average", @average)
-    max("price", @price)
+    max("price", @price_string)
   end
 
   private
 
-  # Función que calcula la longitud máxima de un atributo
-  def max(key, value = nil)
-    return @@MAXES[key] if value.nil?
-
-    @@MAXES ||= {}
-    length = value.to_s.length
-    @@MAXES[key] = length if @@MAXES[key].nil? || length > @@MAXES[key]
+  def base_string
+    [
+      @position.to_s,
+      @name.ljust(max("name")) + " #{@status == "" ? " " : @status}",
+      @price_string.ljust(max("price"))
+    ]
   end
 
   # Función que calcula los puntos por millón de un jugador
@@ -70,17 +86,15 @@ class Player
     # si el jugador es una transferencia, usar la función transfer_to_s
     if @is_transfer then; return transfer_to_s; end
 
+    # si el jugador es una oferta, usar la función to_s_offer
+    if @is_offer then; return to_s_offer; end
+
     # construir cadenas específicas para el jugador
     points = "#{@points.ljust(max("points"))}#{" (#{@average})".rjust(max("average") + 3) unless @average == ''}"
-    name_offset = @status == "" ? 1 : 0
-    price_info = "#{@trend} #{@price}€"
 
     # construir la cadena del jugador
-    content = [
-      @position.to_s,
-      @name.ljust(max("name") + name_offset) + " " + @status.to_s,
+    content = base_string + [
       points,
-      price_info.ljust(max("price") + 3),
       @ppm.to_s
     ]
 
@@ -97,7 +111,7 @@ class Player
 
   # Función que convierte un jugador en transferencia a string
   def transfer_to_s
-    target = "#{@from} → #{@to}#{@clause ? " 💰" : ""}"
+    target = "#{@clause ? "💰" : ""} #{@from} → #{@to}"
     if @from_market then
       target = "#{"+".green} #{@to}"
     elsif @to_market then
@@ -106,16 +120,23 @@ class Player
 
     info = "#{target}, #{@date}" # @todo usar info cuando se arregle date
 
-    content = [
-      @position.to_s,
-      @name.ljust(max("name")),
-      (@price + "€").ljust(max("price") + 1),
+    content = base_string + [
       target
     ]
 
     if @own then # transferencia propia en negrita
       content = content.map { |c| c.bold }
     end
+
+    concat(content)
+  end
+
+  def to_s_offer
+    offer = "#{format_num(@best_bid)}€ (#{@raw_difference}) (#{@difference_trend} #{@difference}%)" if @difference
+
+    content = base_string + [
+      offer + " " + @offered_by.grey.italic
+    ]
 
     concat(content)
   end
