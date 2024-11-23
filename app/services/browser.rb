@@ -91,4 +91,29 @@ class Browser
 
     puts "error: no se ha encontrado ninguna comunidad con ese nombre".red
   end
+
+  def top_market(interval = "day")
+    valid_intervals = %w[day week month]
+    if !valid_intervals.include?(interval) then; puts "error: intervalo inválido".red; return; end
+
+    @conn.post("/ajax/sw/market") do |req|
+      req.body = "post=market&interval=#{interval}"
+    end
+  end
+
+  def top_players
+    @conn.post("/ajax/sw/players") do |req|
+      filters = {
+        position: 0,
+        value: 0,
+        team: 0,
+        injured: 0,
+        favs: 0,
+        owner: 0,
+        benched: 0,
+        stealable: 0
+      }
+      req.body = "post=players&filters=#{filters.to_json}"
+    end
+  end
 end

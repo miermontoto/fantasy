@@ -71,7 +71,7 @@ module ApplicationHelper
 
   # Función que calcula la longitud máxima de un atributo
   def max(key, value = nil)
-    return @@MAXES[key] if value.nil?
+    return (@@MAXES[key] || 0) if value.nil?
 
     @@MAXES ||= {}
     length = value.to_s.length

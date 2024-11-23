@@ -1,0 +1,2225 @@
+{
+  "data": {
+    "gameweekIsActive": true,
+    "id": false,
+    "owners": [
+      {
+        "id": 797857,
+        "name": "Alejandro"
+      },
+      {
+        "id": 799330,
+        "name": "Enol"
+      },
+      {
+        "id": 797853,
+        "name": "Florentineiro Pereceiro"
+      },
+      {
+        "id": 797851,
+        "name": "Gojo Satoru"
+      },
+      {
+        "id": 797854,
+        "name": "Israel"
+      },
+      {
+        "id": 797841,
+        "name": "Juan"
+      },
+      {
+        "id": 797850,
+        "name": "Marco"
+      },
+      {
+        "id": 797852,
+        "name": "Marcos "
+      }
+    ],
+    "players": [
+      {
+        "avg": 10.2,
+        "clause": 101548500,
+        "fav": 0,
+        "id": 48657,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 3,
+        "id_uc": 797852,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": false,
+          "rival_team_id": 5,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123"
+        },
+        "name": "Raphinha",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/48657.png?version=20241113124129",
+        "points": 133,
+        "position": 4,
+        "prev_value": 67648000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 4,
+            "points": 13
+          },
+          {
+            "color": 4,
+            "points": 12
+          },
+          {
+            "color": 3,
+            "points": 5
+          }
+        ],
+        "streak_sum": 30,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+        "ts_pic": 1731498089,
+        "uc_name": "Marcos ",
+        "value": 67699000
+      },
+      {
+        "avg": 10.2,
+        "clause": 112499998.5,
+        "fav": 0,
+        "id": 48684,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 3,
+        "id_uc": 797854,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": false,
+          "rival_team_id": 5,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123"
+        },
+        "name": "Robert Lewandowski",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/48684.png?version=20231117150646",
+        "points": 133,
+        "position": 4,
+        "prev_value": 73102000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 4,
+            "points": 16
+          },
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 2,
+            "points": 3
+          }
+        ],
+        "streak_sum": 24,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+        "ts_pic": 1700230006,
+        "uc_name": "Israel",
+        "value": 73157000
+      },
+      {
+        "avg": 9.5,
+        "clause": 144861375,
+        "fav": 0,
+        "id": 52375,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 3,
+        "id_uc": 797851,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": false,
+          "rival_team_id": 5,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123"
+        },
+        "name": "Lamine Yamal",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/52375.png?version=20240915201905",
+        "points": 114,
+        "position": 4,
+        "prev_value": 79729000,
+        "shield": 0,
+        "status": "injury",
+        "streak": [
+          {
+            "color": 4,
+            "points": 11
+          },
+          {
+            "color": 3,
+            "points": 7
+          },
+          {
+            "color": 0,
+            "points": "-"
+          }
+        ],
+        "streak_sum": 18,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+        "ts_pic": 1726424345,
+        "uc_name": "Gojo Satoru",
+        "value": 79621000
+      },
+      {
+        "avg": 9.2,
+        "clause": 135557958,
+        "fav": 0,
+        "id": 12900,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 15,
+        "id_uc": 797857,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": false,
+          "rival_team_id": 49,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/49.png?version=20241123"
+        },
+        "name": "Vinícius Júnior",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/12900.png?version=20230829091747",
+        "points": 110,
+        "position": 4,
+        "prev_value": 77434000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 4,
+            "points": 10
+          },
+          {
+            "color": 2,
+            "points": 3
+          },
+          {
+            "color": 4,
+            "points": 21
+          }
+        ],
+        "streak_sum": 34,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123",
+        "ts_pic": 1693293467,
+        "uc_name": "Alejandro",
+        "value": 77456000
+      },
+      {
+        "avg": 7.4,
+        "clause": 91072500,
+        "fav": 1,
+        "id": 22547,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 3,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": false,
+          "rival_team_id": 5,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123"
+        },
+        "name": "Pedri",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/22547.png?version=20231218004635",
+        "points": 96,
+        "position": 3,
+        "prev_value": 60747000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 3,
+            "points": 6
+          },
+          {
+            "color": 3,
+            "points": 5
+          }
+        ],
+        "streak_sum": 16,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+        "ts_pic": 1702856795,
+        "uc_name": null,
+        "value": 60715000
+      },
+      {
+        "avg": 7.9,
+        "clause": 89542500,
+        "fav": 1,
+        "id": 7024,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 15,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": false,
+          "rival_team_id": 49,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/49.png?version=20241123"
+        },
+        "name": "Fede Valverde",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/7024.png?version=20231218092607",
+        "points": 95,
+        "position": 3,
+        "prev_value": 59640000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 6
+          },
+          {
+            "color": 2,
+            "points": 2
+          },
+          {
+            "color": 3,
+            "points": 6
+          }
+        ],
+        "streak_sum": 14,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123",
+        "ts_pic": 1702887967,
+        "uc_name": null,
+        "value": 59695000
+      },
+      {
+        "avg": 6.8,
+        "clause": 81559500,
+        "fav": 0,
+        "id": 51,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 2,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": true,
+          "rival_team_id": 48,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/48.png?version=20241123"
+        },
+        "name": "Antoine Griezmann",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/51.png?version=20241008115308",
+        "points": 88,
+        "position": 4,
+        "prev_value": 54715000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 2,
+            "points": 4
+          },
+          {
+            "color": 2,
+            "points": 3
+          }
+        ],
+        "streak_sum": 12,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/2.png?version=20241123",
+        "ts_pic": 1728381188,
+        "uc_name": null,
+        "value": 54373000
+      },
+      {
+        "avg": 6.7,
+        "clause": 77286000,
+        "fav": 0,
+        "id": 18004,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 50,
+        "id_uc": 797850,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": true,
+          "rival_team_id": 20,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/20.png?version=20241123"
+        },
+        "name": "Ante Budimir",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/18004.png?version=20231217210101",
+        "points": 87,
+        "position": 4,
+        "prev_value": 51574000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 8
+          },
+          {
+            "color": 4,
+            "points": 13
+          },
+          {
+            "color": 2,
+            "points": 3
+          }
+        ],
+        "streak_sum": 24,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/50.png?version=20241123",
+        "ts_pic": 1702843261,
+        "uc_name": "Marco",
+        "value": 51524000
+      },
+      {
+        "avg": 7.8,
+        "clause": 133341000,
+        "fav": 0,
+        "id": 58954,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 15,
+        "id_uc": 797852,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": false,
+          "rival_team_id": 49,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/49.png?version=20241123"
+        },
+        "name": "Kylian Mbappé",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/58954.png?version=20240702085856",
+        "points": 86,
+        "position": 4,
+        "prev_value": 84648000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 9
+          },
+          {
+            "color": 0,
+            "points": 0
+          },
+          {
+            "color": 3,
+            "points": 9
+          }
+        ],
+        "streak_sum": 18,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123",
+        "ts_pic": 1719903536,
+        "uc_name": "Marcos ",
+        "value": 84478000
+      },
+      {
+        "avg": 7.1,
+        "clause": 68142000,
+        "fav": 0,
+        "id": 130,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 5,
+        "id_uc": 797851,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": true,
+          "rival_team_id": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123"
+        },
+        "name": "Iago Aspas",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/130.png?version=20231117150616",
+        "points": 85,
+        "position": 4,
+        "prev_value": 45568000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 6
+          },
+          {
+            "color": 4,
+            "points": 10
+          },
+          {
+            "color": 2,
+            "points": 4
+          }
+        ],
+        "streak_sum": 20,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123",
+        "ts_pic": 1700229976,
+        "uc_name": "Gojo Satoru",
+        "value": 45428000
+      },
+      {
+        "avg": 6.5,
+        "clause": 64999999.5,
+        "fav": 0,
+        "id": 51060,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 49,
+        "id_uc": 797841,
+        "is_mine": 1,
+        "match_info": {
+          "is_home": true,
+          "rival_team_id": 15,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123"
+        },
+        "name": "Juan Cruz",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/51060.png?version=20240616124532",
+        "points": 85,
+        "position": 3,
+        "prev_value": 42596000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 7
+          },
+          {
+            "color": 4,
+            "points": 11
+          },
+          {
+            "color": 2,
+            "points": 4
+          }
+        ],
+        "streak_sum": 22,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/49.png?version=20241123",
+        "ts_pic": 1718534732,
+        "uc_name": "Juan",
+        "value": 42396000
+      },
+      {
+        "avg": 6.5,
+        "clause": 59658000,
+        "fav": 0,
+        "id": 175,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 408,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": false,
+          "rival_team_id": 11,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20241123"
+        },
+        "name": "Antonio Raíllo",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/175.png?version=20231217210442",
+        "points": 85,
+        "position": 2,
+        "prev_value": 39886000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 7
+          },
+          {
+            "color": 2,
+            "points": 4
+          },
+          {
+            "color": 3,
+            "points": 5
+          }
+        ],
+        "streak_sum": 16,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20241123",
+        "ts_pic": 1702843482,
+        "uc_name": null,
+        "value": 39772000
+      },
+      {
+        "avg": 6.1,
+        "clause": 58411500,
+        "fav": 0,
+        "id": 22612,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 9,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": false,
+          "rival_team_id": 15,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123"
+        },
+        "name": "Luis Milla",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/22612.png?version=20231218182035",
+        "points": 85,
+        "position": 3,
+        "prev_value": 38767000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 3,
+            "points": 6
+          },
+          {
+            "color": 3,
+            "points": 8
+          }
+        ],
+        "streak_sum": 19,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/9.png?version=20241123",
+        "ts_pic": 1702920035,
+        "uc_name": null,
+        "value": 38941000
+      },
+      {
+        "avg": 6.4,
+        "clause": 59916000,
+        "fav": 0,
+        "id": 16976,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 16,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": false,
+          "rival_team_id": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20241123"
+        },
+        "name": "Martín Zubimendi",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/16976.png?version=20231222221403",
+        "points": 83,
+        "position": 3,
+        "prev_value": 39987000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 6
+          },
+          {
+            "color": 3,
+            "points": 9
+          },
+          {
+            "color": 2,
+            "points": 4
+          }
+        ],
+        "streak_sum": 19,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123",
+        "ts_pic": 1703279643,
+        "uc_name": null,
+        "value": 39944000
+      },
+      {
+        "avg": 6.3,
+        "clause": 75598500,
+        "fav": 0,
+        "id": 19562,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 16,
+        "id_uc": 799330,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": false,
+          "rival_team_id": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20241123"
+        },
+        "name": "Takefusa Kubo",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/19562.png?version=20231119114114",
+        "points": 82,
+        "position": 3,
+        "prev_value": 50210000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 9
+          },
+          {
+            "color": 4,
+            "points": 12
+          },
+          {
+            "color": 3,
+            "points": 7
+          }
+        ],
+        "streak_sum": 28,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123",
+        "ts_pic": 1700390474,
+        "uc_name": "Enol",
+        "value": 50399000
+      },
+      {
+        "avg": 8.9,
+        "clause": 78079500,
+        "fav": 1,
+        "id": 52189,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 20,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": false,
+          "rival_team_id": 50,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/50.png?version=20241123"
+        },
+        "name": "Ayoze Pérez",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/52189.png?version=20230220202037",
+        "points": 80,
+        "position": 4,
+        "prev_value": 52583000,
+        "shield": 0,
+        "status": "injury",
+        "streak": [
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 4,
+            "points": 10
+          },
+          {
+            "color": 2,
+            "points": 3
+          }
+        ],
+        "streak_sum": 13,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/20.png?version=20241123",
+        "ts_pic": 1676920837,
+        "uc_name": null,
+        "value": 52053000
+      },
+      {
+        "avg": 6.2,
+        "clause": 63946500,
+        "fav": 1,
+        "id": 55491,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 17,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": true,
+          "rival_team_id": 14,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/14.png?version=20241123"
+        },
+        "name": "Dodi Lukébakio",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/55491.png?version=20231221192121",
+        "points": 80,
+        "position": 4,
+        "prev_value": 42567000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 4,
+            "points": 16
+          },
+          {
+            "color": 2,
+            "points": 1
+          },
+          {
+            "color": 3,
+            "points": 7
+          }
+        ],
+        "streak_sum": 24,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20241123",
+        "ts_pic": 1703182881,
+        "uc_name": null,
+        "value": 42631000
+      },
+      {
+        "avg": 6.2,
+        "clause": 64342500,
+        "fav": 0,
+        "id": 53098,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 11,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": true,
+          "rival_team_id": 408,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20241123"
+        },
+        "name": "Alberto Moleiro",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/53098.png?version=20231117220502",
+        "points": 80,
+        "position": 3,
+        "prev_value": 43199000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 2,
+            "points": 3
+          },
+          {
+            "color": 2,
+            "points": 2
+          },
+          {
+            "color": 2,
+            "points": 4
+          }
+        ],
+        "streak_sum": 9,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20241123",
+        "ts_pic": 1700255102,
+        "uc_name": null,
+        "value": 42895000
+      },
+      {
+        "avg": 11.3,
+        "clause": 69999999,
+        "fav": 0,
+        "id": 15109,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 4,
+        "id_uc": 797841,
+        "is_mine": 1,
+        "match_info": {
+          "is_home": false,
+          "rival_team_id": 16,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123"
+        },
+        "name": "Giovani Lo Celso",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/15109.png?version=20240831002341",
+        "points": 79,
+        "position": 3,
+        "prev_value": 44481000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 3,
+            "points": 7
+          }
+        ],
+        "streak_sum": 7,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20241123",
+        "ts_pic": 1725056621,
+        "uc_name": "Juan",
+        "value": 44620000
+      },
+      {
+        "avg": 7.2,
+        "clause": 73924500,
+        "fav": 1,
+        "id": 22502,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 20,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": false,
+          "rival_team_id": 50,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/50.png?version=20241123"
+        },
+        "name": "Alex Baena",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/22502.png?version=20231217204420",
+        "points": 79,
+        "position": 3,
+        "prev_value": 49608000,
+        "shield": 0,
+        "status": "doubt",
+        "streak": [
+          {
+            "color": 2,
+            "points": 2
+          },
+          {
+            "color": 4,
+            "points": 10
+          },
+          {
+            "color": 2,
+            "points": 4
+          }
+        ],
+        "streak_sum": 16,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/20.png?version=20241123",
+        "ts_pic": 1702842260,
+        "uc_name": null,
+        "value": 49283000
+      },
+      {
+        "avg": 6.1,
+        "clause": 35022000,
+        "fav": 0,
+        "id": 17980,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 408,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": false,
+          "rival_team_id": 11,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20241123"
+        },
+        "name": "Dani Rodríguez",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/17980.png?version=20231218214908",
+        "points": 79,
+        "position": 3,
+        "prev_value": 23817000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 2,
+            "points": 4
+          },
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 3,
+            "points": 5
+          }
+        ],
+        "streak_sum": 14,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20241123",
+        "ts_pic": 1702932548,
+        "uc_name": null,
+        "value": 23348000
+      },
+      {
+        "avg": 7.1,
+        "clause": 53760000,
+        "fav": 0,
+        "id": 24739,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 5,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": true,
+          "rival_team_id": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123"
+        },
+        "name": "Óscar Mingueza",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/24739.png?version=20231218172613",
+        "points": 78,
+        "position": 2,
+        "prev_value": 36079000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 2,
+            "points": 3
+          },
+          {
+            "color": 3,
+            "points": 9
+          },
+          {
+            "color": 2,
+            "points": 1
+          }
+        ],
+        "streak_sum": 13,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123",
+        "ts_pic": 1702916773,
+        "uc_name": null,
+        "value": 35840000
+      },
+      {
+        "avg": 7,
+        "clause": 61623000,
+        "fav": 0,
+        "id": 17459,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 15,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": false,
+          "rival_team_id": 49,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/49.png?version=20241123"
+        },
+        "name": "Rodrygo",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/17459.png?version=20231121083605",
+        "points": 77,
+        "position": 4,
+        "prev_value": 41458000,
+        "shield": 0,
+        "status": "injury",
+        "streak": [
+          {
+            "color": 2,
+            "points": 2
+          },
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 3,
+            "points": 5
+          }
+        ],
+        "streak_sum": 7,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123",
+        "ts_pic": 1700552165,
+        "uc_name": null,
+        "value": 41082000
+      },
+      {
+        "avg": 5.9,
+        "clause": 59386500,
+        "fav": 0,
+        "id": 18186,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 3,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": false,
+          "rival_team_id": 5,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123"
+        },
+        "name": "Jules Koundé",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/18186.png?version=20240411090659",
+        "points": 77,
+        "position": 2,
+        "prev_value": 39816000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 2,
+            "points": 4
+          },
+          {
+            "color": 2,
+            "points": 2
+          }
+        ],
+        "streak_sum": 11,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+        "ts_pic": 1712819219,
+        "uc_name": null,
+        "value": 39591000
+      },
+      {
+        "avg": 5.4,
+        "clause": 50724000,
+        "fav": 0,
+        "id": 58436,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 317,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": true,
+          "rival_team_id": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/2.png?version=20241123"
+        },
+        "name": "Raúl Moro",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/58436.png?version=20240616125802",
+        "points": 76,
+        "position": 3,
+        "prev_value": 33556000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 2,
+            "points": 3
+          },
+          {
+            "color": 4,
+            "points": 10
+          },
+          {
+            "color": 2,
+            "points": 4
+          }
+        ],
+        "streak_sum": 17,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/317.png?version=20241123",
+        "ts_pic": 1718535482,
+        "uc_name": null,
+        "value": 33816000
+      },
+      {
+        "avg": 6.3,
+        "clause": 67711170,
+        "fav": 0,
+        "id": 1762,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 1,
+        "id_uc": 797854,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": true,
+          "rival_team_id": 16,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123"
+        },
+        "name": "Álex Berenguer",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/1762.png?version=20231217204446",
+        "points": 75,
+        "position": 3,
+        "prev_value": 44157000,
+        "shield": 0,
+        "status": "doubt",
+        "streak": [
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 4,
+            "points": 11
+          },
+          {
+            "color": 3,
+            "points": 7
+          }
+        ],
+        "streak_sum": 23,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20241123",
+        "ts_pic": 1702842286,
+        "uc_name": "Israel",
+        "value": 43984000
+      },
+      {
+        "avg": 5.8,
+        "clause": 52905000,
+        "fav": 0,
+        "id": 22956,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 16,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": false,
+          "rival_team_id": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20241123"
+        },
+        "name": "Sergio Gómez",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/22956.png?version=20240712161239",
+        "points": 75,
+        "position": 3,
+        "prev_value": 35763000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 3,
+            "points": 7
+          },
+          {
+            "color": 2,
+            "points": 2
+          }
+        ],
+        "streak_sum": 14,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123",
+        "ts_pic": 1720793559,
+        "uc_name": null,
+        "value": 35270000
+      },
+      {
+        "avg": 6.2,
+        "clause": 43545000,
+        "fav": 0,
+        "id": 17452,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 15,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": false,
+          "rival_team_id": 49,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/49.png?version=20241123"
+        },
+        "name": "Éder Militão",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/17452.png?version=20241003152346",
+        "points": 74,
+        "position": 2,
+        "prev_value": 29774000,
+        "shield": 0,
+        "status": "injury",
+        "streak": [
+          {
+            "color": 3,
+            "points": 6
+          },
+          {
+            "color": 2,
+            "points": 2
+          },
+          {
+            "color": 2,
+            "points": 2
+          }
+        ],
+        "streak_sum": 10,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123",
+        "ts_pic": 1727961826,
+        "uc_name": null,
+        "value": 29030000
+      },
+      {
+        "avg": 6.1,
+        "clause": 65436000,
+        "fav": 0,
+        "id": 25872,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 222,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": true,
+          "rival_team_id": 8,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/8.png?version=20241123"
+        },
+        "name": "Miguel Gutiérrez",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/25872.png?version=20231218195313",
+        "points": 73,
+        "position": 2,
+        "prev_value": 43548000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 6
+          },
+          {
+            "color": 4,
+            "points": 15
+          },
+          {
+            "color": 2,
+            "points": 3
+          }
+        ],
+        "streak_sum": 24,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20241123",
+        "ts_pic": 1702925593,
+        "uc_name": null,
+        "value": 43624000
+      },
+      {
+        "avg": 6,
+        "clause": 70710000,
+        "fav": 0,
+        "id": 358,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 3,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": false,
+          "rival_team_id": 5,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123"
+        },
+        "name": "Íñigo Martínez",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/358.png?version=20241003093516",
+        "points": 72,
+        "position": 2,
+        "prev_value": 47086000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 9
+          },
+          {
+            "color": 3,
+            "points": 6
+          },
+          {
+            "color": 2,
+            "points": 4
+          }
+        ],
+        "streak_sum": 19,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+        "ts_pic": 1727940916,
+        "uc_name": null,
+        "value": 47140000
+      },
+      {
+        "avg": 5.5,
+        "clause": 61176000,
+        "fav": 1,
+        "id": 557,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 4,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": false,
+          "rival_team_id": 16,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123"
+        },
+        "name": "Pablo Fornals",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/557.png?version=20240202181402",
+        "points": 72,
+        "position": 3,
+        "prev_value": 41127000,
+        "shield": 0,
+        "status": "injury",
+        "streak": [
+          {
+            "color": 4,
+            "points": 10
+          },
+          {
+            "color": 4,
+            "points": 10
+          },
+          {
+            "color": 3,
+            "points": 5
+          }
+        ],
+        "streak_sum": 25,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20241123",
+        "ts_pic": 1706894042,
+        "uc_name": null,
+        "value": 40784000
+      },
+      {
+        "avg": 6.5,
+        "clause": 54261000,
+        "fav": 0,
+        "id": 27852,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 1,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": true,
+          "rival_team_id": 16,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123"
+        },
+        "name": "Daniel Vivian",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/27852.png?version=20210701092440",
+        "points": 71,
+        "position": 2,
+        "prev_value": 36525000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 6
+          },
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 0,
+            "points": "-"
+          }
+        ],
+        "streak_sum": 11,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20241123",
+        "ts_pic": 1625124280,
+        "uc_name": null,
+        "value": 36174000
+      },
+      {
+        "avg": 5.5,
+        "clause": 56854500,
+        "fav": 0,
+        "id": 5795,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 4,
+        "id_uc": 797853,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": false,
+          "rival_team_id": 16,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123"
+        },
+        "name": "Rui Silva",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/5795.png?version=20170130135202",
+        "points": 71,
+        "position": 1,
+        "prev_value": 38470000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 8
+          },
+          {
+            "color": 4,
+            "points": 10
+          },
+          {
+            "color": 0,
+            "points": 0
+          }
+        ],
+        "streak_sum": 18,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20241123",
+        "ts_pic": 1485780722,
+        "uc_name": "Florentineiro Pereceiro",
+        "value": 37903000
+      },
+      {
+        "avg": 5.5,
+        "clause": 34776000,
+        "fav": 0,
+        "id": 28613,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 9,
+        "id_uc": 797851,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": false,
+          "rival_team_id": 15,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123"
+        },
+        "name": "Omar Alderete",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/28613.png?version=20231218181817",
+        "points": 71,
+        "position": 2,
+        "prev_value": 23225000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 3,
+            "points": 7
+          }
+        ],
+        "streak_sum": 17,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/9.png?version=20241123",
+        "ts_pic": 1702919897,
+        "uc_name": "Gojo Satoru",
+        "value": 23184000
+      },
+      {
+        "avg": 5.8,
+        "clause": 57949500,
+        "fav": 0,
+        "id": 346,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 15,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": false,
+          "rival_team_id": 49,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/49.png?version=20241123"
+        },
+        "name": "Luka Modrić",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/346.png?version=20231121093017",
+        "points": 70,
+        "position": 3,
+        "prev_value": 39114000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 7
+          },
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 2,
+            "points": 4
+          }
+        ],
+        "streak_sum": 16,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123",
+        "ts_pic": 1700555417,
+        "uc_name": null,
+        "value": 38633000
+      },
+      {
+        "avg": 5.4,
+        "clause": 52630500,
+        "fav": 0,
+        "id": 31355,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 2,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": true,
+          "rival_team_id": 48,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/48.png?version=20241123"
+        },
+        "name": "Alexander Sørloth",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/31355.png?version=20240712085417",
+        "points": 70,
+        "position": 4,
+        "prev_value": 35375000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 3,
+            "points": 9
+          },
+          {
+            "color": 2,
+            "points": 1
+          }
+        ],
+        "streak_sum": 15,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/2.png?version=20241123",
+        "ts_pic": 1720767257,
+        "uc_name": null,
+        "value": 35087000
+      },
+      {
+        "avg": 5,
+        "clause": 24078000,
+        "fav": 0,
+        "id": 59483,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 317,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": true,
+          "rival_team_id": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/2.png?version=20241123"
+        },
+        "name": "Karl Hein",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/59483.png?version=20240813105314",
+        "points": 70,
+        "position": 1,
+        "prev_value": 16423000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 2,
+            "points": 4
+          },
+          {
+            "color": 2,
+            "points": 2
+          },
+          {
+            "color": 3,
+            "points": 5
+          }
+        ],
+        "streak_sum": 11,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/317.png?version=20241123",
+        "ts_pic": 1723539194,
+        "uc_name": null,
+        "value": 16052000
+      },
+      {
+        "avg": 5.8,
+        "clause": 59598000,
+        "fav": 0,
+        "id": 17989,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 14,
+        "id_uc": 797850,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": false,
+          "rival_team_id": 17,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20241123"
+        },
+        "name": "Jorge de Frutos",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/17989.png?version=20230817193449",
+        "points": 69,
+        "position": 3,
+        "prev_value": 39894000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 2,
+            "points": 4
+          },
+          {
+            "color": 3,
+            "points": 6
+          },
+          {
+            "color": 3,
+            "points": 5
+          }
+        ],
+        "streak_sum": 15,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/14.png?version=20241123",
+        "ts_pic": 1692293689,
+        "uc_name": "Marco",
+        "value": 39732000
+      },
+      {
+        "avg": 5.8,
+        "clause": 35755500,
+        "fav": 1,
+        "id": 29166,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 8,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": false,
+          "rival_team_id": 222,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20241123"
+        },
+        "name": "Joan Garcia",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/29166.png?version=20240626191632",
+        "points": 69,
+        "position": 1,
+        "prev_value": 24080000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 2,
+            "points": 2
+          },
+          {
+            "color": 2,
+            "points": 1
+          },
+          {
+            "color": 3,
+            "points": 6
+          }
+        ],
+        "streak_sum": 9,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/8.png?version=20241123",
+        "ts_pic": 1719422192,
+        "uc_name": null,
+        "value": 23837000
+      },
+      {
+        "avg": 5.3,
+        "clause": 77164500,
+        "fav": 0,
+        "id": 59476,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 2,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": true,
+          "rival_team_id": 48,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/48.png?version=20241123"
+        },
+        "name": "Julián Álvarez",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/59476.png?version=20240812163150",
+        "points": 69,
+        "position": 4,
+        "prev_value": 51753000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 2,
+            "points": 3
+          },
+          {
+            "color": 2,
+            "points": 4
+          },
+          {
+            "color": 3,
+            "points": 9
+          }
+        ],
+        "streak_sum": 16,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/2.png?version=20241123",
+        "ts_pic": 1723473110,
+        "uc_name": null,
+        "value": 51443000
+      },
+      {
+        "avg": 4.9,
+        "clause": 24735000,
+        "fav": 0,
+        "id": 3117,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 9,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": false,
+          "rival_team_id": 15,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123"
+        },
+        "name": "Diego Rico",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/3117.png?version=20231218181107",
+        "points": 69,
+        "position": 2,
+        "prev_value": 16564000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 2,
+            "points": 4
+          },
+          {
+            "color": 2,
+            "points": 4
+          },
+          {
+            "color": 3,
+            "points": 7
+          }
+        ],
+        "streak_sum": 15,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/9.png?version=20241123",
+        "ts_pic": 1702919467,
+        "uc_name": null,
+        "value": 16490000
+      },
+      {
+        "avg": 6.2,
+        "clause": 35768000,
+        "fav": 0,
+        "id": 58466,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 11,
+        "id_uc": 797851,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": true,
+          "rival_team_id": 408,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20241123"
+        },
+        "name": "Álex Muñoz",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/58466.png?version=20240617150746",
+        "points": 68,
+        "position": 2,
+        "prev_value": 17296000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 4,
+            "points": 15
+          },
+          {
+            "color": 2,
+            "points": 2
+          },
+          {
+            "color": 3,
+            "points": 7
+          }
+        ],
+        "streak_sum": 24,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20241123",
+        "ts_pic": 1718629666,
+        "uc_name": "Gojo Satoru",
+        "value": 17884000
+      },
+      {
+        "avg": 5.7,
+        "clause": 66112000,
+        "fav": 0,
+        "id": 12946,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 20,
+        "id_uc": 797854,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": false,
+          "rival_team_id": 50,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/50.png?version=20241123"
+        },
+        "name": "Santi Comesaña",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/12946.png?version=20231222230002",
+        "points": 68,
+        "position": 3,
+        "prev_value": 32518000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 4,
+            "points": 13
+          },
+          {
+            "color": 2,
+            "points": 3
+          },
+          {
+            "color": 4,
+            "points": 11
+          }
+        ],
+        "streak_sum": 27,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/20.png?version=20241123",
+        "ts_pic": 1703282402,
+        "uc_name": "Israel",
+        "value": 33056000
+      },
+      {
+        "avg": 5.2,
+        "clause": 59677500,
+        "fav": 1,
+        "id": 33734,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 4,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": false,
+          "rival_team_id": 16,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123"
+        },
+        "name": "Abde Ezzalzouli",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/33734.png?version=20231217203008",
+        "points": 68,
+        "position": 4,
+        "prev_value": 39888000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 3,
+            "points": 8
+          }
+        ],
+        "streak_sum": 18,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20241123",
+        "ts_pic": 1702841408,
+        "uc_name": null,
+        "value": 39785000
+      },
+      {
+        "avg": 5.5,
+        "clause": 76012500,
+        "fav": 0,
+        "id": 29,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 1,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": true,
+          "rival_team_id": 16,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123"
+        },
+        "name": "Iñaki Williams",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/29.png?version=20231218001755",
+        "points": 66,
+        "position": 4,
+        "prev_value": 50901000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 2,
+            "points": 2
+          },
+          {
+            "color": 4,
+            "points": 11
+          },
+          {
+            "color": 0,
+            "points": "-"
+          }
+        ],
+        "streak_sum": 13,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20241123",
+        "ts_pic": 1702855075,
+        "uc_name": null,
+        "value": 50675000
+      },
+      {
+        "avg": 5.1,
+        "clause": 43882500,
+        "fav": 1,
+        "id": 17615,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 50,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": true,
+          "rival_team_id": 20,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/20.png?version=20241123"
+        },
+        "name": "Sergio Herrera",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/17615.png?version=20231222183854",
+        "points": 66,
+        "position": 1,
+        "prev_value": 29625000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 4,
+            "points": 12
+          },
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 2,
+            "points": 4
+          }
+        ],
+        "streak_sum": 21,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/50.png?version=20241123",
+        "ts_pic": 1703266734,
+        "uc_name": null,
+        "value": 29255000
+      },
+      {
+        "avg": 5.1,
+        "clause": 23998500,
+        "fav": 0,
+        "id": 28784,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 17,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": true,
+          "rival_team_id": 14,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/14.png?version=20241123"
+        },
+        "name": "José Ángel Carmona",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/28784.png?version=20231218181348",
+        "points": 66,
+        "position": 2,
+        "prev_value": 16182000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 7
+          },
+          {
+            "color": 2,
+            "points": 4
+          },
+          {
+            "color": 2,
+            "points": 4
+          }
+        ],
+        "streak_sum": 15,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20241123",
+        "ts_pic": 1702919628,
+        "uc_name": null,
+        "value": 15999000
+      },
+      {
+        "avg": 5.1,
+        "clause": 75283500,
+        "fav": 0,
+        "id": 53095,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 50,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": true,
+          "rival_team_id": 20,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/20.png?version=20241123"
+        },
+        "name": "Bryan Zaragoza",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/53095.png?version=20231218202940",
+        "points": 66,
+        "position": 3,
+        "prev_value": 50164000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 4,
+            "points": 10
+          },
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 1,
+            "points": -1
+          }
+        ],
+        "streak_sum": 14,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/50.png?version=20241123",
+        "ts_pic": 1702927780,
+        "uc_name": null,
+        "value": 50189000
+      },
+      {
+        "avg": 5.9,
+        "clause": 45444000,
+        "fav": 0,
+        "id": 15566,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 222,
+        "id_uc": null,
+        "is_mine": 0,
+        "match_info": {
+          "is_home": true,
+          "rival_team_id": 8,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/8.png?version=20241123"
+        },
+        "name": "Yangel Herrera",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/15566.png?version=20231218201125",
+        "points": 65,
+        "position": 3,
+        "prev_value": 31042000,
+        "shield": 0,
+        "status": "injury",
+        "streak": [
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 2,
+            "points": 3
+          },
+          {
+            "color": 4,
+            "points": 10
+          }
+        ],
+        "streak_sum": 13,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20241123",
+        "ts_pic": 1702926685,
+        "uc_name": null,
+        "value": 30296000
+      },
+      {
+        "avg": 5.3,
+        "clause": 46656000,
+        "fav": 0,
+        "id": 34,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 2,
+        "id_uc": 797841,
+        "is_mine": 1,
+        "match_info": {
+          "is_home": true,
+          "rival_team_id": 48,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/48.png?version=20241123"
+        },
+        "name": "José Giménez",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/34.png?version=20231218002422",
+        "points": 64,
+        "position": 2,
+        "prev_value": 31093000,
+        "shield": 0,
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 6
+          },
+          {
+            "color": 2,
+            "points": 4
+          },
+          {
+            "color": 3,
+            "points": 7
+          }
+        ],
+        "streak_sum": 17,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/2.png?version=20241123",
+        "ts_pic": 1702855462,
+        "uc_name": "Juan",
+        "value": 31104000
+      }
+    ],
+    "teams": [
+      {
+        "id": 48,
+        "name": "Alavés"
+      },
+      {
+        "id": 1,
+        "name": "Athletic Club"
+      },
+      {
+        "id": 2,
+        "name": "Atlético"
+      },
+      {
+        "id": 3,
+        "name": "Barcelona"
+      },
+      {
+        "id": 4,
+        "name": "Betis"
+      },
+      {
+        "id": 5,
+        "name": "Celta"
+      },
+      {
+        "id": 8,
+        "name": "Espanyol"
+      },
+      {
+        "id": 9,
+        "name": "Getafe"
+      },
+      {
+        "id": 222,
+        "name": "Girona"
+      },
+      {
+        "id": 11,
+        "name": "Las Palmas"
+      },
+      {
+        "id": 49,
+        "name": "Leganés"
+      },
+      {
+        "id": 408,
+        "name": "Mallorca"
+      },
+      {
+        "id": 50,
+        "name": "Osasuna"
+      },
+      {
+        "id": 14,
+        "name": "Rayo Vallecano"
+      },
+      {
+        "id": 15,
+        "name": "Real Madrid"
+      },
+      {
+        "id": 16,
+        "name": "Real Sociedad"
+      },
+      {
+        "id": 17,
+        "name": "Sevilla"
+      },
+      {
+        "id": 19,
+        "name": "Valencia"
+      },
+      {
+        "id": 317,
+        "name": "Valladolid"
+      },
+      {
+        "id": 20,
+        "name": "Villarreal"
+      }
+    ]
+  },
+  "status": "ok"
+}

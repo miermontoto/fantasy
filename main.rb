@@ -8,19 +8,19 @@ else
   browser = Browser.new
   scraper = Scraper.new
 
-  endpoints = [ 'feed', 'market', 'standings', 'team', 'offers' ]
+  endpoints = [ 'feed', 'market', 'standings', 'team', 'offers', 'top_market', 'top_players' ]
   action = ARGV[0] || 'feed'
 
-  if endpoints.include?(action)
-    response = browser.send(action)
-    scraper.send(action, response.body)
-  elsif action == 'communities'
+  if action == 'communities'
     if ARGV.length > 1 then
       browser.change_community(ARGV[1])
     else
       response = browser.communities
       scraper.communities(response.body)
     end
+  elsif endpoints.include?(action)
+    response = browser.send(action)
+    scraper.send(action, response.body)
   else
     puts "acción inválida [#{endpoints.join(', ')}]"
   end
