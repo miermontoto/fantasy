@@ -68,4 +68,52 @@ class Browser
   def communities
     @conn.post("/ajax/community-check")
   end
+
+  def change_community(id)
+    puts "cambiando a comunidad #{id}"
+
+    # si es un número, se cambia a esa comunidad
+    if id.is_a?(Integer) || id.to_i.to_s == id then
+      @conn.get("/action/change?id_community=#{id}")
+      return
+    end
+
+    # si es una cadena, hacer un LIKE y cambiar al primer resultado
+    list = Scraper.new.communities(self.communities.body)[:communities]
+    if list.nil? then; puts "error: no se ha podido obtener la lista de comunidades".red; return; end
+    list.each do |community|
+      if community.name.downcase.include?(id.downcase) then
+        puts "cambiando a comunidad #{community.name}"
+        self.change_community(community.id.to_i)
+        return
+      end
+    end
+
+    puts "error: no se ha encontrado ninguna comunidad con ese nombre".red
+  end
+
+  def top_market(interval = "day")
+    valid_intervals = %w[day week month]
+    if !valid_intervals.include?(interval) then; puts "error: intervalo inválido".red; return; end
+
+    @conn.post("/ajax/sw/market") do |req|
+      req.body = "post=market&interval=#{interval}"
+    end
+  end
+
+  def top_players
+    @conn.post("/ajax/sw/players") do |req|
+      filters = {
+        position: 0,
+        value: 0,
+        team: 0,
+        injured: 0,
+        favs: 0,
+        owner: 0,
+        benched: 0,
+        stealable: 0
+      }
+      req.body = "post=players&filters=#{filters.to_json}"
+    end
+  end
 end

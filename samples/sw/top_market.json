@@ -1,0 +1,5846 @@
+{
+  "data": {
+    "chart": {
+      "max": {
+        "date": "31 ago 2024",
+        "value": 7615650000
+      },
+      "min": {
+        "date": "30 jun 2024",
+        "value": 4983910000
+      },
+      "points": [
+        {
+          "date": "23 nov 2023",
+          "value": 5219220000
+        },
+        {
+          "date": "24 nov 2023",
+          "value": 5202819000
+        },
+        {
+          "date": "25 nov 2023",
+          "value": 5167917000
+        },
+        {
+          "date": "26 nov 2023",
+          "value": 5137235000
+        },
+        {
+          "date": "27 nov 2023",
+          "value": 5116666000
+        },
+        {
+          "date": "28 nov 2023",
+          "value": 5104845000
+        },
+        {
+          "date": "29 nov 2023",
+          "value": 5106763000
+        },
+        {
+          "date": "30 nov 2023",
+          "value": 5110786000
+        },
+        {
+          "date": "1 dic 2023",
+          "value": 5121783000
+        },
+        {
+          "date": "2 dic 2023",
+          "value": 5110155000
+        },
+        {
+          "date": "3 dic 2023",
+          "value": 5104277000
+        },
+        {
+          "date": "4 dic 2023",
+          "value": 5100078000
+        },
+        {
+          "date": "5 dic 2023",
+          "value": 5103892000
+        },
+        {
+          "date": "6 dic 2023",
+          "value": 5122883000
+        },
+        {
+          "date": "7 dic 2023",
+          "value": 5143919000
+        },
+        {
+          "date": "8 dic 2023",
+          "value": 5166109000
+        },
+        {
+          "date": "9 dic 2023",
+          "value": 5164042000
+        },
+        {
+          "date": "10 dic 2023",
+          "value": 5162973000
+        },
+        {
+          "date": "11 dic 2023",
+          "value": 5165958000
+        },
+        {
+          "date": "12 dic 2023",
+          "value": 5160251000
+        },
+        {
+          "date": "13 dic 2023",
+          "value": 5170544000
+        },
+        {
+          "date": "14 dic 2023",
+          "value": 5185660000
+        },
+        {
+          "date": "15 dic 2023",
+          "value": 5190407000
+        },
+        {
+          "date": "16 dic 2023",
+          "value": 5177276000
+        },
+        {
+          "date": "17 dic 2023",
+          "value": 5165615000
+        },
+        {
+          "date": "18 dic 2023",
+          "value": 5162064000
+        },
+        {
+          "date": "19 dic 2023",
+          "value": 5164199000
+        },
+        {
+          "date": "20 dic 2023",
+          "value": 5173801000
+        },
+        {
+          "date": "21 dic 2023",
+          "value": 5176351000
+        },
+        {
+          "date": "22 dic 2023",
+          "value": 5178336000
+        },
+        {
+          "date": "23 dic 2023",
+          "value": 5183782000
+        },
+        {
+          "date": "24 dic 2023",
+          "value": 5184650000
+        },
+        {
+          "date": "25 dic 2023",
+          "value": 5181799000
+        },
+        {
+          "date": "26 dic 2023",
+          "value": 5189068000
+        },
+        {
+          "date": "27 dic 2023",
+          "value": 5226247000
+        },
+        {
+          "date": "28 dic 2023",
+          "value": 5228067000
+        },
+        {
+          "date": "29 dic 2023",
+          "value": 5235227000
+        },
+        {
+          "date": "30 dic 2023",
+          "value": 5237508000
+        },
+        {
+          "date": "31 dic 2023",
+          "value": 5230515000
+        },
+        {
+          "date": "1 ene 2024",
+          "value": 5217630000
+        },
+        {
+          "date": "2 ene 2024",
+          "value": 5203921000
+        },
+        {
+          "date": "3 ene 2024",
+          "value": 5196782000
+        },
+        {
+          "date": "4 ene 2024",
+          "value": 5194915000
+        },
+        {
+          "date": "5 ene 2024",
+          "value": 5198185000
+        },
+        {
+          "date": "6 ene 2024",
+          "value": 5214255000
+        },
+        {
+          "date": "7 ene 2024",
+          "value": 5232667000
+        },
+        {
+          "date": "8 ene 2024",
+          "value": 5245070000
+        },
+        {
+          "date": "9 ene 2024",
+          "value": 5256017000
+        },
+        {
+          "date": "10 ene 2024",
+          "value": 5271608000
+        },
+        {
+          "date": "11 ene 2024",
+          "value": 5277035000
+        },
+        {
+          "date": "12 ene 2024",
+          "value": 5278094000
+        },
+        {
+          "date": "13 ene 2024",
+          "value": 5264870000
+        },
+        {
+          "date": "14 ene 2024",
+          "value": 5245510000
+        },
+        {
+          "date": "15 ene 2024",
+          "value": 5230911000
+        },
+        {
+          "date": "16 ene 2024",
+          "value": 5236294000
+        },
+        {
+          "date": "17 ene 2024",
+          "value": 5234417000
+        },
+        {
+          "date": "18 ene 2024",
+          "value": 5250534000
+        },
+        {
+          "date": "19 ene 2024",
+          "value": 5301934000
+        },
+        {
+          "date": "20 ene 2024",
+          "value": 5319108000
+        },
+        {
+          "date": "21 ene 2024",
+          "value": 5340090000
+        },
+        {
+          "date": "22 ene 2024",
+          "value": 5364039000
+        },
+        {
+          "date": "23 ene 2024",
+          "value": 5383020000
+        },
+        {
+          "date": "24 ene 2024",
+          "value": 5412972000
+        },
+        {
+          "date": "25 ene 2024",
+          "value": 5448430000
+        },
+        {
+          "date": "26 ene 2024",
+          "value": 5513410000
+        },
+        {
+          "date": "27 ene 2024",
+          "value": 5527905000
+        },
+        {
+          "date": "28 ene 2024",
+          "value": 5549469000
+        },
+        {
+          "date": "29 ene 2024",
+          "value": 5569372000
+        },
+        {
+          "date": "30 ene 2024",
+          "value": 5595325000
+        },
+        {
+          "date": "31 ene 2024",
+          "value": 5617170000
+        },
+        {
+          "date": "1 feb 2024",
+          "value": 5665919000
+        },
+        {
+          "date": "2 feb 2024",
+          "value": 5691026000
+        },
+        {
+          "date": "3 feb 2024",
+          "value": 5704128000
+        },
+        {
+          "date": "4 feb 2024",
+          "value": 5734036000
+        },
+        {
+          "date": "5 feb 2024",
+          "value": 5760942000
+        },
+        {
+          "date": "6 feb 2024",
+          "value": 5787356000
+        },
+        {
+          "date": "7 feb 2024",
+          "value": 5827158000
+        },
+        {
+          "date": "8 feb 2024",
+          "value": 5863591000
+        },
+        {
+          "date": "9 feb 2024",
+          "value": 5893973000
+        },
+        {
+          "date": "10 feb 2024",
+          "value": 5910984000
+        },
+        {
+          "date": "11 feb 2024",
+          "value": 5927738000
+        },
+        {
+          "date": "12 feb 2024",
+          "value": 5943305000
+        },
+        {
+          "date": "13 feb 2024",
+          "value": 5963125000
+        },
+        {
+          "date": "14 feb 2024",
+          "value": 5989505000
+        },
+        {
+          "date": "15 feb 2024",
+          "value": 6016154000
+        },
+        {
+          "date": "16 feb 2024",
+          "value": 6044825000
+        },
+        {
+          "date": "17 feb 2024",
+          "value": 6050918000
+        },
+        {
+          "date": "18 feb 2024",
+          "value": 6060096000
+        },
+        {
+          "date": "19 feb 2024",
+          "value": 6069816000
+        },
+        {
+          "date": "20 feb 2024",
+          "value": 6077598000
+        },
+        {
+          "date": "21 feb 2024",
+          "value": 6099994000
+        },
+        {
+          "date": "22 feb 2024",
+          "value": 6125286000
+        },
+        {
+          "date": "23 feb 2024",
+          "value": 6151662000
+        },
+        {
+          "date": "24 feb 2024",
+          "value": 6156208000
+        },
+        {
+          "date": "25 feb 2024",
+          "value": 6169335000
+        },
+        {
+          "date": "26 feb 2024",
+          "value": 6179275000
+        },
+        {
+          "date": "27 feb 2024",
+          "value": 6184562000
+        },
+        {
+          "date": "28 feb 2024",
+          "value": 6194217000
+        },
+        {
+          "date": "29 feb 2024",
+          "value": 6213201000
+        },
+        {
+          "date": "1 mar 2024",
+          "value": 6232641000
+        },
+        {
+          "date": "2 mar 2024",
+          "value": 6226444000
+        },
+        {
+          "date": "3 mar 2024",
+          "value": 6226104000
+        },
+        {
+          "date": "4 mar 2024",
+          "value": 6238255000
+        },
+        {
+          "date": "5 mar 2024",
+          "value": 6252867000
+        },
+        {
+          "date": "6 mar 2024",
+          "value": 6281951000
+        },
+        {
+          "date": "7 mar 2024",
+          "value": 6318698000
+        },
+        {
+          "date": "8 mar 2024",
+          "value": 6350738000
+        },
+        {
+          "date": "9 mar 2024",
+          "value": 6357226000
+        },
+        {
+          "date": "10 mar 2024",
+          "value": 6368353000
+        },
+        {
+          "date": "11 mar 2024",
+          "value": 6378955000
+        },
+        {
+          "date": "12 mar 2024",
+          "value": 6389623000
+        },
+        {
+          "date": "13 mar 2024",
+          "value": 6404432000
+        },
+        {
+          "date": "14 mar 2024",
+          "value": 6428637000
+        },
+        {
+          "date": "15 mar 2024",
+          "value": 6451514000
+        },
+        {
+          "date": "16 mar 2024",
+          "value": 6448080000
+        },
+        {
+          "date": "17 mar 2024",
+          "value": 6448105000
+        },
+        {
+          "date": "18 mar 2024",
+          "value": 6449908000
+        },
+        {
+          "date": "19 mar 2024",
+          "value": 6461269000
+        },
+        {
+          "date": "20 mar 2024",
+          "value": 6475159000
+        },
+        {
+          "date": "21 mar 2024",
+          "value": 6493133000
+        },
+        {
+          "date": "22 mar 2024",
+          "value": 6508628000
+        },
+        {
+          "date": "23 mar 2024",
+          "value": 6519076000
+        },
+        {
+          "date": "24 mar 2024",
+          "value": 6523496000
+        },
+        {
+          "date": "25 mar 2024",
+          "value": 6528958000
+        },
+        {
+          "date": "26 mar 2024",
+          "value": 6521931000
+        },
+        {
+          "date": "27 mar 2024",
+          "value": 6516434000
+        },
+        {
+          "date": "28 mar 2024",
+          "value": 6516634000
+        },
+        {
+          "date": "29 mar 2024",
+          "value": 6524281000
+        },
+        {
+          "date": "30 mar 2024",
+          "value": 6508481000
+        },
+        {
+          "date": "31 mar 2024",
+          "value": 6502761000
+        },
+        {
+          "date": "1 abr 2024",
+          "value": 6501608000
+        },
+        {
+          "date": "2 abr 2024",
+          "value": 6502453000
+        },
+        {
+          "date": "3 abr 2024",
+          "value": 6509079000
+        },
+        {
+          "date": "4 abr 2024",
+          "value": 6516560000
+        },
+        {
+          "date": "5 abr 2024",
+          "value": 6520177000
+        },
+        {
+          "date": "6 abr 2024",
+          "value": 6521506000
+        },
+        {
+          "date": "7 abr 2024",
+          "value": 6521842000
+        },
+        {
+          "date": "8 abr 2024",
+          "value": 6522816000
+        },
+        {
+          "date": "9 abr 2024",
+          "value": 6514151000
+        },
+        {
+          "date": "10 abr 2024",
+          "value": 6505715000
+        },
+        {
+          "date": "11 abr 2024",
+          "value": 6499421000
+        },
+        {
+          "date": "12 abr 2024",
+          "value": 6491654000
+        },
+        {
+          "date": "13 abr 2024",
+          "value": 6460154000
+        },
+        {
+          "date": "14 abr 2024",
+          "value": 6434046000
+        },
+        {
+          "date": "15 abr 2024",
+          "value": 6418191000
+        },
+        {
+          "date": "16 abr 2024",
+          "value": 6403099000
+        },
+        {
+          "date": "17 abr 2024",
+          "value": 6399975000
+        },
+        {
+          "date": "18 abr 2024",
+          "value": 6409220000
+        },
+        {
+          "date": "19 abr 2024",
+          "value": 6419328000
+        },
+        {
+          "date": "20 abr 2024",
+          "value": 6403134000
+        },
+        {
+          "date": "21 abr 2024",
+          "value": 6388773000
+        },
+        {
+          "date": "22 abr 2024",
+          "value": 6376662000
+        },
+        {
+          "date": "23 abr 2024",
+          "value": 6370087000
+        },
+        {
+          "date": "24 abr 2024",
+          "value": 6372182000
+        },
+        {
+          "date": "25 abr 2024",
+          "value": 6390398000
+        },
+        {
+          "date": "26 abr 2024",
+          "value": 6410783000
+        },
+        {
+          "date": "27 abr 2024",
+          "value": 6406928000
+        },
+        {
+          "date": "28 abr 2024",
+          "value": 6404274000
+        },
+        {
+          "date": "29 abr 2024",
+          "value": 6404813000
+        },
+        {
+          "date": "30 abr 2024",
+          "value": 6403316000
+        },
+        {
+          "date": "1 may 2024",
+          "value": 6414800000
+        },
+        {
+          "date": "2 may 2024",
+          "value": 6443726000
+        },
+        {
+          "date": "3 may 2024",
+          "value": 6475475000
+        },
+        {
+          "date": "4 may 2024",
+          "value": 6476787000
+        },
+        {
+          "date": "5 may 2024",
+          "value": 6475004000
+        },
+        {
+          "date": "6 may 2024",
+          "value": 6472766000
+        },
+        {
+          "date": "7 may 2024",
+          "value": 6480634000
+        },
+        {
+          "date": "8 may 2024",
+          "value": 6493432000
+        },
+        {
+          "date": "9 may 2024",
+          "value": 6510857000
+        },
+        {
+          "date": "10 may 2024",
+          "value": 6532838000
+        },
+        {
+          "date": "11 may 2024",
+          "value": 6526652000
+        },
+        {
+          "date": "12 may 2024",
+          "value": 6521364000
+        },
+        {
+          "date": "13 may 2024",
+          "value": 6518341000
+        },
+        {
+          "date": "14 may 2024",
+          "value": 6523094000
+        },
+        {
+          "date": "15 may 2024",
+          "value": 6523364000
+        },
+        {
+          "date": "16 may 2024",
+          "value": 6541203000
+        },
+        {
+          "date": "17 may 2024",
+          "value": 6557514000
+        },
+        {
+          "date": "18 may 2024",
+          "value": 6609834000
+        },
+        {
+          "date": "19 may 2024",
+          "value": 6622219000
+        },
+        {
+          "date": "20 may 2024",
+          "value": 6627617000
+        },
+        {
+          "date": "21 may 2024",
+          "value": 6643886000
+        },
+        {
+          "date": "22 may 2024",
+          "value": 6667164000
+        },
+        {
+          "date": "23 may 2024",
+          "value": 6701988000
+        },
+        {
+          "date": "24 may 2024",
+          "value": 6762847000
+        },
+        {
+          "date": "25 may 2024",
+          "value": 6765347000
+        },
+        {
+          "date": "26 may 2024",
+          "value": 6752884000
+        },
+        {
+          "date": "27 may 2024",
+          "value": 6732006000
+        },
+        {
+          "date": "28 may 2024",
+          "value": 6687397000
+        },
+        {
+          "date": "29 may 2024",
+          "value": 6638348000
+        },
+        {
+          "date": "30 may 2024",
+          "value": 6589171000
+        },
+        {
+          "date": "31 may 2024",
+          "value": 6541268000
+        },
+        {
+          "date": "1 jun 2024",
+          "value": 6494709000
+        },
+        {
+          "date": "2 jun 2024",
+          "value": 6444231000
+        },
+        {
+          "date": "3 jun 2024",
+          "value": 6391693000
+        },
+        {
+          "date": "4 jun 2024",
+          "value": 6345712000
+        },
+        {
+          "date": "5 jun 2024",
+          "value": 6154784000
+        },
+        {
+          "date": "6 jun 2024",
+          "value": 6105315000
+        },
+        {
+          "date": "7 jun 2024",
+          "value": 6060689000
+        },
+        {
+          "date": "8 jun 2024",
+          "value": 6018465000
+        },
+        {
+          "date": "9 jun 2024",
+          "value": 5974388000
+        },
+        {
+          "date": "10 jun 2024",
+          "value": 5932608000
+        },
+        {
+          "date": "11 jun 2024",
+          "value": 5886970000
+        },
+        {
+          "date": "12 jun 2024",
+          "value": 5843317000
+        },
+        {
+          "date": "13 jun 2024",
+          "value": 5803290000
+        },
+        {
+          "date": "14 jun 2024",
+          "value": 5617211000
+        },
+        {
+          "date": "15 jun 2024",
+          "value": 5569377000
+        },
+        {
+          "date": "16 jun 2024",
+          "value": 5619161000
+        },
+        {
+          "date": "17 jun 2024",
+          "value": 5419435000
+        },
+        {
+          "date": "18 jun 2024",
+          "value": 5321641000
+        },
+        {
+          "date": "19 jun 2024",
+          "value": 5285269000
+        },
+        {
+          "date": "20 jun 2024",
+          "value": 5283094000
+        },
+        {
+          "date": "21 jun 2024",
+          "value": 5257990000
+        },
+        {
+          "date": "22 jun 2024",
+          "value": 5224908000
+        },
+        {
+          "date": "23 jun 2024",
+          "value": 5188885000
+        },
+        {
+          "date": "24 jun 2024",
+          "value": 5127737000
+        },
+        {
+          "date": "25 jun 2024",
+          "value": 5107050000
+        },
+        {
+          "date": "26 jun 2024",
+          "value": 5075858000
+        },
+        {
+          "date": "27 jun 2024",
+          "value": 5067734000
+        },
+        {
+          "date": "28 jun 2024",
+          "value": 5052873000
+        },
+        {
+          "date": "29 jun 2024",
+          "value": 5014795000
+        },
+        {
+          "date": "30 jun 2024",
+          "value": 4983910000
+        },
+        {
+          "date": "1 jul 2024",
+          "value": 4992577000
+        },
+        {
+          "date": "2 jul 2024",
+          "value": 5057415000
+        },
+        {
+          "date": "3 jul 2024",
+          "value": 4999666000
+        },
+        {
+          "date": "4 jul 2024",
+          "value": 5037704000
+        },
+        {
+          "date": "5 jul 2024",
+          "value": 5089626000
+        },
+        {
+          "date": "6 jul 2024",
+          "value": 5146304000
+        },
+        {
+          "date": "7 jul 2024",
+          "value": 5209372000
+        },
+        {
+          "date": "8 jul 2024",
+          "value": 5216068000
+        },
+        {
+          "date": "9 jul 2024",
+          "value": 5267059000
+        },
+        {
+          "date": "10 jul 2024",
+          "value": 5308161000
+        },
+        {
+          "date": "11 jul 2024",
+          "value": 5351218000
+        },
+        {
+          "date": "12 jul 2024",
+          "value": 5399786000
+        },
+        {
+          "date": "13 jul 2024",
+          "value": 5434678000
+        },
+        {
+          "date": "14 jul 2024",
+          "value": 5481287000
+        },
+        {
+          "date": "15 jul 2024",
+          "value": 5537181000
+        },
+        {
+          "date": "16 jul 2024",
+          "value": 5562403000
+        },
+        {
+          "date": "17 jul 2024",
+          "value": 5623231000
+        },
+        {
+          "date": "18 jul 2024",
+          "value": 5669341000
+        },
+        {
+          "date": "19 jul 2024",
+          "value": 5744177000
+        },
+        {
+          "date": "20 jul 2024",
+          "value": 5765939000
+        },
+        {
+          "date": "21 jul 2024",
+          "value": 5818477000
+        },
+        {
+          "date": "22 jul 2024",
+          "value": 5870152000
+        },
+        {
+          "date": "23 jul 2024",
+          "value": 5923337000
+        },
+        {
+          "date": "24 jul 2024",
+          "value": 5973282000
+        },
+        {
+          "date": "25 jul 2024",
+          "value": 5988669000
+        },
+        {
+          "date": "26 jul 2024",
+          "value": 6049039000
+        },
+        {
+          "date": "27 jul 2024",
+          "value": 6110574000
+        },
+        {
+          "date": "28 jul 2024",
+          "value": 6163524000
+        },
+        {
+          "date": "29 jul 2024",
+          "value": 6210626000
+        },
+        {
+          "date": "30 jul 2024",
+          "value": 6268368000
+        },
+        {
+          "date": "31 jul 2024",
+          "value": 6284380000
+        },
+        {
+          "date": "1 ago 2024",
+          "value": 6343216000
+        },
+        {
+          "date": "2 ago 2024",
+          "value": 6403529000
+        },
+        {
+          "date": "3 ago 2024",
+          "value": 6396009000
+        },
+        {
+          "date": "4 ago 2024",
+          "value": 6447184000
+        },
+        {
+          "date": "5 ago 2024",
+          "value": 6516606000
+        },
+        {
+          "date": "6 ago 2024",
+          "value": 6512339000
+        },
+        {
+          "date": "7 ago 2024",
+          "value": 6581848000
+        },
+        {
+          "date": "8 ago 2024",
+          "value": 6655911000
+        },
+        {
+          "date": "9 ago 2024",
+          "value": 6772413000
+        },
+        {
+          "date": "10 ago 2024",
+          "value": 6872111000
+        },
+        {
+          "date": "11 ago 2024",
+          "value": 6928236000
+        },
+        {
+          "date": "12 ago 2024",
+          "value": 7054034000
+        },
+        {
+          "date": "13 ago 2024",
+          "value": 7103621000
+        },
+        {
+          "date": "14 ago 2024",
+          "value": 7150659000
+        },
+        {
+          "date": "15 ago 2024",
+          "value": 7222248000
+        },
+        {
+          "date": "16 ago 2024",
+          "value": 7275194000
+        },
+        {
+          "date": "17 ago 2024",
+          "value": 7326738000
+        },
+        {
+          "date": "18 ago 2024",
+          "value": 7352219000
+        },
+        {
+          "date": "19 ago 2024",
+          "value": 7373446000
+        },
+        {
+          "date": "20 ago 2024",
+          "value": 7395700000
+        },
+        {
+          "date": "21 ago 2024",
+          "value": 7470338000
+        },
+        {
+          "date": "22 ago 2024",
+          "value": 7499860000
+        },
+        {
+          "date": "23 ago 2024",
+          "value": 7559312000
+        },
+        {
+          "date": "24 ago 2024",
+          "value": 7532295000
+        },
+        {
+          "date": "25 ago 2024",
+          "value": 7552729000
+        },
+        {
+          "date": "26 ago 2024",
+          "value": 7570260000
+        },
+        {
+          "date": "27 ago 2024",
+          "value": 7613852000
+        },
+        {
+          "date": "28 ago 2024",
+          "value": 7600594000
+        },
+        {
+          "date": "29 ago 2024",
+          "value": 7588719000
+        },
+        {
+          "date": "30 ago 2024",
+          "value": 7581322000
+        },
+        {
+          "date": "31 ago 2024",
+          "value": 7615650000
+        },
+        {
+          "date": "1 sept 2024",
+          "value": 7595200000
+        },
+        {
+          "date": "2 sept 2024",
+          "value": 7574328000
+        },
+        {
+          "date": "3 sept 2024",
+          "value": 7573721000
+        },
+        {
+          "date": "4 sept 2024",
+          "value": 7532849000
+        },
+        {
+          "date": "5 sept 2024",
+          "value": 7521009000
+        },
+        {
+          "date": "6 sept 2024",
+          "value": 7504561000
+        },
+        {
+          "date": "7 sept 2024",
+          "value": 7480063000
+        },
+        {
+          "date": "8 sept 2024",
+          "value": 7454014000
+        },
+        {
+          "date": "9 sept 2024",
+          "value": 7418277000
+        },
+        {
+          "date": "10 sept 2024",
+          "value": 7381531000
+        },
+        {
+          "date": "11 sept 2024",
+          "value": 7339102000
+        },
+        {
+          "date": "12 sept 2024",
+          "value": 7297400000
+        },
+        {
+          "date": "13 sept 2024",
+          "value": 7259128000
+        },
+        {
+          "date": "14 sept 2024",
+          "value": 7205146000
+        },
+        {
+          "date": "15 sept 2024",
+          "value": 7155694000
+        },
+        {
+          "date": "16 sept 2024",
+          "value": 7114076000
+        },
+        {
+          "date": "17 sept 2024",
+          "value": 7082790000
+        },
+        {
+          "date": "18 sept 2024",
+          "value": 7059375000
+        },
+        {
+          "date": "19 sept 2024",
+          "value": 7037934000
+        },
+        {
+          "date": "20 sept 2024",
+          "value": 7012247000
+        },
+        {
+          "date": "21 sept 2024",
+          "value": 6974860000
+        },
+        {
+          "date": "22 sept 2024",
+          "value": 6943672000
+        },
+        {
+          "date": "23 sept 2024",
+          "value": 6923272000
+        },
+        {
+          "date": "24 sept 2024",
+          "value": 6907183000
+        },
+        {
+          "date": "25 sept 2024",
+          "value": 6899684000
+        },
+        {
+          "date": "26 sept 2024",
+          "value": 6891623000
+        },
+        {
+          "date": "27 sept 2024",
+          "value": 6880555000
+        },
+        {
+          "date": "28 sept 2024",
+          "value": 6861273000
+        },
+        {
+          "date": "29 sept 2024",
+          "value": 6848437000
+        },
+        {
+          "date": "30 sept 2024",
+          "value": 6832453000
+        },
+        {
+          "date": "1 oct 2024",
+          "value": 6815810000
+        },
+        {
+          "date": "2 oct 2024",
+          "value": 6816434000
+        },
+        {
+          "date": "3 oct 2024",
+          "value": 6807069000
+        },
+        {
+          "date": "4 oct 2024",
+          "value": 6791431000
+        },
+        {
+          "date": "5 oct 2024",
+          "value": 6755040000
+        },
+        {
+          "date": "6 oct 2024",
+          "value": 6729102000
+        },
+        {
+          "date": "7 oct 2024",
+          "value": 6709207000
+        },
+        {
+          "date": "8 oct 2024",
+          "value": 6699485000
+        },
+        {
+          "date": "9 oct 2024",
+          "value": 6698288000
+        },
+        {
+          "date": "10 oct 2024",
+          "value": 6694073000
+        },
+        {
+          "date": "11 oct 2024",
+          "value": 6685699000
+        },
+        {
+          "date": "12 oct 2024",
+          "value": 6669253000
+        },
+        {
+          "date": "13 oct 2024",
+          "value": 6646542000
+        },
+        {
+          "date": "14 oct 2024",
+          "value": 6622433000
+        },
+        {
+          "date": "15 oct 2024",
+          "value": 6587974000
+        },
+        {
+          "date": "16 oct 2024",
+          "value": 6550558000
+        },
+        {
+          "date": "17 oct 2024",
+          "value": 6511577000
+        },
+        {
+          "date": "18 oct 2024",
+          "value": 6477481000
+        },
+        {
+          "date": "19 oct 2024",
+          "value": 6433878000
+        },
+        {
+          "date": "20 oct 2024",
+          "value": 6401779000
+        },
+        {
+          "date": "21 oct 2024",
+          "value": 6380227000
+        },
+        {
+          "date": "22 oct 2024",
+          "value": 6361488000
+        },
+        {
+          "date": "23 oct 2024",
+          "value": 6361934000
+        },
+        {
+          "date": "24 oct 2024",
+          "value": 6362305000
+        },
+        {
+          "date": "25 oct 2024",
+          "value": 6361510000
+        },
+        {
+          "date": "26 oct 2024",
+          "value": 6343143000
+        },
+        {
+          "date": "27 oct 2024",
+          "value": 6328287000
+        },
+        {
+          "date": "28 oct 2024",
+          "value": 6319513000
+        },
+        {
+          "date": "29 oct 2024",
+          "value": 6308241000
+        },
+        {
+          "date": "30 oct 2024",
+          "value": 6314219000
+        },
+        {
+          "date": "31 oct 2024",
+          "value": 6314714000
+        },
+        {
+          "date": "1 nov 2024",
+          "value": 6305567000
+        },
+        {
+          "date": "2 nov 2024",
+          "value": 6281493000
+        },
+        {
+          "date": "3 nov 2024",
+          "value": 6253074000
+        },
+        {
+          "date": "4 nov 2024",
+          "value": 6223559000
+        },
+        {
+          "date": "5 nov 2024",
+          "value": 6201272000
+        },
+        {
+          "date": "6 nov 2024",
+          "value": 6188545000
+        },
+        {
+          "date": "7 nov 2024",
+          "value": 6177464000
+        },
+        {
+          "date": "8 nov 2024",
+          "value": 6159308000
+        },
+        {
+          "date": "9 nov 2024",
+          "value": 6131409000
+        },
+        {
+          "date": "10 nov 2024",
+          "value": 6117475000
+        },
+        {
+          "date": "11 nov 2024",
+          "value": 6107170000
+        },
+        {
+          "date": "12 nov 2024",
+          "value": 6109097000
+        },
+        {
+          "date": "13 nov 2024",
+          "value": 6108845000
+        },
+        {
+          "date": "14 nov 2024",
+          "value": 6111113000
+        },
+        {
+          "date": "15 nov 2024",
+          "value": 6108136000
+        },
+        {
+          "date": "16 nov 2024",
+          "value": 6093599000
+        },
+        {
+          "date": "17 nov 2024",
+          "value": 6075404000
+        },
+        {
+          "date": "18 nov 2024",
+          "value": 6057952000
+        },
+        {
+          "date": "19 nov 2024",
+          "value": 6031733000
+        },
+        {
+          "date": "20 nov 2024",
+          "value": 6004086000
+        },
+        {
+          "date": "21 nov 2024",
+          "value": 5972888000
+        },
+        {
+          "date": "22 nov 2024",
+          "value": 5949970000
+        },
+        {
+          "date": "23 nov 2024",
+          "value": 5907491000
+        }
+      ]
+    },
+    "last": {
+      "date": "23 nov 2024",
+      "value": 5907491000
+    },
+    "players": {
+      "negative": [
+        {
+          "diff": -3000,
+          "id": 55042,
+          "id_team": 1,
+          "name": "Unai Gómez",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20241123",
+          "value": 1286000
+        },
+        {
+          "diff": -5000,
+          "id": 27841,
+          "id_team": 4,
+          "name": "Youssouf Sabaly",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20241123",
+          "value": 4051000
+        },
+        {
+          "diff": -6000,
+          "id": 55452,
+          "id_team": 19,
+          "name": "Sergi Canós",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/19.png?version=20241123",
+          "value": 658000
+        },
+        {
+          "diff": -6000,
+          "id": 119,
+          "id_team": 8,
+          "name": "Sergi Gómez",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/8.png?version=20241123",
+          "value": 329000
+        },
+        {
+          "diff": -7000,
+          "id": 59685,
+          "id_team": 48,
+          "name": "Adrián Pica",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/48.png?version=20241123",
+          "value": 3733000
+        },
+        {
+          "diff": -7000,
+          "id": 19524,
+          "id_team": 4,
+          "name": "Iker Losada",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20241123",
+          "value": 1477000
+        },
+        {
+          "diff": -9000,
+          "id": 19927,
+          "id_team": 50,
+          "name": "Raúl García de Haro",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/50.png?version=20241123",
+          "value": 425000
+        },
+        {
+          "diff": -9000,
+          "id": 168,
+          "id_team": 222,
+          "name": "Pau López",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20241123",
+          "value": 329000
+        },
+        {
+          "diff": -12000,
+          "id": 29168,
+          "id_team": 50,
+          "name": "Iker Benito",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/50.png?version=20241123",
+          "value": 329000
+        },
+        {
+          "diff": -13000,
+          "id": 55043,
+          "id_team": 19,
+          "name": "Martín Tejón",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/19.png?version=20241123",
+          "value": 329000
+        },
+        {
+          "diff": -14000,
+          "id": 185,
+          "id_team": 48,
+          "name": "Joan Jordan",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/48.png?version=20241123",
+          "value": 329000
+        },
+        {
+          "diff": -14000,
+          "id": 18555,
+          "id_team": 9,
+          "name": "Domingos Duarte",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/9.png?version=20241123",
+          "value": 329000
+        },
+        {
+          "diff": -16000,
+          "id": 52114,
+          "id_team": 317,
+          "name": "David Torres",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/317.png?version=20241123",
+          "value": 1788000
+        },
+        {
+          "diff": -16000,
+          "id": 28778,
+          "id_team": 17,
+          "name": "Juanlu Sánchez",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20241123",
+          "value": 697000
+        },
+        {
+          "diff": -16000,
+          "id": 5691,
+          "id_team": 16,
+          "name": "Álvaro Odriozola",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123",
+          "value": 329000
+        },
+        {
+          "diff": -17000,
+          "id": 13004,
+          "id_team": 14,
+          "name": "Sergi Guardiola",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/14.png?version=20241123",
+          "value": 484000
+        },
+        {
+          "diff": -18000,
+          "id": 56971,
+          "id_team": 3,
+          "name": "Hector Fort",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+          "value": 329000
+        },
+        {
+          "diff": -19000,
+          "id": 4886,
+          "id_team": 48,
+          "name": "Asier Villalibre",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/48.png?version=20241123",
+          "value": 329000
+        },
+        {
+          "diff": -20000,
+          "id": 13013,
+          "id_team": 317,
+          "name": "Anuar",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/317.png?version=20241123",
+          "value": 4083000
+        },
+        {
+          "diff": -20000,
+          "id": 20141,
+          "id_team": 19,
+          "name": "Germán Valera",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/19.png?version=20241123",
+          "value": 353000
+        },
+        {
+          "diff": -22000,
+          "id": 55754,
+          "id_team": 4,
+          "name": "Assane Diao",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20241123",
+          "value": 1284000
+        },
+        {
+          "diff": -22000,
+          "id": 40032,
+          "id_team": 11,
+          "name": "Mika Mármol",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20241123",
+          "value": 383000
+        },
+        {
+          "diff": -23000,
+          "id": 55044,
+          "id_team": 11,
+          "name": "Juanma Herzog",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20241123",
+          "value": 329000
+        },
+        {
+          "diff": -24000,
+          "id": 22569,
+          "id_team": 317,
+          "name": "Luis Pérez",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/317.png?version=20241123",
+          "value": 2793000
+        },
+        {
+          "diff": -25000,
+          "id": 11472,
+          "id_team": 8,
+          "name": "Leandro Cabrera",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/8.png?version=20241123",
+          "value": 774000
+        },
+        {
+          "diff": -25000,
+          "id": 57291,
+          "id_team": 5,
+          "name": "Damián Rodríguez",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123",
+          "value": 496000
+        },
+        {
+          "diff": -25000,
+          "id": 52202,
+          "id_team": 8,
+          "name": "José Gragera",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/8.png?version=20241123",
+          "value": 329000
+        },
+        {
+          "diff": -27000,
+          "id": 25867,
+          "id_team": 48,
+          "name": "Antonio Blanco",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/48.png?version=20241123",
+          "value": 5684000
+        },
+        {
+          "diff": -27000,
+          "id": 58425,
+          "id_team": 49,
+          "name": "Diego García",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/49.png?version=20241123",
+          "value": 357000
+        },
+        {
+          "diff": -28000,
+          "id": 59419,
+          "id_team": 8,
+          "name": "Irvin Cardona",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/8.png?version=20241123",
+          "value": 350000
+        },
+        {
+          "diff": -32000,
+          "id": 22547,
+          "id_team": 3,
+          "name": "Pedri",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+          "value": 60715000
+        },
+        {
+          "diff": -32000,
+          "id": 53094,
+          "id_team": 317,
+          "name": "Víctor Meseguer",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/317.png?version=20241123",
+          "value": 965000
+        },
+        {
+          "diff": -32000,
+          "id": 52404,
+          "id_team": 17,
+          "name": "Manu Bueno",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20241123",
+          "value": 329000
+        },
+        {
+          "diff": -34000,
+          "id": 1718,
+          "id_team": 14,
+          "name": "Aridane Hernández",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/14.png?version=20241123",
+          "value": 474000
+        },
+        {
+          "diff": -34000,
+          "id": 58997,
+          "id_team": 49,
+          "name": "Naim García",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/49.png?version=20241123",
+          "value": 337000
+        },
+        {
+          "diff": -35000,
+          "id": 20131,
+          "id_team": 48,
+          "name": "Manu Sánchez",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/48.png?version=20241123",
+          "value": 1017000
+        },
+        {
+          "diff": -35000,
+          "id": 6035,
+          "id_team": 5,
+          "name": "Iván Villar",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123",
+          "value": 361000
+        },
+        {
+          "diff": -36000,
+          "id": 11700,
+          "id_team": 3,
+          "name": "Ferran Torres",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+          "value": 1860000
+        },
+        {
+          "diff": -36000,
+          "id": 6041,
+          "id_team": 15,
+          "name": "Jesús Vallejo",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123",
+          "value": 397000
+        },
+        {
+          "diff": -36000,
+          "id": 49111,
+          "id_team": 317,
+          "name": "Cenk Özkacar",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/317.png?version=20241123",
+          "value": 341000
+        },
+        {
+          "diff": -39000,
+          "id": 217,
+          "id_team": 19,
+          "name": "Dimitri Foulquier",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/19.png?version=20241123",
+          "value": 2783000
+        },
+        {
+          "diff": -39000,
+          "id": 6061,
+          "id_team": 317,
+          "name": "Amath Ndiaye",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/317.png?version=20241123",
+          "value": 329000
+        },
+        {
+          "diff": -40000,
+          "id": 28772,
+          "id_team": 1,
+          "name": "Nico Serrano",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20241123",
+          "value": 337000
+        },
+        {
+          "diff": -40000,
+          "id": 59633,
+          "id_team": 5,
+          "name": "Alfon González",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123",
+          "value": 329000
+        },
+        {
+          "diff": -41000,
+          "id": 28613,
+          "id_team": 9,
+          "name": "Omar Alderete",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/9.png?version=20241123",
+          "value": 23184000
+        },
+        {
+          "diff": -43000,
+          "id": 16976,
+          "id_team": 16,
+          "name": "Martín Zubimendi",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123",
+          "value": 39944000
+        },
+        {
+          "diff": -43000,
+          "id": 27428,
+          "id_team": 408,
+          "name": "Antonio Sánchez",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20241123",
+          "value": 1251000
+        },
+        {
+          "diff": -43000,
+          "id": 51134,
+          "id_team": 5,
+          "name": "Pablo Durán",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123",
+          "value": 377000
+        },
+        {
+          "diff": -43000,
+          "id": 60456,
+          "id_team": 4,
+          "name": "Mateo Flores",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20241123",
+          "value": 357000
+        },
+        {
+          "diff": -44000,
+          "id": 53111,
+          "id_team": 11,
+          "name": "Álvaro Valles",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20241123",
+          "value": 385000
+        },
+        {
+          "diff": -47000,
+          "id": 15285,
+          "id_team": 317,
+          "name": "Javi Sánchez",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/317.png?version=20241123",
+          "value": 3352000
+        },
+        {
+          "diff": -48000,
+          "id": 556,
+          "id_team": 14,
+          "name": "Gerard Gumbau",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/14.png?version=20241123",
+          "value": 4089000
+        },
+        {
+          "diff": -50000,
+          "id": 18004,
+          "id_team": 50,
+          "name": "Ante Budimir",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/50.png?version=20241123",
+          "value": 51524000
+        },
+        {
+          "diff": -50000,
+          "id": 12902,
+          "id_team": 14,
+          "name": "Raúl de Tomás",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/14.png?version=20241123",
+          "value": 383000
+        },
+        {
+          "diff": -50000,
+          "id": 35805,
+          "id_team": 9,
+          "name": "Peter Federico",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/9.png?version=20241123",
+          "value": 363000
+        },
+        {
+          "diff": -52000,
+          "id": 1034,
+          "id_team": 4,
+          "name": "Juanmi Jiménez",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20241123",
+          "value": 481000
+        },
+        {
+          "diff": -52000,
+          "id": 24753,
+          "id_team": 9,
+          "name": "John Joe Patrick",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/9.png?version=20241123",
+          "value": 329000
+        },
+        {
+          "diff": -53000,
+          "id": 59415,
+          "id_team": 3,
+          "name": "Dani Olmo",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+          "value": 62263000
+        },
+        {
+          "diff": -54000,
+          "id": 12951,
+          "id_team": 11,
+          "name": "Jaime Mata",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20241123",
+          "value": 379000
+        },
+        {
+          "diff": -54000,
+          "id": 6034,
+          "id_team": 8,
+          "name": "Edu Expósito",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/8.png?version=20241123",
+          "value": 329000
+        },
+        {
+          "diff": -54000,
+          "id": 56628,
+          "id_team": 17,
+          "name": "Lucien Agoumé",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20241123",
+          "value": 329000
+        },
+        {
+          "diff": -55000,
+          "id": 1684,
+          "id_team": 48,
+          "name": "Kike García",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/48.png?version=20241123",
+          "value": 7539000
+        },
+        {
+          "diff": -56000,
+          "id": 59126,
+          "id_team": 48,
+          "name": "Hugo Novoa",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/48.png?version=20241123",
+          "value": 437000
+        },
+        {
+          "diff": -57000,
+          "id": 56926,
+          "id_team": 3,
+          "name": "Pau Cubarsi",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+          "value": 39802000
+        },
+        {
+          "diff": -57000,
+          "id": 14796,
+          "id_team": 49,
+          "name": "Óscar Rodríguez",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/49.png?version=20241123",
+          "value": 549000
+        },
+        {
+          "diff": -58000,
+          "id": 59394,
+          "id_team": 4,
+          "name": "Ricardo Rodríguez",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20241123",
+          "value": 423000
+        },
+        {
+          "diff": -58000,
+          "id": 58994,
+          "id_team": 48,
+          "name": "Carlos Martín",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/48.png?version=20241123",
+          "value": 329000
+        },
+        {
+          "diff": -61000,
+          "id": 27518,
+          "id_team": 14,
+          "name": "Óscar Valentín",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/14.png?version=20241123",
+          "value": 17812000
+        },
+        {
+          "diff": -61000,
+          "id": 6049,
+          "id_team": 222,
+          "name": "Cristian Portu",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20241123",
+          "value": 329000
+        },
+        {
+          "diff": -62000,
+          "id": 49329,
+          "id_team": 14,
+          "name": "Pep Chavarría",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/14.png?version=20241123",
+          "value": 4227000
+        },
+        {
+          "diff": -66000,
+          "id": 48620,
+          "id_team": 17,
+          "name": "Marcão",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20241123",
+          "value": 371000
+        },
+        {
+          "diff": -67000,
+          "id": 29235,
+          "id_team": 3,
+          "name": "Gavi",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+          "value": 24562000
+        },
+        {
+          "diff": -68000,
+          "id": 55454,
+          "id_team": 16,
+          "name": "Arsen Zakharyan",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123",
+          "value": 445000
+        },
+        {
+          "diff": -70000,
+          "id": 59199,
+          "id_team": 17,
+          "name": "Stanis Idumbo",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20241123",
+          "value": 329000
+        },
+        {
+          "diff": -72000,
+          "id": 53104,
+          "id_team": 11,
+          "name": "Benito Ramírez",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20241123",
+          "value": 349000
+        },
+        {
+          "diff": -73000,
+          "id": 51077,
+          "id_team": 317,
+          "name": "Lucas Rosa",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/317.png?version=20241123",
+          "value": 3754000
+        },
+        {
+          "diff": -74000,
+          "id": 3117,
+          "id_team": 9,
+          "name": "Diego Rico",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/9.png?version=20241123",
+          "value": 16490000
+        },
+        {
+          "diff": -74000,
+          "id": 13005,
+          "id_team": 15,
+          "name": "Andriy Lunin",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123",
+          "value": 11237000
+        },
+        {
+          "diff": -75000,
+          "id": 96,
+          "id_team": 15,
+          "name": "Dani Ceballos",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123",
+          "value": 1471000
+        },
+        {
+          "diff": -75000,
+          "id": 208,
+          "id_team": 50,
+          "name": "Moi Gómez",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/50.png?version=20241123",
+          "value": 1006000
+        },
+        {
+          "diff": -77000,
+          "id": 58992,
+          "id_team": 1,
+          "name": "Álvaro Djaló",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20241123",
+          "value": 3424000
+        },
+        {
+          "diff": -79000,
+          "id": 11091,
+          "id_team": 16,
+          "name": "Brais Méndez",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123",
+          "value": 26156000
+        },
+        {
+          "diff": -79000,
+          "id": 22571,
+          "id_team": 317,
+          "name": "Marcos André",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/317.png?version=20241123",
+          "value": 500000
+        },
+        {
+          "diff": -80000,
+          "id": 22471,
+          "id_team": 16,
+          "name": "Jon Pacheco",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123",
+          "value": 353000
+        },
+        {
+          "diff": -82000,
+          "id": 12941,
+          "id_team": 14,
+          "name": "Óscar Trejo",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/14.png?version=20241123",
+          "value": 383000
+        },
+        {
+          "diff": -83000,
+          "id": 14691,
+          "id_team": 17,
+          "name": "Adrià Pedrosa",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20241123",
+          "value": 5255000
+        },
+        {
+          "diff": -83000,
+          "id": 59088,
+          "id_team": 20,
+          "name": "Willy Kambwala",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/20.png?version=20241123",
+          "value": 338000
+        },
+        {
+          "diff": -84000,
+          "id": 59790,
+          "id_team": 408,
+          "name": "Chiquinho",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20241123",
+          "value": 384000
+        },
+        {
+          "diff": -84000,
+          "id": 51138,
+          "id_team": 16,
+          "name": "Jon Magunazelaia",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123",
+          "value": 329000
+        },
+        {
+          "diff": -85000,
+          "id": 59263,
+          "id_team": 222,
+          "name": "Alejandro Francés",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20241123",
+          "value": 410000
+        },
+        {
+          "diff": -87000,
+          "id": 58431,
+          "id_team": 49,
+          "name": "Sergio González",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/49.png?version=20241123",
+          "value": 19446000
+        },
+        {
+          "diff": -88000,
+          "id": 59599,
+          "id_team": 17,
+          "name": "Valentín Barco",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20241123",
+          "value": 349000
+        },
+        {
+          "diff": -88000,
+          "id": 28279,
+          "id_team": 5,
+          "name": "Franco Cervi",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123",
+          "value": 345000
+        },
+        {
+          "diff": -89000,
+          "id": 17975,
+          "id_team": 408,
+          "name": "Abdón Prats",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20241123",
+          "value": 436000
+        },
+        {
+          "diff": -92000,
+          "id": 55741,
+          "id_team": 4,
+          "name": "Fran Vieites",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20241123",
+          "value": 413000
+        },
+        {
+          "diff": -92000,
+          "id": 13011,
+          "id_team": 8,
+          "name": "Fernando Calero",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/8.png?version=20241123",
+          "value": 329000
+        },
+        {
+          "diff": -93000,
+          "id": 519,
+          "id_team": 4,
+          "name": "Cédric Bakambu",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20241123",
+          "value": 945000
+        },
+        {
+          "diff": -93000,
+          "id": 59763,
+          "id_team": 19,
+          "name": "Maximiliano Caufriez",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/19.png?version=20241123",
+          "value": 412000
+        },
+        {
+          "diff": -94000,
+          "id": 59598,
+          "id_team": 222,
+          "name": "Yáser Asprilla",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20241123",
+          "value": 5537000
+        },
+        {
+          "diff": -96000,
+          "id": 52372,
+          "id_team": 19,
+          "name": "Javier Guerra",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/19.png?version=20241123",
+          "value": 4854000
+        },
+        {
+          "diff": -96000,
+          "id": 59191,
+          "id_team": 11,
+          "name": "Oli McBurnie",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20241123",
+          "value": 4752000
+        },
+        {
+          "diff": -96000,
+          "id": 59600,
+          "id_team": 49,
+          "name": "Jackson Porozo",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/49.png?version=20241123",
+          "value": 329000
+        },
+        {
+          "diff": -97000,
+          "id": 52377,
+          "id_team": 50,
+          "name": "Jorge Herrando",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/50.png?version=20241123",
+          "value": 329000
+        },
+        {
+          "diff": -99000,
+          "id": 17450,
+          "id_team": 4,
+          "name": "Aitor Ruibal",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20241123",
+          "value": 6776000
+        },
+        {
+          "diff": -99000,
+          "id": 22872,
+          "id_team": 8,
+          "name": "Brian Oliván",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/8.png?version=20241123",
+          "value": 404000
+        },
+        {
+          "diff": -100000,
+          "id": 59372,
+          "id_team": 4,
+          "name": "Nobel Mendy",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20241123",
+          "value": 329000
+        },
+        {
+          "diff": -101000,
+          "id": 27863,
+          "id_team": 48,
+          "name": "Stoichkov",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/48.png?version=20241123",
+          "value": 2315000
+        },
+        {
+          "diff": -101000,
+          "id": 55663,
+          "id_team": 5,
+          "name": "Mihailo Ristić",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123",
+          "value": 920000
+        },
+        {
+          "diff": -101000,
+          "id": 27914,
+          "id_team": 20,
+          "name": "Iker Álvarez",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/20.png?version=20241123",
+          "value": 388000
+        },
+        {
+          "diff": -102000,
+          "id": 59572,
+          "id_team": 317,
+          "name": "Chuki Cantalejo",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/317.png?version=20241123",
+          "value": 333000
+        },
+        {
+          "diff": -103000,
+          "id": 33734,
+          "id_team": 4,
+          "name": "Abde Ezzalzouli",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20241123",
+          "value": 39785000
+        },
+        {
+          "diff": -106000,
+          "id": 14379,
+          "id_team": 50,
+          "name": "Aitor Fernández",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/50.png?version=20241123",
+          "value": 371000
+        },
+        {
+          "diff": -108000,
+          "id": 52375,
+          "id_team": 3,
+          "name": "Lamine Yamal",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+          "value": 79621000
+        },
+        {
+          "diff": -108000,
+          "id": 55014,
+          "id_team": 408,
+          "name": "Daniel Luna",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20241123",
+          "value": 329000
+        },
+        {
+          "diff": -109000,
+          "id": 6065,
+          "id_team": 8,
+          "name": "Pere Milla",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/8.png?version=20241123",
+          "value": 360000
+        },
+        {
+          "diff": -109000,
+          "id": 25885,
+          "id_team": 5,
+          "name": "Carlos Dominguez",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123",
+          "value": 329000
+        },
+        {
+          "diff": -111000,
+          "id": 31267,
+          "id_team": 408,
+          "name": "Omar Mascarell",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20241123",
+          "value": 1915000
+        },
+        {
+          "diff": -112000,
+          "id": 12949,
+          "id_team": 2,
+          "name": "Thomas Lemar",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/2.png?version=20241123",
+          "value": 401000
+        },
+        {
+          "diff": -114000,
+          "id": 175,
+          "id_team": 408,
+          "name": "Antonio Raíllo",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20241123",
+          "value": 39772000
+        },
+        {
+          "diff": -114000,
+          "id": 229,
+          "id_team": 317,
+          "name": "Darwin Machís",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/317.png?version=20241123",
+          "value": 407000
+        },
+        {
+          "diff": -115000,
+          "id": 55656,
+          "id_team": 222,
+          "name": "Jhon Solís",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20241123",
+          "value": 334000
+        },
+        {
+          "diff": -119000,
+          "id": 18465,
+          "id_team": 5,
+          "name": "Joseph Aidoo",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123",
+          "value": 394000
+        },
+        {
+          "diff": -119000,
+          "id": 60273,
+          "id_team": 8,
+          "name": "Justin Smith",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/8.png?version=20241123",
+          "value": 330000
+        },
+        {
+          "diff": -120000,
+          "id": 49424,
+          "id_team": 17,
+          "name": "Kike Salas",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20241123",
+          "value": 2077000
+        },
+        {
+          "diff": -120000,
+          "id": 60258,
+          "id_team": 222,
+          "name": "Min-su Kim",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20241123",
+          "value": 373000
+        },
+        {
+          "diff": -120000,
+          "id": 60218,
+          "id_team": 1,
+          "name": "Peio Canales",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20241123",
+          "value": 329000
+        },
+        {
+          "diff": -122000,
+          "id": 16868,
+          "id_team": 48,
+          "name": "Ander Guevara",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/48.png?version=20241123",
+          "value": 6216000
+        },
+        {
+          "diff": -125000,
+          "id": 59484,
+          "id_team": 3,
+          "name": "Marc Bernal",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+          "value": 376000
+        },
+        {
+          "diff": -129000,
+          "id": 49101,
+          "id_team": 49,
+          "name": "Javi Hernández",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/49.png?version=20241123",
+          "value": 1566000
+        },
+        {
+          "diff": -129000,
+          "id": 28782,
+          "id_team": 17,
+          "name": "Pedro Ortiz",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20241123",
+          "value": 352000
+        },
+        {
+          "diff": -129000,
+          "id": 23171,
+          "id_team": 11,
+          "name": "Marvin Park",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20241123",
+          "value": 341000
+        },
+        {
+          "diff": -130000,
+          "id": 60211,
+          "id_team": 317,
+          "name": "Raúl Chasco",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/317.png?version=20241123",
+          "value": 395000
+        },
+        {
+          "diff": -131000,
+          "id": 22886,
+          "id_team": 317,
+          "name": "Iván Sánchez",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/317.png?version=20241123",
+          "value": 1266000
+        },
+        {
+          "diff": -132000,
+          "id": 28787,
+          "id_team": 19,
+          "name": "Diego López",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/19.png?version=20241123",
+          "value": 8791000
+        },
+        {
+          "diff": -132000,
+          "id": 56952,
+          "id_team": 1,
+          "name": "Adama Boiro",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20241123",
+          "value": 329000
+        },
+        {
+          "diff": -133000,
+          "id": 31111,
+          "id_team": 17,
+          "name": "Gonzalo Montiel",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20241123",
+          "value": 352000
+        },
+        {
+          "diff": -134000,
+          "id": 58988,
+          "id_team": 48,
+          "name": "Tomás Conechny",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/48.png?version=20241123",
+          "value": 336000
+        },
+        {
+          "diff": -136000,
+          "id": 36,
+          "id_team": 5,
+          "name": "Javier Manquillo",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123",
+          "value": 888000
+        },
+        {
+          "diff": -137000,
+          "id": 53114,
+          "id_team": 15,
+          "name": "Jude Bellingham",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123",
+          "value": 68041000
+        },
+        {
+          "diff": -137000,
+          "id": 53143,
+          "id_team": 48,
+          "name": "Abde Rebbach",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/48.png?version=20241123",
+          "value": 1201000
+        },
+        {
+          "diff": -138000,
+          "id": 17990,
+          "id_team": 8,
+          "name": "Álvaro Tejero",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/8.png?version=20241123",
+          "value": 5721000
+        },
+        {
+          "diff": -139000,
+          "id": 22543,
+          "id_team": 49,
+          "name": "Renato Tapia",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/49.png?version=20241123",
+          "value": 5823000
+        },
+        {
+          "diff": -139000,
+          "id": 58125,
+          "id_team": 317,
+          "name": "Mario Martín",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/317.png?version=20241123",
+          "value": 1217000
+        },
+        {
+          "diff": -140000,
+          "id": 130,
+          "id_team": 5,
+          "name": "Iago Aspas",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123",
+          "value": 45428000
+        },
+        {
+          "diff": -141000,
+          "id": 48185,
+          "id_team": 3,
+          "name": "Pablo Torre",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+          "value": 2420000
+        },
+        {
+          "diff": -142000,
+          "id": 15342,
+          "id_team": 16,
+          "name": "Ander Barrenetxea",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123",
+          "value": 6305000
+        },
+        {
+          "diff": -143000,
+          "id": 40097,
+          "id_team": 317,
+          "name": "César de la Hoz",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/317.png?version=20241123",
+          "value": 366000
+        },
+        {
+          "diff": -147000,
+          "id": 56502,
+          "id_team": 1,
+          "name": "Mikel Jauregizar",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20241123",
+          "value": 8418000
+        },
+        {
+          "diff": -151000,
+          "id": 322,
+          "id_team": 14,
+          "name": "Adri Embarba",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/14.png?version=20241123",
+          "value": 2320000
+        },
+        {
+          "diff": -152000,
+          "id": 23664,
+          "id_team": 5,
+          "name": "Sergio Carreira",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123",
+          "value": 329000
+        },
+        {
+          "diff": -155000,
+          "id": 51915,
+          "id_team": 14,
+          "name": "Diego Mendez",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/14.png?version=20241123",
+          "value": 374000
+        },
+        {
+          "diff": -156000,
+          "id": 4753,
+          "id_team": 1,
+          "name": "Yeray Álvarez",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20241123",
+          "value": 8547000
+        },
+        {
+          "diff": -156000,
+          "id": 60296,
+          "id_team": 222,
+          "name": "Ferran Ruiz",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20241123",
+          "value": 369000
+        },
+        {
+          "diff": -157000,
+          "id": 54817,
+          "id_team": 15,
+          "name": "Arda Güler",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123",
+          "value": 8660000
+        },
+        {
+          "diff": -158000,
+          "id": 40029,
+          "id_team": 317,
+          "name": "Juanmi Latasa",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/317.png?version=20241123",
+          "value": 361000
+        },
+        {
+          "diff": -160000,
+          "id": 49275,
+          "id_team": 19,
+          "name": "André Almeida",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/19.png?version=20241123",
+          "value": 2308000
+        },
+        {
+          "diff": -160000,
+          "id": 29403,
+          "id_team": 14,
+          "name": "Pathé Ciss",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/14.png?version=20241123",
+          "value": 1094000
+        },
+        {
+          "diff": -162000,
+          "id": 17989,
+          "id_team": 14,
+          "name": "Jorge de Frutos",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/14.png?version=20241123",
+          "value": 39732000
+        },
+        {
+          "diff": -164000,
+          "id": 58427,
+          "id_team": 49,
+          "name": "Yvan Neyou",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/49.png?version=20241123",
+          "value": 9428000
+        },
+        {
+          "diff": -165000,
+          "id": 7910,
+          "id_team": 222,
+          "name": "Christian Stuani",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20241123",
+          "value": 10011000
+        },
+        {
+          "diff": -167000,
+          "id": 40147,
+          "id_team": 15,
+          "name": "Antonio Rüdiger",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123",
+          "value": 39863000
+        },
+        {
+          "diff": -170000,
+          "id": 58954,
+          "id_team": 15,
+          "name": "Kylian Mbappé",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123",
+          "value": 84478000
+        },
+        {
+          "diff": -170000,
+          "id": 5917,
+          "id_team": 16,
+          "name": "Igor Zubeldia",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123",
+          "value": 24795000
+        },
+        {
+          "diff": -170000,
+          "id": 58951,
+          "id_team": 15,
+          "name": "Endrick",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123",
+          "value": 7715000
+        },
+        {
+          "diff": -170000,
+          "id": 23172,
+          "id_team": 16,
+          "name": "Urko González",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123",
+          "value": 351000
+        },
+        {
+          "diff": -173000,
+          "id": 1762,
+          "id_team": 1,
+          "name": "Álex Berenguer",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20241123",
+          "value": 43984000
+        },
+        {
+          "diff": -174000,
+          "id": 213,
+          "id_team": 19,
+          "name": "Stole Dimitrievski",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/19.png?version=20241123",
+          "value": 350000
+        },
+        {
+          "diff": -176000,
+          "id": 36263,
+          "id_team": 317,
+          "name": "Eray Cömert",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/317.png?version=20241123",
+          "value": 1022000
+        },
+        {
+          "diff": -177000,
+          "id": 48194,
+          "id_team": 5,
+          "name": "Williot Swedberg",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123",
+          "value": 19880000
+        },
+        {
+          "diff": -178000,
+          "id": 24789,
+          "id_team": 1,
+          "name": "Nico Williams",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20241123",
+          "value": 58797000
+        },
+        {
+          "diff": -178000,
+          "id": 564,
+          "id_team": 16,
+          "name": "Mikel Oyarzabal",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123",
+          "value": 34449000
+        },
+        {
+          "diff": -178000,
+          "id": 48486,
+          "id_team": 408,
+          "name": "José Copete",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20241123",
+          "value": 1118000
+        },
+        {
+          "diff": -179000,
+          "id": 55009,
+          "id_team": 3,
+          "name": "Fermín López",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+          "value": 16676000
+        },
+        {
+          "diff": -179000,
+          "id": 55045,
+          "id_team": 5,
+          "name": "Hugo Sotelo",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123",
+          "value": 4420000
+        },
+        {
+          "diff": -179000,
+          "id": 18532,
+          "id_team": 48,
+          "name": "Aleksandar Sedlar",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/48.png?version=20241123",
+          "value": 360000
+        },
+        {
+          "diff": -180000,
+          "id": 53101,
+          "id_team": 11,
+          "name": "Pejiño",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20241123",
+          "value": 329000
+        },
+        {
+          "diff": -181000,
+          "id": 341,
+          "id_team": 14,
+          "name": "James Rodríguez",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/14.png?version=20241123",
+          "value": 4793000
+        },
+        {
+          "diff": -182000,
+          "id": 17623,
+          "id_team": 15,
+          "name": "Ferland Mendy",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123",
+          "value": 12083000
+        },
+        {
+          "diff": -183000,
+          "id": 56506,
+          "id_team": 48,
+          "name": "Carlos Vicente",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/48.png?version=20241123",
+          "value": 23921000
+        },
+        {
+          "diff": -183000,
+          "id": 28784,
+          "id_team": 17,
+          "name": "José Ángel Carmona",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20241123",
+          "value": 15999000
+        },
+        {
+          "diff": -183000,
+          "id": 18109,
+          "id_team": 19,
+          "name": "Luis Rioja",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/19.png?version=20241123",
+          "value": 10371000
+        },
+        {
+          "diff": -183000,
+          "id": 15339,
+          "id_team": 408,
+          "name": "Valery Fernández",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20241123",
+          "value": 1088000
+        },
+        {
+          "diff": -188000,
+          "id": 59602,
+          "id_team": 9,
+          "name": "Bertuğ Yıldırım",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/9.png?version=20241123",
+          "value": 7620000
+        },
+        {
+          "diff": -189000,
+          "id": 53107,
+          "id_team": 20,
+          "name": "Sergi Cardona",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/20.png?version=20241123",
+          "value": 19166000
+        },
+        {
+          "diff": -191000,
+          "id": 27874,
+          "id_team": 222,
+          "name": "Iván Martín",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20241123",
+          "value": 14185000
+        },
+        {
+          "diff": -192000,
+          "id": 59532,
+          "id_team": 8,
+          "name": "Marash Kumbulla",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/8.png?version=20241123",
+          "value": 4982000
+        },
+        {
+          "diff": -197000,
+          "id": 15693,
+          "id_team": 2,
+          "name": "Javi Galán",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/2.png?version=20241123",
+          "value": 9311000
+        },
+        {
+          "diff": -197000,
+          "id": 11186,
+          "id_team": 49,
+          "name": "Dani Raba",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/49.png?version=20241123",
+          "value": 1097000
+        },
+        {
+          "diff": -198000,
+          "id": 19575,
+          "id_team": 3,
+          "name": "Ansu Fati",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+          "value": 4359000
+        },
+        {
+          "diff": -199000,
+          "id": 17455,
+          "id_team": 49,
+          "name": "Jorge Sáenz",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/49.png?version=20241123",
+          "value": 4995000
+        },
+        {
+          "diff": -200000,
+          "id": 51060,
+          "id_team": 49,
+          "name": "Juan Cruz",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/49.png?version=20241123",
+          "value": 42396000
+        },
+        {
+          "diff": -204000,
+          "id": 22455,
+          "id_team": 16,
+          "name": "Javier López",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123",
+          "value": 2434000
+        },
+        {
+          "diff": -204000,
+          "id": 30444,
+          "id_team": 408,
+          "name": "Leo Román",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20241123",
+          "value": 1345000
+        },
+        {
+          "diff": -206000,
+          "id": 58384,
+          "id_team": 222,
+          "name": "Ladislav Krejčí",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20241123",
+          "value": 4296000
+        },
+        {
+          "diff": -210000,
+          "id": 27855,
+          "id_team": 20,
+          "name": "Diego Conde",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/20.png?version=20241123",
+          "value": 37672000
+        },
+        {
+          "diff": -210000,
+          "id": 7845,
+          "id_team": 11,
+          "name": "Adnan Januzaj",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20241123",
+          "value": 1379000
+        },
+        {
+          "diff": -211000,
+          "id": 16779,
+          "id_team": 9,
+          "name": "Álex Sola",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/9.png?version=20241123",
+          "value": 6829000
+        },
+        {
+          "diff": -213000,
+          "id": 54834,
+          "id_team": 222,
+          "name": "Daley Blind",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20241123",
+          "value": 20065000
+        },
+        {
+          "diff": -213000,
+          "id": 59787,
+          "id_team": 49,
+          "name": "Sébastien Haller",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/49.png?version=20241123",
+          "value": 2439000
+        },
+        {
+          "diff": -214000,
+          "id": 40095,
+          "id_team": 408,
+          "name": "Samuel Costa",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20241123",
+          "value": 26315000
+        },
+        {
+          "diff": -214000,
+          "id": 14911,
+          "id_team": 14,
+          "name": "Álvaro García",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/14.png?version=20241123",
+          "value": 20171000
+        },
+        {
+          "diff": -215000,
+          "id": 3728,
+          "id_team": 4,
+          "name": "Marc Roca",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20241123",
+          "value": 4893000
+        },
+        {
+          "diff": -216000,
+          "id": 27333,
+          "id_team": 3,
+          "name": "Eric García",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+          "value": 5075000
+        },
+        {
+          "diff": -220000,
+          "id": 31496,
+          "id_team": 4,
+          "name": "Héctor Bellerín",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20241123",
+          "value": 4971000
+        },
+        {
+          "diff": -221000,
+          "id": 29163,
+          "id_team": 8,
+          "name": "Omar El Hilali",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/8.png?version=20241123",
+          "value": 3512000
+        },
+        {
+          "diff": -223000,
+          "id": 8952,
+          "id_team": 17,
+          "name": "Jesús Navas",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20241123",
+          "value": 2437000
+        },
+        {
+          "diff": -225000,
+          "id": 18186,
+          "id_team": 3,
+          "name": "Jules Koundé",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+          "value": 39591000
+        },
+        {
+          "diff": -226000,
+          "id": 29,
+          "id_team": 1,
+          "name": "Iñaki Williams",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20241123",
+          "value": 50675000
+        },
+        {
+          "diff": -226000,
+          "id": 58438,
+          "id_team": 50,
+          "name": "Flavien Boyomo",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/50.png?version=20241123",
+          "value": 35188000
+        },
+        {
+          "diff": -227000,
+          "id": 58,
+          "id_team": 3,
+          "name": "Ter Stegen",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+          "value": 4314000
+        },
+        {
+          "diff": -233000,
+          "id": 59042,
+          "id_team": 17,
+          "name": "Peque Fernández",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20241123",
+          "value": 3286000
+        },
+        {
+          "diff": -234000,
+          "id": 5,
+          "id_team": 1,
+          "name": "Óscar De Marcos",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20241123",
+          "value": 22938000
+        },
+        {
+          "diff": -234000,
+          "id": 455,
+          "id_team": 20,
+          "name": "Eric Bailly",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/20.png?version=20241123",
+          "value": 2618000
+        },
+        {
+          "diff": -235000,
+          "id": 57117,
+          "id_team": 8,
+          "name": "Alejo Véliz",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/8.png?version=20241123",
+          "value": 1704000
+        },
+        {
+          "diff": -238000,
+          "id": 28677,
+          "id_team": 1,
+          "name": "Beñat Prados",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20241123",
+          "value": 6432000
+        },
+        {
+          "diff": -238000,
+          "id": 7784,
+          "id_team": 1,
+          "name": "Unai Núñez",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20241123",
+          "value": 2279000
+        },
+        {
+          "diff": -239000,
+          "id": 24739,
+          "id_team": 5,
+          "name": "Óscar Mingueza",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123",
+          "value": 35840000
+        },
+        {
+          "diff": -240000,
+          "id": 607,
+          "id_team": 9,
+          "name": "Borja Mayoral",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/9.png?version=20241123",
+          "value": 6750000
+        },
+        {
+          "diff": -242000,
+          "id": 10024,
+          "id_team": 9,
+          "name": "Mauro Arambarri",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/9.png?version=20241123",
+          "value": 27554000
+        },
+        {
+          "diff": -243000,
+          "id": 29166,
+          "id_team": 8,
+          "name": "Joan Garcia",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/8.png?version=20241123",
+          "value": 23837000
+        },
+        {
+          "diff": -244000,
+          "id": 36371,
+          "id_team": 408,
+          "name": "Vedat Muriqi",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20241123",
+          "value": 39446000
+        },
+        {
+          "diff": -247000,
+          "id": 56583,
+          "id_team": 14,
+          "name": "Augusto Batalla",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/14.png?version=20241123",
+          "value": 19495000
+        },
+        {
+          "diff": -247000,
+          "id": 48616,
+          "id_team": 2,
+          "name": "Samuel Lino",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/2.png?version=20241123",
+          "value": 8743000
+        },
+        {
+          "diff": -248000,
+          "id": 33726,
+          "id_team": 5,
+          "name": "Hugo Álvarez",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123",
+          "value": 19587000
+        },
+        {
+          "diff": -252000,
+          "id": 60227,
+          "id_team": 3,
+          "name": "Wojciech Szczęsny",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+          "value": 7397000
+        },
+        {
+          "diff": -253000,
+          "id": 19168,
+          "id_team": 17,
+          "name": "Nemanja Gudelj",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20241123",
+          "value": 10925000
+        },
+        {
+          "diff": -254000,
+          "id": 14736,
+          "id_team": 49,
+          "name": "Juan Soriano",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/49.png?version=20241123",
+          "value": 1142000
+        },
+        {
+          "diff": -255000,
+          "id": 19747,
+          "id_team": 19,
+          "name": "Thierry Correia",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/19.png?version=20241123",
+          "value": 4850000
+        },
+        {
+          "diff": -256000,
+          "id": 22668,
+          "id_team": 50,
+          "name": "Lucas Torró",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/50.png?version=20241123",
+          "value": 22651000
+        },
+        {
+          "diff": -258000,
+          "id": 308,
+          "id_team": 408,
+          "name": "Johan Mojica",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20241123",
+          "value": 21716000
+        },
+        {
+          "diff": -261000,
+          "id": 22601,
+          "id_team": 19,
+          "name": "Pepelu",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/19.png?version=20241123",
+          "value": 13954000
+        },
+        {
+          "diff": -264000,
+          "id": 28280,
+          "id_team": 408,
+          "name": "Dominik Greif",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20241123",
+          "value": 12647000
+        },
+        {
+          "diff": -266000,
+          "id": 270,
+          "id_team": 50,
+          "name": "Rubén García",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/50.png?version=20241123",
+          "value": 8009000
+        },
+        {
+          "diff": -266000,
+          "id": 6027,
+          "id_team": 11,
+          "name": "José Campaña",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20241123",
+          "value": 3580000
+        },
+        {
+          "diff": -267000,
+          "id": 3720,
+          "id_team": 222,
+          "name": "David López",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20241123",
+          "value": 20031000
+        },
+        {
+          "diff": -267000,
+          "id": 52130,
+          "id_team": 408,
+          "name": "Cyle Larin",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20241123",
+          "value": 10298000
+        },
+        {
+          "diff": -270000,
+          "id": 25606,
+          "id_team": 222,
+          "name": "Paulo Gazzaniga",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20241123",
+          "value": 23472000
+        },
+        {
+          "diff": -271000,
+          "id": 1713,
+          "id_team": 14,
+          "name": "Florian Lejeune",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/14.png?version=20241123",
+          "value": 36347000
+        },
+        {
+          "diff": -273000,
+          "id": 48575,
+          "id_team": 2,
+          "name": "Axel Witsel",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/2.png?version=20241123",
+          "value": 6715000
+        },
+        {
+          "diff": -275000,
+          "id": 56632,
+          "id_team": 17,
+          "name": "Isaac Romero",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20241123",
+          "value": 11877000
+        },
+        {
+          "diff": -276000,
+          "id": 55453,
+          "id_team": 17,
+          "name": "Ørjan Nyland",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20241123",
+          "value": 10225000
+        },
+        {
+          "diff": -284000,
+          "id": 59588,
+          "id_team": 20,
+          "name": "Thierno Barry",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/20.png?version=20241123",
+          "value": 21749000
+        },
+        {
+          "diff": -287000,
+          "id": 59593,
+          "id_team": 20,
+          "name": "Logan Costa",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/20.png?version=20241123",
+          "value": 24662000
+        },
+        {
+          "diff": -288000,
+          "id": 31355,
+          "id_team": 2,
+          "name": "Alexander Sørloth",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/2.png?version=20241123",
+          "value": 35087000
+        },
+        {
+          "diff": -288000,
+          "id": 28619,
+          "id_team": 14,
+          "name": "Iván Balliu",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/14.png?version=20241123",
+          "value": 669000
+        },
+        {
+          "diff": -289000,
+          "id": 49342,
+          "id_team": 14,
+          "name": "Abdul Mumin",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/14.png?version=20241123",
+          "value": 20771000
+        },
+        {
+          "diff": -289000,
+          "id": 361,
+          "id_team": 1,
+          "name": "Yuri Berchiche",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20241123",
+          "value": 14082000
+        },
+        {
+          "diff": -290000,
+          "id": 128,
+          "id_team": 5,
+          "name": "Borja Iglesias",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123",
+          "value": 30632000
+        },
+        {
+          "diff": -290000,
+          "id": 59641,
+          "id_team": 48,
+          "name": "Toni Martínez",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/48.png?version=20241123",
+          "value": 8060000
+        },
+        {
+          "diff": -295000,
+          "id": 27865,
+          "id_team": 50,
+          "name": "Jesus Areso",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/50.png?version=20241123",
+          "value": 18165000
+        },
+        {
+          "diff": -295000,
+          "id": 16999,
+          "id_team": 222,
+          "name": "Abel Ruiz",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20241123",
+          "value": 6824000
+        },
+        {
+          "diff": -302000,
+          "id": 28621,
+          "id_team": 48,
+          "name": "Abdelkabir Abqar",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/48.png?version=20241123",
+          "value": 8758000
+        },
+        {
+          "diff": -304000,
+          "id": 53098,
+          "id_team": 11,
+          "name": "Alberto Moleiro",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20241123",
+          "value": 42895000
+        },
+        {
+          "diff": -310000,
+          "id": 59476,
+          "id_team": 2,
+          "name": "Julián Álvarez",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/2.png?version=20241123",
+          "value": 51443000
+        },
+        {
+          "diff": -313000,
+          "id": 55738,
+          "id_team": 19,
+          "name": "César Tárrega",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/19.png?version=20241123",
+          "value": 19041000
+        },
+        {
+          "diff": -314000,
+          "id": 27871,
+          "id_team": 19,
+          "name": "Giorgi Mamardashvili",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/19.png?version=20241123",
+          "value": 28161000
+        },
+        {
+          "diff": -315000,
+          "id": 52162,
+          "id_team": 20,
+          "name": "Pape Gueye",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/20.png?version=20241123",
+          "value": 21404000
+        },
+        {
+          "diff": -319000,
+          "id": 27869,
+          "id_team": 9,
+          "name": "Juan Berrocal",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/9.png?version=20241123",
+          "value": 1275000
+        },
+        {
+          "diff": -321000,
+          "id": 48556,
+          "id_team": 3,
+          "name": "Andreas Christensen",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+          "value": 1517000
+        },
+        {
+          "diff": -322000,
+          "id": 35922,
+          "id_team": 8,
+          "name": "Jofre Carreras",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/8.png?version=20241123",
+          "value": 11586000
+        },
+        {
+          "diff": -323000,
+          "id": 22527,
+          "id_team": 50,
+          "name": "Aimar Oroz",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/50.png?version=20241123",
+          "value": 36429000
+        },
+        {
+          "diff": -325000,
+          "id": 22502,
+          "id_team": 20,
+          "name": "Alex Baena",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/20.png?version=20241123",
+          "value": 49283000
+        },
+        {
+          "diff": -325000,
+          "id": 24,
+          "id_team": 14,
+          "name": "Unai López",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/14.png?version=20241123",
+          "value": 7743000
+        },
+        {
+          "diff": -328000,
+          "id": 14789,
+          "id_team": 1,
+          "name": "Oihan Sancet",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20241123",
+          "value": 31988000
+        },
+        {
+          "diff": -328000,
+          "id": 22573,
+          "id_team": 49,
+          "name": "Enric Franquesa",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/49.png?version=20241123",
+          "value": 492000
+        },
+        {
+          "diff": -335000,
+          "id": 40166,
+          "id_team": 15,
+          "name": "Aurélien Tchouaméni",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123",
+          "value": 21640000
+        },
+        {
+          "diff": -339000,
+          "id": 29169,
+          "id_team": 50,
+          "name": "Pablo Ibáñez",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/50.png?version=20241123",
+          "value": 3525000
+        },
+        {
+          "diff": -341000,
+          "id": 17453,
+          "id_team": 3,
+          "name": "Frenkie De Jong",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+          "value": 29647000
+        },
+        {
+          "diff": -342000,
+          "id": 51,
+          "id_team": 2,
+          "name": "Antoine Griezmann",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/2.png?version=20241123",
+          "value": 54373000
+        },
+        {
+          "diff": -343000,
+          "id": 557,
+          "id_team": 4,
+          "name": "Pablo Fornals",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20241123",
+          "value": 40784000
+        },
+        {
+          "diff": -345000,
+          "id": 59789,
+          "id_team": 16,
+          "name": "Orri Óskarsson",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123",
+          "value": 8802000
+        },
+        {
+          "diff": -351000,
+          "id": 27852,
+          "id_team": 1,
+          "name": "Daniel Vivian",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20241123",
+          "value": 36174000
+        },
+        {
+          "diff": -356000,
+          "id": 59398,
+          "id_team": 8,
+          "name": "Alex Král",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/8.png?version=20241123",
+          "value": 13341000
+        },
+        {
+          "diff": -360000,
+          "id": 24792,
+          "id_team": 9,
+          "name": "Juan Iglesias",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/9.png?version=20241123",
+          "value": 8515000
+        },
+        {
+          "diff": -363000,
+          "id": 298,
+          "id_team": 408,
+          "name": "Sergi Darder",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20241123",
+          "value": 20545000
+        },
+        {
+          "diff": -364000,
+          "id": 58467,
+          "id_team": 17,
+          "name": "Chidera Ejuke",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20241123",
+          "value": 11128000
+        },
+        {
+          "diff": -365000,
+          "id": 8171,
+          "id_team": 9,
+          "name": "Dakonam Djené",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/9.png?version=20241123",
+          "value": 9418000
+        },
+        {
+          "diff": -367000,
+          "id": 58383,
+          "id_team": 9,
+          "name": "Chrisantus Uche",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/9.png?version=20241123",
+          "value": 20757000
+        },
+        {
+          "diff": -370000,
+          "id": 17615,
+          "id_team": 50,
+          "name": "Sergio Herrera",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/50.png?version=20241123",
+          "value": 29255000
+        },
+        {
+          "diff": -371000,
+          "id": 59483,
+          "id_team": 317,
+          "name": "Karl Hein",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/317.png?version=20241123",
+          "value": 16052000
+        },
+        {
+          "diff": -374000,
+          "id": 36084,
+          "id_team": 19,
+          "name": "Cristhian Mosquera",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/19.png?version=20241123",
+          "value": 19562000
+        },
+        {
+          "diff": -376000,
+          "id": 17459,
+          "id_team": 15,
+          "name": "Rodrygo",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123",
+          "value": 41082000
+        },
+        {
+          "diff": -381000,
+          "id": 17291,
+          "id_team": 9,
+          "name": "Carles Pérez",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/9.png?version=20241123",
+          "value": 9149000
+        },
+        {
+          "diff": -383000,
+          "id": 25621,
+          "id_team": 14,
+          "name": "Andrei Rațiu",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/14.png?version=20241123",
+          "value": 28726000
+        },
+        {
+          "diff": -384000,
+          "id": 56925,
+          "id_team": 16,
+          "name": "Jon Aramburu",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123",
+          "value": 18807000
+        },
+        {
+          "diff": -390000,
+          "id": 58986,
+          "id_team": 50,
+          "name": "Abel Bretones",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/50.png?version=20241123",
+          "value": 11147000
+        },
+        {
+          "diff": -393000,
+          "id": 609,
+          "id_team": 9,
+          "name": "David Soria",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/9.png?version=20241123",
+          "value": 20253000
+        },
+        {
+          "diff": -395000,
+          "id": 27517,
+          "id_team": 14,
+          "name": "Isi Palazón",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/14.png?version=20241123",
+          "value": 22720000
+        },
+        {
+          "diff": -397000,
+          "id": 36048,
+          "id_team": 48,
+          "name": "Nahuel Tenaglia",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/48.png?version=20241123",
+          "value": 12143000
+        },
+        {
+          "diff": -411000,
+          "id": 17979,
+          "id_team": 408,
+          "name": "Martin Valjent",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20241123",
+          "value": 18747000
+        },
+        {
+          "diff": -415000,
+          "id": 52188,
+          "id_team": 317,
+          "name": "Selim Amallah",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/317.png?version=20241123",
+          "value": 9613000
+        },
+        {
+          "diff": -417000,
+          "id": 31226,
+          "id_team": 222,
+          "name": "Arnaut Danjuma",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20241123",
+          "value": 13758000
+        },
+        {
+          "diff": -423000,
+          "id": 6032,
+          "id_team": 16,
+          "name": "Alex Remiro",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123",
+          "value": 29470000
+        },
+        {
+          "diff": -430000,
+          "id": 345,
+          "id_team": 15,
+          "name": "Lucas Vázquez",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123",
+          "value": 13803000
+        },
+        {
+          "diff": -450000,
+          "id": 48960,
+          "id_team": 20,
+          "name": "Kiko Femenía",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/20.png?version=20241123",
+          "value": 12395000
+        },
+        {
+          "diff": -452000,
+          "id": 29205,
+          "id_team": 3,
+          "name": "Alejandro Balde",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+          "value": 37754000
+        },
+        {
+          "diff": -458000,
+          "id": 12916,
+          "id_team": 4,
+          "name": "Ezequiel Ávila",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20241123",
+          "value": 15360000
+        },
+        {
+          "diff": -469000,
+          "id": 17980,
+          "id_team": 408,
+          "name": "Dani Rodríguez",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20241123",
+          "value": 23348000
+        },
+        {
+          "diff": -472000,
+          "id": 24778,
+          "id_team": 408,
+          "name": "Robert Navarro",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20241123",
+          "value": 13580000
+        },
+        {
+          "diff": -475000,
+          "id": 56578,
+          "id_team": 4,
+          "name": "Johnny Cardoso",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20241123",
+          "value": 19968000
+        },
+        {
+          "diff": -481000,
+          "id": 346,
+          "id_team": 15,
+          "name": "Luka Modrić",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123",
+          "value": 38633000
+        },
+        {
+          "diff": -485000,
+          "id": 59583,
+          "id_team": 2,
+          "name": "Conor Gallagher",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/2.png?version=20241123",
+          "value": 24194000
+        },
+        {
+          "diff": -488000,
+          "id": 55088,
+          "id_team": 5,
+          "name": "Carl Starfelt",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123",
+          "value": 16864000
+        },
+        {
+          "diff": -492000,
+          "id": 192,
+          "id_team": 5,
+          "name": "Vicente Guaita",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123",
+          "value": 17451000
+        },
+        {
+          "diff": -493000,
+          "id": 22956,
+          "id_team": 16,
+          "name": "Sergio Gómez",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123",
+          "value": 35270000
+        },
+        {
+          "diff": -524000,
+          "id": 49382,
+          "id_team": 5,
+          "name": "Marcos Alonso",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123",
+          "value": 14743000
+        },
+        {
+          "diff": -530000,
+          "id": 52189,
+          "id_team": 20,
+          "name": "Ayoze Pérez",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/20.png?version=20241123",
+          "value": 52053000
+        },
+        {
+          "diff": -537000,
+          "id": 58980,
+          "id_team": 49,
+          "name": "Valentin Rosier",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/49.png?version=20241123",
+          "value": 12227000
+        },
+        {
+          "diff": -551000,
+          "id": 59382,
+          "id_team": 20,
+          "name": "Nicolas Pépé",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/20.png?version=20241123",
+          "value": 24174000
+        },
+        {
+          "diff": -559000,
+          "id": 55743,
+          "id_team": 8,
+          "name": "Carlos Romero",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/8.png?version=20241123",
+          "value": 19227000
+        },
+        {
+          "diff": -567000,
+          "id": 5795,
+          "id_team": 4,
+          "name": "Rui Silva",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20241123",
+          "value": 37903000
+        },
+        {
+          "diff": -580000,
+          "id": 7893,
+          "id_team": 48,
+          "name": "Antonio Sivera",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/48.png?version=20241123",
+          "value": 17334000
+        },
+        {
+          "diff": -616000,
+          "id": 33896,
+          "id_team": 20,
+          "name": "Ilias Akhomach",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/20.png?version=20241123",
+          "value": 15429000
+        },
+        {
+          "diff": -634000,
+          "id": 28611,
+          "id_team": 2,
+          "name": "Rodrigo De Paul",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/2.png?version=20241123",
+          "value": 18656000
+        },
+        {
+          "diff": -639000,
+          "id": 328,
+          "id_team": 15,
+          "name": "Dani Carvajal",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123",
+          "value": 12791000
+        },
+        {
+          "diff": -671000,
+          "id": 48950,
+          "id_team": 2,
+          "name": "Nahuel Molina",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/2.png?version=20241123",
+          "value": 15730000
+        },
+        {
+          "diff": -672000,
+          "id": 7025,
+          "id_team": 49,
+          "name": "Marko Dmitrović",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/49.png?version=20241123",
+          "value": 16391000
+        },
+        {
+          "diff": -744000,
+          "id": 17452,
+          "id_team": 15,
+          "name": "Éder Militão",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123",
+          "value": 29030000
+        },
+        {
+          "diff": -746000,
+          "id": 15566,
+          "id_team": 222,
+          "name": "Yangel Herrera",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20241123",
+          "value": 30296000
+        },
+        {
+          "diff": -807000,
+          "id": 8953,
+          "id_team": 408,
+          "name": "Pablo Maffeo",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20241123",
+          "value": 17349000
+        }
+      ],
+      "positive": [
+        {
+          "diff": 588000,
+          "id": 58466,
+          "id_team": 11,
+          "name": "Álex Muñoz",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20241123",
+          "value": 17884000
+        },
+        {
+          "diff": 538000,
+          "id": 12946,
+          "id_team": 20,
+          "name": "Santi Comesaña",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/20.png?version=20241123",
+          "value": 33056000
+        },
+        {
+          "diff": 512000,
+          "id": 476,
+          "id_team": 20,
+          "name": "Gerard Moreno",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/20.png?version=20241123",
+          "value": 17189000
+        },
+        {
+          "diff": 454000,
+          "id": 59791,
+          "id_team": 11,
+          "name": "Dário Essugo",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20241123",
+          "value": 19641000
+        },
+        {
+          "diff": 443000,
+          "id": 56577,
+          "id_team": 4,
+          "name": "Vitor Roque",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20241123",
+          "value": 33917000
+        },
+        {
+          "diff": 408000,
+          "id": 63,
+          "id_team": 4,
+          "name": "Marc Bartra",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20241123",
+          "value": 29693000
+        },
+        {
+          "diff": 377000,
+          "id": 15554,
+          "id_team": 222,
+          "name": "Bryan Gil",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20241123",
+          "value": 29118000
+        },
+        {
+          "diff": 373000,
+          "id": 24706,
+          "id_team": 20,
+          "name": "Yéremi Pino",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/20.png?version=20241123",
+          "value": 16923000
+        },
+        {
+          "diff": 339000,
+          "id": 3710,
+          "id_team": 49,
+          "name": "Darko Brašanac",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/49.png?version=20241123",
+          "value": 11066000
+        },
+        {
+          "diff": 314000,
+          "id": 561,
+          "id_team": 2,
+          "name": "Marcos Llorente",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/2.png?version=20241123",
+          "value": 29488000
+        },
+        {
+          "diff": 309000,
+          "id": 15344,
+          "id_team": 15,
+          "name": "Brahim Díaz",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123",
+          "value": 23402000
+        },
+        {
+          "diff": 293000,
+          "id": 14838,
+          "id_team": 9,
+          "name": "Allan Nyom",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/9.png?version=20241123",
+          "value": 3935000
+        },
+        {
+          "diff": 286000,
+          "id": 59788,
+          "id_team": 16,
+          "name": "Nayef Aguerd",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123",
+          "value": 32556000
+        },
+        {
+          "diff": 281000,
+          "id": 59792,
+          "id_team": 11,
+          "name": "Fábio Silva",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20241123",
+          "value": 28651000
+        },
+        {
+          "diff": 269000,
+          "id": 14811,
+          "id_team": 1,
+          "name": "Unai Simón",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20241123",
+          "value": 10721000
+        },
+        {
+          "diff": 268000,
+          "id": 29222,
+          "id_team": 2,
+          "name": "Giuliano Simeone",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/2.png?version=20241123",
+          "value": 7364000
+        },
+        {
+          "diff": 264000,
+          "id": 20320,
+          "id_team": 3,
+          "name": "Iñaki Peña",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+          "value": 23791000
+        },
+        {
+          "diff": 260000,
+          "id": 58436,
+          "id_team": 317,
+          "name": "Raúl Moro",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/317.png?version=20241123",
+          "value": 33816000
+        },
+        {
+          "diff": 260000,
+          "id": 54831,
+          "id_team": 4,
+          "name": "Sergi Altimira",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20241123",
+          "value": 11355000
+        },
+        {
+          "diff": 257000,
+          "id": 48205,
+          "id_team": 222,
+          "name": "Arnau Martínez",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20241123",
+          "value": 9173000
+        },
+        {
+          "diff": 247000,
+          "id": 51992,
+          "id_team": 17,
+          "name": "Loïc Badé",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20241123",
+          "value": 19717000
+        },
+        {
+          "diff": 227000,
+          "id": 444,
+          "id_team": 20,
+          "name": "Dani Parejo",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/20.png?version=20241123",
+          "value": 23945000
+        },
+        {
+          "diff": 222000,
+          "id": 6053,
+          "id_team": 222,
+          "name": "Juanpe",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20241123",
+          "value": 4120000
+        },
+        {
+          "diff": 221000,
+          "id": 12945,
+          "id_team": 5,
+          "name": "Fran Beltrán",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123",
+          "value": 19313000
+        },
+        {
+          "diff": 208000,
+          "id": 14791,
+          "id_team": 1,
+          "name": "Gorka Guruzeta",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20241123",
+          "value": 28741000
+        },
+        {
+          "diff": 206000,
+          "id": 5608,
+          "id_team": 2,
+          "name": "Clément Lenglet",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/2.png?version=20241123",
+          "value": 8175000
+        },
+        {
+          "diff": 193000,
+          "id": 53110,
+          "id_team": 11,
+          "name": "Alex Suárez",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20241123",
+          "value": 9647000
+        },
+        {
+          "diff": 192000,
+          "id": 39847,
+          "id_team": 9,
+          "name": "Yellu Santiago",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/9.png?version=20241123",
+          "value": 525000
+        },
+        {
+          "diff": 192000,
+          "id": 55011,
+          "id_team": 222,
+          "name": "Jastin García",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20241123",
+          "value": 525000
+        },
+        {
+          "diff": 189000,
+          "id": 19562,
+          "id_team": 16,
+          "name": "Takefusa Kubo",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123",
+          "value": 50399000
+        },
+        {
+          "diff": 188000,
+          "id": 22591,
+          "id_team": 19,
+          "name": "Rafa Mir",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/19.png?version=20241123",
+          "value": 517000
+        },
+        {
+          "diff": 183000,
+          "id": 59087,
+          "id_team": 17,
+          "name": "Albert Sambi Lokonga",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20241123",
+          "value": 6392000
+        },
+        {
+          "diff": 177000,
+          "id": 59776,
+          "id_team": 19,
+          "name": "Enzo Barrenechea",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/19.png?version=20241123",
+          "value": 8295000
+        },
+        {
+          "diff": 175000,
+          "id": 60290,
+          "id_team": 15,
+          "name": "Raúl Asencio",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123",
+          "value": 4272000
+        },
+        {
+          "diff": 175000,
+          "id": 29402,
+          "id_team": 14,
+          "name": "Randy Nteka",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/14.png?version=20241123",
+          "value": 529000
+        },
+        {
+          "diff": 174000,
+          "id": 22612,
+          "id_team": 9,
+          "name": "Luis Milla",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/9.png?version=20241123",
+          "value": 38941000
+        },
+        {
+          "diff": 170000,
+          "id": 59642,
+          "id_team": 2,
+          "name": "Juan Musso",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/2.png?version=20241123",
+          "value": 529000
+        },
+        {
+          "diff": 164000,
+          "id": 58818,
+          "id_team": 4,
+          "name": "Romain Perraud",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20241123",
+          "value": 13311000
+        },
+        {
+          "diff": 164000,
+          "id": 19977,
+          "id_team": 3,
+          "name": "Ronald Araújo",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+          "value": 8513000
+        },
+        {
+          "diff": 164000,
+          "id": 48208,
+          "id_team": 222,
+          "name": "Juan Carlos Martín",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20241123",
+          "value": 493000
+        },
+        {
+          "diff": 160000,
+          "id": 16975,
+          "id_team": 49,
+          "name": "Miguel de la Fuente",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/49.png?version=20241123",
+          "value": 6551000
+        },
+        {
+          "diff": 156000,
+          "id": 581,
+          "id_team": 14,
+          "name": "Joni Montiel",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/14.png?version=20241123",
+          "value": 485000
+        },
+        {
+          "diff": 156000,
+          "id": 13971,
+          "id_team": 11,
+          "name": "Marc Cardona",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20241123",
+          "value": 485000
+        },
+        {
+          "diff": 155000,
+          "id": 1689,
+          "id_team": 50,
+          "name": "Rubén Peña",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/50.png?version=20241123",
+          "value": 4039000
+        },
+        {
+          "diff": 154000,
+          "id": 5916,
+          "id_team": 48,
+          "name": "Jon Guridi",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/48.png?version=20241123",
+          "value": 9258000
+        },
+        {
+          "diff": 150000,
+          "id": 22459,
+          "id_team": 317,
+          "name": "Kike Pérez",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/317.png?version=20241123",
+          "value": 3592000
+        },
+        {
+          "diff": 148000,
+          "id": 51135,
+          "id_team": 2,
+          "name": "Pablo Barrios",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/2.png?version=20241123",
+          "value": 23206000
+        },
+        {
+          "diff": 148000,
+          "id": 60257,
+          "id_team": 19,
+          "name": "Rodrigo Abajas",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/19.png?version=20241123",
+          "value": 477000
+        },
+        {
+          "diff": 147000,
+          "id": 35924,
+          "id_team": 48,
+          "name": "Jesús Owono",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/48.png?version=20241123",
+          "value": 505000
+        },
+        {
+          "diff": 143000,
+          "id": 56668,
+          "id_team": 16,
+          "name": "Sheraldo Becker",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123",
+          "value": 6184000
+        },
+        {
+          "diff": 142000,
+          "id": 58820,
+          "id_team": 3,
+          "name": "Marc Casadó",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+          "value": 44312000
+        },
+        {
+          "diff": 141000,
+          "id": 27520,
+          "id_team": 15,
+          "name": "Fran García",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123",
+          "value": 5518000
+        },
+        {
+          "diff": 140000,
+          "id": 14670,
+          "id_team": 15,
+          "name": "Thibaut Courtois",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123",
+          "value": 39410000
+        },
+        {
+          "diff": 140000,
+          "id": 52044,
+          "id_team": 222,
+          "name": "Viktor Tsygankov",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20241123",
+          "value": 19463000
+        },
+        {
+          "diff": 140000,
+          "id": 60220,
+          "id_team": 17,
+          "name": "Mateo Mejia",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20241123",
+          "value": 469000
+        },
+        {
+          "diff": 139000,
+          "id": 15109,
+          "id_team": 4,
+          "name": "Giovani Lo Celso",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20241123",
+          "value": 44620000
+        },
+        {
+          "diff": 139000,
+          "id": 15756,
+          "id_team": 50,
+          "name": "Alejandro Catena",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/50.png?version=20241123",
+          "value": 32665000
+        },
+        {
+          "diff": 139000,
+          "id": 46,
+          "id_team": 17,
+          "name": "Saúl Ñíguez",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20241123",
+          "value": 1410000
+        },
+        {
+          "diff": 139000,
+          "id": 49296,
+          "id_team": 19,
+          "name": "Fran Pérez",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/19.png?version=20241123",
+          "value": 485000
+        },
+        {
+          "diff": 138000,
+          "id": 58952,
+          "id_team": 11,
+          "name": "Viti Rozada",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20241123",
+          "value": 10625000
+        },
+        {
+          "diff": 135000,
+          "id": 55523,
+          "id_team": 5,
+          "name": "Anastasios Douvikas",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123",
+          "value": 21591000
+        },
+        {
+          "diff": 132000,
+          "id": 53102,
+          "id_team": 11,
+          "name": "Kirian Rodríguez",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20241123",
+          "value": 23930000
+        },
+        {
+          "diff": 129000,
+          "id": 59049,
+          "id_team": 222,
+          "name": "Donny van de Beek",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20241123",
+          "value": 9791000
+        },
+        {
+          "diff": 128000,
+          "id": 49348,
+          "id_team": 49,
+          "name": "Matija Nastasić",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/49.png?version=20241123",
+          "value": 7244000
+        },
+        {
+          "diff": 128000,
+          "id": 59363,
+          "id_team": 317,
+          "name": "Arnau Rafús",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/317.png?version=20241123",
+          "value": 521000
+        },
+        {
+          "diff": 128000,
+          "id": 52117,
+          "id_team": 16,
+          "name": "Jon Ander Olasagasti",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123",
+          "value": 457000
+        },
+        {
+          "diff": 124000,
+          "id": 82,
+          "id_team": 11,
+          "name": "Sandro",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20241123",
+          "value": 22991000
+        },
+        {
+          "diff": 121000,
+          "id": 3708,
+          "id_team": 11,
+          "name": "Jasper Cillessen",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20241123",
+          "value": 23971000
+        },
+        {
+          "diff": 121000,
+          "id": 19527,
+          "id_team": 50,
+          "name": "Jon Moncayola",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/50.png?version=20241123",
+          "value": 13712000
+        },
+        {
+          "diff": 120000,
+          "id": 24742,
+          "id_team": 14,
+          "name": "Dani Cárdenas",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/14.png?version=20241123",
+          "value": 481000
+        },
+        {
+          "diff": 120000,
+          "id": 59000,
+          "id_team": 317,
+          "name": "Babatunde Akinsola",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/317.png?version=20241123",
+          "value": 449000
+        },
+        {
+          "diff": 118000,
+          "id": 11866,
+          "id_team": 19,
+          "name": "Hugo Duro",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/19.png?version=20241123",
+          "value": 11875000
+        },
+        {
+          "diff": 115000,
+          "id": 58435,
+          "id_team": 317,
+          "name": "Stanko Jurić",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/317.png?version=20241123",
+          "value": 1781000
+        },
+        {
+          "diff": 109000,
+          "id": 52309,
+          "id_team": 9,
+          "name": "Álvaro Rodríguez",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/9.png?version=20241123",
+          "value": 2067000
+        },
+        {
+          "diff": 108000,
+          "id": 22877,
+          "id_team": 50,
+          "name": "Juan Cruz",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/50.png?version=20241123",
+          "value": 1732000
+        },
+        {
+          "diff": 108000,
+          "id": 15564,
+          "id_team": 49,
+          "name": "Roberto López",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/49.png?version=20241123",
+          "value": 437000
+        },
+        {
+          "diff": 107000,
+          "id": 28773,
+          "id_team": 1,
+          "name": "Aitor Paredes",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20241123",
+          "value": 10596000
+        },
+        {
+          "diff": 103000,
+          "id": 54818,
+          "id_team": 2,
+          "name": "César Azpilicueta",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/2.png?version=20241123",
+          "value": 1132000
+        },
+        {
+          "diff": 101000,
+          "id": 392,
+          "id_team": 20,
+          "name": "Denis Suárez",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/20.png?version=20241123",
+          "value": 449000
+        },
+        {
+          "diff": 98000,
+          "id": 18317,
+          "id_team": 20,
+          "name": "Raúl Albiol",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/20.png?version=20241123",
+          "value": 10996000
+        },
+        {
+          "diff": 93000,
+          "id": 48672,
+          "id_team": 9,
+          "name": "Fabrizio Angileri",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/9.png?version=20241123",
+          "value": 429000
+        },
+        {
+          "diff": 90000,
+          "id": 306,
+          "id_team": 4,
+          "name": "Diego Llorente",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20241123",
+          "value": 39774000
+        },
+        {
+          "diff": 89000,
+          "id": 31,
+          "id_team": 2,
+          "name": "Jan Oblak",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/2.png?version=20241123",
+          "value": 40047000
+        },
+        {
+          "diff": 89000,
+          "id": 60210,
+          "id_team": 20,
+          "name": "Pau Navarro",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/20.png?version=20241123",
+          "value": 2692000
+        },
+        {
+          "diff": 87000,
+          "id": 58808,
+          "id_team": 11,
+          "name": "Manu Fuster",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20241123",
+          "value": 4674000
+        },
+        {
+          "diff": 85000,
+          "id": 31243,
+          "id_team": 317,
+          "name": "Mamadou Sylla",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/317.png?version=20241123",
+          "value": 7578000
+        },
+        {
+          "diff": 84000,
+          "id": 59623,
+          "id_team": 16,
+          "name": "Jon Martin",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123",
+          "value": 413000
+        },
+        {
+          "diff": 82000,
+          "id": 59499,
+          "id_team": 4,
+          "name": "Natan Souza",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20241123",
+          "value": 11959000
+        },
+        {
+          "diff": 80000,
+          "id": 17290,
+          "id_team": 14,
+          "name": "Sergio Camello",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/14.png?version=20241123",
+          "value": 22117000
+        },
+        {
+          "diff": 80000,
+          "id": 5653,
+          "id_team": 408,
+          "name": "Toni Lato",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20241123",
+          "value": 453000
+        },
+        {
+          "diff": 79000,
+          "id": 55057,
+          "id_team": 17,
+          "name": "Djibril Sow",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20241123",
+          "value": 2772000
+        },
+        {
+          "diff": 76000,
+          "id": 25872,
+          "id_team": 222,
+          "name": "Miguel Gutiérrez",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20241123",
+          "value": 43624000
+        },
+        {
+          "diff": 76000,
+          "id": 53413,
+          "id_team": 1,
+          "name": "Javier Martón",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20241123",
+          "value": 405000
+        },
+        {
+          "diff": 75000,
+          "id": 31484,
+          "id_team": 15,
+          "name": "Eduardo Camavinga",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123",
+          "value": 41935000
+        },
+        {
+          "diff": 72000,
+          "id": 42,
+          "id_team": 2,
+          "name": "Koke",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/2.png?version=20241123",
+          "value": 21094000
+        },
+        {
+          "diff": 72000,
+          "id": 340,
+          "id_team": 4,
+          "name": "Isco",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20241123",
+          "value": 12753000
+        },
+        {
+          "diff": 72000,
+          "id": 59533,
+          "id_team": 3,
+          "name": "Gerard Martín",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+          "value": 429000
+        },
+        {
+          "diff": 69000,
+          "id": 28791,
+          "id_team": 19,
+          "name": "Jesús Vázquez",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/19.png?version=20241123",
+          "value": 409000
+        },
+        {
+          "diff": 65000,
+          "id": 59905,
+          "id_team": 317,
+          "name": "Abdulay Juma",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/317.png?version=20241123",
+          "value": 2416000
+        },
+        {
+          "diff": 64000,
+          "id": 55491,
+          "id_team": 17,
+          "name": "Dodi Lukébakio",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20241123",
+          "value": 42631000
+        },
+        {
+          "diff": 64000,
+          "id": 536,
+          "id_team": 1,
+          "name": "Íñigo Lekue",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20241123",
+          "value": 393000
+        },
+        {
+          "diff": 62000,
+          "id": 49336,
+          "id_team": 222,
+          "name": "Oriol Romeu",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20241123",
+          "value": 4242000
+        },
+        {
+          "diff": 61000,
+          "id": 19727,
+          "id_team": 2,
+          "name": "Rodrigo Riquelme",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/2.png?version=20241123",
+          "value": 4308000
+        },
+        {
+          "diff": 60000,
+          "id": 59644,
+          "id_team": 408,
+          "name": "Marc Domènech",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20241123",
+          "value": 389000
+        },
+        {
+          "diff": 60000,
+          "id": 59817,
+          "id_team": 3,
+          "name": "Sergi Domínguez",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+          "value": 389000
+        },
+        {
+          "diff": 58000,
+          "id": 55987,
+          "id_team": 19,
+          "name": "Yarek Gasiorowski",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/19.png?version=20241123",
+          "value": 588000
+        },
+        {
+          "diff": 57000,
+          "id": 57010,
+          "id_team": 5,
+          "name": "Tadeo Allende",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123",
+          "value": 389000
+        },
+        {
+          "diff": 56000,
+          "id": 40089,
+          "id_team": 16,
+          "name": "Umar Sadiq",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123",
+          "value": 385000
+        },
+        {
+          "diff": 56000,
+          "id": 58958,
+          "id_team": 14,
+          "name": "Pelayo Fernández",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/14.png?version=20241123",
+          "value": 385000
+        },
+        {
+          "diff": 55000,
+          "id": 48684,
+          "id_team": 3,
+          "name": "Robert Lewandowski",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+          "value": 73157000
+        },
+        {
+          "diff": 55000,
+          "id": 7024,
+          "id_team": 15,
+          "name": "Fede Valverde",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123",
+          "value": 59695000
+        },
+        {
+          "diff": 54000,
+          "id": 358,
+          "id_team": 3,
+          "name": "Íñigo Martínez",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+          "value": 47140000
+        },
+        {
+          "diff": 54000,
+          "id": 1756,
+          "id_team": 50,
+          "name": "Unai García",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/50.png?version=20241123",
+          "value": 417000
+        },
+        {
+          "diff": 53000,
+          "id": 49,
+          "id_team": 2,
+          "name": "Ángel Correa",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/2.png?version=20241123",
+          "value": 9850000
+        },
+        {
+          "diff": 52000,
+          "id": 59360,
+          "id_team": 17,
+          "name": "Kelechi Iheanacho",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20241123",
+          "value": 1356000
+        },
+        {
+          "diff": 52000,
+          "id": 60271,
+          "id_team": 8,
+          "name": "Rafa Bauza",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/8.png?version=20241123",
+          "value": 381000
+        },
+        {
+          "diff": 51000,
+          "id": 48657,
+          "id_team": 3,
+          "name": "Raphinha",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+          "value": 67699000
+        },
+        {
+          "diff": 50000,
+          "id": 14839,
+          "id_team": 408,
+          "name": "Manu Morlanes",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20241123",
+          "value": 9646000
+        },
+        {
+          "diff": 48000,
+          "id": 59371,
+          "id_team": 16,
+          "name": "Luka Sučić",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123",
+          "value": 31791000
+        },
+        {
+          "diff": 48000,
+          "id": 58428,
+          "id_team": 49,
+          "name": "Julián Chicco",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/49.png?version=20241123",
+          "value": 501000
+        },
+        {
+          "diff": 46000,
+          "id": 59581,
+          "id_team": 20,
+          "name": "Luiz Júnior",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/20.png?version=20241123",
+          "value": 461000
+        },
+        {
+          "diff": 45000,
+          "id": 15338,
+          "id_team": 2,
+          "name": "Robin Le Normand",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/2.png?version=20241123",
+          "value": 23511000
+        },
+        {
+          "diff": 42000,
+          "id": 25631,
+          "id_team": 5,
+          "name": "Ilaix Moriba",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123",
+          "value": 1056000
+        },
+        {
+          "diff": 41000,
+          "id": 28774,
+          "id_team": 1,
+          "name": "Julen Agirrezabala",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20241123",
+          "value": 26501000
+        },
+        {
+          "diff": 41000,
+          "id": 79,
+          "id_team": 49,
+          "name": "Munir El Haddadi",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/49.png?version=20241123",
+          "value": 3023000
+        },
+        {
+          "diff": 41000,
+          "id": 59777,
+          "id_team": 20,
+          "name": "Juan Bernat",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/20.png?version=20241123",
+          "value": 590000
+        },
+        {
+          "diff": 40000,
+          "id": 59026,
+          "id_team": 222,
+          "name": "Gabriel Misehouy",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20241123",
+          "value": 445000
+        },
+        {
+          "diff": 40000,
+          "id": 27424,
+          "id_team": 48,
+          "name": "Luka Romero",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/48.png?version=20241123",
+          "value": 369000
+        },
+        {
+          "diff": 38000,
+          "id": 27298,
+          "id_team": 15,
+          "name": "David Alaba",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123",
+          "value": 2585000
+        },
+        {
+          "diff": 37000,
+          "id": 59407,
+          "id_team": 11,
+          "name": "Scott McKenna",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20241123",
+          "value": 7729000
+        },
+        {
+          "diff": 35000,
+          "id": 55966,
+          "id_team": 49,
+          "name": "Adrià Altimira",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/49.png?version=20241123",
+          "value": 4980000
+        },
+        {
+          "diff": 34000,
+          "id": 15345,
+          "id_team": 16,
+          "name": "Aihen Muñoz",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123",
+          "value": 2180000
+        },
+        {
+          "diff": 33000,
+          "id": 17572,
+          "id_team": 11,
+          "name": "Javi Muñoz",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20241123",
+          "value": 2254000
+        },
+        {
+          "diff": 33000,
+          "id": 59643,
+          "id_team": 8,
+          "name": "Walid Cheddira",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/8.png?version=20241123",
+          "value": 668000
+        },
+        {
+          "diff": 32000,
+          "id": 59498,
+          "id_team": 222,
+          "name": "Bojan Miovski",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20241123",
+          "value": 4503000
+        },
+        {
+          "diff": 31000,
+          "id": 49092,
+          "id_team": 17,
+          "name": "Tanguy Nianzou",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20241123",
+          "value": 401000
+        },
+        {
+          "diff": 30000,
+          "id": 4774,
+          "id_team": 17,
+          "name": "Álvaro Fernández",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20241123",
+          "value": 5076000
+        },
+        {
+          "diff": 28000,
+          "id": 59506,
+          "id_team": 5,
+          "name": "Javier Rodríguez",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123",
+          "value": 6108000
+        },
+        {
+          "diff": 28000,
+          "id": 55462,
+          "id_team": 222,
+          "name": "Silvi Clúa",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20241123",
+          "value": 790000
+        },
+        {
+          "diff": 28000,
+          "id": 49288,
+          "id_team": 1,
+          "name": "Ander Herrera",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20241123",
+          "value": 476000
+        },
+        {
+          "diff": 27000,
+          "id": 58426,
+          "id_team": 49,
+          "name": "Seydouba Cisse",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/49.png?version=20241123",
+          "value": 9880000
+        },
+        {
+          "diff": 26000,
+          "id": 27425,
+          "id_team": 1,
+          "name": "Iñigo Ruiz De Galarreta",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20241123",
+          "value": 27178000
+        },
+        {
+          "diff": 25000,
+          "id": 53095,
+          "id_team": 50,
+          "name": "Bryan Zaragoza",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/50.png?version=20241123",
+          "value": 50189000
+        },
+        {
+          "diff": 24000,
+          "id": 23369,
+          "id_team": 20,
+          "name": "Juan Foyth",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/20.png?version=20241123",
+          "value": 583000
+        },
+        {
+          "diff": 24000,
+          "id": 54897,
+          "id_team": 408,
+          "name": "Siebe Van der Heyden",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20241123",
+          "value": 493000
+        },
+        {
+          "diff": 24000,
+          "id": 60274,
+          "id_team": 17,
+          "name": "Isra Domínguez",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20241123",
+          "value": 353000
+        },
+        {
+          "diff": 22000,
+          "id": 12900,
+          "id_team": 15,
+          "name": "Vinícius Júnior",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20241123",
+          "value": 77456000
+        },
+        {
+          "diff": 20000,
+          "id": 354,
+          "id_team": 16,
+          "name": "Aritz Elustondo",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123",
+          "value": 521000
+        },
+        {
+          "diff": 20000,
+          "id": 22528,
+          "id_team": 50,
+          "name": "Javi Martínez",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/50.png?version=20241123",
+          "value": 349000
+        },
+        {
+          "diff": 20000,
+          "id": 53103,
+          "id_team": 11,
+          "name": "Fabio González",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20241123",
+          "value": 349000
+        },
+        {
+          "diff": 18000,
+          "id": 14432,
+          "id_team": 8,
+          "name": "Javi Puado",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/8.png?version=20241123",
+          "value": 22286000
+        },
+        {
+          "diff": 18000,
+          "id": 11092,
+          "id_team": 1,
+          "name": "Andoni Gorosabel",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20241123",
+          "value": 420000
+        },
+        {
+          "diff": 18000,
+          "id": 59406,
+          "id_team": 5,
+          "name": "Marc Vidal",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123",
+          "value": 417000
+        },
+        {
+          "diff": 16000,
+          "id": 3154,
+          "id_team": 1,
+          "name": "Mikel Vesga",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20241123",
+          "value": 642000
+        },
+        {
+          "diff": 16000,
+          "id": 21592,
+          "id_team": 19,
+          "name": "Hugo Guillamón",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/19.png?version=20241123",
+          "value": 345000
+        },
+        {
+          "diff": 11000,
+          "id": 34,
+          "id_team": 2,
+          "name": "José Giménez",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/2.png?version=20241123",
+          "value": 31104000
+        },
+        {
+          "diff": 10000,
+          "id": 28776,
+          "id_team": 16,
+          "name": "Beñat Turrientes",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20241123",
+          "value": 569000
+        },
+        {
+          "diff": 8000,
+          "id": 432,
+          "id_team": 19,
+          "name": "José Luis Gayà",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/19.png?version=20241123",
+          "value": 22553000
+        },
+        {
+          "diff": 7000,
+          "id": 55010,
+          "id_team": 3,
+          "name": "Pau Víctor",
+          "position": 4,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20241123",
+          "value": 731000
+        },
+        {
+          "diff": 7000,
+          "id": 20481,
+          "id_team": 17,
+          "name": "Suso",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20241123",
+          "value": 496000
+        },
+        {
+          "diff": 4000,
+          "id": 48617,
+          "id_team": 5,
+          "name": "Luca de la Torre",
+          "position": 3,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20241123",
+          "value": 333000
+        },
+        {
+          "diff": 3000,
+          "id": 551,
+          "id_team": 19,
+          "name": "Jaume Doménech",
+          "position": 1,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/19.png?version=20241123",
+          "value": 337000
+        },
+        {
+          "diff": 2000,
+          "id": 36376,
+          "id_team": 2,
+          "name": "Reinildo Mandava",
+          "position": 2,
+          "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/2.png?version=20241123",
+          "value": 5244000
+        }
+      ]
+    },
+    "prev": {
+      "date": "22 nov 2024",
+      "value": 5949970000
+    }
+  },
+  "status": "ok"
+}

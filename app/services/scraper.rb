@@ -366,6 +366,80 @@ class Scraper
     { communities: communities }
   end
 
+  def top_market(html)
+    content = check_ajax_response(html)
+
+    if content.empty? then; return {}; end
+
+    last = content.to_h["last"]
+
+    positive = content.to_h["players"]["positive"].map do |player|
+      Player.new({
+        position: "pos-#{player["position"]}",
+        id: player["id"],
+        name: player["name"],
+        diff: player["diff"],
+        value: player["value"],
+        team_img: player["teamLogoUrl"],
+        player_img: player["photoUrl"],
+        own: player["is_mine"] == 1,
+        user: player["uc_name"],
+        offer: true
+      })
+    end
+
+    negative = content.to_h["players"]["negative"].map do |player|
+      Player.new({
+        position: "pos-#{player["position"]}",
+        id: player["id"],
+        name: player["name"],
+        diff: player["diff"],
+        value: player["value"],
+        team_img: player["teamLogoUrl"],
+        player_img: player["photoUrl"],
+        own: player["is_mine"] == 1,
+        user: player["uc_name"]
+      })
+    end
+
+    puts "últimos valores de mercado".grey.bold
+    puts "cambio: #{format_num(last["value"])}€ (#{last["date"]})"
+    puts
+    puts "positivos".green.bold
+    positive.each { |player| puts player }
+
+    { positive: positive, negative: negative, last: last }
+  end
+
+  def top_players(html)
+    content = check_ajax_response(html)
+
+    if content.empty? then; return {}; end
+
+    players = content.to_h["players"].map do |player|
+      Player.new({
+        position: "pos-#{player["position"]}",
+        id: player["id"],
+        name: player["name"],
+        value: player["value"],
+        average: player["avg"],
+        streak: player["streak"],
+        points: player["points"],
+        status: player["status"],
+        previous_value: player["prev_value"],
+        clause: player["clause"],
+        player_img: player["photoUrl"],
+        own: player["is_mine"] == 1,
+        user: player["uc_name"]
+      })
+    end
+
+    puts "top jugadores".grey.bold
+    players.each { |player| puts player }
+
+    { players: players }
+  end
+
   private
 
   def check_ajax_response(response)
