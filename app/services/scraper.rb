@@ -42,7 +42,9 @@ class Scraper
 
     # transferencias recientes
     recent_transfers = doc.css(".card-transfer").map do |block|
-      date = block.css(".date").text.strip
+      # si contiene una fecha con más de dos "hace" en la cadena, es un bug
+      date = block.css(".head>.date").first.text.strip
+
       block.css(".player-list>li").map do |transfer|
         Player.new({
           name: transfer.css(".title strong").first.text.strip,

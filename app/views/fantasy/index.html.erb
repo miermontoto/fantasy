@@ -1,7 +1,5 @@
 <div class="flex flex-col">
   <div class="grid gap-y-2 grid-cols-1 md:grid-cols-2 p-2 bg-[#121824] rounded-lg justify-items-stretch">
-
-    <!-- Market Data Section -->
     <div class="grid gap-y-2 grid-cols-1 p-2 order-last md:order-first">
       <div id="left-container">
         <%= render partial: "fantasy/partials/transfer_list", locals: {
@@ -15,7 +13,6 @@
       </div>
     </div>
 
-    <!-- Standings Section -->
     <div class="p-2">
       <h1 class="text-center font-bold text-2xl">CLASIFICACIÓN</h1>
       <%= render partial: 'fantasy/partials/standings', locals: { standings: @standings_data } %>
@@ -42,17 +39,15 @@
 
     // Function to update the page numbers and content after an AJAX load
     function updatePaginationControls(pageFeed, pageMarket, totalPagesFeed, totalPagesMarket) {
-      // Update page numbers
-      document.getElementById("current-page-feed").innerHTML = `
-        <span class="text-xl font-bold">${pageFeed}</span>
-        <span class="text-gray-400 mx-2">de</span>
-        <span class="text-gray-300">${totalPagesFeed}</span>
-      `;
-      document.getElementById("current-page-market").innerHTML = `
-        <span class="text-xl font-bold">${pageMarket}</span>
-        <span class="text-gray-400 mx-2">de</span>
-        <span class="text-gray-300">${totalPagesMarket}</span>
-      `;
+      // Update feed pagination numbers
+      const feedContainer = document.getElementById("current-page-feed");
+      feedContainer.querySelector('.text-xl').textContent = pageFeed;
+      feedContainer.querySelector('.text-gray-300').textContent = totalPagesFeed;
+
+      // Update market pagination numbers
+      const marketContainer = document.getElementById("current-page-market");
+      marketContainer.querySelector('.text-xl').textContent = pageMarket;
+      marketContainer.querySelector('.text-gray-300').textContent = totalPagesMarket;
 
       // Update button states and data attributes for feed pagination
       const firstFeedBtn = document.querySelector('.first-feed');
@@ -136,14 +131,25 @@
       const totalFeedPages = getTotalPages('feed');
       const totalMarketPages = getTotalPages('market');
 
-      // Prefetch next feed page
-      if (currentFeedPage < totalFeedPages) {
-        prefetchPage(currentFeedPage + 1, currentMarketPage);
-      }
+      // Prefetch feed pages window (previous, current, next)
+      const feedPagesToFetch = [
+        currentFeedPage - 1,
+        currentFeedPage,
+        currentFeedPage + 1
+      ].filter(page => page > 0 && page <= totalFeedPages);
 
-      // Prefetch next market page
-      if (currentMarketPage < totalMarketPages) {
-        prefetchPage(currentFeedPage, currentMarketPage + 1);
+      // Prefetch market pages window (previous, current, next)
+      const marketPagesToFetch = [
+        currentMarketPage - 1,
+        currentMarketPage,
+        currentMarketPage + 1
+      ].filter(page => page > 0 && page <= totalMarketPages);
+
+      // Fetch all combinations of feed and market pages in the window
+      for (const feedPage of feedPagesToFetch) {
+        for (const marketPage of marketPagesToFetch) {
+          prefetchPage(feedPage, marketPage);
+        }
       }
     }
 
@@ -163,8 +169,17 @@
         // Update pagination controls
         updatePaginationControls(pageFeed, pageMarket, totalPagesFeed, totalPagesMarket);
 
-        // Start prefetching the next pages after a short delay
-        setTimeout(prefetchAdjacentPages, 100);
+        // Clear old cached pages that are no longer needed
+        const cacheKeys = Array.from(pageCache.keys());
+        for (const key of cacheKeys) {
+          const [cachedFeed, cachedMarket] = key.split('-').map(Number);
+          if (Math.abs(cachedFeed - pageFeed) > 1 || Math.abs(cachedMarket - pageMarket) > 1) {
+            pageCache.delete(key);
+          }
+        }
+
+        // Prefetch adjacent pages immediately after the update
+        prefetchAdjacentPages();
 
       } catch (error) {
         console.error('Error loading page:', error);
