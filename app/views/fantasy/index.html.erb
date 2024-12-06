@@ -1,21 +1,18 @@
 <div class="flex flex-col">
   <div class="grid gap-y-2 grid-cols-1 md:grid-cols-2 p-2 bg-[#121824] rounded-lg justify-items-stretch">
-    
-    <!-- Market Data Section -->
     <div class="grid gap-y-2 grid-cols-1 p-2 order-last md:order-first">
       <div id="left-container">
-        <%= render partial: "fantasy/partials/transfer_list", locals: { 
-          paginated_feed_data: @paginated_feed_data, 
-          paginated_market_data: @paginated_market_data, 
-          current_page_feed: @current_page_feed, 
-          current_page_market: @current_page_market, 
-          total_pages_feed: @total_pages_feed, 
-          total_pages_market: @total_pages_market 
+        <%= render partial: "fantasy/partials/transfer_list", locals: {
+          paginated_feed_data: @paginated_feed_data,
+          paginated_market_data: @paginated_market_data,
+          current_page_feed: @current_page_feed,
+          current_page_market: @current_page_market,
+          total_pages_feed: @total_pages_feed,
+          total_pages_market: @total_pages_market
         } %>
       </div>
     </div>
 
-    <!-- Standings Section -->
     <div class="p-2">
       <h1 class="text-center font-bold text-2xl">CLASIFICACIÓN</h1>
       <%= render partial: 'fantasy/partials/standings', locals: { standings: @standings_data } %>
@@ -25,110 +22,190 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    const transfersContainer = document.getElementById('transfers-container');
-    const marketContainer = document.getElementById('market-container');
-    
+    const leftContainer = document.getElementById('left-container');
+    const pageCache = new Map(); // Cache for prefetched pages
+
+    // Function to get current page number from pagination controls
+    function getCurrentPage(type) {
+      const currentPageSpan = document.querySelector(`#current-page-${type} .text-xl`);
+      return currentPageSpan ? parseInt(currentPageSpan.textContent) : 1;
+    }
+
+    // Function to get total pages from pagination controls
+    function getTotalPages(type) {
+      const span = document.querySelector(`#current-page-${type}`);
+      return span ? parseInt(span.dataset.totalpages) : 1;
+    }
+
     // Function to update the page numbers and content after an AJAX load
     function updatePaginationControls(pageFeed, pageMarket, totalPagesFeed, totalPagesMarket) {
-      // Update page numbers
-      document.getElementById("current-page-feed").textContent = `Página ${pageFeed} de ${totalPagesFeed}`;
-      document.getElementById("current-page-market").textContent = `Página ${pageMarket} de ${totalPagesMarket}`;
-      
-      // Update button states
-      document.querySelector('.previous-feed').disabled = pageFeed <= 1;
-      document.querySelector('.next-feed').disabled = pageFeed >= totalPagesFeed;
-      document.querySelector('.previous-market').disabled = pageMarket <= 1;
-      document.querySelector('.next-market').disabled = pageMarket >= totalPagesMarket;
-      
-      // Update data-page attributes
-      document.querySelector('.previous-feed').dataset.page = pageFeed - 1;
-      document.querySelector('.next-feed').dataset.page = pageFeed + 1;
-      document.querySelector('.previous-market').dataset.page = pageMarket - 1;
-      document.querySelector('.next-market').dataset.page = pageMarket + 1;
+      // Update feed pagination numbers
+      const feedContainer = document.getElementById("current-page-feed");
+      feedContainer.querySelector('.text-xl').textContent = pageFeed;
+      feedContainer.querySelector('.text-gray-300').textContent = totalPagesFeed;
+
+      // Update market pagination numbers
+      const marketContainer = document.getElementById("current-page-market");
+      marketContainer.querySelector('.text-xl').textContent = pageMarket;
+      marketContainer.querySelector('.text-gray-300').textContent = totalPagesMarket;
+
+      // Update button states and data attributes for feed pagination
+      const firstFeedBtn = document.querySelector('.first-feed');
+      const prevFeedBtn = document.querySelector('.previous-feed');
+      const nextFeedBtn = document.querySelector('.next-feed');
+      const lastFeedBtn = document.querySelector('.last-feed');
+
+      if (firstFeedBtn && prevFeedBtn && nextFeedBtn && lastFeedBtn) {
+        const isFirstPage = pageFeed <= 1;
+        const isLastPage = pageFeed >= totalPagesFeed;
+
+        firstFeedBtn.disabled = isFirstPage;
+        prevFeedBtn.disabled = isFirstPage;
+        nextFeedBtn.disabled = isLastPage;
+        lastFeedBtn.disabled = isLastPage;
+
+        prevFeedBtn.dataset.page = pageFeed - 1;
+        nextFeedBtn.dataset.page = pageFeed + 1;
+      }
+
+      // Update button states and data attributes for market pagination
+      const firstMarketBtn = document.querySelector('.first-market');
+      const prevMarketBtn = document.querySelector('.previous-market');
+      const nextMarketBtn = document.querySelector('.next-market');
+      const lastMarketBtn = document.querySelector('.last-market');
+
+      if (firstMarketBtn && prevMarketBtn && nextMarketBtn && lastMarketBtn) {
+        const isFirstPage = pageMarket <= 1;
+        const isLastPage = pageMarket >= totalPagesMarket;
+
+        firstMarketBtn.disabled = isFirstPage;
+        prevMarketBtn.disabled = isFirstPage;
+        nextMarketBtn.disabled = isLastPage;
+        lastMarketBtn.disabled = isLastPage;
+
+        prevMarketBtn.dataset.page = pageMarket - 1;
+        nextMarketBtn.dataset.page = pageMarket + 1;
+      }
+    }
+
+    // Function to fetch page content
+    async function fetchPage(pageFeed, pageMarket) {
+      const url = `/?page_feed=${pageFeed}&page_market=${pageMarket}`;
+      const cacheKey = `${pageFeed}-${pageMarket}`;
+
+      // Return cached content if available
+      if (pageCache.has(cacheKey)) {
+        return pageCache.get(cacheKey);
+      }
+
+      try {
+        // Fetch new content
+        const response = await fetch(url, {
+          headers: { 'X-Requested-With': 'XMLHttpRequest' }
+        });
+        const html = await response.text();
+
+        // Cache the result
+        pageCache.set(cacheKey, html);
+
+        return html;
+      } catch (error) {
+        console.error('Error fetching page:', error);
+        throw error;
+      }
+    }
+
+    // Function to prefetch a specific page
+    async function prefetchPage(pageFeed, pageMarket) {
+      try {
+        await fetchPage(pageFeed, pageMarket);
+      } catch (error) {
+        console.error('Error prefetching page:', error);
+      }
+    }
+
+    // Function to prefetch adjacent pages
+    function prefetchAdjacentPages() {
+      const currentFeedPage = getCurrentPage('feed');
+      const currentMarketPage = getCurrentPage('market');
+      const totalFeedPages = getTotalPages('feed');
+      const totalMarketPages = getTotalPages('market');
+
+      // Prefetch feed pages window (previous, current, next)
+      const feedPagesToFetch = [
+        currentFeedPage - 1,
+        currentFeedPage,
+        currentFeedPage + 1
+      ].filter(page => page > 0 && page <= totalFeedPages);
+
+      // Prefetch market pages window (previous, current, next)
+      const marketPagesToFetch = [
+        currentMarketPage - 1,
+        currentMarketPage,
+        currentMarketPage + 1
+      ].filter(page => page > 0 && page <= totalMarketPages);
+
+      // Fetch all combinations of feed and market pages in the window
+      for (const feedPage of feedPagesToFetch) {
+        for (const marketPage of marketPagesToFetch) {
+          prefetchPage(feedPage, marketPage);
+        }
+      }
     }
 
     // Function to load new content (market and feed)
-    function loadPage(pageFeed, pageMarket) {
-      // Construct the URL with the page parameters
-      const url = `/?page_feed=${pageFeed}&page_market=${pageMarket}`;
-      console.log(url);
+    async function loadPage(pageFeed, pageMarket) {
+      try {
+        // Get the content (from cache or fetch)
+        const html = await fetchPage(pageFeed, pageMarket);
 
-      // Fetch the new content
-      fetch(url, {
-        headers: { 'X-Requested-With': 'XMLHttpRequest' }
-      })
-      .then(response => response.text())
-      .then(html => {
-        // Create a temporary DOM to parse the new HTML
-        const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = html;
+        // Update the left container with the new partial HTML
+        leftContainer.innerHTML = html;
 
-        console.log(tempDiv);
-        
-        // Only replace the relevant parts of the page
-        const newTransfersHTML = tempDiv.querySelector('#transfers-container').innerHTML;
-        const newMarketHTML = tempDiv.querySelector('#market-container').innerHTML;
+        // Get the new total pages values
+        const totalPagesFeed = getTotalPages('feed');
+        const totalPagesMarket = getTotalPages('market');
 
-        console.log(newMarketHTML);
-        console.log(newTransfersHTML);
-
-        // Update the transfers and market containers with the new HTML
-        transfersContainer.innerHTML = newTransfersHTML;
-        marketContainer.innerHTML = newMarketHTML;
-
-        console.log(transfersContainer.innerHTML);
-        console.log(marketContainer);
-
-        // Update pagination controls with the new values from the response
-        const totalPagesFeed = tempDiv.querySelector('#current-page-feed').dataset.totalpages;
-        const totalPagesMarket = tempDiv.querySelector('#current-page-market').dataset.totalpages;
-
+        // Update pagination controls
         updatePaginationControls(pageFeed, pageMarket, totalPagesFeed, totalPagesMarket);
-      });
+
+        // Clear old cached pages that are no longer needed
+        const cacheKeys = Array.from(pageCache.keys());
+        for (const key of cacheKeys) {
+          const [cachedFeed, cachedMarket] = key.split('-').map(Number);
+          if (Math.abs(cachedFeed - pageFeed) > 1 || Math.abs(cachedMarket - pageMarket) > 1) {
+            pageCache.delete(key);
+          }
+        }
+
+        // Prefetch adjacent pages immediately after the update
+        prefetchAdjacentPages();
+
+      } catch (error) {
+        console.error('Error loading page:', error);
+      }
     }
 
+    // Event delegation for pagination buttons
     document.addEventListener('click', function(event) {
-      // Check if the clicked element is one of the pagination buttons
-      if (event.target.classList.contains('previous-feed')) {
-        const pageFeed = parseInt(event.target.dataset.page); // get new page for feed
-        const pageMarket = parseInt(document.querySelector('.next-market').dataset.page-1); // keep current market page
+      const button = event.target.closest('button');
+      if (!button) return;
+
+      if (button.classList.contains('first-feed') || button.classList.contains('previous-feed') ||
+          button.classList.contains('next-feed') || button.classList.contains('last-feed')) {
+        const pageFeed = parseInt(button.dataset.page);
+        const pageMarket = getCurrentPage('market'); // Keep current market page
         loadPage(pageFeed, pageMarket);
-      } 
-      else if (event.target.classList.contains('next-feed')) {
-        const pageFeed = parseInt(event.target.dataset.page); // get new page for feed
-        const pageMarket = parseInt(document.querySelector('.next-market').dataset.page-1); // keep current market page
-        loadPage(pageFeed, pageMarket);
-      } 
-      else if (event.target.classList.contains('previous-market')) {
-        const pageMarket = parseInt(event.target.dataset.page); // get new page for market
-        const pageFeed = parseInt(document.querySelector('.next-feed').dataset.page-1); // keep current feed page
-        loadPage(pageFeed, pageMarket);
-      } 
-      else if (event.target.classList.contains('next-market')) {
-        const pageMarket = parseInt(event.target.dataset.page); // get new page for market
-        const pageFeed = parseInt(document.querySelector('.next-feed').dataset.page-1); // keep current feed page
+      }
+      else if (button.classList.contains('first-market') || button.classList.contains('previous-market') ||
+               button.classList.contains('next-market') || button.classList.contains('last-market')) {
+        const pageMarket = parseInt(button.dataset.page);
+        const pageFeed = getCurrentPage('feed'); // Keep current feed page
         loadPage(pageFeed, pageMarket);
       }
     });
 
-
-    // // Event delegation: Listen for clicks on pagination buttons
-    // document.addEventListener('click', function(event) {
-    //   // If the clicked element is a pagination button
-    //   if (event.target.classList.contains('previous-feed') || event.target.classList.contains('next-feed') || 
-    //       event.target.classList.contains('previous-market') || event.target.classList.contains('next-market')) {
-        
-    //     // Get the page number from the button's data-page attribute
-    //     const pageFeed = parseInt(event.target.dataset.page);
-    //     const pageMarket = parseInt(event.target.dataset.page);
-
-    //     console.log(pageFeed, pageMarket);
-        
-    //     // Trigger the page load function
-    //     if (event.target.classList.contains('previous-feed') || event.target.classList.contains('next-feed')) {
-    //       loadPage(pageFeed, pageMarket);
-    //     }
-    //   }
-    // });
+    // Start prefetching adjacent pages on initial load
+    setTimeout(prefetchAdjacentPages, 100);
   });
 </script>

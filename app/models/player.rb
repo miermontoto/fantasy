@@ -7,17 +7,17 @@ class Player
   attr_accessor :position, :name, :points, :value, :average, :price, :ppm, :id,
                 :trend, :streak, :status, :own, :player_img, :team_img,
                 :transfer_div, :clause, :is_transfer, :is_offer, :previous_value,
-                :best_bid, :offered_by, :bid_status, :asked_price
+                :best_bid, :offered_by, :bid_status, :asked_price, :date, :from, :to
 
   # Constructor de la clase, inicializa los atributos del jugador
   # a partir de un hash de atributos proporcionado por el scraper
   def initialize(attributes = {})
     @position = Position.new(attributes[:position])                              # posición del jugador
-    @name = attributes[:name].gsub('💥', '')                                     # nombre del jugador
+    @name = attributes[:name].gsub("💥", "")                                     # nombre del jugador
     @points = attributes[:points].to_s || "0"                                    # puntos del jugador en toda la temporada actual
     @value = attributes[:value]                                                  # valor actual del jugador en el mercado
     @average = attributes[:average]                                              # media de puntos por partido
-    @price = '€ ' + format_num(@value)                                           # valor formateado actual del jugador en el mercado
+    @price = "€ " + format_num(@value)                                           # valor formateado actual del jugador en el mercado
     @ppm = calculate_ppm                                                         # puntos por millón de valor
     @id = attributes[:id]                                                        # id del jugador
     @trend = attributes[:trend] ? parse_trend(attributes[:trend]) : ""           # tendencia del jugador
@@ -34,6 +34,7 @@ class Player
     @clause = attributes[:clause] || false                                       # en transferencia: true si la transferencia es por pago de cláusula
     @from_market = @from == ApplicationHelper::MARKET_NAME unless @from.nil?     # en transferencia: true si el origen es el mercado
     @to_market = @to == ApplicationHelper::MARKET_NAME unless @to.nil?           # en transferencia: true si el destino es el mercado
+    @date = attributes[:date] || ""                                              # en transferencia: fecha de la transferencia
 
     @is_offer = attributes[:offer] || false                                      # en oferta: true
     @previous_value = attributes[:previous_value] || 0                           # en oferta: valor anterior del jugador
@@ -67,22 +68,6 @@ class Player
     max("price", @price_string)
   end
 
-  private
-
-  def base_string
-    [
-      @position.to_s,
-      @name.ljust(max("name")) + " #{@status == "" ? " " : @status}",
-      @price_string.rjust(max("price"))
-    ]
-  end
-
-  # Función que calcula los puntos por millón de un jugador
-  def calculate_ppm
-    return 0 if @points.to_i == 0 || @value.to_i == 0
-    (@points.to_i.to_f / @value.to_i * 1000000).round(2)
-  end
-
   # Función que convierte un jugador a string
   def to_s
     # si el jugador es una transferencia, usar la función transfer_to_s
@@ -109,6 +94,22 @@ class Player
 
     # concatenar la cadena del jugador
     concat(content)
+  end
+
+  private
+
+  def base_string
+    [
+      @position.to_s,
+      @name.ljust(max("name")) + " #{@status == "" ? " " : @status}",
+      @price_string.rjust(max("price"))
+    ]
+  end
+
+  # Función que calcula los puntos por millón de un jugador
+  def calculate_ppm
+    return 0 if @points.to_i == 0 || @value.to_i == 0
+    (@points.to_i.to_f / @value.to_i * 1000000).round(2)
   end
 
   # Función que convierte un jugador en transferencia a string

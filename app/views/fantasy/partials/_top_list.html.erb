@@ -1,0 +1,8 @@
+<div class="space-y-6">
+  <h2 class="text-center font-bold text-2xl">TOP JUGADORES DEL MERCADO</h2>
+  <div id="market-container" class="space-y-2">
+    <% paginated_market_data.each do |market_item| %>
+      <%= render partial: "fantasy/partials/market_player", locals: { market_player: market_item } %>
+    <% end %>
+  </div>
+</div>
