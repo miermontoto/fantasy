@@ -7,10 +7,8 @@ class FantasyController < ApplicationController
     raw_data = Scraper.new.feed(browser.feed.body)
 
     @market_data = raw_data[:market]
-    @feed_data = raw_data[:transfers]
+    @events_data = raw_data[:events]
     @standings_data = Scraper.new.standings(browser.standings.body)
-
-    debugger
 
     # Pagination parameters for market data
     market_page = params[:page_market].present? ? params[:page_market].to_i : 1
@@ -24,8 +22,8 @@ class FantasyController < ApplicationController
     feed_page = params[:page_feed].present? ? params[:page_feed].to_i : 1
     per_page_feed = 5
 
-    @total_pages_feed = (@feed_data.size / per_page_feed.to_f).ceil
-    @paginated_feed_data = @feed_data.slice((feed_page - 1) * per_page_feed, per_page_feed) || []
+    @total_pages_feed = (@events_data.size / per_page_feed.to_f).ceil
+    @paginated_feed_data = @events_data.slice((feed_page - 1) * per_page_feed, per_page_feed) || []
     @current_page_feed = feed_page
 
 

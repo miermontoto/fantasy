@@ -1,5 +1,5 @@
 <div>
-  <h2>ÚLTIMAS NOTICIAS MERCADO</h2>
+  <h2 class="text-center font-bold text-2xl mb-10">TOP MERCADO</h2>
   <div id="market-container">
     <% @paginated_market_data.each do |market_item| %>
       <%= render partial: "fantasy/partials/market_player", locals: { market_player: market_item } %>
@@ -7,25 +7,36 @@
   </div>
 
   <!-- Market Pagination Controls -->
-  <div id="market-pagination" class="ml-4">
-    <button class="previous-market" data-page="<%= @current_page_market - 1 %>" <%= 'disabled' if @current_page_market <= 1 %>>Anterior</button>
-    <span id="current-page-market" data-totalpages="<%= @total_pages_market %>">Página <%= @current_page_market %> de <%= @total_pages_market %></span>
-    <button class="next-market" data-page="<%= @current_page_market + 1 %>" <%= 'disabled' if @current_page_market >= @total_pages_market %>>Siguiente</button>
-  </div>
+  <%= render partial: "fantasy/partials/pagination", locals: {
+    id: "market-pagination",
+    current_page: @current_page_market,
+    total_pages: @total_pages_market,
+    type: "market"
+  } %>
 </div>
 
 <div>
-  <h2 class="text-center font-bold text-2xl mb-10">TRANSFERENCIAS</h2>
-  <div id="transfers-container">
-    <% @paginated_feed_data.each do |transfer| %>
-      <%= render partial: "fantasy/partials/transfer_card", locals: { transfer: transfer } %>
+  <h2 class="text-center font-bold text-2xl mb-10">EVENTOS</h2>
+  <div id="events-container">
+    <% @paginated_feed_data.each do |event| %>
+      <% case event[:type] %>
+      <% when :transfer %>
+        <%= render partial: "fantasy/partials/transfer_card", locals: { transfer: event[:data] } %>
+      <% when :gameweek_start %>
+        <%= render partial: "fantasy/partials/gameweek_start_card", locals: { event: event[:data] } %>
+      <% when :gameweek_end %>
+        <%= render partial: "fantasy/partials/gameweek_end_card", locals: { event: event[:data] } %>
+      <% when :clause_drops %>
+        <%= render partial: "fantasy/partials/clause_drops_card", locals: { event: event[:data] } %>
+      <% end %>
     <% end %>
   </div>
 
   <!-- Feed Pagination Controls -->
-  <div id="feed-pagination" class="ml-4">
-    <button class="previous-feed" data-page="<%= @current_page_feed - 1 %>" <%= 'disabled' if @current_page_feed <= 1 %>>Anterior</button>
-    <span id="current-page-feed" data-totalpages="<%= @total_pages_feed %>">Página <%= @current_page_feed %> de <%= @total_pages_feed %></span>
-    <button class="next-feed" data-page="<%= @current_page_feed + 1 %>" <%= 'disabled' if @current_page_feed >= @total_pages_feed %>>Siguiente</button>
-  </div>
+  <%= render partial: "fantasy/partials/pagination", locals: {
+    id: "feed-pagination",
+    current_page: @current_page_feed,
+    total_pages: @total_pages_feed,
+    type: "feed"
+  } %>
 </div>
