@@ -3,23 +3,41 @@
     <img class="object-cover w-20 h-20 rounded-t-lg mt-2 md:ml-2 md:mt-0 md:h-16 md:w-16 md:rounded-none md:rounded-s-lg" src="<%= market_player.player_img %>" alt="Imagen del jugador <%= market_player.name %>" loading="lazy">
 
     <div class="flex flex-col justify-between p-4 leading-normal w-full">
-      <div class="flex items-center gap-3">
-        <div class="<%= market_player.position.browser[:color] %> border-solid border-2 border-black skew-x-[-10deg]">
-          <p class="p-1 text-sm text-black font-bold skew-x-[10deg]"><%= market_player.position.browser[:position] %></p>
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="<%= market_player.position.browser[:color] %> border-solid border-2 border-black skew-x-[-10deg]">
+            <p class="p-1 text-sm text-black font-bold skew-x-[10deg]"><%= market_player.position.browser[:position] %></p>
+          </div>
+          <h1 class="text-white font-bold text-lg"><%= market_player.name %></h1>
         </div>
-        <h1 class="text-white font-bold text-lg"><%= market_player.name %></h1>
-      </div>
-      <div class="flex items-center w-full">
-        <p class="text-xl font-bold text-white text-gray-900"><%= market_player.price %></p>
+        <div class="flex items-center">
+          <div class="bg-white border-solid border-2 border-black skew-x-[-10deg]">
+            <p class="p-1 text-sm text-black font-bold skew-x-[10deg]"><%= market_player.points %></p>
+          </div>
+          <div class="bg-black border-solid border-2 border-white skew-x-[-10deg] -ml-[2px]">
+            <p class="p-1 text-sm text-white font-bold skew-x-[10deg]">(<%= market_player.average %>)</p>
+          </div>
+        </div>
       </div>
       <div class="flex items-center justify-between">
+        <p class="text-xl font-bold text-white text-gray-900"><%= market_player.price %></p>
         <div class="flex items-center">
-          <span class="text-gray-400 mr-4"><%= market_player.points %> pts</span>
-          <span class="text-gray-400">Media: <%= market_player.average %></span>
-        </div>
-        <div class="flex items-center">
-          <% market_player.streak.each do |result| %>
-            <span class="text-gray-400 ml-1"><%= result %></span>
+          <% market_player.streak.each_with_index do |points, index| %>
+            <% points_value = points == "-" ? 0 : points.to_i %>
+            <% bg_color = if points_value < 0
+                 'bg-red-500'
+               elsif points_value >= 10
+                 'bg-cyan-500'
+               elsif points_value >= 5
+                 'bg-green-500'
+               elsif points_value >= 1
+                 'bg-yellow-500'
+               else
+                 'bg-gray-500'
+               end %>
+            <div class="<%= bg_color %> border-solid border-2 border-black skew-x-[-10deg] <%= index > 0 ? '-ml-[2px]' : '' %>" style="width: 26px">
+              <p class="p-1 text-sm text-black font-bold skew-x-[10deg] text-center" style="width: 22px"><%= points %></p>
+            </div>
           <% end %>
         </div>
       </div>
