@@ -19,15 +19,15 @@
   <h2 class="text-center font-bold text-2xl mb-10">EVENTOS</h2>
   <div id="events-container">
     <% @paginated_feed_data.each do |event| %>
-      <% case event[:type] %>
+      <% case event.type %>
       <% when :transfer %>
-        <%= render partial: "fantasy/partials/transfer_card", locals: { transfer: event[:data] } %>
+        <%= render partial: "fantasy/partials/transfer_card", locals: { transfer: event.data } %>
       <% when :gameweek_start %>
-        <%= render partial: "fantasy/partials/gameweek_start_card", locals: { event: event[:data] } %>
+        <%= render partial: "fantasy/partials/gameweek_start_card", locals: { event: event.data } %>
       <% when :gameweek_end %>
-        <%= render partial: "fantasy/partials/gameweek_end_card", locals: { event: event[:data] } %>
+        <%= render partial: "fantasy/partials/gameweek_end_card", locals: { event: event.data } %>
       <% when :clause_drops %>
-        <%= render partial: "fantasy/partials/clause_drops_card", locals: { event: event[:data] } %>
+        <%= render partial: "fantasy/partials/clause_drops_card", locals: { event: event.data } %>
       <% end %>
     <% end %>
   </div>

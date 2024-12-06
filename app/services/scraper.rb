@@ -45,11 +45,11 @@ class Scraper
       date = block.css(".date").text.strip
       block.css(".player-list>li").map do |transfer|
         Player.new({
-          name: transfer.css(".title strong").text.strip,
+          name: transfer.css(".title strong").first.text.strip,
           position: transfer.css(".player-row .icons i").attr("class").value,
           team_img: transfer.css("img.team-logo").attr("src").value,
           from: transfer.css(".title em").first.text.strip,
-          to: transfer.css(".title em").last.text.strip,
+          to: transfer.css(".title em")[1].text.strip,
           value: transfer.css(".price").first.text.strip,
           date: date,
           status: transfer.css(".status use")&.attr("href")&.value&.split("#")&.last,
@@ -120,46 +120,46 @@ class Scraper
 
     # Add gameweek starts
     gameweek_starts.each do |event|
-      all_events << {
+      all_events << Event.new({
         type: :gameweek_start,
         date: parse_date(event[:date]),
         raw_date: event[:date],
         data: event
-      }
+      })
     end
 
     # Add gameweek ends
     gameweek_ends.each do |event|
-      all_events << {
+      all_events << Event.new({
         type: :gameweek_end,
         date: parse_date(event[:date]),
         raw_date: event[:date],
         data: event
-      }
+      })
     end
 
     # Add clause drops
     clause_drops.each do |event|
-      all_events << {
+      all_events << Event.new({
         type: :clause_drops,
         date: parse_date(event[:date]),
         raw_date: event[:date],
         data: event
-      }
+      })
     end
 
     # Add transfers
     recent_transfers.each do |transfer|
-      all_events << {
+      all_events << Event.new({
         type: :transfer,
         date: parse_date(transfer.date),
         raw_date: transfer.date,
         data: transfer
-      }
+      })
     end
 
     # Sort all events by date
-    all_events.sort_by! { |event| event[:date] }.reverse!
+    all_events.sort_by! { |event| event.date }.reverse!
 
     puts "información general".grey.bold
     puts "#{"liga:".bold} #{community_name}"
@@ -171,28 +171,7 @@ class Scraper
     market_players.each { |player| puts player }
 
     puts "\neventos".grey.bold
-    all_events.each do |event|
-      case event[:type]
-      when :gameweek_start
-        data = event[:data]
-        puts "#{event[:raw_date]} - #{data[:gameweek]} #{data[:subtitle]}"
-      when :gameweek_end
-        data = event[:data]
-        puts "#{event[:raw_date]} - Fin de #{data[:gameweek]}"
-        data[:rankings].each do |user|
-          puts "  #{user[:position]}. #{user[:name]} - #{user[:points]}pts (#{user[:profit]})"
-        end
-      when :clause_drops
-        data = event[:data]
-        puts "#{event[:raw_date]} - Bajadas de cláusulas"
-        data[:players].each do |player|
-          puts "  #{player[:name]} (#{player[:owner]}) - #{player[:new_price]} ← #{player[:old_price]}"
-        end
-      when :transfer
-        transfer = event[:data]
-        puts "#{event[:raw_date]} - #{transfer.name} transferido de #{transfer.from} a #{transfer.to} por #{transfer.value}"
-      end
-    end
+    all_events.each { |event| puts event }
 
     {
       events: all_events,
