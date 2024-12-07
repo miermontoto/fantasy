@@ -5,7 +5,7 @@ class Player
 
   # @todo revisar si se puede usar attr_reader en vez de attr_accessor
   attr_accessor :position, :name, :points, :value, :average, :price, :ppm, :id,
-                :trend, :streak, :status, :own, :player_img, :team_img,
+                :trend, :streak, :status, :own, :player_img, :team_img, :user,
                 :transfer_div, :clause, :is_transfer, :is_offer, :previous_value,
                 :best_bid, :offered_by, :bid_status, :asked_price, :date, :from, :to
 

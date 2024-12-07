@@ -67,6 +67,48 @@ class FantasyController < ApplicationController
   def market
     browser = Browser.new
     @market_data = Scraper.new.market(browser.market.body)
+
+    # Apply filters
+    @market_data[:market] = @market_data[:market].select do |player|
+      matches = true
+      if params[:position].present?
+        matches &= player.position.to_s == params[:position]
+      end
+      if params[:exclude_position].present?
+        excluded = params[:exclude_position].split(',')
+        matches &= !excluded.include?(player.position.to_s)
+      end
+      matches &= player.value <= params[:max_price].to_i if params[:max_price].present?
+      matches &= player.name.downcase.include?(params[:search].downcase) if params[:search].present?
+      matches
+    end
+
+    # Apply sorting
+    sort_by = params[:sort] || 'points_desc'
+    @market_data[:market] = @market_data[:market].sort_by do |player|
+      case sort_by
+      when 'price_asc' then player.value
+      when 'price_desc' then -player.value
+      when 'points_desc' then -player.points.to_i
+      when 'avg_desc' then -player.average.to_f
+      when 'ppm_desc' then -player.ppm
+      else -player.points.to_i # Default to points_desc
+      end
+    end
+
+    # Pagination
+    @current_page = (params[:page] || 1).to_i
+    per_page = 10
+    total_items = @market_data[:market].size
+    @total_pages = (total_items.to_f / per_page).ceil
+
+    start_idx = (@current_page - 1) * per_page
+    @market_data[:market] = @market_data[:market][start_idx, per_page] || []
+
+    respond_to do |format|
+      format.html
+      format.turbo_stream if turbo_frame_request?
+    end
   end
 
   def team

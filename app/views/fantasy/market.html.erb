@@ -1,0 +1,215 @@
+<% content_for :title, "Mercado" %>
+
+<div class="container mx-auto p-4 h-[calc(100vh-6rem)] flex flex-col">
+  <!-- General Info Container -->
+  <div class="bg-gray-800 rounded-lg p-4 mb-6">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-6">
+        <div>
+          <span class="text-gray-400 text-sm">Balance</span>
+          <p class="text-xl font-semibold <%= @market_data[:info][:current_balance].to_i < 0 ? 'text-red-500' : 'text-white' %>">
+            <%= number_to_currency(@market_data[:info][:current_balance], unit: '€', precision: 0) %>
+          </p>
+        </div>
+        <div class="h-8 w-px bg-gray-700"></div>
+        <div>
+          <span class="text-gray-400 text-sm">Balance Futuro</span>
+          <p class="text-xl font-semibold <%= @market_data[:info][:future_balance].to_i < 0 ? 'text-red-500' : 'text-white' %>">
+            <%= number_to_currency(@market_data[:info][:future_balance], unit: '€', precision: 0) %>
+          </p>
+        </div>
+        <div class="h-8 w-px bg-gray-700"></div>
+        <div>
+          <span class="text-gray-400 text-sm">Deuda Máxima</span>
+          <p class="text-xl font-semibold <%= @market_data[:info][:max_debt].to_i < 0 ? 'text-red-500' : 'text-white' %>">
+            <%= number_to_currency(@market_data[:info][:max_debt], unit: '€', precision: 0) %>
+          </p>
+        </div>
+      </div>
+      <div>
+        <span class="text-gray-400 text-sm">Próxima Actualización</span>
+        <p class="text-lg font-semibold"><%= @market_data[:info][:next_update] %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 flex-1 min-h-0">
+    <!-- Filters Sidebar -->
+    <div class="lg:col-span-1">
+      <div class="bg-gray-800 rounded-lg p-4">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-lg font-semibold">Filtros</h3>
+          <% if params[:position].present? || params[:exclude_position].present? || params[:max_price].present? || params[:sort].present? || params[:search].present? %>
+            <%= link_to market_path, class: "text-blue-400 hover:text-blue-300 text-sm", data: { turbo_frame: "market_content" } do %>
+              Limpiar filtros
+              <span class="ml-1">×</span>
+            <% end %>
+          <% end %>
+        </div>
+
+        <%= form_tag market_path, method: :get, class: "space-y-4", data: { turbo_frame: "market_content" } do %>
+          <div>
+            <label class="block text-sm font-medium text-gray-400 mb-2">Posición</label>
+            <div class="flex gap-2">
+              <% positions = [
+                ['POR', { color: 'bg-yellow-500 border-yellow-500', text: 'text-black' }],
+                ['DEF', { color: 'bg-blue-500 border-blue-500', text: 'text-black' }],
+                ['MED', { color: 'bg-green-500 border-green-500', text: 'text-black' }],
+                ['DEL', { color: 'bg-red-500 border-red-500', text: 'text-black' }]
+              ] %>
+              <% positions.each do |pos, styles| %>
+                <% is_selected = params[:position] == pos %>
+                <% is_excluded = params[:exclude_position]&.split(',')&.include?(pos) %>
+                <button type="button"
+                        data-position="<%= pos %>"
+                        class="relative flex-1 px-3 py-1.5 border-2 text-sm font-bold rounded skew-x-[-10deg] transition-all
+                               <%= is_selected ? styles[:color] : is_excluded ? 'bg-gray-700 border-gray-600 opacity-40' : 'bg-gray-700 border-gray-600 hover:border-gray-500' %>">
+                  <span class="block skew-x-[10deg] <%= is_selected ? styles[:text] : 'text-white' %>"><%= pos %></span>
+                  <% if is_excluded %>
+                    <div class="absolute inset-0 flex items-center justify-center skew-x-[10deg]">
+                      <div class="w-full h-0.5 bg-gray-300 rotate-45"></div>
+                    </div>
+                  <% end %>
+                </button>
+              <% end %>
+              <%= hidden_field_tag :position, params[:position] %>
+              <%= hidden_field_tag :exclude_position, params[:exclude_position] %>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-400 mb-2">
+              Precio Máximo: <span id="price-value"><%= number_to_currency(params[:max_price] || 100_000_000, unit: '€', precision: 0) %></span>
+            </label>
+            <%= range_field_tag :max_price,
+              params[:max_price] || 100_000_000,
+              min: 0,
+              max: 100_000_000,
+              step: 1_000_000,
+              class: "w-full"
+            %>
+            <div class="flex justify-between text-sm text-gray-400 mt-1">
+              <span>0€</span>
+              <span>100M€</span>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-400 mb-2">Ordenar por</label>
+            <%= select_tag :sort,
+              options_for_select([
+                ['Puntos (mayor a menor)', 'points_desc'],
+                ['Media (mayor a menor)', 'avg_desc'],
+                ['PPM (mayor a menor)', 'ppm_desc'],
+                ['Precio (mayor a menor)', 'price_desc'],
+                ['Precio (menor a mayor)', 'price_asc']
+              ], params[:sort] || 'points_desc'),
+              class: "w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            %>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-400 mb-2">Buscar jugador</label>
+            <%= text_field_tag :search,
+              params[:search],
+              placeholder: "Nombre del jugador...",
+              class: "w-full px-4 py-2 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <!-- Results Container -->
+    <div class="lg:col-span-3 bg-gray-800 rounded-lg flex flex-col min-h-0">
+      <div class="p-4 border-b border-gray-700">
+        <div class="flex justify-between items-center">
+          <h2 class="text-2xl font-bold">Jugadores en el Mercado</h2>
+        </div>
+      </div>
+
+      <%= turbo_frame_tag "market_content" do %>
+        <div class="overflow-y-auto flex-1 p-4">
+          <div class="space-y-2">
+            <% if @market_data[:market]&.any? %>
+              <% @market_data[:market].each do |player| %>
+                <%= render partial: "fantasy/partials/market_player", locals: { market_player: player } %>
+              <% end %>
+            <% else %>
+              <div class="text-center py-8">
+                <p class="text-gray-400">No se encontraron jugadores con los filtros seleccionados</p>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="p-4 border-t border-gray-700">
+          <%= render partial: "fantasy/partials/pagination",
+            locals: {
+              id: "market-pagination",
+              current_page: @current_page || 1,
+              total_pages: @total_pages || 1,
+              type: "market"
+            }
+          %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= javascript_tag nonce: true do %>
+  document.addEventListener('turbo:load', function() {
+    const form = document.querySelector('form');
+    const positionInput = document.querySelector('input[name="position"]');
+    const excludePositionInput = document.querySelector('input[name="exclude_position"]');
+    let timeout;
+
+    const submitForm = () => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        form.requestSubmit();
+      }, 300);
+    };
+
+    // Handle position button clicks
+    document.querySelectorAll('button[data-position]').forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        const position = button.dataset.position;
+
+        if (e.shiftKey) {
+          // Shift+click: toggle exclusion
+          let excluded = excludePositionInput.value ? excludePositionInput.value.split(',') : [];
+          const index = excluded.indexOf(position);
+
+          if (index === -1) {
+            excluded.push(position);
+          } else {
+            excluded.splice(index, 1);
+          }
+
+          excludePositionInput.value = excluded.join(',');
+          positionInput.value = ''; // Clear position when excluding
+        } else {
+          // Normal click: toggle selection
+          positionInput.value = positionInput.value === position ? '' : position;
+          excludePositionInput.value = ''; // Clear exclusions when selecting
+        }
+
+        submitForm();
+      });
+    });
+
+    // Auto-submit on input changes
+    form.querySelectorAll('input:not([type="hidden"]), select').forEach(input => {
+      input.addEventListener('change', submitForm);
+      if (input.type === 'text' || input.type === 'range') {
+        input.addEventListener('input', submitForm);
+      }
+    });
+  });
+<% end %>
+
+</
+rewritten_file>```

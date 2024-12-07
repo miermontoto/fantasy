@@ -1,28 +1,53 @@
-<div class="flex w-full grow justify-center">
-  <div class="flex w-full flex-col shadow-2xl items-center bg-gray-800 border-2 border-gray-700 rounded-lg shadow m-2 md:flex-row md:max-w-xl hover:bg-gray-700">
-    <img class="object-cover w-20 h-20 rounded-t-lg mt-2 md:ml-2 md:mt-0 md:h-16 md:w-16 md:rounded-none md:rounded-s-lg" src="<%= market_player.player_img %>" alt="Imagen del jugador <%= market_player.name %>" loading="lazy">
+<div class="flex items-center bg-gray-700 rounded-lg p-2 hover:bg-gray-600 transition-colors">
+  <div class="relative">
+    <img class="w-12 h-12 rounded-lg" src="<%= market_player.player_img %>" alt="<%= market_player.name %>" loading="lazy">
+    <% if market_player.status.present? %>
+      <div class="absolute -top-1 -right-1 w-4 h-4 rounded-full <%= market_player.status == '⚠️' ? 'bg-yellow-500' : 'bg-red-500' %> flex items-center justify-center text-xs text-white font-bold">
+        !
+      </div>
+    <% end %>
+  </div>
 
-    <div class="flex flex-col justify-between p-4 leading-normal w-full">
-      <div class="flex items-center justify-between">
-        <div class="flex items-center gap-3">
-          <div class="<%= market_player.position.browser[:color] %> border-solid border-2 border-black skew-x-[-10deg]">
-            <p class="p-1 text-sm text-black font-bold skew-x-[10deg]"><%= market_player.position.browser[:position] %></p>
-          </div>
-          <h1 class="text-white font-bold text-lg"><%= market_player.name %></h1>
+  <div class="flex flex-col items-center mx-2">
+    <img src="<%= market_player.team_img %>" alt="Team" class="w-6 h-6 mb-1">
+    <div class="<%= market_player.position.browser[:color] %> border-2 border-black skew-x-[-10deg] px-2 py-0.5 rounded">
+      <span class="block skew-x-[10deg] text-xs font-bold text-black"><%= market_player.position.browser[:position] %></span>
+    </div>
+  </div>
+
+  <div class="flex-1 flex items-center justify-between">
+    <div>
+      <h3 class="font-semibold"><%= market_player.name %></h3>
+      <div class="flex items-center gap-2 text-xs text-gray-400">
+        <% if market_player.own %>
+          <span class="text-blue-400">Tu jugador</span>
+          <span class="w-1 h-1 bg-gray-500 rounded-full"></span>
+        <% end %>
+        <% if market_player.instance_variable_get(:@user).present? %>
+          <span>Dueño: <%= market_player.instance_variable_get(:@user) %></span>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-4">
+      <div class="flex items-center gap-3 px-3 border-x border-gray-600">
+        <div class="text-center w-12">
+          <div class="text-sm font-semibold"><%= market_player.points %></div>
+          <div class="text-xs text-gray-400">PTS</div>
         </div>
-        <div class="flex items-center">
-          <div class="bg-white border-solid border-2 border-black skew-x-[-10deg]">
-            <p class="p-1 text-sm text-black font-bold skew-x-[10deg]"><%= market_player.points %></p>
-          </div>
-          <div class="bg-black border-solid border-2 border-white skew-x-[-10deg] -ml-[2px]">
-            <p class="p-1 text-sm text-white font-bold skew-x-[10deg]">(<%= market_player.average %>)</p>
-          </div>
+        <div class="text-center w-12">
+          <div class="text-sm font-semibold"><%= market_player.average %></div>
+          <div class="text-xs text-gray-400">AVG</div>
+        </div>
+        <div class="text-center w-12">
+          <div class="text-sm font-semibold"><%= market_player.ppm %></div>
+          <div class="text-xs text-gray-400">PPM</div>
         </div>
       </div>
-      <div class="flex items-center justify-between">
-        <p class="text-xl font-bold text-white text-gray-900"><%= market_player.price %></p>
-        <div class="flex items-center">
-          <% market_player.streak.each_with_index do |points, index| %>
+
+      <div class="flex items-center gap-6">
+        <div class="flex items-center gap-1">
+          <% market_player.streak.each do |points| %>
             <% points_value = points == "-" ? 0 : points.to_i %>
             <% bg_color = if points_value < 0
                  'bg-red-500'
@@ -35,9 +60,25 @@
                else
                  'bg-gray-500'
                end %>
-            <div class="<%= bg_color %> border-solid border-2 border-black skew-x-[-10deg] <%= index > 0 ? '-ml-[2px]' : '' %>" style="width: 26px">
-              <p class="p-1 text-sm text-black font-bold skew-x-[10deg] text-center" style="width: 22px"><%= points %></p>
+            <div class="<%= bg_color %> w-6 h-6 rounded-sm flex items-center justify-center text-xs font-bold">
+              <%= points %>
             </div>
+          <% end %>
+        </div>
+
+        <div class="text-right min-w-[100px]">
+          <div class="flex items-center gap-1 justify-end">
+            <p class="font-bold"><%= market_player.price %></p>
+            <% if market_player.trend.present? %>
+              <span class="text-sm <%= market_player.trend.include?('up') ? 'text-green-500' : 'text-red-500' %>">
+                <%= market_player.trend.include?('up') ? '↑' : '↓' %>
+              </span>
+            <% end %>
+          </div>
+          <% if market_player.instance_variable_get(:@diff) %>
+            <p class="text-xs text-gray-400">
+              <%= market_player.instance_variable_get(:@diff) > 0 ? '+' : '' %><%= number_to_currency(market_player.instance_variable_get(:@diff), unit: '€', precision: 0) %>
+            </p>
           <% end %>
         </div>
       </div>
