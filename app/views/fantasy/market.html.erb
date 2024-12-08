@@ -1,6 +1,7 @@
 <% content_for :title, "Mercado" %>
 
-<div class="container mx-auto p-4 h-[calc(100vh-6rem)] flex flex-col">
+<div class="container mx-auto p-4 h-[calc(100vh-6rem)] flex flex-col"
+     data-controller="fantasy--market">
   <!-- General Info Container -->
   <div class="bg-gray-800 rounded-lg p-4 mb-6">
     <div class="flex flex-wrap items-center justify-between gap-4">
@@ -39,15 +40,24 @@
       <div class="bg-gray-800 rounded-lg p-4">
         <div class="flex justify-between items-center mb-4">
           <h3 class="text-lg font-semibold">Filtros</h3>
-          <% if params[:position].present? || params[:exclude_position].present? || params[:max_price].present? || params[:sort].present? || params[:search].present? %>
-            <%= link_to market_path, class: "text-blue-400 hover:text-blue-300 text-sm", data: { turbo_frame: "market_content" } do %>
+          <% if params[:position].present? || params[:exclude_position].present? ||
+                params[:max_price].present? && params[:max_price].to_i != 100_000_000 ||
+                params[:sort_by].present? && params[:sort_by] != 'points' ||
+                params[:sort_direction].present? && params[:sort_direction] != 'desc' ||
+                params[:search].present? %>
+            <%= link_to market_path, class: "text-blue-400 hover:text-blue-300 text-sm", data: { turbo_frame: "market-content" } do %>
               Limpiar filtros
               <span class="ml-1">×</span>
             <% end %>
           <% end %>
         </div>
 
-        <%= form_tag market_path, method: :get, class: "space-y-4", data: { turbo_frame: "market_content" } do %>
+        <%= form_tag market_path, method: :get,
+            class: "space-y-4",
+            data: {
+              turbo_frame: "market-content",
+              fantasy__market_target: "form"
+            } do %>
           <div>
             <label class="block text-sm font-medium text-gray-400 mb-2">Posición</label>
             <div class="flex gap-2">
@@ -62,6 +72,7 @@
                 <% is_excluded = params[:exclude_position]&.split(',')&.include?(pos) %>
                 <button type="button"
                         data-position="<%= pos %>"
+                        data-action="click->fantasy--market#togglePosition"
                         class="relative flex-1 px-3 py-1.5 border-2 text-sm font-bold rounded skew-x-[-10deg] transition-all
                                <%= is_selected ? styles[:color] : is_excluded ? 'bg-gray-700 border-gray-600 opacity-40' : 'bg-gray-700 border-gray-600 hover:border-gray-500' %>">
                   <span class="block skew-x-[10deg] <%= is_selected ? styles[:text] : 'text-white' %>"><%= pos %></span>
@@ -86,7 +97,8 @@
               min: 0,
               max: 100_000_000,
               step: 1_000_000,
-              class: "w-full"
+              class: "w-full",
+              data: { action: "input->fantasy--market#updatePriceDisplay change->fantasy--market#submitForm" }
             %>
             <div class="flex justify-between text-sm text-gray-400 mt-1">
               <span>0€</span>
@@ -96,16 +108,28 @@
 
           <div>
             <label class="block text-sm font-medium text-gray-400 mb-2">Ordenar por</label>
-            <%= select_tag :sort,
-              options_for_select([
-                ['Puntos (mayor a menor)', 'points_desc'],
-                ['Media (mayor a menor)', 'avg_desc'],
-                ['PPM (mayor a menor)', 'ppm_desc'],
-                ['Precio (mayor a menor)', 'price_desc'],
-                ['Precio (menor a mayor)', 'price_asc']
-              ], params[:sort] || 'points_desc'),
-              class: "w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            %>
+            <div class="flex gap-2">
+              <%= select_tag :sort_by,
+                options_for_select([
+                  ['Puntos', 'points'],
+                  ['Media', 'avg'],
+                  ['PPM', 'ppm'],
+                  ['Precio', 'price'],
+                  ['Racha', 'streak']
+                ], params[:sort_by] || 'points'),
+                class: "flex-1 bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500",
+                data: { action: "change->fantasy--market#submitForm" }
+              %>
+
+              <button type="button"
+                      data-action="click->fantasy--market#toggleSortDirection"
+                      class="px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <span class="text-xl leading-none">
+                  <%= params[:sort_direction] == 'asc' ? '↑' : '↓' %>
+                </span>
+              </button>
+              <%= hidden_field_tag :sort_direction, params[:sort_direction] || 'desc' %>
+            </div>
           </div>
 
           <div>
@@ -113,7 +137,8 @@
             <%= text_field_tag :search,
               params[:search],
               placeholder: "Nombre del jugador...",
-              class: "w-full px-4 py-2 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              class: "w-full px-4 py-2 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500",
+              data: { action: "input->fantasy--market#submitForm" }
             %>
           </div>
         <% end %>
@@ -128,88 +153,13 @@
         </div>
       </div>
 
-      <%= turbo_frame_tag "market_content" do %>
-        <div class="overflow-y-auto flex-1 p-4">
-          <div class="space-y-2">
-            <% if @market_data[:market]&.any? %>
-              <% @market_data[:market].each do |player| %>
-                <%= render partial: "fantasy/partials/market_player", locals: { market_player: player } %>
-              <% end %>
-            <% else %>
-              <div class="text-center py-8">
-                <p class="text-gray-400">No se encontraron jugadores con los filtros seleccionados</p>
-              </div>
-            <% end %>
-          </div>
-        </div>
-
-        <div class="p-4 border-t border-gray-700">
-          <%= render partial: "fantasy/partials/pagination",
-            locals: {
-              id: "market-pagination",
-              current_page: @current_page || 1,
-              total_pages: @total_pages || 1,
-              type: "market"
-            }
-          %>
-        </div>
+      <%= turbo_frame_tag "market-content", class: "flex flex-col flex-1" do %>
+        <%= render partial: "fantasy/partials/market_content", locals: {
+          market_players: @filtered_market,
+          page: @page,
+          total_pages: @total_pages
+        } %>
       <% end %>
     </div>
   </div>
 </div>
-
-<%= javascript_tag nonce: true do %>
-  document.addEventListener('turbo:load', function() {
-    const form = document.querySelector('form');
-    const positionInput = document.querySelector('input[name="position"]');
-    const excludePositionInput = document.querySelector('input[name="exclude_position"]');
-    let timeout;
-
-    const submitForm = () => {
-      clearTimeout(timeout);
-      timeout = setTimeout(() => {
-        form.requestSubmit();
-      }, 300);
-    };
-
-    // Handle position button clicks
-    document.querySelectorAll('button[data-position]').forEach(button => {
-      button.addEventListener('click', (e) => {
-        e.preventDefault();
-        const position = button.dataset.position;
-
-        if (e.shiftKey) {
-          // Shift+click: toggle exclusion
-          let excluded = excludePositionInput.value ? excludePositionInput.value.split(',') : [];
-          const index = excluded.indexOf(position);
-
-          if (index === -1) {
-            excluded.push(position);
-          } else {
-            excluded.splice(index, 1);
-          }
-
-          excludePositionInput.value = excluded.join(',');
-          positionInput.value = ''; // Clear position when excluding
-        } else {
-          // Normal click: toggle selection
-          positionInput.value = positionInput.value === position ? '' : position;
-          excludePositionInput.value = ''; // Clear exclusions when selecting
-        }
-
-        submitForm();
-      });
-    });
-
-    // Auto-submit on input changes
-    form.querySelectorAll('input:not([type="hidden"]), select').forEach(input => {
-      input.addEventListener('change', submitForm);
-      if (input.type === 'text' || input.type === 'range') {
-        input.addEventListener('input', submitForm);
-      }
-    });
-  });
-<% end %>
-
-</
-rewritten_file>```

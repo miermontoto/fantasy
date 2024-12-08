@@ -1,4 +1,41 @@
 <div class="flex flex-col">
+  <!-- General Info Container -->
+  <div class="bg-gray-800 rounded-lg p-4 mb-6">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-6">
+        <div>
+          <span class="text-gray-400 text-sm">Balance</span>
+          <p class="text-xl font-semibold text-white">
+            <%= @general_info[:balance] %>
+          </p>
+        </div>
+        <div class="h-8 w-px bg-gray-700"></div>
+        <div>
+          <span class="text-gray-400 text-sm">Créditos</span>
+          <p class="text-xl font-semibold text-white">
+            <%= @general_info[:credits] %>
+          </p>
+        </div>
+        <div class="h-8 w-px bg-gray-700"></div>
+        <div>
+          <span class="text-gray-400 text-sm">Liga</span>
+          <p class="text-xl font-semibold text-white">
+            <%= @general_info[:community] %>
+          </p>
+        </div>
+      </div>
+      <div>
+        <span class="text-gray-400 text-sm">Jornada</span>
+        <p class="text-lg font-semibold">
+          <%= @general_info[:gameweek] %>
+          <span class="text-gray-400">
+            (<%= @general_info[:status] %>)
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+
   <div class="grid gap-y-2 grid-cols-1 md:grid-cols-2 p-2 bg-[#121824] rounded-lg justify-items-stretch">
     <div class="grid gap-y-2 grid-cols-1 p-2 order-last md:order-first">
       <div id="left-container">
@@ -14,12 +51,10 @@
     </div>
 
     <div class="p-2">
-      <h1 class="text-center font-bold text-2xl">CLASIFICACIÓN</h1>
       <%= render partial: 'fantasy/partials/standings', locals: { standings: @standings_data } %>
     </div>
   </div>
 </div>
-
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const leftContainer = document.getElementById('left-container');

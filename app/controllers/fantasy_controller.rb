@@ -1,34 +1,26 @@
 class FantasyController < ApplicationController
   layout "application"
 
-  def index
-    browser = Browser.new
+  def initialize
+    super
 
-    raw_data = Scraper.new.feed(browser.feed.body)
+    @scraper = Scraper.new(false)
+    @browser = Browser.new
+  end
+
+  def index
+    raw_data = @scraper.feed(@browser.feed.body)
 
     @market_data = raw_data[:market]
     @events_data = raw_data[:events]
-    @standings_data = Scraper.new.standings(browser.standings.body)
+    @standings_data = @scraper.standings(@browser.standings.body)
+    @general_info = raw_data[:info]
 
-    # Pagination parameters for market data
-    market_page = params[:page_market].present? ? params[:page_market].to_i : 1
-    per_page_market = 5
-
-    @total_pages_market = (@market_data.size / per_page_market.to_f).ceil
-    @paginated_market_data = @market_data.slice((market_page - 1) * per_page_market, per_page_market) || []
-    @current_page_market = market_page
-
-    # Pagination parameters for feed data
-    feed_page = params[:page_feed].present? ? params[:page_feed].to_i : 1
-    per_page_feed = 5
-
-    # hay que filtrar los eventos teniendo en cuenta que no se tienen "fechas"
-    # como tal, sino que se tiene una cadena con el tiempo relativo a la fecha
-    # actual, ej: hace 13 minutos, hace 2 horas, hace 1 día, etc.
-    sorted_events = @events_data.sort_by do |event|
+    # Sort events by relative time
+    @events_data = @events_data.sort_by do |event|
       time_str = event.raw_date.downcase
 
-      # convertir el tiempo relativo a minutos
+      # Convert relative time to minutes
       case time_str
       when /^hace (\d+) segundos?$/
         $1.to_i / 60
@@ -43,81 +35,235 @@ class FantasyController < ApplicationController
       end
     end
 
-    @total_pages_feed = (sorted_events.size / per_page_feed.to_f).ceil
-    @paginated_feed_data = sorted_events.slice((feed_page - 1) * per_page_feed, per_page_feed) || []
-    @current_page_feed = feed_page
+    # Get top 5 market players by points
+    @paginated_market_data = @market_data.sort_by { |player| -player.points.to_i }.first(5)
 
-    # Si la peticion es AJAX, renderizar la vista parcial
-    if request.xhr?
-      render partial: "fantasy/partials/transfer_list", locals: {
-        paginated_feed_data: @paginated_feed_data,
-        paginated_market_data: @paginated_market_data,
-        current_page_feed: @current_page_feed,
-        total_pages_feed: @total_pages_feed,
-        current_page_market: @current_page_market,
-        total_pages_market: @total_pages_market
-      }
-    else
-      respond_to do |format|
-        format.html
+    # Paginate events data
+    @current_page_feed = [params[:page_feed].to_i, 1].max
+    @per_page_feed = 5
+    @total_pages_feed = [(@events_data.size.to_f / @per_page_feed).ceil, 1].max
+    @current_page_feed = [@current_page_feed, @total_pages_feed].min
+    start_idx_feed = (@current_page_feed - 1) * @per_page_feed
+    @paginated_feed_data = @events_data[start_idx_feed, @per_page_feed] || []
+
+    respond_to do |format|
+      format.html
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.update("left-container",
+          partial: "fantasy/partials/transfer_list",
+          locals: {
+            paginated_feed_data: @paginated_feed_data,
+            paginated_market_data: @paginated_market_data,
+            current_page_feed: @current_page_feed,
+            total_pages_feed: @total_pages_feed
+          }
+        )
       end
     end
   end
 
   def market
-    browser = Browser.new
-    @market_data = Scraper.new.market(browser.market.body)
+    @market_data = @scraper.market(@browser.market.body)
+    return render_empty_market unless @market_data && @market_data[:market]
+
+    @filtered_market = @market_data[:market].dup
 
     # Apply filters
-    @market_data[:market] = @market_data[:market].select do |player|
-      matches = true
-      if params[:position].present?
-        matches &= player.position.to_s == params[:position]
-      end
-      if params[:exclude_position].present?
-        excluded = params[:exclude_position].split(',')
-        matches &= !excluded.include?(player.position.to_s)
-      end
-      matches &= player.value <= params[:max_price].to_i if params[:max_price].present?
-      matches &= player.name.downcase.include?(params[:search].downcase) if params[:search].present?
-      matches
-    end
-
-    # Apply sorting
-    sort_by = params[:sort] || 'points_desc'
-    @market_data[:market] = @market_data[:market].sort_by do |player|
-      case sort_by
-      when 'price_asc' then player.value
-      when 'price_desc' then -player.value
-      when 'points_desc' then -player.points.to_i
-      when 'avg_desc' then -player.average.to_f
-      when 'ppm_desc' then -player.ppm
-      else -player.points.to_i # Default to points_desc
-      end
-    end
+    apply_position_filter
+    apply_price_filter
+    apply_search_filter
+    apply_sorting
 
     # Pagination
-    @current_page = (params[:page] || 1).to_i
-    per_page = 10
-    total_items = @market_data[:market].size
-    @total_pages = (total_items.to_f / per_page).ceil
+    @page = [params[:page].to_i, 1].max
+    @per_page = 10
+    @total_pages = [(@filtered_market.size.to_f / @per_page).ceil, 1].max
+    @page = [@page, @total_pages].min
 
-    start_idx = (@current_page - 1) * per_page
-    @market_data[:market] = @market_data[:market][start_idx, per_page] || []
+    start_idx = (@page - 1) * @per_page
+    @filtered_market = @filtered_market[start_idx, @per_page] || []
 
     respond_to do |format|
       format.html
-      format.turbo_stream if turbo_frame_request?
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.update("market-content",
+          partial: "fantasy/partials/market_content",
+          locals: {
+            market_players: @filtered_market,
+            page: @page,
+            total_pages: @total_pages
+          }
+        )
+      end
     end
   end
 
   def team
-    browser = Browser.new
-    @team_data = Scraper.new.team(browser.team.body)
+    @team_data = @scraper.team(@browser.team.body)
   end
 
   def standings
-    browser = Browser.new
-    @standings_data = Scraper.new.standings(browser.standings.body)
+    @standings_data = @scraper.standings(@browser.standings.body)
+  end
+
+  def events
+    # Get events data from index action
+    raw_data = @scraper.feed(@browser.feed.body)
+    @events_data = raw_data[:events]
+
+    # Sort events by relative time
+    @events_data = @events_data.sort_by do |event|
+      time_str = event.raw_date.downcase
+
+      # Convert relative time to minutes
+      case time_str
+      when /^hace (\d+) segundos?$/
+        $1.to_i / 60
+      when /^hace (\d+) minutos?$/
+        $1.to_i
+      when /^hace (\d+) horas?$/
+        $1.to_i * 60
+      when /^hace (\d+) días?$/
+        $1.to_i * 24 * 60
+      else # panic!
+        Float::INFINITY
+      end
+    end
+
+    # Pagination
+    @page = (params[:page] || 1).to_i
+    @per_page = 5
+    @total_pages = (@events_data.size.to_f / @per_page).ceil
+    @page = 1 if @page > @total_pages
+
+    start_idx = (@page - 1) * @per_page
+    @paginated_events = @events_data[start_idx, @per_page] || []
+
+    respond_to do |format|
+      format.html
+      format.turbo_stream {
+        render turbo_stream: turbo_stream.update("events-results", partial: "fantasy/partials/events_list", locals: {
+          events_data: @paginated_events,
+          page: @page,
+          total_pages: @total_pages
+        })
+      }
+    end
+  end
+
+  def render_players
+    @filtered_market = JSON.parse(params[:players])
+    @page = params[:page].to_i
+    @total_pages = params[:total_pages].to_i
+
+    render turbo_stream: [
+      turbo_stream.update("market-results",
+        partial: "fantasy/partials/market_players",
+        locals: { market_players: @filtered_market }
+      ),
+      turbo_stream.update("market-pagination",
+        partial: "fantasy/partials/pagination",
+        locals: {
+          id: "market-pagination",
+          current_page: @page,
+          total_pages: @total_pages,
+          type: "market"
+        }
+      )
+    ]
+  rescue JSON::ParserError
+    render turbo_stream: turbo_stream.update("market-results",
+      partial: "fantasy/partials/market_players",
+      locals: { market_players: [] }
+    )
+  end
+
+  def render_events
+    @events_data = JSON.parse(params[:events])
+    @page = params[:page].to_i
+    @total_pages = params[:total_pages].to_i
+
+    render turbo_stream: turbo_stream.update("events-content",
+      partial: "fantasy/partials/events_content",
+      locals: {
+        events_data: @events_data,
+        page: @page,
+        total_pages: @total_pages
+      }
+    )
+  rescue JSON::ParserError
+    render turbo_stream: turbo_stream.update("events-content",
+      partial: "fantasy/partials/events_content",
+      locals: {
+        events_data: [],
+        page: 1,
+        total_pages: 1
+      }
+    )
+  end
+
+  private
+
+  def apply_position_filter
+    if params[:position].present?
+      @filtered_market.select! { |player| player.position.browser[:position] == params[:position] }
+    end
+
+    if params[:exclude_position].present?
+      excluded = params[:exclude_position].split(',')
+      @filtered_market.reject! { |player| excluded.include?(player.position.browser[:position]) }
+    end
+  end
+
+  def apply_price_filter
+    if params[:max_price].present? && params[:max_price].to_i > 0
+      max_price = params[:max_price].to_i
+      @filtered_market.select! { |player| player.price.to_i <= max_price }
+    end
+  end
+
+  def apply_search_filter
+    if params[:search].present?
+      search_term = params[:search].downcase.strip
+      @filtered_market.select! { |player| player.name.downcase.include?(search_term) }
+    end
+  end
+
+  def apply_sorting
+    sort_by = params[:sort_by].presence || 'points'
+    direction = (params[:sort_direction] || 'desc') == 'asc' ? 1 : -1
+
+    @filtered_market.sort_by! do |player|
+      value = case sort_by
+        when 'points' then player.points.to_i
+        when 'avg' then player.average.to_s.tr(',', '.').to_f
+        when 'ppm' then player.ppm.to_f
+        when 'price' then player.price.to_i
+        when 'streak' then
+          if player.streak.is_a?(Array)
+            player.streak.map { |p| p.to_i }.sum
+          else
+            0
+          end
+        else 0
+      end
+      value * direction
+    end
+  end
+
+  def render_empty_market
+    respond_to do |format|
+      format.html { redirect_to root_path, alert: "No se pudo cargar el mercado" }
+      format.turbo_stream {
+        render turbo_stream: turbo_stream.update("market-content",
+          partial: "fantasy/partials/market_content",
+          locals: {
+            market_players: [],
+            page: 1,
+            total_pages: 1
+          }
+        )
+      }
+    end
   end
 end

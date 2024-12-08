@@ -5,8 +5,9 @@ require "json"
 class Scraper
   include FantasyHelper
 
-  def initialize
+  def initialize(print = true)
     @browser = Browser.new
+    @print = print
   end
 
   def feed(html)
@@ -163,17 +164,19 @@ class Scraper
     # Sort all events by date
     all_events.sort_by! { |event| event.date }.reverse!
 
-    puts "información general".grey.bold
-    puts "#{"liga:".bold} #{community_name}"
-    puts "#{"balance:".bold} #{user_balance}"
-    puts "#{"créditos:".bold} #{user_credits}"
-    puts "#{"jornada:".bold} #{gameweek} (#{gameweek_status})"
+    if @print then
+      puts "información general".grey.bold
+      puts "#{"liga:".bold} #{community_name}"
+      puts "#{"balance:".bold} #{user_balance}"
+      puts "#{"créditos:".bold} #{user_credits}"
+      puts "#{"jornada:".bold} #{gameweek} (#{gameweek_status})"
 
-    puts "\ntop jugadores en el mercado".grey.bold
-    market_players.each { |player| puts player }
+      puts "\ntop jugadores en el mercado".grey.bold
+      market_players.each { |player| puts player }
 
-    puts "\neventos".grey.bold
-    all_events.each { |event| puts event }
+      puts "\neventos".grey.bold
+      all_events.each { |event| puts event }
+    end
 
     {
       events: all_events,
@@ -218,14 +221,16 @@ class Scraper
       next_update: doc.css(".next-update").text.split("en").last.strip
     }
 
-    puts "información general".grey.bold
-    puts "#{"balance:".bold} #{footer_info[:current_balance]}€"
-    puts "#{"balance futuro:".bold} #{footer_info[:future_balance]}€"
-    puts "#{"deuda máx.:".bold} #{footer_info[:max_debt]}€"
-    puts "#{"next update".bold} #{footer_info[:next_update]}"
+    if @print then
+      puts "información general".grey.bold
+      puts "#{"balance:".bold} #{footer_info[:current_balance]}€"
+      puts "#{"balance futuro:".bold} #{footer_info[:future_balance]}€"
+      puts "#{"deuda máx.:".bold} #{footer_info[:max_debt]}€"
+      puts "#{"next update".bold} #{footer_info[:next_update]}"
 
-    puts "\nmercado".grey.bold
-    players.each { |player| puts player }
+      puts "\nmercado".grey.bold
+      players.each { |player| puts player }
+    end
 
     { market: players, info: footer_info }
   end
@@ -241,7 +246,8 @@ class Scraper
         value: user.css(".played").text.split("·").last.strip.gsub(/[^0-9]/, "").to_i,
         points: user.css(".points:not(span)").text.split(" ").first.strip.to_i,
         diff: user.css(".diff").text.strip,
-        user_img: user.css("img").attr("src") ? user.css("img").attr("src").value : nil
+        user_img: user.css("img").attr("src") ? user.css("img").attr("src").value : nil,
+        myself: user.css(".name").to_html.include?("myself")
       })
     end
 
@@ -250,20 +256,23 @@ class Scraper
         position: user.css(".position").text.strip,
         name: user.css(".name").text.strip,
         players: user.css(".played").text.split("·").first.strip.split(" ").first.to_i,
-        value: user.css(".played").text.split("·").last.strip.gsub(/[^0-9]/, "").to_i,
+        # value: user.css(".played").text.split("·").last.strip.gsub(/[^0-9]/, "").to_i,
         points: user.css(".points:not(span)").text.split(" ").first.strip.to_i,
-        user_img: user.css("img").attr("src") ? user.css("img").attr("src").value : nil
-        # @todo jugadores de la jornada que faltan por jugar
+        user_img: user.css("img").attr("src") ? user.css("img").attr("src").value : nil,
+        played: user.css(".played").text.strip,
+        myself: user.css(".name").to_html.include?("myself")
       })
     end
 
     jornada = doc.css(".top select option[selected]").text.strip
 
-    puts "clasificación general".grey.bold
-    total.each { |user| puts user }
+    if @print then
+      puts "clasificación general".grey.bold
+      total.each { |user| puts user }
 
-    puts "\nclasificación #{jornada.downcase}".grey.bold
-    gameweek.each { |user| puts user }
+      puts "\nclasificación #{jornada.downcase}".grey.bold
+      gameweek.each { |user| puts user }
+    end
 
     { total: total, gameweek: gameweek }
   end
@@ -285,8 +294,12 @@ class Scraper
       })
     end
 
-    puts "plantilla".grey.bold
-    squad_players.each { |player| puts player }
+    if @print then
+      puts "plantilla".grey.bold
+      squad_players.each { |player| puts player }
+    end
+
+    { players: squad_players }
   end
 
   def offers(response)
@@ -296,10 +309,10 @@ class Scraper
 
     offers = content["offers"]
 
-    puts "ofertas".grey.bold
+    puts "ofertas".grey.bold if @print
 
     if offers.nil? then
-      puts "no hay ofertas pendientes"
+      puts "no hay ofertas pendientes" if @print
       return {}
     end
 
@@ -321,7 +334,7 @@ class Scraper
       })
     end
 
-    offers.each { |offer| puts offer }
+    offers.each { |offer| puts offer } if @print
 
     { offers: offers }
   end
@@ -341,8 +354,10 @@ class Scraper
       })
     end
 
-    puts "comunidades".grey.bold
-    communities.each { |community| puts community }
+    if @print then
+      puts "comunidades".grey.bold
+      communities.each { |community| puts community }
+    end
 
     { communities: communities }
   end
@@ -383,11 +398,13 @@ class Scraper
       })
     end
 
-    puts "últimos valores de mercado".grey.bold
-    puts "cambio: #{format_num(last["value"])}€ (#{last["date"]})"
-    puts
-    puts "positivos".green.bold
-    positive.each { |player| puts player }
+    if @print then
+      puts "últimos valores de mercado".grey.bold
+      puts "cambio: #{format_num(last["value"])}€ (#{last["date"]})"
+      puts
+      puts "positivos".green.bold
+      positive.each { |player| puts player }
+    end
 
     { positive: positive, negative: negative, last: last }
   end
@@ -415,8 +432,10 @@ class Scraper
       })
     end
 
-    puts "top jugadores".grey.bold
-    players.each { |player| puts player }
+    if @print then
+      puts "top jugadores".grey.bold
+      players.each { |player| puts player }
+    end
 
     { players: players }
   end
@@ -428,7 +447,7 @@ class Scraper
     status = content["status"]
 
     if status == "error"
-      puts "error al obtener la información (¿XAUTH inválido?)".red.bold
+      puts "error al obtener la información (¿XAUTH inválido?)".red.bold if @print
       return {}
     end
 
@@ -436,8 +455,6 @@ class Scraper
   end
 
   def parse_date(date_string)
-    # Add date parsing logic here - format will depend on your input
-    # This is just a placeholder - implement according to your date format
     DateTime.parse(date_string) rescue DateTime.now
   end
 end

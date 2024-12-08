@@ -1,8 +1,20 @@
-<div class="space-y-6">
-  <h2 class="text-center font-bold text-2xl">TOP JUGADORES DEL MERCADO</h2>
-  <div id="market-container" class="space-y-2">
-    <% paginated_market_data.each do |market_item| %>
-      <%= render partial: "fantasy/partials/market_player", locals: { market_player: market_item } %>
-    <% end %>
+<div class="bg-gray-800 rounded-lg p-4 flex flex-col">
+  <div class="p-4 border-b border-gray-700">
+    <h2 class="text-2xl font-bold">Mercado</h2>
+    <%= link_to "Ver mercado completo", '/market', class: "text-blue-500 hover:underline" %>
+  </div>
+
+  <div class="overflow-y-auto flex-1 p-4">
+    <div class="space-y-4">
+      <% if top_data.present? %>
+        <% top_data.each do |market_item| %>
+          <%= render partial: "fantasy/partials/market_player", locals: { market_player: market_item } %>
+        <% end %>
+      <% else %>
+        <div class="text-center py-8">
+          <p class="text-gray-400">No hay jugadores para mostrar</p>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

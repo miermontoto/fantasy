@@ -1,47 +1,56 @@
-<div>
-    <%# Opciones del menu: Global | Jornada %>
-    <div class="flex justify-center mt-10">
-        <button id="general-tab" class="tab-button active px-4 py-2 mx-1 border border-gray-700 rounded-lg bg-white text-black" onclick="showContent('general')">
-            General
-        </button>
-        <button id="jornada-tab" class="tab-button px-4 py-2 mx-1 border border-gray-700 rounded-lg text-white hover:bg-gray-700" onclick="showContent('jornada')">
-            Jornada
-        </button>
-    </div>
+<div class="bg-gray-800 rounded-lg p-4 flex flex-col">
+  <div class="p-4 border-b border-gray-700">
+    <h2 class="text-2xl font-bold">Clasificación</h2>
+  </div>
 
+  <%# Opciones del menu: Global | Jornada %>
+  <div class="flex justify-center p-4 border-b border-gray-700">
+    <button id="general-tab"
+            class="tab-button active px-4 py-2 mx-1 border-2 border-gray-700 rounded-lg bg-white text-black transition-colors duration-200"
+            onclick="showContent('general')">
+      General
+    </button>
+    <button id="jornada-tab"
+            class="tab-button px-4 py-2 mx-1 border-2 border-gray-700 rounded-lg text-white hover:bg-gray-700 transition-colors duration-200"
+            onclick="showContent('jornada')">
+      Jornada
+    </button>
+  </div>
+
+  <div class="flex-1 overflow-y-auto">
     <%# Standings globales %>
-    <div id="general-content" class="content mt-6 space-y-4 px-4 max-w-xl mx-auto">
-        <% @standings_data[:total].each_with_index do |player, index| %>
-            <%= render partial: "fantasy/partials/standings_card", locals: {player: player, index: index+1} %>
-        <% end %>
+    <div id="general-content" class="content p-4 space-y-4">
+      <% @standings_data[:total].each_with_index do |player, index| %>
+        <%= render partial: "fantasy/partials/standings_card", locals: {player: player, index: index+1} %>
+      <% end %>
     </div>
-
 
     <%# Standings de la jornada %>
-    <div id="jornada-content" class="content mt-6 space-y-4 px-4 max-w-xl mx-auto hidden">
-        <% @standings_data[:gameweek].each_with_index do |player, index| %>
-            <%= render partial: "fantasy/partials/standings_card", locals: {player: player, index: index+1} %>
-        <% end %>
+    <div id="jornada-content" class="content p-4 space-y-4 hidden">
+      <% @standings_data[:gameweek].each_with_index do |player, index| %>
+        <%= render partial: "fantasy/partials/standings_card", locals: {player: player, index: index+1} %>
+      <% end %>
     </div>
+  </div>
 </div>
 
 <%# JS para activar el menu %>
 <script>
-    function showContent(tab) {
-        // Change active button
-        var activeButton = document.querySelector('.active');
-        activeButton.classList.remove('bg-white', 'text-black', 'active');
-        activeButton.classList.add('text-white', 'hover:bg-gray-700');
+  function showContent(tab) {
+    // Change active button
+    var activeButton = document.querySelector('.active');
+    activeButton.classList.remove('bg-white', 'text-black', 'active');
+    activeButton.classList.add('text-white', 'hover:bg-gray-700');
 
-        // Get new active button
-        var newActiveButton = document.getElementById(tab + '-tab');
-        newActiveButton.classList.remove('text-white', 'hover:bg-gray-700');
-        newActiveButton.classList.add('bg-white', 'text-black', 'active');
+    // Get new active button
+    var newActiveButton = document.getElementById(tab + '-tab');
+    newActiveButton.classList.remove('text-white', 'hover:bg-gray-700');
+    newActiveButton.classList.add('bg-white', 'text-black', 'active');
 
-        document.querySelectorAll('.content').forEach(content => content.classList.add('hidden'));
+    // Hide all content divs
+    document.querySelectorAll('.content').forEach(content => content.classList.add('hidden'));
 
-        // Add active class to selected tab and show the selected content
-        // document.getElementById(tab + '-tab').classList.add('bg-white', 'text-black');
-        document.getElementById(tab + '-content').classList.remove('hidden');
-    }
+    // Show selected content
+    document.getElementById(tab + '-content').classList.remove('hidden');
+  }
 </script>

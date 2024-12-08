@@ -20,7 +20,7 @@ class Player
     @price = "€ " + format_num(@value)                                           # valor formateado actual del jugador en el mercado
     @ppm = calculate_ppm                                                         # puntos por millón de valor
     @id = attributes[:id]                                                        # id del jugador
-    @trend = attributes[:trend] ? parse_trend(attributes[:trend]) : ""           # tendencia del jugador
+    @trend = attributes[:trend] || ""                                            # tendencia del jugador
     @streak = attributes[:streak]                                                # array de los puntos de los últimos tres partidos
     @status = attributes[:status] ? parse_status(attributes[:status]) : ""       # estado del jugador
     @own = attributes[:own] || false                                             # true si el jugador es del usuario
@@ -52,11 +52,13 @@ class Player
 
     @transfer_div = "
     <p class=\"text-sm #{@from_market ? 'text-gray-500 italic' : 'text-gray-200'}\">#{@from}</p>
-    <span class=\"mx-2 text-xl #{@from_market ? 'text-green-500' : @to_market ? 'text-red-500' : 'text-white'}\">&rarr;</span>
+    <span class=\"mx-2 text-xl #{@from_market ? 'text-green-500' : @to_market ? 'text-red-500' : 'text-white'}\">
+      #{@clause ? "&rarr;&rarr;&rarr;" : "&rarr;"}
+    </span>
     <p class=\"text-sm #{@to_market ? 'text-gray-500 italic' : 'text-gray-200'}\">#{@to}</p>
     " if @is_transfer
 
-    price_trend = @increase_trend ? @increase_trend : @trend
+    price_trend = @increase_trend ? @increase_trend : parse_trend(@trend)
     @price_string = "#{@price} "
     @price_string += price_trend unless price_trend == ""
     @price_string += " (#{format_num(@variation)}€)" if @variation
