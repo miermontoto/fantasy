@@ -6,18 +6,43 @@ class Browser
   BASIC_ENDPOINTS = %i[feed market team standings]
 
   def initialize
-    xauth = Token.new("XAUTH", false)
-    refresh = Token.new("REFRESH")
+    setup_connection
+    get_current_community_id
+  end
 
-    if xauth.value.nil? then; puts "WARNING: XAUTH token not found"; end
+  def self.current_community_id
+    Token.get_current_community
+  end
+
+  def get_current_community_id
+    return Token.get_current_community unless Token.get_current_community.nil?
+
+    scraper = Scraper.new(false)
+    tokens = Token.list_tokens.keys
+    if tokens.empty? then; puts "error: no se han encontrado tokens".red; return; end
+    tokens.each do |token|
+      setup_connection(token.to_i)
+      feed = scraper.feed(self.feed.body)
+      community_name = feed[:info][:community]
+      id = find_community_by_name(community_name, false)
+      Token.set_current_community(id) if id
+      return if id
+    end
+
+    Token.set_current_community(nil)
+    puts "error: no se ha encontrado ninguna comunidad".red
+  end
+
+  def setup_connection(community_id = nil)
+    xauth = Token.get_xauth(community_id || Token.get_current_community) || nil
 
     @conn = Faraday.new(url: "https://#{BASE_URL}") do |faraday|
       faraday.headers["Host"] = BASE_URL
       faraday.headers["User-Agent"] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
-      faraday.headers["Cookie"] = "refresh-token=#{refresh.value}"
+      faraday.headers["Cookie"] = "refresh-token=#{Token.refresh_token}"
       faraday.headers["Content-Type"] = "application/x-www-form-urlencoded; charset=UTF-8"
       faraday.headers["X-Requested-With"] = "XMLHttpRequest"
-      faraday.headers["X-Auth"] = xauth.value unless xauth.nil?
+      faraday.headers["X-Auth"] = xauth if xauth
     end
   end
 
@@ -74,22 +99,36 @@ class Browser
 
     # si es un número, se cambia a esa comunidad
     if id.is_a?(Integer) || id.to_i.to_s == id then
-      @conn.get("/action/change?id_community=#{id}")
+      response = @conn.get("/action/change?id_community=#{id}")
+      Token.set_current_community(id)
+      setup_connection(id) if response.status == 200
       return
     end
 
-    # si es una cadena, hacer un LIKE y cambiar al primer resultado
-    list = Scraper.new.communities(self.communities.body)[:communities]
-    if list.nil? then; puts "error: no se ha podido obtener la lista de comunidades".red; return; end
+    true_id = find_community_by_name(id)
+    if true_id.nil? then
+      puts "error: no se ha encontrado ninguna comunidad con ese nombre".red
+      return
+    end
+
+    self.change_community(true_id)
+  end
+
+  def find_community_by_name(name, print = true)
+    scraper = Scraper.new(false)
+    list = scraper.communities(self.communities.body)[:communities]
+    if list.nil? then
+      puts "error: no se ha podido obtener la lista de comunidades".red if print
+      return
+    end
+
     list.each do |community|
-      if community.name.downcase.include?(id.downcase) then
-        puts "cambiando a comunidad #{community.name}"
-        self.change_community(community.id.to_i)
-        return
+      if community.name.downcase.include?(name.downcase) then
+        return community.id.to_i
       end
     end
 
-    puts "error: no se ha encontrado ninguna comunidad con ese nombre".red
+    nil
   end
 
   def top_market(interval = "day")

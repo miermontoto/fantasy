@@ -202,6 +202,11 @@ class FantasyController < ApplicationController
     )
   end
 
+  def change_community
+    @browser.change_community(params[:id])
+    redirect_back(fallback_location: root_path)
+  end
+
   private
 
   def apply_position_filter

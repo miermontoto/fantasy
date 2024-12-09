@@ -1,7 +1,7 @@
 class Community
   include ApplicationHelper
 
-  attr_reader :id, :name, :icon, :balance, :offers
+  attr_reader :id, :name, :icon, :balance, :offers, :current
 
   def initialize(attributes = {})
     @id = attributes[:id]
@@ -9,6 +9,7 @@ class Community
     @icon = attributes[:icon] || ""
     @balance = attributes[:balance] || 0
     @offers = attributes[:offers] || 0
+    @current = attributes[:current] || false
 
     @balance_string = format_num(balance) + "€"
 
@@ -26,5 +27,9 @@ class Community
     ]
 
     concat(content)
+  end
+
+  def current?
+    @current
   end
 end

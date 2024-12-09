@@ -6,7 +6,6 @@ class Scraper
   include FantasyHelper
 
   def initialize(print = true)
-    @browser = Browser.new
     @print = print
   end
 
@@ -343,14 +342,14 @@ class Scraper
     content = check_ajax_response(response)
 
     if content.empty? then; return {}; end
-
     communities = content["communities"].to_h.map do |id, community|
       Community.new({
         id: community["id"],
         name: community["name"],
         icon: community["community_icon"],
         balance: community["balance"],
-        offers: community["offers"]
+        offers: community["offers"],
+        current: community["id"] == Browser.current_community_id
       })
     end
 

@@ -1,0 +1,8 @@
+{
+  "current_community": 0,
+  "refresh": "your_refresh_token",
+  "xauth": {
+    "community_id": "xauth_token_for_this_community",
+    "community_id_2": "xauth_token_for_this_community"
+  }
+}

@@ -10,3 +10,4 @@ storage/*
 !/app/assets/builds/.keep
 
 /public/assets/*
+tokens.json

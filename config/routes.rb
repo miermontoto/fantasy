@@ -10,12 +10,12 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
   # Define routes for each function in the application
-  get "" => "fantasy#index"
+  root "fantasy#index"
   get "market" => "fantasy#market"
   get "standings" => "fantasy#standings"
   get "team" => "fantasy#team"
   get "events" => "fantasy#events"
 
-  # Defines the root path route ("/")
-  # root "posts#index"
+  # Community management
+  get "change_community/:id" => "fantasy#change_community", as: :change_community
 end
