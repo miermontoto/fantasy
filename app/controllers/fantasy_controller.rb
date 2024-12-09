@@ -1,4 +1,6 @@
 class FantasyController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:set_xauth]
+
   layout "application"
 
   def initialize
@@ -205,6 +207,18 @@ class FantasyController < ApplicationController
   def change_community
     @browser.change_community(params[:id])
     redirect_back(fallback_location: root_path)
+  end
+
+  def set_xauth
+    community_id = params[:id]
+    token = params[:token]
+
+    if community_id.present? && token.present?
+      Token.set_xauth(community_id, token)
+      render json: { status: "success" }
+    else
+      render json: { status: "error", message: "Missing parameters" }, status: :bad_request
+    end
   end
 
   private

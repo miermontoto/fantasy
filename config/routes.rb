@@ -18,4 +18,5 @@ Rails.application.routes.draw do
 
   # Community management
   get "change_community/:id" => "fantasy#change_community", as: :change_community
+  post "api/set_xauth/:id" => "fantasy#set_xauth", as: :set_xauth
 end
