@@ -219,9 +219,9 @@ class Scraper
     players = sort_players(players)
 
     footer_info = {
-      current_balance: format_num(doc.css(".footer-sticky-market .balance-real-current").text.gsub(/\./, "").to_i),
-      future_balance: format_num(doc.css(".balance-real-future").text.gsub(/\./, "").to_i),
-      max_debt: format_num(doc.css(".balance-real-maxdebt").text.gsub(/\./, "").to_i),
+      current_balance: format_value(doc.css(".footer-sticky-market .balance-real-current").text.gsub(/\./, "").to_i),
+      future_balance: format_value(doc.css(".balance-real-future").text.gsub(/\./, "").to_i),
+      max_debt: format_value(doc.css(".balance-real-maxdebt").text.gsub(/\./, "").to_i),
       next_update: doc.css(".next-update").text.split("en").last.strip
     }
 

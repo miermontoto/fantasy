@@ -1,64 +1,40 @@
 <% content_for :title, "Mi Equipo" %>
 
 <div class="flex flex-col">
-  <!-- Stats Container -->
-  <div class="bg-gray-800 rounded-lg p-4 mb-6">
-    <div class="flex items-center justify-between">
-      <!-- Team Stats -->
-      <div class="flex items-center gap-6">
-        <div>
-          <span class="text-gray-400 text-sm">Jugadores</span>
-          <p class="text-xl font-semibold">
-            <%= @team_data[:players]&.count || 0 %> / 25
-          </p>
-        </div>
-        <div class="h-8 w-px bg-gray-700"></div>
-        <div>
-          <span class="text-gray-400 text-sm">En venta</span>
-          <p class="text-xl font-semibold">
-            <%= @team_data[:players]&.count { |p| p.being_sold } || 0 %> / 6
-          </p>
-        </div>
-        <div class="h-8 w-px bg-gray-700"></div>
-        <div>
-          <span class="text-gray-400 text-sm">Valor</span>
-          <% team_value = @team_data[:players]&.sum(&:value) || 0 %>
-          <% current_balance = @team_data[:info][:current_balance].to_s.gsub(/[^\d-]/, '').to_i %>
-          <% total_value = team_value + current_balance %>
-          <div class="flex flex-col">
-            <p class="text-xl font-semibold leading-tight">
-              <%= format_value(team_value) %>
-            </p>
-            <p class="text-sm text-gray-400 <%= total_value < 0 ? 'text-red-500' : '' %>">
-              real: <%= format_value(total_value) %>
-            </p>
-          </div>
-        </div>
-      </div>
+  <% team_value = @team_data[:players]&.sum(&:value) || 0 %>
+  <% current_balance = @team_data[:info][:current_balance].to_s.gsub(/[^\d-]/, '').to_i %>
+  <% total_value = team_value + current_balance %>
 
-      <!-- Financial Stats -->
-      <div class="flex items-center gap-6">
-        <div>
-          <span class="text-gray-400 text-sm">Balance</span>
-          <div class="flex flex-col">
-            <p class="text-xl font-semibold leading-tight <%= @team_data[:info][:current_balance].include?('-') ? 'text-red-500' : '' %>">
-              <%= @team_data[:info][:current_balance] %>
-            </p>
-            <p class="text-sm text-gray-400 <%= @team_data[:info][:future_balance].include?('-') ? 'text-red-500' : '' %>">
-              futuro: <%= @team_data[:info][:future_balance] %>
-            </p>
-          </div>
-        </div>
-        <div class="h-8 w-px bg-gray-700"></div>
-        <div>
-          <span class="text-gray-400 text-sm">Deuda máxima</span>
-          <p class="text-xl font-semibold <%= @team_data[:info][:max_debt].include?('-') ? 'text-red-500' : '' %>">
-            <%= @team_data[:info][:max_debt] %>
+  <%= render partial: "fantasy/partials/stats", locals: {
+    info: @team_data[:info],
+    additional_stats: capture do %>
+      <div>
+        <span class="text-gray-400 text-sm">Jugadores</span>
+        <p class="text-xl font-semibold">
+          <%= @team_data[:players]&.count || 0 %> / 25
+        </p>
+      </div>
+      <div class="h-8 w-px bg-gray-700"></div>
+      <div>
+        <span class="text-gray-400 text-sm">En venta</span>
+        <p class="text-xl font-semibold">
+          <%= @team_data[:players]&.count { |p| p.being_sold } || 0 %> / 6
+        </p>
+      </div>
+      <div class="h-8 w-px bg-gray-700"></div>
+      <div>
+        <span class="text-gray-400 text-sm">Valor</span>
+        <div class="flex flex-col">
+          <p class="text-xl font-semibold leading-tight">
+            <%= format_value(team_value) %>
+          </p>
+          <p class="text-sm text-gray-400 <%= total_value < 0 ? 'text-red-500' : '' %>">
+            real: <%= format_value(total_value) %>
           </p>
         </div>
       </div>
-    </div>
-  </div>
+    <% end
+  } %>
 
   <div class="bg-gray-800 rounded-lg p-4">
     <div class="p-4 border-b border-gray-700">

@@ -2,37 +2,7 @@
 
 <div class="container mx-auto h-[calc(100vh-6rem)] flex flex-col"
      data-controller="fantasy--market">
-  <!-- General Info Container -->
-  <div class="bg-gray-800 rounded-lg p-4 mb-6">
-    <div class="flex flex-wrap items-center justify-between gap-4">
-      <div class="flex items-center gap-6">
-        <div>
-          <span class="text-gray-400 text-sm">Balance</span>
-          <p class="text-xl font-semibold <%= @market_data[:info][:current_balance].to_i < 0 ? 'text-red-500' : 'text-white' %>">
-            <%= number_to_currency(@market_data[:info][:current_balance], unit: '€', precision: 0) %>
-          </p>
-        </div>
-        <div class="h-8 w-px bg-gray-700"></div>
-        <div>
-          <span class="text-gray-400 text-sm">Balance Futuro</span>
-          <p class="text-xl font-semibold <%= @market_data[:info][:future_balance].to_i < 0 ? 'text-red-500' : 'text-white' %>">
-            <%= number_to_currency(@market_data[:info][:future_balance], unit: '€', precision: 0) %>
-          </p>
-        </div>
-        <div class="h-8 w-px bg-gray-700"></div>
-        <div>
-          <span class="text-gray-400 text-sm">Deuda Máxima</span>
-          <p class="text-xl font-semibold <%= @market_data[:info][:max_debt].to_i < 0 ? 'text-red-500' : 'text-white' %>">
-            <%= number_to_currency(@market_data[:info][:max_debt], unit: '€', precision: 0) %>
-          </p>
-        </div>
-      </div>
-      <div>
-        <span class="text-gray-400 text-sm">Próxima Actualización</span>
-        <p class="text-lg font-semibold"><%= @market_data[:info][:next_update] %></p>
-      </div>
-    </div>
-  </div>
+  <%= render partial: "fantasy/partials/stats", locals: { info: @market_data[:info] } %>
 
   <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 flex-1 min-h-0">
     <!-- Filters Sidebar -->
