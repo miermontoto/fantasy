@@ -40,7 +40,7 @@
       </div>
       <div class="flex items-center gap-2 text-xs text-gray-400">
         <% if player.is_offer %>
-          <% if player.offered_by.present? && player.offered_by != "Libre" && player.offered_by != "Fantasy MARCA" %>
+          <% if player.offered_by.present? && player.offered_by != ApplicationHelper::FREE_AGENT %>
             <span class="truncate"><%= player.offered_by %></span>
           <% elsif player.own %>
             <span class="text-blue-400 whitespace-nowrap">Tu jugador</span>
@@ -93,10 +93,10 @@
         <div class="text-right min-w-[100px]">
           <div class="flex items-center gap-1 justify-end">
             <p class="font-bold whitespace-nowrap">
-              <%= player.is_offer ? player.price : number_to_currency(player.value, unit: '€', precision: 0) %>
+              <%= player.is_offer ? player.price : format_value(player.value) %>
             </p>
             <% if player.trend.present? %>
-              <span class="text-sm <%= player.trend.to_s.include?('↑') || player.trend.to_s.include?('up') ? 'text-green-500' : 'text-red-500' %>">
+              <span class="text-2xl <%= player.trend.to_s.include?('↑') || player.trend.to_s.include?('up') ? 'text-green-500' : 'text-red-500' %>">
                 <%= player.trend.to_s.include?('↑') || player.trend.to_s.include?('up') ? '↑' : '↓' %>
               </span>
             <% end %>

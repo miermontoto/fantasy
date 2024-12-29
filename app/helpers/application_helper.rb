@@ -6,6 +6,7 @@ module ApplicationHelper
   SEPARATOR = " | ".grey
   UNKNOWN = "UNKNOWN"
   SELLING_TEXT = "En venta"
+  FREE_AGENT = "Libre"
 
   def parse_status(original)
     case original
@@ -64,6 +65,10 @@ module ApplicationHelper
   def format_num(num)
     return "-" if num.nil?
     num.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1.').reverse
+  end
+
+  def format_value(num)
+    "€ " + format_num(num)
   end
 
   def concat(arr)

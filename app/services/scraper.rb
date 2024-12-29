@@ -3,7 +3,7 @@ require "colorize"
 require "json"
 
 class Scraper
-  include FantasyHelper
+  include ApplicationHelper
 
   def initialize(print = true)
     @print = print
@@ -38,7 +38,7 @@ class Scraper
         streak: player.css(".streak span").map { |span| span.text.strip },
         player_img: player.css(".player-pic.qd-player img").attr("src").value,
         own: false,
-        offered_by: ApplicationHelper::MARKET_NAME,
+        offered_by: ApplicationHelper::FREE_AGENT,
         is_offer: true
       })
     end
@@ -301,12 +301,18 @@ class Scraper
       })
     end
 
+    footer_info = {
+      current_balance: format_value(doc.css(".footer-sticky .balance-real-current").text.strip),
+      future_balance: format_value(doc.css(".balance-real-future").text.strip),
+      max_debt: format_value(doc.css(".balance-real-maxdebt").text.strip)
+    }
+
     if @print then
       puts "plantilla".grey.bold
       squad_players.each { |player| puts player }
     end
 
-    { players: squad_players }
+    { players: squad_players, info: footer_info }
   end
 
   def offers(response)
