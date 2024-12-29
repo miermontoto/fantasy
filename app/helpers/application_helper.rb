@@ -5,6 +5,7 @@ module ApplicationHelper
   MARKET_NAME = "Fantasy MARCA"
   SEPARATOR = " | ".grey
   UNKNOWN = "UNKNOWN"
+  SELLING_TEXT = "En venta"
 
   def parse_status(original)
     case original

@@ -36,7 +36,10 @@ class Scraper
         # trend: player.css(".value-arrow").text.strip,
         average: player.css(".avg").text.strip,
         streak: player.css(".streak span").map { |span| span.text.strip },
-        player_img: player.css(".player-pic.qd-player img").attr("src").value
+        player_img: player.css(".player-pic.qd-player img").attr("src").value,
+        own: false,
+        offered_by: ApplicationHelper::MARKET_NAME,
+        is_offer: true
       })
     end
 
@@ -198,7 +201,7 @@ class Scraper
         id: player.css(".player-pic.qd-player").attr("data-id_player").value,
         name: player.css(".name").text.strip,
         team_img: player.css("img.team-logo").attr("src").value,
-        from: player.css(".date").text.strip.split(",").first,
+        offered_by: player.css(".date").text.strip.split(",").first,
         position: player.css(".icons i").attr("class").value,
         points: player.css(".points").text.strip.to_i,
         value: player.css(".underName").text.gsub(/[^0-9]/, "").to_i,
@@ -207,7 +210,9 @@ class Scraper
         streak: player.css(".streak span").map { |span| span.text.strip },
         status: player.css(".status use")&.attr("href")&.value&.split("#")&.last,
         sale: player.css(".player-btns .btn-bid").text.gsub(/[^0-9]/, "").to_i,
-        player_img: player.css(".player-pic.qd-player img").attr("src").value
+        player_img: player.css(".player-pic.qd-player img").attr("src").value,
+        asked_price: player.css(".btn.btn-popup.btn-bid.btn-green").text.strip,
+        is_offer: true
       })
     end
 

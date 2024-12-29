@@ -12,43 +12,41 @@ class Player
   # Constructor de la clase, inicializa los atributos del jugador
   # a partir de un hash de atributos proporcionado por el scraper
   def initialize(attributes = {})
-    @position = Position.new(attributes[:position])                              # posición del jugador
-    @name = attributes[:name].gsub("💥", "")                                     # nombre del jugador
-    @points = attributes[:points].to_s || "0"                                    # puntos del jugador en toda la temporada actual
-    @value = attributes[:value]                                                  # valor actual del jugador en el mercado
-    @average = attributes[:average]                                              # media de puntos por partido
-    @price = "€ " + format_num(@value)                                           # valor formateado actual del jugador en el mercado
-    @ppm = calculate_ppm                                                         # puntos por millón de valor
-    @id = attributes[:id]                                                        # id del jugador
-    @trend = attributes[:trend] || ""                                            # tendencia del jugador
-    @streak = attributes[:streak]                                                # array de los puntos de los últimos tres partidos
-    @status = attributes[:status] ? parse_status(attributes[:status]) : ""       # estado del jugador
-    @own = attributes[:own] || false                                             # true si el jugador es del usuario
-    @user = attributes[:user]                                                    # nombre del usuario
-    @player_img = attributes[:player_img] || ""                                  # url de la imagen del jugador
-    @team_img = attributes[:team_img] || ""                                      # url de la imagen del equipo del jugador
+    @position = Position.new(attributes[:position])                                                    # posición del jugador
+    @name = attributes[:name].gsub("💥", "")                                                           # nombre del jugador
+    @points = attributes[:points].to_s || "0"                                                          # puntos del jugador en toda la temporada actual
+    @value = attributes[:value]                                                                        # valor actual del jugador en el mercado
+    @average = attributes[:average]                                                                    # media de puntos por partido
+    @price = "€ " + format_num(@value)                                                                 # valor formateado actual del jugador en el mercado
+    @ppm = calculate_ppm                                                                               # puntos por millón de valor
+    @id = attributes[:id]                                                                              # id del jugador
+    @trend = attributes[:trend] || ""                                                                  # tendencia del jugador
+    @streak = attributes[:streak]                                                                      # array de los puntos de los últimos tres partidos
+    @status = attributes[:status] ? parse_status(attributes[:status]) : ""                             # estado del jugador
+    @user = attributes[:user] || ""                                                                    # nombre del usuario acutal? no se usa (creo)
+    @player_img = attributes[:player_img] || ""                                                        # url de la imagen del jugador
+    @team_img = attributes[:team_img] || ""                                                            # url de la imagen del equipo del jugador
 
-    @is_transfer = attributes[:transfer] || false                                # en transferencia: true
-    @from = attributes[:from] || ""                                              # en transferencia: origen
-    @to = attributes[:to] || ""                                                  # en transferencia: destino
-    @clause = attributes[:clause] || false                                       # en transferencia: true si la transferencia es por pago de cláusula
-    @from_market = @from == ApplicationHelper::MARKET_NAME unless @from.nil?     # en transferencia: true si el origen es el mercado
-    @to_market = @to == ApplicationHelper::MARKET_NAME unless @to.nil?           # en transferencia: true si el destino es el mercado
-    @date = attributes[:date] || ""                                              # en transferencia: fecha de la transferencia
+    @is_transfer = attributes[:transfer] || false                                                      # en transferencia: true
+    @from = attributes[:from] || ""                                                                    # en transferencia: origen
+    @to = attributes[:to] || ""                                                                        # en transferencia: destino
+    @clause = attributes[:clause] || false                                                             # en transferencia: true si la transferencia es por pago de cláusula
+    @from_market = @from == ApplicationHelper::MARKET_NAME unless @from.nil?                           # en transferencia: true si el origen es el mercado
+    @to_market = @to == ApplicationHelper::MARKET_NAME unless @to.nil?                                 # en transferencia: true si el destino es el mercado
+    @date = attributes[:date] || ""                                                                    # en transferencia: fecha de la transferencia
 
-    @is_offer = attributes[:offer] || false                                      # en oferta: true
-    @previous_value = attributes[:previous_value] || 0                           # en oferta: valor anterior del jugador
-    @best_bid = attributes[:best_bid] || 0                                       # en oferta: mejor oferta
-    @offered_by = attributes[:offered_by] || ""                                  # en oferta: nombre del usuario que ofrece el jugador
-    @bid_status = attributes[:bid_status] || ""                                  # en oferta: estado de la oferta
-    @asked_price = attributes[:asked_price] || 0                                 # en oferta: precio de la oferta
-
-    @variation = attributes[:diff] || (@value - @previous_value if @is_offer)    # en mercado/oferta: variación diaria del valor
-
-    @raw_difference = @best_bid - @value if @is_offer                            # en oferta: diferencia bruta entre el valor y la mejor oferta
-    @difference = (100 * ((@best_bid.to_f / @value) - 1)).round(2) if @is_offer  # en oferta: diferencia en porcentaje entre el valor y la mejor oferta
-    @increase_trend = increase_trend(@variation) if @variation
-    @difference_trend = difference_trend(@difference) if @difference
+    @is_offer = attributes[:offer] || false                                                            # en oferta: true
+    @previous_value = attributes[:previous_value] || 0                                                 # en oferta: valor anterior del jugador
+    @best_bid = attributes[:best_bid] || 0                                                             # en oferta: mejor oferta
+    @offered_by = attributes[:offered_by] || @user                                                     # en oferta: nombre del usuario que ofrece el jugador
+    @bid_status = attributes[:bid_status] || ""                                                        # en oferta: estado de la oferta
+    @asked_price = attributes[:asked_price] || 0                                                       # en oferta: precio de la oferta
+    @own = attributes[:own] || @offered_by == @user || @asked_price == ApplicationHelper::SELLING_TEXT # en oferta: true si el jugador es del usuario
+    @variation = attributes[:diff] || (@value - @previous_value if @is_offer)                          # en oferta: variación diaria del valor
+    @raw_difference = @best_bid - @value if @is_offer                                                  # en oferta: diferencia bruta entre el valor y la mejor oferta
+    @difference = (100 * ((@best_bid.to_f / @value) - 1)).round(2) if @is_offer                        # en oferta: diferencia en porcentaje entre el valor y la mejor oferta
+    @increase_trend = increase_trend(@variation) if @variation                                         # en oferta: tendencia de la variación
+    @difference_trend = difference_trend(@difference) if @difference                                   # en oferta: tendencia de la diferencia
 
     @transfer_div = "
     <p class=\"text-sm #{@from_market ? 'text-gray-500 italic' : 'text-gray-200'}\">#{@from}</p>
@@ -138,7 +136,7 @@ class Player
 
   def to_s_offer
     difference = "#{@raw_difference.positive? ? "+".green : "-".red}#{format_num(@raw_difference)}"
-    offer = "€ #{format_num(@best_bid)} (#{difference}) (#{@difference_trend} #{@difference}%)" if @difference
+    offer = "€ #{format_num(@asked_price)} (#{difference}) (#{@difference_trend} #{@difference}%)" if @difference
 
     content = base_string
     content << [

@@ -1,5 +1,5 @@
 class FantasyController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: [:set_xauth]
+  skip_before_action :verify_authenticity_token, only: [ :set_xauth ]
 
   layout "application"
 
@@ -41,10 +41,10 @@ class FantasyController < ApplicationController
     @paginated_market_data = @market_data.sort_by { |player| -player.points.to_i }.first(5)
 
     # Paginate events data
-    @current_page_feed = [params[:page_feed].to_i, 1].max
+    @current_page_feed = [ params[:page_feed].to_i, 1 ].max
     @per_page_feed = 5
-    @total_pages_feed = [(@events_data.size.to_f / @per_page_feed).ceil, 1].max
-    @current_page_feed = [@current_page_feed, @total_pages_feed].min
+    @total_pages_feed = [ (@events_data.size.to_f / @per_page_feed).ceil, 1 ].max
+    @current_page_feed = [ @current_page_feed, @total_pages_feed ].min
     start_idx_feed = (@current_page_feed - 1) * @per_page_feed
     @paginated_feed_data = @events_data[start_idx_feed, @per_page_feed] || []
 
@@ -77,10 +77,10 @@ class FantasyController < ApplicationController
     apply_sorting
 
     # Pagination
-    @page = [params[:page].to_i, 1].max
+    @page = [ params[:page].to_i, 1 ].max
     @per_page = 10
-    @total_pages = [(@filtered_market.size.to_f / @per_page).ceil, 1].max
-    @page = [@page, @total_pages].min
+    @total_pages = [ (@filtered_market.size.to_f / @per_page).ceil, 1 ].max
+    @page = [ @page, @total_pages ].min
 
     start_idx = (@page - 1) * @per_page
     @filtered_market = @filtered_market[start_idx, @per_page] || []
@@ -229,7 +229,7 @@ class FantasyController < ApplicationController
     end
 
     if params[:exclude_position].present?
-      excluded = params[:exclude_position].split(',')
+      excluded = params[:exclude_position].split(",")
       @filtered_market.reject! { |player| excluded.include?(player.position.browser[:position]) }
     end
   end
@@ -249,22 +249,22 @@ class FantasyController < ApplicationController
   end
 
   def apply_sorting
-    sort_by = params[:sort_by].presence || 'points'
-    direction = (params[:sort_direction] || 'desc') == 'asc' ? 1 : -1
+    sort_by = params[:sort_by].presence || "points"
+    direction = (params[:sort_direction] || "desc") == "asc" ? 1 : -1
 
     @filtered_market.sort_by! do |player|
       value = case sort_by
-        when 'points' then player.points.to_i
-        when 'avg' then player.average.to_s.tr(',', '.').to_f
-        when 'ppm' then player.ppm.to_f
-        when 'price' then player.price.to_i
-        when 'streak' then
+      when "points" then player.points.to_i
+      when "avg" then player.average.to_s.tr(",", ".").to_f
+      when "ppm" then player.ppm.to_f
+      when "price" then player.price.to_i
+      when "streak" then
           if player.streak.is_a?(Array)
             player.streak.map { |p| p.to_i }.sum
           else
             0
           end
-        else 0
+      else 0
       end
       value * direction
     end

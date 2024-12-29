@@ -62,10 +62,10 @@
             <label class="block text-sm font-medium text-gray-400 mb-2">Posición</label>
             <div class="flex gap-2">
               <% positions = [
-                ['POR', { color: 'bg-yellow-500 border-yellow-500', text: 'text-black' }],
-                ['DEF', { color: 'bg-blue-500 border-blue-500', text: 'text-black' }],
-                ['MED', { color: 'bg-green-500 border-green-500', text: 'text-black' }],
-                ['DEL', { color: 'bg-red-500 border-red-500', text: 'text-black' }]
+                ['PT', { color: 'bg-yellow-500 border-yellow-500', text: 'text-black' }],
+                ['DF', { color: 'bg-blue-500 border-blue-500', text: 'text-black' }],
+                ['MD', { color: 'bg-green-500 border-green-500', text: 'text-black' }],
+                ['DL', { color: 'bg-red-500 border-red-500', text: 'text-black' }]
               ] %>
               <% positions.each do |pos, styles| %>
                 <% is_selected = params[:position] == pos %>
@@ -74,7 +74,7 @@
                         data-position="<%= pos %>"
                         data-action="click->fantasy--market#togglePosition"
                         class="relative flex-1 px-3 py-1.5 border-2 text-sm font-bold rounded skew-x-[-10deg] transition-all
-                               <%= is_selected ? styles[:color] : is_excluded ? 'bg-gray-700 border-gray-600 opacity-40' : 'bg-gray-700 border-gray-600 hover:border-gray-500' %>">
+                               <%= is_selected ? styles[:color] : (is_excluded ? 'bg-gray-700 border-gray-600 opacity-40' : 'bg-gray-700 border-gray-600 hover:border-gray-500') %>">
                   <span class="block skew-x-[10deg] <%= is_selected ? styles[:text] : 'text-white' %>"><%= pos %></span>
                   <% if is_excluded %>
                     <div class="absolute inset-0 flex items-center justify-center skew-x-[10deg]">
