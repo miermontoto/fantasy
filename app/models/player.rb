@@ -7,7 +7,8 @@ class Player
   attr_accessor :position, :name, :points, :value, :average, :price, :ppm, :id,
                 :trend, :streak, :status, :own, :player_img, :team_img, :user,
                 :transfer_div, :clause, :is_transfer, :is_offer, :previous_value,
-                :best_bid, :offered_by, :bid_status, :asked_price, :date, :from, :to
+                :best_bid, :offered_by, :bid_status, :asked_price, :date, :from, :to,
+                :is_in_team, :selected, :achieved, :being_sold
 
   # Constructor de la clase, inicializa los atributos del jugador
   # a partir de un hash de atributos proporcionado por el scraper
@@ -35,7 +36,7 @@ class Player
     @to_market = @to == ApplicationHelper::MARKET_NAME unless @to.nil?                                 # en transferencia: true si el destino es el mercado
     @date = attributes[:date] || ""                                                                    # en transferencia: fecha de la transferencia
 
-    @is_offer = attributes[:offer] || false                                                            # en oferta: true
+    @is_offer = attributes[:is_offer] || false                                                         # en oferta: true
     @previous_value = attributes[:previous_value] || 0                                                 # en oferta: valor anterior del jugador
     @best_bid = attributes[:best_bid] || 0                                                             # en oferta: mejor oferta
     @offered_by = attributes[:offered_by] || @user                                                     # en oferta: nombre del usuario que ofrece el jugador
@@ -47,6 +48,11 @@ class Player
     @difference = (100 * ((@best_bid.to_f / @value) - 1)).round(2) if @is_offer                        # en oferta: diferencia en porcentaje entre el valor y la mejor oferta
     @increase_trend = increase_trend(@variation) if @variation                                         # en oferta: tendencia de la variación
     @difference_trend = difference_trend(@difference) if @difference                                   # en oferta: tendencia de la diferencia
+
+    @is_in_team = attributes[:is_team] || false                                                        # en equipo: true
+    @selected = attributes[:selected] || false                                                         # en equipo: true si el jugador juega esta jornada
+    @achieved = attributes[:achieved] || "?"                                                           # en equipo: puntos del jugador en la jornada actual (si aplica)
+    @being_sold = attributes[:being_sold] || false                                                     # en equipo: true si el jugador está en venta
 
     @transfer_div = "
     <p class=\"text-sm #{@from_market ? 'text-gray-500 italic' : 'text-gray-200'}\">#{@from}</p>

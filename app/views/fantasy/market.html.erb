@@ -40,15 +40,14 @@
       <div class="bg-gray-800 rounded-lg p-4">
         <div class="flex justify-between items-center mb-4">
           <h3 class="text-lg font-semibold">Filtros</h3>
-          <% if params[:position].present? || params[:exclude_position].present? ||
-                params[:max_price].present? && params[:max_price].to_i != 100_000_000 ||
-                params[:sort_by].present? && params[:sort_by] != 'points' ||
-                params[:sort_direction].present? && params[:sort_direction] != 'desc' ||
-                params[:search].present? %>
-            <%= link_to market_path, class: "text-blue-400 hover:text-blue-300 text-sm", data: { turbo_frame: "market-content" } do %>
+          <%= link_to market_path,
+              class: "text-blue-400 hover:text-blue-300 text-sm",
+              data: {
+                turbo_frame: "market-content",
+                action: "click->fantasy--market#resetStyles"
+              } do %>
               Limpiar filtros
               <span class="ml-1">×</span>
-            <% end %>
           <% end %>
         </div>
 
@@ -64,7 +63,7 @@
               <% positions = [
                 ['PT', { color: 'bg-yellow-500 border-yellow-500', text: 'text-black' }],
                 ['DF', { color: 'bg-blue-500 border-blue-500', text: 'text-black' }],
-                ['MD', { color: 'bg-green-500 border-green-500', text: 'text-black' }],
+                ['MC', { color: 'bg-green-500 border-green-500', text: 'text-black' }],
                 ['DL', { color: 'bg-red-500 border-red-500', text: 'text-black' }]
               ] %>
               <% positions.each do |pos, styles| %>
@@ -74,7 +73,7 @@
                         data-position="<%= pos %>"
                         data-action="click->fantasy--market#togglePosition"
                         class="relative flex-1 px-3 py-1.5 border-2 text-sm font-bold rounded skew-x-[-10deg] transition-all
-                               <%= is_selected ? styles[:color] : (is_excluded ? 'bg-gray-700 border-gray-600 opacity-40' : 'bg-gray-700 border-gray-600 hover:border-gray-500') %>">
+                               <%= is_selected ? styles[:color] : (is_excluded ? 'bg-gray-700 border-gray-600 opacity-40' : 'bg-gray-700 border-gray-600 hover:bg-gray-600') %>">
                   <span class="block skew-x-[10deg] <%= is_selected ? styles[:text] : 'text-white' %>"><%= pos %></span>
                   <% if is_excluded %>
                     <div class="absolute inset-0 flex items-center justify-center skew-x-[10deg]">
@@ -140,6 +139,46 @@
               class: "w-full px-4 py-2 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500",
               data: { action: "input->fantasy--market#submitForm" }
             %>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-400 mb-2">Origen</label>
+            <div class="flex gap-2">
+              <%= hidden_field_tag :source, params[:source] || "all" %>
+              <button type="button"
+                      data-source="all"
+                      data-action="click->fantasy--market#toggleSource"
+                      class="flex-1 px-3 py-1.5 text-sm font-medium rounded border-2 skew-x-[-10deg] transition-colors <%= params[:source].nil? || params[:source] == 'all' ? 'bg-blue-500 border-blue-500 text-black' : 'bg-gray-700 border-gray-600 text-white hover:bg-gray-600' %>">
+                <span class="block skew-x-[10deg]">Todos</span>
+              </button>
+
+              <button type="button"
+                      data-source="free"
+                      data-action="click->fantasy--market#toggleSource"
+                      class="flex-1 px-3 py-1.5 text-sm font-medium rounded border-2 skew-x-[-10deg] transition-colors <%= params[:source] == 'free' ? 'bg-blue-500 border-blue-500 text-black' : 'bg-gray-700 border-gray-600 text-white hover:bg-gray-600' %>">
+                <span class="block skew-x-[10deg]">Libres</span>
+              </button>
+
+              <button type="button"
+                      data-source="users"
+                      data-action="click->fantasy--market#toggleSource"
+                      class="flex-1 px-3 py-1.5 text-sm font-medium rounded border-2 skew-x-[-10deg] transition-colors <%= params[:source] == 'users' ? 'bg-blue-500 border-blue-500 text-black' : 'bg-gray-700 border-gray-600 text-white hover:bg-gray-600' %>">
+                <span class="block skew-x-[10deg]">No libres</span>
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <label class="flex items-center gap-2 text-sm font-medium text-gray-400">
+              <%= hidden_field_tag :own_players, "0" %>
+              <%= check_box_tag :own_players,
+                "1",
+                params[:own_players].nil? || params[:own_players] == "1",
+                class: "w-4 h-4 rounded border-gray-600 text-blue-500 focus:ring-blue-500 focus:ring-offset-gray-800 bg-gray-700",
+                data: { action: "change->fantasy--market#submitForm" }
+              %>
+              <span>Ocultar mis jugadores</span>
+            </label>
           </div>
         <% end %>
       </div>

@@ -32,7 +32,7 @@ class Scraper
         team_img: player.css("img.team-logo").attr("src").value,
         position: player.css(".icons i").attr("class").value,
         points: player.css(".points").text.strip,
-        value: player.css(".underName").text.gsub(/[^0-9]/, ""),
+        value: player.css(".underName").text.gsub(/[^0-9]/, "").to_i,
         # trend: player.css(".value-arrow").text.strip,
         average: player.css(".avg").text.strip,
         streak: player.css(".streak span").map { |span| span.text.strip },
@@ -216,7 +216,7 @@ class Scraper
       })
     end
 
-    players = sort_players(players).filter { |player| !player.own }
+    players = sort_players(players)
 
     footer_info = {
       current_balance: format_num(doc.css(".footer-sticky-market .balance-real-current").text.gsub(/\./, "").to_i),
@@ -233,7 +233,7 @@ class Scraper
       puts "#{"next update".bold} #{footer_info[:next_update]}"
 
       puts "\nmercado".grey.bold
-      players.each { |player| puts player }
+      players.each { |player| puts player unless player.own }
     end
 
     { market: players, info: footer_info }
@@ -294,7 +294,10 @@ class Scraper
         streak: player.css(".streak span").map { |span| span.text.strip },
         trend: player.css(".value-arrow").text.strip,
         player_img: player.css(".player-pic.qd-player img").attr("src").value,
-        team_img: player.css("img.team-logo").attr("src").value
+        team_img: player.css("img.team-logo").attr("src").value,
+        selected: player.attribute_nodes.include?("in-lineup"),
+        is_in_team: true,
+        being_sold: player.css(".btn.btn-popup").text.strip == ApplicationHelper::SELLING_TEXT
       })
     end
 

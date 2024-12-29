@@ -74,6 +74,8 @@ class FantasyController < ApplicationController
     apply_position_filter
     apply_price_filter
     apply_search_filter
+    apply_source_filter
+    apply_own_players_filter
     apply_sorting
 
     # Pagination
@@ -267,6 +269,24 @@ class FantasyController < ApplicationController
       else 0
       end
       value * direction
+    end
+  end
+
+  def apply_own_players_filter
+    # Hide own players by default (when nil) or when explicitly checked (value = "1")
+    if params[:own_players].nil? || params[:own_players] == "1"
+      @filtered_market.reject! { |player| player.own }
+    end
+  end
+
+  def apply_source_filter
+    return if params[:source].nil? || params[:source] == "all"
+
+    case params[:source]
+    when "free"
+      @filtered_market.select! { |player| player.offered_by == "Libre" }
+    when "users"
+      @filtered_market.reject! { |player| player.offered_by == "Libre" }
     end
   end
 

@@ -1,42 +1,23 @@
 <% content_for :title, "Mi Equipo" %>
 
-<div class="space-y-6">
+<div class="flex flex-col">
   <div class="bg-gray-800 rounded-lg p-4">
-    <h2 class="text-xl font-bold mb-4">Mi Plantilla</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      <% @team_data[:players]&.each do |player| %>
-        <div class="bg-gray-700 rounded-lg p-4">
-          <div class="flex items-center space-x-4">
-            <img src="<%= player.player_img %>" alt="<%= player.name %>" class="w-16 h-16 rounded-full">
-            <div class="flex-1">
-              <div class="flex items-center space-x-2">
-                <img src="<%= player.team_img %>" alt="Team" class="w-6 h-6">
-                <h3 class="font-semibold"><%= player.name %></h3>
-              </div>
-              <div class="flex items-center space-x-4 mt-1 text-sm text-gray-300">
-                <span class="<%= player.position.browser[:color] %>"><%= player.position.browser[:position] %></span>
-                <span>Puntos: <%= player.points %></span>
-                <span>Media: <%= player.average %></span>
-              </div>
-              <div class="flex items-center space-x-2 mt-2">
-                <% player.streak.each do |result| %>
-                  <span class="w-6 h-6 flex items-center justify-center rounded <%= result == '-' ? 'bg-gray-600' : (result.to_i > 0 ? 'bg-green-600' : 'bg-red-600') %>">
-                    <%= result %>
-                  </span>
-                <% end %>
-              </div>
-              <div class="mt-2">
-                <p class="text-lg font-bold"><%= number_to_currency(player.value, unit: '€', precision: 0) %></p>
-                <% if player.trend.present? %>
-                  <span class="<%= player.trend.include?('up') ? 'text-green-500' : 'text-red-500' %>">
-                    <%= player.trend.include?('up') ? '↑' : '↓' %>
-                  </span>
-                <% end %>
-              </div>
-            </div>
+    <div class="p-4 border-b border-gray-700">
+      <h2 class="text-2xl font-bold">Mi Plantilla</h2>
+    </div>
+
+    <div class="overflow-y-auto flex-1 p-4">
+      <div class="space-y-4">
+        <% if @team_data[:players]&.any? %>
+          <% @team_data[:players].each do |player| %>
+            <%= render partial: "fantasy/partials/player_card", locals: { player: player } %>
+          <% end %>
+        <% else %>
+          <div class="text-center py-8">
+            <p class="text-gray-400">No hay jugadores en tu equipo</p>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

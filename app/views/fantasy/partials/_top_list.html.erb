@@ -8,7 +8,7 @@
     <div class="space-y-4">
       <% if top_data.present? %>
         <% top_data.each do |market_item| %>
-          <%= render partial: "fantasy/partials/market_player", locals: { market_player: market_item } %>
+          <%= render partial: "fantasy/partials/player_card", locals: { player: market_item } %>
         <% end %>
       <% else %>
         <div class="text-center py-8">

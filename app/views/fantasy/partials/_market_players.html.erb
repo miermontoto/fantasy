@@ -1,7 +1,7 @@
 <% if market_players.any? %>
   <div class="space-y-2">
     <% market_players.each do |player| %>
-      <%= render partial: "fantasy/partials/market_player", locals: { market_player: player } %>
+      <%= render partial: "fantasy/partials/player_card", locals: { player: player } %>
     <% end %>
   </div>
 <% else %>
