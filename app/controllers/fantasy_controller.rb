@@ -106,6 +106,38 @@ class FantasyController < ApplicationController
 
   def team
     @team_data = @scraper.team(@browser.team.body)
+    return unless @team_data && @team_data[:players]
+
+    @filtered_players = @team_data[:players].dup
+
+    # Apply filters
+    apply_team_position_filter
+    apply_team_search_filter
+    apply_team_sale_filter
+    apply_team_sorting
+
+    # Pagination
+    @page = [params[:page].to_i, 1].max
+    @per_page = 10
+    @total_pages = [(@filtered_players.size.to_f / @per_page).ceil, 1].max
+    @page = [@page, @total_pages].min
+
+    start_idx = (@page - 1) * @per_page
+    @filtered_players = @filtered_players[start_idx, @per_page] || []
+
+    respond_to do |format|
+      format.html
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.update("team-content",
+          partial: "fantasy/partials/team_content",
+          locals: {
+            players: @filtered_players,
+            page: @page,
+            total_pages: @total_pages
+          }
+        )
+      end
+    end
   end
 
   def standings
@@ -305,6 +337,58 @@ class FantasyController < ApplicationController
           }
         )
       }
+    end
+  end
+
+  def apply_team_position_filter
+    if params[:position].present?
+      @filtered_players.select! { |player| player.position.browser[:position] == params[:position] }
+    end
+  end
+
+  def apply_team_search_filter
+    if params[:search].present?
+      search_term = params[:search].downcase.strip
+      @filtered_players.select! { |player| player.name.downcase.include?(search_term) }
+    end
+  end
+
+  def apply_team_sale_filter
+    if params[:on_sale] == "1"
+      @filtered_players.select! { |player| player.being_sold }
+    end
+  end
+
+  def apply_team_sorting
+    sort_by = params[:sort_by].presence || "points"
+    direction = (params[:sort_direction] || "desc") == "asc" ? 1 : -1
+
+    @filtered_players.sort_by! do |player|
+      value = case sort_by
+      when "points" then player.points.to_i
+      when "avg" then player.average.to_s.tr(",", ".").to_f
+      when "ppm" then player.ppm.to_f
+      when "price" then player.price.to_i
+      when "streak" then
+        if player.streak.is_a?(Array)
+          player.streak.map { |p| p.to_i }.sum
+        else
+          0
+        end
+      else 0
+      end
+      [
+        # First sort by position (PT -> DF -> MC -> DL)
+        case player.position.browser[:position]
+        when "PT" then 1
+        when "DF" then 2
+        when "MC" then 3
+        when "DL" then 4
+        else 5
+        end,
+        # Then by the selected sort criteria
+        value * direction
+      ]
     end
   end
 end

@@ -299,7 +299,8 @@ class Scraper
         team_img: player.css("img.team-logo").attr("src").value,
         selected: player.attribute_nodes.include?("in-lineup"),
         is_in_team: true,
-        being_sold: player.css(".btn.btn-popup").text.strip == ApplicationHelper::SELLING_TEXT
+        being_sold: player.css(".btn.btn-popup").text.strip == ApplicationHelper::SELLING_TEXT,
+        rival_img: player.css(".rival img").attr("src").value
       })
     end
 
