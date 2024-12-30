@@ -1,13 +1,7 @@
 <%# Unified Player Card %>
-<div class="flex items-center <%=
-  if player.own
-    if player.being_sold
-      'bg-gray-600 ring-2 ring-orange-500/50'
-    else
-      'bg-gray-600'
-    end
-  else
-    'bg-gray-700'
+<div class="flex items-center bg-gray-700 <%=
+  if player.own && (player.being_sold || player.is_offer)
+    'ring-2 ring-orange-500/50'
   end
 %> rounded-lg p-2 hover:bg-gray-600 transition-colors w-full">
   <div class="flex flex-col items-center flex-shrink-0 px-2">
