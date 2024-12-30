@@ -52,6 +52,9 @@
     </div>
 
     <div class="flex items-center gap-4 flex-shrink-0">
+      <% if player.rival_img.present? %>
+        <img src="<%= player.rival_img %>" alt="Rival" class="w-5 h-5">
+      <% end %>
       <div class="flex items-center gap-3 border-l border-r border-gray-600 px-3">
         <div class="text-center w-12">
           <div class="text-sm font-semibold"><%= player.points %></div>

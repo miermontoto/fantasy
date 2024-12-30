@@ -8,7 +8,7 @@ class Player
                 :trend, :streak, :status, :own, :player_img, :team_img, :user,
                 :transfer_div, :clause, :is_transfer, :is_offer, :previous_value,
                 :best_bid, :offered_by, :bid_status, :asked_price, :date, :from, :to,
-                :is_in_team, :selected, :achieved, :being_sold
+                :rival_img, :is_in_team, :selected, :achieved, :being_sold
 
   # Constructor de la clase, inicializa los atributos del jugador
   # a partir de un hash de atributos proporcionado por el scraper
@@ -27,6 +27,7 @@ class Player
     @user = attributes[:user] || ""                                                                    # nombre del usuario acutal? no se usa (creo)
     @player_img = attributes[:player_img] || ""                                                        # url de la imagen del jugador
     @team_img = attributes[:team_img] || ""                                                            # url de la imagen del equipo del jugador
+    @rival_img = attributes[:rival_img] || ""                                                          # url de la imagen del próximo equipo rival
 
     @is_transfer = attributes[:transfer] || false                                                      # en transferencia: true
     @from = attributes[:from] || ""                                                                    # en transferencia: origen

@@ -39,7 +39,8 @@ class Scraper
         player_img: player.css(".player-pic.qd-player img").attr("src").value,
         own: false,
         offered_by: ApplicationHelper::FREE_AGENT,
-        is_offer: true
+        is_offer: true,
+        rival_img: player.css(".rival img").attr("src").value
       })
     end
 
@@ -212,7 +213,8 @@ class Scraper
         sale: player.css(".player-btns .btn-bid").text.gsub(/[^0-9]/, "").to_i,
         player_img: player.css(".player-pic.qd-player img").attr("src").value,
         asked_price: player.css(".btn.btn-popup.btn-bid.btn-green").text.strip,
-        is_offer: true
+        is_offer: true,
+        rival_img: player.css(".rival img").attr("src").value
       })
     end
 
