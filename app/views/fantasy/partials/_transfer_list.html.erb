@@ -1,0 +1,10 @@
+<div class="space-y-6">
+  <%= render partial: "fantasy/partials/top_list", locals: {
+    top_data: paginated_market_data
+  } %>
+  <%= render partial: "fantasy/partials/events_list", locals: {
+    events_data: paginated_feed_data,
+    current_page_feed: current_page_feed,
+    total_pages_feed: total_pages_feed
+  } %>
+</div>

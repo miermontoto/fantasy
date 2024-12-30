@@ -1,0 +1,11 @@
+<% if market_players.any? %>
+  <div class="space-y-2">
+    <% market_players.each do |player| %>
+      <%= render partial: "fantasy/partials/player_card", locals: { player: player } %>
+    <% end %>
+  </div>
+<% else %>
+  <div class="text-center py-8">
+    <p class="text-gray-400">No se encontraron jugadores con los filtros seleccionados</p>
+  </div>
+<% end %>

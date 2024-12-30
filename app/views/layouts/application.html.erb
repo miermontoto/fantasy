@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html class="bg-black text-white">
+  <head>
+    <title><%= content_for(:title) || "Fantasy" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%# <%= yield :head %>
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <main class="container mx-auto mt-6 px-5 flex flex-col">
+      <header>
+        <nav class="bg-gray-800 rounded-lg mb-6">
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center">
+            <!-- Main Navigation -->
+            <div class="flex items-center justify-between flex-1 px-4 py-3">
+              <div class="flex items-center gap-6">
+                <%= link_to "Inicio", root_path, class: "text-xl font-bold #{current_page?(root_path) ? 'text-blue-400' : 'text-white hover:text-gray-300'}" %>
+                <%= link_to "Mercado", market_path, class: "text-lg #{current_page?(market_path) ? 'text-blue-400' : 'text-white hover:text-gray-300'}" %>
+                <%= link_to "Equipo", team_path, class: "text-lg #{current_page?(team_path) ? 'text-blue-400' : 'text-white hover:text-gray-300'}" %>
+              </div>
+
+              <!-- Community Selector with Alert -->
+              <div class="flex items-center gap-2">
+                <% if @needs_xauth %>
+                  <div data-controller="modal"
+                       data-modal-community-id-value="<%= @current_community_id %>"
+                       class="flex items-center relative">
+                    <button type="button"
+                            data-action="click->modal#show"
+                            class="inline-flex items-center text-red-400 hover:text-red-300 focus:outline-none"
+                            title="XAUTH token required">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                      </svg>
+                    </button>
+
+                    <!-- Modal (positioned absolutely) -->
+                    <div data-modal-target="modal"
+                         class="hidden absolute right-0 top-full mt-2 z-50 w-96 bg-gray-800 rounded-xl shadow-xl border border-gray-700">
+                      <div class="p-6 border-b border-gray-700">
+                        <h2 class="text-xl font-bold">XAUTH Token Required</h2>
+                        <p class="text-gray-300 mt-2">
+                          Please enter your XAUTH token for this community to continue.
+                        </p>
+                      </div>
+                      <form data-action="submit->modal#handleSubmit" class="p-6">
+                        <div class="space-y-4">
+                          <div>
+                            <label for="xauth-input" class="block text-sm font-medium text-gray-300 mb-1">XAUTH Token</label>
+                            <input type="text"
+                                   id="xauth-input"
+                                   data-modal-target="input"
+                                   class="w-full px-4 py-2 bg-gray-700 rounded-lg border border-gray-600 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-white placeholder-gray-400"
+                                   placeholder="Enter your XAUTH token"
+                                   required>
+                          </div>
+                          <div class="flex justify-end gap-3 pt-4">
+                            <button type="button"
+                                    data-action="click->modal#hide"
+                                    class="px-4 py-2 text-gray-300 hover:text-white">
+                              Cancel
+                            </button>
+                            <button type="submit"
+                                    class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                              Save Token
+                            </button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                <% end %>
+
+                <div class="relative" data-controller="dropdown">
+                  <button type="button"
+                          class="flex items-center gap-2 px-3 py-2 text-sm bg-gray-700 hover:bg-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 <%= 'opacity-50 cursor-not-allowed' if @needs_xauth %>"
+                          data-action="click->dropdown#toggle"
+                          <%= 'disabled' if @needs_xauth %>>
+                    <% current_community = @communities&.find(&:current?) %>
+                    <% if current_community %>
+                      <% if current_community.icon.present? %>
+                        <span class="text-base"><%= current_community.icon %></span>
+                      <% end %>
+                      <span><%= current_community.name %></span>
+                    <% else %>
+                      <span>Seleccionar Liga</span>
+                    <% end %>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+
+                  <div class="absolute right-0 mt-2 w-56 bg-gray-700 rounded-lg shadow-lg overflow-hidden hidden z-50"
+                       data-dropdown-target="menu">
+                    <div class="max-h-64 overflow-y-auto">
+                      <% if @communities&.any? %>
+                        <% @communities.each do |community| %>
+                          <%= link_to change_community_path(id: community.id),
+                              class: "w-full px-4 py-2 text-left text-sm hover:bg-gray-600 flex items-center gap-2 #{community.current? ? 'bg-gray-600' : ''}" do %>
+                            <% if community.icon.present? %>
+                              <span class="text-base"><%= community.icon %></span>
+                            <% end %>
+                            <span><%= community.name %></span>
+                          <% end %>
+                        <% end %>
+                      <% else %>
+                        <div class="px-4 py-2 text-sm text-gray-400">No hay ligas disponibles</div>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <%= yield %>
+    </main>
+  </body>
+</html>

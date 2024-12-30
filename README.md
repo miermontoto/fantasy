@@ -49,9 +49,9 @@ fantasy
 ├── main.rb
 ├── token.rb
 ├── lib
-│   ├── browser.rb
-│   ├── scraper.rb
-│   └── helpers.rb
+│   ├── browser.rb
+│   ├── scraper.rb
+│   └── helpers.rb
 └── models
 	├── transfer.rb
 	├── player.rb

@@ -1,0 +1,246 @@
+<div class="flex flex-col">
+  <!-- General Info Container -->
+  <div class="bg-gray-800 rounded-lg p-4 mb-6">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-6">
+        <div>
+          <span class="text-gray-400 text-sm">Balance</span>
+          <p class="text-xl font-semibold text-white">
+            <%= @general_info[:balance] %>
+          </p>
+        </div>
+        <div class="h-8 w-px bg-gray-700"></div>
+        <div>
+          <span class="text-gray-400 text-sm">Créditos</span>
+          <p class="text-xl font-semibold text-white">
+            <%= @general_info[:credits] %>
+          </p>
+        </div>
+        <div class="h-8 w-px bg-gray-700"></div>
+        <div>
+          <span class="text-gray-400 text-sm">Liga</span>
+          <p class="text-xl font-semibold text-white">
+            <%= @general_info[:community] %>
+          </p>
+        </div>
+      </div>
+      <div>
+        <span class="text-gray-400 text-sm">Jornada</span>
+        <p class="text-lg font-semibold">
+          <%= @general_info[:gameweek] %>
+          <span class="text-gray-400">
+            (<%= @general_info[:status] %>)
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid gap-y-2 grid-cols-1 md:grid-cols-2 p-2 bg-[#121824] rounded-lg justify-items-stretch">
+    <div class="grid gap-y-2 grid-cols-1 p-2 order-last md:order-first">
+      <div id="left-container">
+        <%= render partial: "fantasy/partials/transfer_list", locals: {
+          paginated_feed_data: @paginated_feed_data,
+          paginated_market_data: @paginated_market_data,
+          current_page_feed: @current_page_feed,
+          current_page_market: @current_page_market,
+          total_pages_feed: @total_pages_feed,
+          total_pages_market: @total_pages_market
+        } %>
+      </div>
+    </div>
+
+    <div class="p-2">
+      <%= render partial: 'fantasy/partials/standings', locals: { standings: @standings_data } %>
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const leftContainer = document.getElementById('left-container');
+    const pageCache = new Map(); // Cache for prefetched pages
+
+    // Function to get current page number from pagination controls
+    function getCurrentPage(type) {
+      const currentPageSpan = document.querySelector(`#current-page-${type} .text-xl`);
+      return currentPageSpan ? parseInt(currentPageSpan.textContent) : 1;
+    }
+
+    // Function to get total pages from pagination controls
+    function getTotalPages(type) {
+      const span = document.querySelector(`#current-page-${type}`);
+      return span ? parseInt(span.dataset.totalpages) : 1;
+    }
+
+    // Function to update the page numbers and content after an AJAX load
+    function updatePaginationControls(pageFeed, pageMarket, totalPagesFeed, totalPagesMarket) {
+      // Update feed pagination numbers
+      const feedContainer = document.getElementById("current-page-feed");
+      feedContainer.querySelector('.text-xl').textContent = pageFeed;
+      feedContainer.querySelector('.text-gray-300').textContent = totalPagesFeed;
+
+      // Update market pagination numbers
+      const marketContainer = document.getElementById("current-page-market");
+      marketContainer.querySelector('.text-xl').textContent = pageMarket;
+      marketContainer.querySelector('.text-gray-300').textContent = totalPagesMarket;
+
+      // Update button states and data attributes for feed pagination
+      const firstFeedBtn = document.querySelector('.first-feed');
+      const prevFeedBtn = document.querySelector('.previous-feed');
+      const nextFeedBtn = document.querySelector('.next-feed');
+      const lastFeedBtn = document.querySelector('.last-feed');
+
+      if (firstFeedBtn && prevFeedBtn && nextFeedBtn && lastFeedBtn) {
+        const isFirstPage = pageFeed <= 1;
+        const isLastPage = pageFeed >= totalPagesFeed;
+
+        firstFeedBtn.disabled = isFirstPage;
+        prevFeedBtn.disabled = isFirstPage;
+        nextFeedBtn.disabled = isLastPage;
+        lastFeedBtn.disabled = isLastPage;
+
+        prevFeedBtn.dataset.page = pageFeed - 1;
+        nextFeedBtn.dataset.page = pageFeed + 1;
+      }
+
+      // Update button states and data attributes for market pagination
+      const firstMarketBtn = document.querySelector('.first-market');
+      const prevMarketBtn = document.querySelector('.previous-market');
+      const nextMarketBtn = document.querySelector('.next-market');
+      const lastMarketBtn = document.querySelector('.last-market');
+
+      if (firstMarketBtn && prevMarketBtn && nextMarketBtn && lastMarketBtn) {
+        const isFirstPage = pageMarket <= 1;
+        const isLastPage = pageMarket >= totalPagesMarket;
+
+        firstMarketBtn.disabled = isFirstPage;
+        prevMarketBtn.disabled = isFirstPage;
+        nextMarketBtn.disabled = isLastPage;
+        lastMarketBtn.disabled = isLastPage;
+
+        prevMarketBtn.dataset.page = pageMarket - 1;
+        nextMarketBtn.dataset.page = pageMarket + 1;
+      }
+    }
+
+    // Function to fetch page content
+    async function fetchPage(pageFeed, pageMarket) {
+      const url = `/?page_feed=${pageFeed}&page_market=${pageMarket}`;
+      const cacheKey = `${pageFeed}-${pageMarket}`;
+
+      // Return cached content if available
+      if (pageCache.has(cacheKey)) {
+        return pageCache.get(cacheKey);
+      }
+
+      try {
+        // Fetch new content
+        const response = await fetch(url, {
+          headers: { 'X-Requested-With': 'XMLHttpRequest' }
+        });
+        const html = await response.text();
+
+        // Cache the result
+        pageCache.set(cacheKey, html);
+
+        return html;
+      } catch (error) {
+        console.error('Error fetching page:', error);
+        throw error;
+      }
+    }
+
+    // Function to prefetch a specific page
+    async function prefetchPage(pageFeed, pageMarket) {
+      try {
+        await fetchPage(pageFeed, pageMarket);
+      } catch (error) {
+        console.error('Error prefetching page:', error);
+      }
+    }
+
+    // Function to prefetch adjacent pages
+    function prefetchAdjacentPages() {
+      const currentFeedPage = getCurrentPage('feed');
+      const currentMarketPage = getCurrentPage('market');
+      const totalFeedPages = getTotalPages('feed');
+      const totalMarketPages = getTotalPages('market');
+
+      // Prefetch feed pages window (previous, current, next)
+      const feedPagesToFetch = [
+        currentFeedPage - 1,
+        currentFeedPage,
+        currentFeedPage + 1
+      ].filter(page => page > 0 && page <= totalFeedPages);
+
+      // Prefetch market pages window (previous, current, next)
+      const marketPagesToFetch = [
+        currentMarketPage - 1,
+        currentMarketPage,
+        currentMarketPage + 1
+      ].filter(page => page > 0 && page <= totalMarketPages);
+
+      // Fetch all combinations of feed and market pages in the window
+      for (const feedPage of feedPagesToFetch) {
+        for (const marketPage of marketPagesToFetch) {
+          prefetchPage(feedPage, marketPage);
+        }
+      }
+    }
+
+    // Function to load new content (market and feed)
+    async function loadPage(pageFeed, pageMarket) {
+      try {
+        // Get the content (from cache or fetch)
+        const html = await fetchPage(pageFeed, pageMarket);
+
+        // Update the left container with the new partial HTML
+        leftContainer.innerHTML = html;
+
+        // Get the new total pages values
+        const totalPagesFeed = getTotalPages('feed');
+        const totalPagesMarket = getTotalPages('market');
+
+        // Update pagination controls
+        updatePaginationControls(pageFeed, pageMarket, totalPagesFeed, totalPagesMarket);
+
+        // Clear old cached pages that are no longer needed
+        const cacheKeys = Array.from(pageCache.keys());
+        for (const key of cacheKeys) {
+          const [cachedFeed, cachedMarket] = key.split('-').map(Number);
+          if (Math.abs(cachedFeed - pageFeed) > 1 || Math.abs(cachedMarket - pageMarket) > 1) {
+            pageCache.delete(key);
+          }
+        }
+
+        // Prefetch adjacent pages immediately after the update
+        prefetchAdjacentPages();
+
+      } catch (error) {
+        console.error('Error loading page:', error);
+      }
+    }
+
+    // Event delegation for pagination buttons
+    document.addEventListener('click', function(event) {
+      const button = event.target.closest('button');
+      if (!button) return;
+
+      if (button.classList.contains('first-feed') || button.classList.contains('previous-feed') ||
+          button.classList.contains('next-feed') || button.classList.contains('last-feed')) {
+        const pageFeed = parseInt(button.dataset.page);
+        const pageMarket = getCurrentPage('market'); // Keep current market page
+        loadPage(pageFeed, pageMarket);
+      }
+      else if (button.classList.contains('first-market') || button.classList.contains('previous-market') ||
+               button.classList.contains('next-market') || button.classList.contains('last-market')) {
+        const pageMarket = parseInt(button.dataset.page);
+        const pageFeed = getCurrentPage('feed'); // Keep current feed page
+        loadPage(pageFeed, pageMarket);
+      }
+    });
+
+    // Start prefetching adjacent pages on initial load
+    setTimeout(prefetchAdjacentPages, 100);
+  });
+</script>

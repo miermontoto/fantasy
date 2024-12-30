@@ -1,0 +1,32 @@
+<div class="bg-gray-700 border-2 border-gray-600 rounded-lg hover:bg-gray-600 transition-colors duration-200">
+  <div class="flex items-center p-4">
+    <img class="w-16 h-16 rounded-lg object-cover mr-5 -ml-1"
+         src="<%= event.player_img%>"
+         alt="<%= event.name %>"
+         loading="lazy">
+
+    <div class="flex-1 min-w-0">
+      <div class="flex items-center gap-3">
+        <div class="<%= event.position.browser[:color] %> border-2 border-black skew-x-[-10deg]">
+          <p class="px-2 py-1 text-sm text-black font-bold skew-x-[10deg]"><%= event.position.browser[:position] %></p>
+        </div>
+        <h3 class="text-white font-bold text-lg truncate"><%= event.name %></h3>
+        <span class="text-gray-400 text-sm ml-auto"><%= event.date %></span>
+      </div>
+
+      <div class="flex items-center justify-between mt-2">
+        <p class="text-xl font-semibold text-white">
+          <%= event.price %>
+          <% if event.trend.present? %>
+            <span class="<%= event.trend.include?('up') ? 'text-green-500' : 'text-red-500' %>">
+              <%= event.trend.include?('up') ? '↑' : '↓' %>
+            </span>
+          <% end %>
+        </p>
+        <div class="flex items-center ml-8">
+          <%= render inline: event.transfer_div %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

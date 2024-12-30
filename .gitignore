@@ -1,1 +1,13 @@
 .env
+log/*
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+bin/*
+tmp/*
+storage/*
+
+/app/assets/builds/*
+!/app/assets/builds/.keep
+
+/public/assets/*
+tokens.json
