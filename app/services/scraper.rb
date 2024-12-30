@@ -383,6 +383,8 @@ class Scraper
     if content.empty? then; return {}; end
 
     last = content.to_h["last"]
+    prev = content.to_h["prev"]
+    diff = last["value"] - prev["value"]
 
     positive = content.to_h["players"]["positive"].map do |player|
       Player.new({
@@ -421,7 +423,7 @@ class Scraper
       positive.each { |player| puts player }
     end
 
-    { positive: positive, negative: negative, last: last }
+    { positive: positive, negative: negative, last: last, diff: diff }
   end
 
   def top_players(html)

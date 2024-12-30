@@ -28,6 +28,9 @@
           <p class="text-lg font-semibold"><%= info[:next_update] %></p>
         </div>
       <% end %>
+      <% if info[:next_update].present? && defined?(additional_stats) %>
+        <div class="h-8 w-px bg-gray-700"></div>
+      <% end %>
       <%= additional_stats if defined?(additional_stats) %>
     </div>
   </div>

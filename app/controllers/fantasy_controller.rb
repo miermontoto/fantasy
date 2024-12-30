@@ -68,6 +68,8 @@ class FantasyController < ApplicationController
     @market_data = @scraper.market(@browser.market.body)
     return render_empty_market unless @market_data && @market_data[:market]
 
+    @top_data = @scraper.top_market(@browser.top_market.body)
+
     @filtered_market = @market_data[:market].dup
 
     # Apply filters

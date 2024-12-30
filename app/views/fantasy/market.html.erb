@@ -2,7 +2,17 @@
 
 <div class="container mx-auto h-[calc(100vh-6rem)] flex flex-col"
      data-controller="fantasy--market">
-  <%= render partial: "fantasy/partials/stats", locals: { info: @market_data[:info] } %>
+  <%= render partial: "fantasy/partials/stats", locals: {
+    info: @market_data[:info],
+    additional_stats: capture do %>
+      <div>
+        <span class="text-gray-400 text-sm">Último cambio</span>
+        <p class="text-xl font-semibold <%= @top_data[:diff] < 0 ? 'text-red-500' : 'text-green-500' %>">
+          <%= format_value(@top_data[:diff]) %>
+        </p>
+      </div>
+    <% end
+   } %>
 
   <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 flex-1 min-h-0">
     <!-- Filters Sidebar -->
