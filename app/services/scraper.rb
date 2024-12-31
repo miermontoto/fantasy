@@ -250,7 +250,7 @@ class Scraper
         name: user.css(".name").text.strip,
         players: user.css(".played").text.split("·").first.strip.split(" ").first.to_i,
         value: user.css(".played").text.split("·").last.strip.gsub(/[^0-9]/, "").to_i,
-        points: user.css(".points:not(span)").text.split(" ").first.strip.to_i,
+        points: user.css(".points:not(span)").text.split(" ").first.strip.gsub(".", "").to_i,
         diff: user.css(".diff").text.strip,
         user_img: user.css("img").attr("src") ? user.css("img").attr("src").value : nil,
         myself: user.css(".name").to_html.include?("myself")
