@@ -17,19 +17,10 @@
   <div class="relative flex-shrink-0 mr-2 ml-0.5">
     <img class="w-12 h-12 rounded-lg" src="<%= player.player_img %>" alt="<%= player.name %>" loading="lazy">
     <% if player.status.present? %>
-      <div class="absolute -top-1 -right-1 w-4 h-4 rounded-full flex items-center justify-center text-xs font-bold
-        <%= case player.status
-            when 'injury' then 'bg-red-500'
-            when 'doubt' then 'bg-yellow-500'
-            when 'red' then 'bg-red-500'
-            else ''
-            end %>">
-        <%= case player.status
-            when 'injury' then '+'
-            when 'doubt' then '?'
-            when 'red' then '◼'
-            else ''
-            end %>
+      <div class="absolute -top-2 -right-1 <%= player.status.browser[:color] %> skew-x-[-10deg] px-1 py-0.5 rounded-sm w-[16px] h-[16px] flex items-center justify-center">
+        <span class="block skew-x-[10deg] text-[10px] font-bold <%= player.status.browser[:text_color] %>">
+          <%= player.status.browser[:symbol] %>
+        </span>
       </div>
     <% end %>
   </div>

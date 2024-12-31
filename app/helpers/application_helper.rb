@@ -8,19 +8,6 @@ module ApplicationHelper
   SELLING_TEXT = "En venta"
   FREE_AGENT = "Libre"
 
-  def parse_status(original)
-    case original
-    when "injury"
-      "+".red.bold
-    when "doubt"
-      "?".yellow.bold
-    when "red"
-      "◼".red.bold
-    else
-      ""
-    end
-  end
-
   def parse_trend(original)
     case original
     when "↑"

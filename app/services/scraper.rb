@@ -300,7 +300,8 @@ class Scraper
         selected: player.attribute_nodes.include?("in-lineup"),
         is_in_team: true,
         being_sold: player.css(".btn.btn-popup").text.strip == ApplicationHelper::SELLING_TEXT,
-        rival_img: player.css(".rival img").attr("src").value
+        rival_img: player.css(".rival img").attr("src").value,
+        status: player.css(".status use")&.attr("href")&.value&.split("#")&.last
       })
     end
 

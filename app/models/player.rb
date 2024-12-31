@@ -23,7 +23,7 @@ class Player
     @id = attributes[:id]                                                                              # id del jugador
     @trend = attributes[:trend] || ""                                                                  # tendencia del jugador
     @streak = attributes[:streak]                                                                      # array de los puntos de los últimos tres partidos
-    @status = attributes[:status] ? parse_status(attributes[:status]) : ""                             # estado del jugador
+    @status = Status.new(attributes[:status])                                                          # estado del jugador
     @user = attributes[:user] || ""                                                                    # nombre del usuario acutal? no se usa (creo)
     @player_img = attributes[:player_img] || ""                                                        # url de la imagen del jugador
     @team_img = attributes[:team_img] || ""                                                            # url de la imagen del equipo del jugador
