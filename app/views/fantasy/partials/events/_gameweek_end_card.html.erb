@@ -1,30 +1,44 @@
-<div class="flex w-full grow justify-center">
-  <div class="flex w-full flex-col shadow-2xl items-center bg-gray-800 border-2 border-gray-700 rounded-lg shadow m-2 md:flex-row md:max-w-xl hover:bg-gray-700">
-    <div class="flex flex-col justify-between p-4 leading-normal w-full">
-      <div class="flex items-center justify-between">
-        <h1 class="text-white font-bold text-lg">Fin de <%= event[:gameweek] %></h1>
-        <span class="text-gray-400 text-sm"><%= event[:date] %></span>
+<%# Gameweek End Card %>
+<div class="flex items-center bg-gray-700 rounded-lg p-2 hover:bg-gray-600 transition-colors w-full">
+  <div class="flex-1 flex flex-col min-w-0">
+    <div class="flex items-center justify-between gap-2 mb-3">
+      <div class="flex items-center gap-2">
+        <div class="bg-green-500 skew-x-[-10deg] px-3 py-1 rounded-sm">
+          <span class="block skew-x-[10deg] text-sm font-bold text-white">Fin de la jornada <%= event[:gameweek] %></span>
+        </div>
       </div>
-      <div class="mt-4">
-        <% event[:rankings].each do |user| %>
-          <div class="flex items-center justify-between py-1">
-            <div class="flex items-center">
-              <div class="min-w-8 min-h-8 w-8 h-8 bg-orange-300 text-black font-bold rounded-full flex items-center justify-center overflow-hidden">
-                <% if user[:user_img].present? %>
-                  <img class="w-full h-full object-cover" src="<%= user[:user_img] %>" alt="<%= user[:name] %>" loading="lazy">
-                <% else %>
-                  <span><%= user[:name][0].upcase %></span>
-                <% end %>
-              </div>
-              <span class="text-gray-300 ml-2"><%= user[:position] %>. <%= user[:name] %></span>
+
+      <div class="text-xs text-gray-400 px-2 py-0.5 bg-black/30 rounded">
+        <span class="text-gray-400 text-xs"><%= event[:date] %></span>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <% event[:rankings].each do |user| %>
+        <div class="flex items-center justify-between bg-black/20 rounded-lg p-2">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-orange-300 text-black font-bold rounded-full flex items-center justify-center overflow-hidden">
+              <% if user[:user_img].present? %>
+                <img class="w-full h-full object-cover" src="<%= user[:user_img] %>" alt="<%= user[:name] %>" loading="lazy">
+              <% else %>
+                <span><%= user[:name][0].upcase %></span>
+              <% end %>
             </div>
-            <div class="flex items-center">
-              <span class="text-white font-bold mr-2"><%= user[:points] %> pts</span>
-              <span class="text-green-500"><%= user[:profit] %></span>
+            <div class="flex flex-col">
+              <div class="flex items-center gap-2">
+                <div class="bg-black/30 skew-x-[-10deg] px-2 py-0.5 rounded-sm">
+                  <span class="block skew-x-[10deg] text-xs font-bold text-white">#<%= user[:position] %></span>
+                </div>
+                <span class="font-bold"><%= user[:name] %></span>
+              </div>
+              <div class="flex items-center gap-2 mt-0.5">
+                <span class="text-gray-400 text-sm"><%= user[:points] %> pts</span>
+                <span class="text-green-500 text-sm"><%= user[:profit] %></span>
+              </div>
             </div>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

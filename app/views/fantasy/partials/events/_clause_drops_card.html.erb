@@ -1,25 +1,39 @@
-<div class="flex w-full grow justify-center">
-  <div class="flex w-full flex-col shadow-2xl items-center bg-gray-800 border-2 border-gray-700 rounded-lg shadow m-2 md:flex-row md:max-w-xl hover:bg-gray-700">
-    <div class="flex flex-col justify-between p-4 leading-normal w-full">
-      <div class="flex items-center justify-between mb-4">
-        <h1 class="text-white font-bold text-lg">Bajada de cláusula</h1>
-        <span class="text-gray-400 text-sm"><%= event[:date] %></span>
+<%# Clause Drops Card %>
+<div class="flex items-center bg-gray-700 rounded-lg p-2 hover:bg-gray-600 transition-colors w-full">
+  <div class="flex-1 flex flex-col min-w-0">
+    <div class="flex items-center justify-between gap-2 mb-3">
+      <div class="flex items-center gap-2">
+        <div class="bg-red-500 skew-x-[-10deg] px-3 py-1 rounded-sm">
+          <span class="block skew-x-[10deg] text-sm font-bold text-white">Bajada de cláusula</span>
+        </div>
       </div>
+
+      <div class="text-xs text-gray-400 px-2 py-0.5 bg-black/30 rounded">
+        <span class="text-gray-400 text-xs"><%= event[:date] %></span>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-3">
       <% event[:players].each do |player| %>
-        <div class="flex items-center justify-between py-2 border-t border-gray-700">
-          <div class="flex items-center">
-            <img class="w-12 h-12 rounded-full mr-3" src="<%= player[:player_img] %>" alt="<%= player[:name] %>" loading="lazy">
-            <div>
-              <h2 class="text-white"><%= player[:name] %></h2>
-              <p class="text-gray-400 text-sm"><%= player[:owner] %></p>
+        <div class="flex items-center justify-between bg-black/20 rounded-lg p-2">
+          <div class="flex items-center gap-3">
+            <div class="relative">
+              <img class="w-10 h-10 rounded-lg" src="<%= player[:player_img] %>" alt="<%= player[:name] %>" loading="lazy">
+              <img class="absolute -bottom-1 -right-1 w-4 h-4 rounded-sm bg-white/10 p-0.5" src="<%= player[:team_img] %>" alt="Team logo" loading="lazy">
+            </div>
+            <div class="flex flex-col">
+              <span class="font-bold"><%= player[:name] %></span>
+              <span class="text-gray-400 text-sm"><%= player[:owner] %></span>
             </div>
           </div>
-          <div class="flex items-center">
+
+          <div class="flex items-center gap-3">
             <div class="flex flex-col items-end">
-              <span class="text-red-500 font-bold"><%= player[:new_price] %></span>
-              <span class="text-gray-400 text-sm"><%= pla.css(".status use")&.attr("href")&.value&.split("#")&.lastyer[:old_price] %></span>
+              <div class="bg-black/30 skew-x-[-10deg] px-2 py-0.5 rounded-sm">
+                <span class="block skew-x-[10deg] text-sm font-bold text-red-500"><%= player[:new_price] %></span>
+              </div>
+              <span class="text-gray-400 text-xs mt-0.5"><%= player[:old_price] %></span>
             </div>
-            <img class="w-6 h-6 ml-2" src="<%= player[:team_img] %>" alt="Team logo" loading="lazy">
           </div>
         </div>
       <% end %>

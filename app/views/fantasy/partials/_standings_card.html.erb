@@ -1,38 +1,41 @@
-<div class="flex items-center p-4 bg-gray-700 rounded-lg border-2 <%= player.myself ? 'border-blue-500' : 'border-gray-600' %> hover:bg-gray-600 transition-colors duration-200">
-  <div class="flex items-center gap-4">
-    <div class="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center border-2 <%= player.myself ? 'border-blue-500' : 'border-gray-600' %> skew-x-[-10deg]">
-      <span class="text-lg font-bold skew-x-[10deg]"><%= index %></span>
+<%# Standings Card %>
+<div class="flex items-center bg-gray-700 rounded-lg p-2 hover:bg-gray-600 transition-colors w-full <%= player.myself ? 'ring-2 ring-blue-500' : '' %>">
+  <div class="flex items-center gap-2 sm:gap-4 flex-1 min-w-0">
+    <div class="w-7 h-7 sm:w-8 sm:h-8 bg-black/30 rounded-lg flex items-center justify-center skew-x-[-10deg] flex-shrink-0 <%= player.myself ? 'ring-2 ring-blue-500' : '' %>">
+      <span class="text-base sm:text-lg font-bold text-white skew-x-[10deg]"><%= index %></span>
     </div>
 
-    <div class="min-w-10 min-h-10 w-10 h-10 bg-orange-300 text-black font-bold rounded-full flex items-center justify-center overflow-hidden border-2 <%= player.myself ? 'border-blue-500' : 'border-gray-600' %>">
+    <div class="w-8 h-8 sm:w-10 sm:h-10 bg-orange-300 text-black font-bold rounded-full flex items-center justify-center overflow-hidden flex-shrink-0">
       <img class="w-full h-full object-cover" src="<%= player.user_img %>" alt="Imagen del usuario <%= player.name %>." loading="lazy">
     </div>
 
-    <div class="min-w-0">
-      <div class="flex items-center gap-2">
-        <strong class="text-white text-md md:text-lg font-semibold truncate"><%= player.name %></strong>
+    <div class="min-w-0 flex-1">
+      <div class="flex items-center gap-2 flex-wrap">
+        <strong class="text-white text-sm sm:text-base font-bold truncate"><%= player.name %></strong>
         <% if player.myself %>
-          <span class="text-blue-500 text-sm">(Tú)</span>
+          <span class="text-blue-500 text-xs sm:text-sm">(Tú)</span>
         <% end %>
       </div>
-      <div class="flex items-center gap-2 text-sm text-gray-400">
+      <div class="flex items-center gap-2 text-xs sm:text-sm text-gray-400 flex-wrap">
         <% if player.played.present? %>
           <span class="truncate"><%= player.played.downcase! %></span>
         <% else %>
           <span class="truncate"><%= player.players %></span>
         <% end %>
         <% if player.value.present? %>
-          <span class="w-1 h-1 bg-gray-500 rounded-full flex-shrink-0"></span>
+          <span class="hidden sm:block w-1 h-1 bg-gray-500 rounded-full flex-shrink-0"></span>
           <span class="whitespace-nowrap"><%= player.value %></span>
         <% end %>
       </div>
     </div>
   </div>
 
-  <div class="ml-auto pl-4 text-right">
-    <p class="text-lg md:text-xl font-bold"><%= player.points %></p>
+  <div class="flex flex-col items-end gap-0.5 ml-2 sm:ml-4">
+    <div class="bg-black/30 skew-x-[-10deg] px-2 py-0.5 rounded-sm">
+      <span class="block skew-x-[10deg] text-sm sm:text-base font-bold text-white"><%= player.points %></span>
+    </div>
     <% if player.diff.present? %>
-      <p class="text-sm text-green-500"><%= player.diff %></p>
+      <span class="text-xs sm:text-sm text-green-500"><%= player.diff %></span>
     <% end %>
   </div>
 </div>

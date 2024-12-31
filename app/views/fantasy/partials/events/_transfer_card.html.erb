@@ -1,30 +1,49 @@
-<div class="bg-gray-700 border-2 border-gray-600 rounded-lg hover:bg-gray-600 transition-colors duration-200">
-  <div class="flex items-center p-4">
-    <img class="w-16 h-16 rounded-lg object-cover mr-5 -ml-1"
-         src="<%= event.player_img%>"
-         alt="<%= event.name %>"
-         loading="lazy">
+<%# Transfer Card %>
+<div class="flex items-center bg-gray-700 rounded-lg p-2 hover:bg-gray-600 transition-colors w-full">
+  <div class="flex flex-col items-center flex-shrink-0 px-2">
+    <img src="<%= event.team_img %>" alt="Team" class="w-5 h-5 mb-1">
+    <div class="<%= event.position.browser[:color] %> skew-x-[-10deg] px-2 py-0.5 rounded-sm w-[32px] text-center h-[20px] flex items-center justify-center">
+      <span class="block skew-x-[10deg] text-xs font-bold text-black"><%= event.position.browser[:position] %></span>
+    </div>
+  </div>
 
-    <div class="flex-1 min-w-0">
-      <div class="flex items-center gap-3">
-        <div class="<%= event.position.browser[:color] %> border-2 border-black skew-x-[-10deg]">
-          <p class="px-2 py-1 text-sm text-black font-bold skew-x-[10deg]"><%= event.position.browser[:position] %></p>
+  <div class="relative flex-shrink-0 mr-2 ml-0.5">
+    <img class="w-12 h-12 rounded-lg" src="<%= event.player_img %>" alt="<%= event.name %>" loading="lazy">
+    <% if event.status.present? %>
+      <div class="absolute -top-2 -right-1 <%= event.status.browser[:color] %> skew-x-[-10deg] px-1 py-0.5 rounded-sm w-[16px] h-[16px] flex items-center justify-center">
+        <span class="block skew-x-[10deg] text-[10px] font-bold <%= event.status.browser[:text_color] %>">
+          <%= event.status.browser[:symbol] %>
+        </span>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="flex-1 flex flex-col min-w-0">
+    <div class="flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2 min-w-0">
+        <div class="flex flex-col min-w-0">
+          <h3 class="font-bold truncate"><%= event.name %></h3>
+          <div class="flex items-center gap-1 text-sm">
+            <span class="font-medium whitespace-nowrap text-gray-400">
+              <%= event.price %>
+            </span>
+            <% if event.trend.present? %>
+              <span class="<%= event.trend.include?('up') ? 'text-green-500' : 'text-red-500' %>">
+                <%= event.trend.include?('up') ? '↑' : '↓' %>
+              </span>
+            <% end %>
+          </div>
+          <div class="flex items-center text-sm">
+            <%= render inline: event.transfer_div %>
+          </div>
         </div>
-        <h3 class="text-white font-bold text-lg truncate"><%= event.name %></h3>
-        <span class="text-gray-400 text-sm ml-auto"><%= event.date %></span>
       </div>
 
-      <div class="flex items-center justify-between mt-2">
-        <p class="text-xl font-semibold text-white">
-          <%= event.price %>
-          <% if event.trend.present? %>
-            <span class="<%= event.trend.include?('up') ? 'text-green-500' : 'text-red-500' %>">
-              <%= event.trend.include?('up') ? '↑' : '↓' %>
-            </span>
-          <% end %>
-        </p>
-        <div class="flex items-center ml-8">
-          <%= render inline: event.transfer_div %>
+      <div class="flex flex-col items-end gap-1">
+        <div class="flex items-center gap-1">
+          <div class="text-xs text-gray-400 px-2 py-0.5 bg-black/30 rounded">
+            <span class="text-gray-400 text-xs"><%= event.date %></span>
+          </div>
         </div>
       </div>
     </div>
