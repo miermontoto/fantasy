@@ -162,22 +162,41 @@
           </div>
         <% end %>
       </div>
+
+      <% if @offers.present? %>
+        <div class="mt-6 bg-gray-800 rounded-lg p-4">
+          <div class="flex justify-between items-center mb-4">
+            <h3 class="text-lg font-semibold">Ofertas recibidas</h3>
+          </div>
+          <div class="flex flex-col gap-2">
+            <% @offers.each do |offer| %>
+              <%= render partial: "fantasy/partials/player_card", locals: { player: offer } %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
     </div>
 
     <!-- Results Container -->
-    <div class="lg:col-span-3 bg-gray-800 rounded-lg flex flex-col min-h-0">
-      <div class="p-4 border-b border-gray-700">
+    <div class="lg:col-span-3 bg-gray-800 rounded-lg flex flex-col h-[calc(100vh-16rem)]">
+      <div class="p-4 border-b border-gray-700 flex-shrink-0">
         <div class="flex justify-between items-center">
           <h2 class="text-2xl font-bold">Jugadores en el Mercado</h2>
         </div>
       </div>
 
-      <%= turbo_frame_tag "market-content", class: "flex flex-col flex-1" do %>
-        <%= render partial: "fantasy/partials/market_content", locals: {
-          market_players: @filtered_market,
-          page: @page,
-          total_pages: @total_pages
-        } %>
+      <%= turbo_frame_tag "market-content", class: "flex-1 min-h-0 overflow-auto" do %>
+        <div class="p-4 flex flex-col gap-2">
+          <% if @filtered_market.any? %>
+            <% @filtered_market.each do |player| %>
+              <%= render partial: "fantasy/partials/player_card", locals: { player: player } %>
+            <% end %>
+          <% else %>
+            <div class="text-center text-gray-400 py-8">
+              No se encontraron jugadores
+            </div>
+          <% end %>
+        </div>
       <% end %>
     </div>
   </div>

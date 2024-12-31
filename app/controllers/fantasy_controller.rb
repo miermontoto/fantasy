@@ -69,6 +69,7 @@ class FantasyController < ApplicationController
     return render_empty_market unless @market_data && @market_data[:market]
 
     @top_data = @scraper.top_market(@browser.top_market.body)
+    @offers = @scraper.offers(@browser.offers.body)[:offers]
 
     @filtered_market = @market_data[:market].dup
 
@@ -80,25 +81,12 @@ class FantasyController < ApplicationController
     apply_own_players_filter
     apply_sorting
 
-    # Pagination
-    @page = [ params[:page].to_i, 1 ].max
-    @per_page = 10
-    @total_pages = [ (@filtered_market.size.to_f / @per_page).ceil, 1 ].max
-    @page = [ @page, @total_pages ].min
-
-    start_idx = (@page - 1) * @per_page
-    @filtered_market = @filtered_market[start_idx, @per_page] || []
-
     respond_to do |format|
       format.html
       format.turbo_stream do
         render turbo_stream: turbo_stream.update("market-content",
           partial: "fantasy/partials/market_content",
-          locals: {
-            market_players: @filtered_market,
-            page: @page,
-            total_pages: @total_pages
-          }
+          locals: { market_players: @filtered_market }
         )
       end
     end
@@ -116,25 +104,12 @@ class FantasyController < ApplicationController
     apply_team_sale_filter
     apply_team_sorting
 
-    # Pagination
-    @page = [params[:page].to_i, 1].max
-    @per_page = 10
-    @total_pages = [(@filtered_players.size.to_f / @per_page).ceil, 1].max
-    @page = [@page, @total_pages].min
-
-    start_idx = (@page - 1) * @per_page
-    @filtered_players = @filtered_players[start_idx, @per_page] || []
-
     respond_to do |format|
       format.html
       format.turbo_stream do
         render turbo_stream: turbo_stream.update("team-content",
           partial: "fantasy/partials/team_content",
-          locals: {
-            players: @filtered_players,
-            page: @page,
-            total_pages: @total_pages
-          }
+          locals: { players: @filtered_players }
         )
       end
     end

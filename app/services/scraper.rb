@@ -37,9 +37,8 @@ class Scraper
         average: player.css(".avg").text.strip,
         streak: player.css(".streak span").map { |span| span.text.strip },
         player_img: player.css(".player-pic.qd-player img").attr("src").value,
-        own: false,
-        offered_by: ApplicationHelper::FREE_AGENT,
-        is_offer: true,
+        owner: ApplicationHelper::FREE_AGENT,
+        is_market: true,
         rival_img: player.css(".rival img").attr("src").value
       })
     end
@@ -213,7 +212,7 @@ class Scraper
         sale: player.css(".player-btns .btn-bid").text.gsub(/[^0-9]/, "").to_i,
         player_img: player.css(".player-pic.qd-player img").attr("src").value,
         asked_price: player.css(".btn.btn-popup.btn-bid.btn-green").text.strip,
-        is_offer: true,
+        is_market: true,
         rival_img: player.css(".rival img").attr("src").value
       })
     end
@@ -340,14 +339,15 @@ class Scraper
         position: "pos-#{offer["position"]}",
         average: offer["avg"],
         value: offer["value"],
-        streak: offer["streak"],
+        streak: offer["streak"].map { |s| s["points"] },
         date: offer["date"],
-        offer: true,
-        previous_value: offer["prev_value"],
+        is_offer: true,
         best_bid: offer["bid"],
         offered_by: offer["uname"],
-        bid_status: offer["bid_status"],
-        asked_price: offer["price"]
+        team_img: offer["teamLogoUrl"],
+        player_img: offer["photoUrl"],
+        points: offer["points"],
+        own: true
       })
     end
 
