@@ -52,12 +52,15 @@ class Player
     @is_market = attributes[:is_market] || false                                # en mercado: true
     @owner = attributes[:owner] || ""                                           # en mercado: nombre del usuario que ofrece el jugador
     @asked_price = attributes[:asked_price] || 0                                # en mercado: precio de venta del jugador
-    @own = attributes[:own] || @asked_price == ApplicationHelper::SELLING_TEXT  # en mercado: true si el jugador es propio
 
-    @is_in_team = attributes[:is_team] || false                                 # en equipo: true
+    @is_in_team = attributes[:is_in_team] || false                              # en equipo: true
     @selected = attributes[:selected] || false                                  # en equipo: true si el jugador juega esta jornada
     @achieved = attributes[:achieved] || "?"                                    # en equipo: puntos del jugador en la jornada actual (si aplica)
     @being_sold = attributes[:being_sold] || false                              # en equipo: true si el jugador está en venta
+
+    @own = attributes[:own] \
+      || @is_in_team \
+      || @asked_price == ApplicationHelper::SELLING_TEXT                        # true si el jugador es propio
 
     @transfer_div = "
     <p class=\"text-sm #{@from_market ? 'text-gray-500 italic' : 'text-gray-200'}\">#{@from}</p>
