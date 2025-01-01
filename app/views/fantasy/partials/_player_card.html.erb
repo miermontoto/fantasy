@@ -1,5 +1,6 @@
+<%# Common player card layout that works with all player types %>
 <div class="flex items-center bg-gray-700 <%=
-  if player.own && (player.being_sold || player.is_offer)
+  if (player.is_a?(TeamPlayer) && player.being_sold) || (player.is_a?(MarketPlayer) && player.own)
     'ring-2 ring-orange-500/50'
   end
 %> rounded-lg p-2 hover:bg-gray-600 transition-colors w-full">
@@ -31,7 +32,7 @@
           <h3 class="font-bold truncate"><%= player.name %></h3>
           <div class="flex items-center gap-1 text-sm">
             <span class="font-medium whitespace-nowrap text-gray-400">
-              <%= player.is_offer ? player.price : format_value(player.value) %>
+              <%= format_value(player.value) %>
             </span>
             <% if player.trend.present? %>
               <span class="<%= player.trend.to_s.include?('↑') || player.trend.to_s.include?('up') ? 'text-green-500' : 'text-red-500' %>">
@@ -44,12 +45,12 @@
 
       <div class="flex flex-col items-end gap-1">
         <div class="flex items-center gap-1">
-          <% if player.own && player.being_sold %>
+          <% if player.is_a?(TeamPlayer) && player.being_sold %>
             <div class="text-xs text-orange-400 px-2 py-0.5 bg-black/30 rounded">
               <span class="font-medium">En venta</span>
             </div>
           <% end %>
-          <% if player.ppm.present? && !player.is_offer %>
+          <% if player.ppm.present? && !player.is_a?(OfferPlayer) %>
             <div class="text-xs text-gray-400 px-2 py-0.5 bg-black/30 rounded">
               <span class="font-bold"><%= player.ppm %></span>
               <span class="ml-1">PPM</span>
@@ -57,18 +58,17 @@
           <% end %>
         </div>
 
-        <% if (player.offered_by.present? && player.offered_by != ApplicationHelper::FREE_AGENT) %>
+        <% if (player.is_a?(MarketPlayer) && player.offered_by != ApplicationHelper::FREE_AGENT) \
+          || player.is_a?(OfferPlayer) %>
           <div class="text-xs text-gray-400 px-2 py-0.5 bg-black/30 rounded">
-            <% if player.offered_by.present? && player.offered_by != ApplicationHelper::FREE_AGENT %>
-              <span class="truncate"><%= player.offered_by %></span>
-            <% end %>
+            <span class="truncate"><%= player.offered_by %></span>
           </div>
         <% end %>
       </div>
     </div>
 
     <div class="flex items-center gap-3 mt-1">
-      <% if player.streak.present? && player.average.present? && !player.is_offer %>
+      <% if player.streak.present? && player.average.present? && !player.is_a?(OfferPlayer) %>
         <div class="flex items-center gap-2">
           <div class="bg-black/80 skew-x-[-10deg] px-2 py-1 rounded-sm flex items-center">
             <div class="skew-x-[10deg] text-xs font-bold text-white mr-2">
@@ -101,16 +101,14 @@
         </div>
       <% end %>
 
-      <% if player.is_offer && player.asked_price.present? %>
+      <% if player.is_a?(OfferPlayer) %>
         <div class="text-right">
           <p class="text-xs text-gray-400">
             <%= format_value(player.best_bid) %>
 
             <% if player.difference.present? %>
               <span class="text-xs <%= player.difference > 0 ? 'text-green-500' : (player.difference < 0 ? 'text-red-500' : 'text-yellow-500') %>">
-                <%# @todo: usar difference_trend pero sin los colores de consola %>
-                <%= player.difference > 0 ? '+' : (player.difference < 0 ? '-' : '±') %>
-                <%= player.difference %>%
+                <%= player.difference > 0 ? '+' : (player.difference == 0 ? '±' : '') %><%= player.difference %>%
               </span>
             <% end %>
           </p>

@@ -24,32 +24,26 @@ class Scraper
 
     # top market players
     market_players = doc.css(".card-market_unified .player-list li").map do |player|
-      # @remind no se puede añadir la tendencia aquí porque ocurren problemas
-      # de padding con el nombre al tener en cuenta los colores de las flechas
-      # aquí pero no tener tendencias en las transferencias de debajo.
-      Player.new({
+      MarketPlayer.new({
         name: player.css(".name").text.strip,
         team_img: player.css("img.team-logo").attr("src").value,
         position: player.css(".icons i").attr("class").value,
         points: player.css(".points").text.strip,
         value: player.css(".underName").text.gsub(/[^0-9]/, "").to_i,
-        # trend: player.css(".value-arrow").text.strip,
         average: player.css(".avg").text.strip,
         streak: player.css(".streak span").map { |span| span.text.strip },
         player_img: player.css(".player-pic.qd-player img").attr("src").value,
         owner: ApplicationHelper::FREE_AGENT,
-        is_market: true,
         rival_img: player.css(".rival img").attr("src").value
       })
     end
 
     # transferencias recientes
     recent_transfers = doc.css(".card-transfer").map do |block|
-      # si contiene una fecha con más de dos "hace" en la cadena, es un bug
       date = block.css(".head>.date").first.text.strip
 
       block.css(".player-list>li").map do |transfer|
-        Player.new({
+        TransferPlayer.new({
           name: transfer.css(".title strong").first.text.strip,
           position: transfer.css(".player-row .icons i").attr("class").value,
           team_img: transfer.css("img.team-logo").attr("src").value,
@@ -58,9 +52,7 @@ class Scraper
           value: transfer.css(".price").first.text.strip,
           date: date,
           status: transfer.css(".status use")&.attr("href")&.value&.split("#")&.last,
-          user: user_name,
           player_img: transfer.css(".player-pic.qd-player img").attr("src").value,
-          transfer: true,
           clause: transfer.css(".title").text.include?("por pago de cláusula")
         })
       end
@@ -197,7 +189,7 @@ class Scraper
     doc = Nokogiri::HTML(html)
 
     players = doc.css("#list-on-sale li").map do |player|
-      Player.new({
+      MarketPlayer.new({
         id: player.css(".player-pic.qd-player").attr("data-id_player").value,
         name: player.css(".name").text.strip,
         team_img: player.css("img.team-logo").attr("src").value,
@@ -209,10 +201,8 @@ class Scraper
         average: player.css(".avg").text.strip,
         streak: player.css(".streak span").map { |span| span.text.strip },
         status: player.css(".status use")&.attr("href")&.value&.split("#")&.last,
-        sale: player.css(".player-btns .btn-bid").text.gsub(/[^0-9]/, "").to_i,
         player_img: player.css(".player-pic.qd-player img").attr("src").value,
         asked_price: player.css(".btn.btn-popup.btn-bid.btn-green").text.strip,
-        is_market: true,
         rival_img: player.css(".rival img").attr("src").value
       })
     end
@@ -286,7 +276,7 @@ class Scraper
     doc = Nokogiri::HTML(html)
 
     squad_players = doc.css(".player-list.list-team li").map do |player|
-      Player.new({
+      TeamPlayer.new({
         name: player.css(".name").text.strip.gsub(/\s+/, " "),
         position: player.css(".icons i").attr("class").value,
         points: player.css(".points").text.strip,
@@ -297,7 +287,6 @@ class Scraper
         player_img: player.css(".player-pic.qd-player img").attr("src").value,
         team_img: player.css("img.team-logo").attr("src").value,
         selected: player.attribute_nodes.include?("in-lineup"),
-        is_in_team: true,
         being_sold: player.css(".btn.btn-popup").text.strip == ApplicationHelper::SELLING_TEXT,
         rival_img: player.css(".rival img").attr("src").value,
         status: player.css(".status use")&.attr("href")&.value&.split("#")&.last
@@ -333,7 +322,7 @@ class Scraper
     end
 
     offers = offers.map do |id, offer|
-      Player.new({
+      OfferPlayer.new({
         id: id,
         name: offer["name"],
         position: "pos-#{offer["position"]}",
@@ -341,13 +330,11 @@ class Scraper
         value: offer["value"],
         streak: offer["streak"].map { |s| s["points"] },
         date: offer["date"],
-        is_offer: true,
         best_bid: offer["bid"],
         offered_by: offer["uname"],
         team_img: offer["teamLogoUrl"],
         player_img: offer["photoUrl"],
-        points: offer["points"],
-        own: true
+        points: offer["points"]
       })
     end
 
