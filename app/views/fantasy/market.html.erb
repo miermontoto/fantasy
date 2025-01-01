@@ -5,9 +5,15 @@
   additional_stats: capture do %>
     <div>
       <span class="text-gray-400 text-sm">Último cambio</span>
+      <% if @top_data[:diff].present? %>
       <p class="text-xl font-semibold <%= @top_data[:diff] < 0 ? 'text-red-500' : 'text-green-500' %>">
         <%= format_value(@top_data[:diff]) %>
-      </p>
+        </p>
+      <% else %>
+        <p class="text-xl font-semibold text-gray-400">
+          ?
+        </p>
+      <% end %>
     </div>
   <% end,
   title: "Jugadores en el Mercado",
