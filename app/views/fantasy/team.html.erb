@@ -1,158 +1,39 @@
 <% content_for :title, "Mi Equipo" %>
 
-<div class="container mx-auto flex flex-col h-full min-h-0 pb-6"
-     data-controller="fantasy--team">
-  <% team_value = @team_data[:players]&.sum(&:value) || 0 %>
-  <% current_balance = @team_data[:info][:current_balance].to_s.gsub(/[^\d-]/, '').to_i %>
-  <% total_value = team_value + current_balance %>
+<% team_value = @team_data[:players]&.sum(&:value) || 0 %>
+<% current_balance = @team_data[:info][:current_balance].to_s.gsub(/[^\d-]/, '').to_i %>
+<% total_value = team_value + current_balance %>
 
-  <%= render partial: "fantasy/partials/stats", locals: {
-    info: @team_data[:info],
-    additional_stats: capture do %>
-      <div>
-        <span class="text-gray-400 text-sm">Jugadores</span>
-        <p class="text-xl font-semibold">
-          <%= @team_data[:players]&.count || 0 %> / 25
+<%= render partial: "fantasy/partials/page_layout", locals: {
+  info: @team_data[:info],
+  additional_stats: capture do %>
+    <div>
+      <span class="text-gray-400 text-sm">Jugadores</span>
+      <p class="text-xl font-semibold">
+        <%= @team_data[:players]&.count || 0 %> / 25
+      </p>
+    </div>
+    <div class="h-8 w-px bg-gray-700"></div>
+    <div>
+      <span class="text-gray-400 text-sm">En venta</span>
+      <p class="text-xl font-semibold">
+        <%= @team_data[:players]&.count { |p| p.being_sold } || 0 %> / 6
+      </p>
+    </div>
+    <div class="h-8 w-px bg-gray-700"></div>
+    <div>
+      <span class="text-gray-400 text-sm">Valor</span>
+      <div class="flex flex-col">
+        <p class="text-xl font-semibold leading-tight">
+          <%= format_value(team_value) %>
+        </p>
+        <p class="text-sm text-gray-400 <%= total_value < 0 ? 'text-red-500' : '' %>">
+          real: <%= format_value(total_value) %>
         </p>
       </div>
-      <div class="h-8 w-px bg-gray-700"></div>
-      <div>
-        <span class="text-gray-400 text-sm">En venta</span>
-        <p class="text-xl font-semibold">
-          <%= @team_data[:players]&.count { |p| p.being_sold } || 0 %> / 6
-        </p>
-      </div>
-      <div class="h-8 w-px bg-gray-700"></div>
-      <div>
-        <span class="text-gray-400 text-sm">Valor</span>
-        <div class="flex flex-col">
-          <p class="text-xl font-semibold leading-tight">
-            <%= format_value(team_value) %>
-          </p>
-          <p class="text-sm text-gray-400 <%= total_value < 0 ? 'text-red-500' : '' %>">
-            real: <%= format_value(total_value) %>
-          </p>
-        </div>
-      </div>
-    <% end
-  } %>
-
-  <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 flex-1 min-h-0">
-    <!-- Filters Sidebar -->
-    <div class="lg:col-span-1">
-      <div class="bg-gray-800 rounded-lg p-4">
-        <div class="flex justify-between items-center mb-4">
-          <h3 class="text-lg font-semibold">Filtros</h3>
-          <%= link_to team_path,
-              class: "text-blue-400 hover:text-blue-300 text-sm",
-              data: {
-                turbo_frame: "team-content",
-                action: "click->fantasy--team#resetStyles"
-              } do %>
-              Limpiar filtros
-              <span class="ml-1">×</span>
-          <% end %>
-        </div>
-
-        <%= form_tag team_path, method: :get,
-            class: "space-y-4",
-            data: {
-              turbo_frame: "team-content",
-              fantasy__team_target: "form"
-            } do %>
-          <div>
-            <label class="block text-sm font-medium text-gray-400 mb-2">Posición</label>
-            <div class="flex gap-2">
-              <% positions = [
-                ['PT', { color: 'bg-yellow-500 border-yellow-500', text: 'text-black' }],
-                ['DF', { color: 'bg-blue-500 border-blue-500', text: 'text-black' }],
-                ['MC', { color: 'bg-green-500 border-green-500', text: 'text-black' }],
-                ['DL', { color: 'bg-red-500 border-red-500', text: 'text-black' }]
-              ] %>
-              <% positions.each do |pos, styles| %>
-                <% is_selected = params[:position] == pos %>
-                <button type="button"
-                        data-position="<%= pos %>"
-                        data-action="click->fantasy--team#togglePosition"
-                        class="relative flex-1 px-3 py-1.5 border-2 text-sm font-bold rounded skew-x-[-10deg] transition-all
-                               <%= is_selected ? styles[:color] : 'bg-gray-700 border-gray-600 hover:bg-gray-600' %>">
-                  <span class="block skew-x-[10deg] <%= is_selected ? styles[:text] : 'text-white' %>"><%= pos %></span>
-                </button>
-              <% end %>
-              <%= hidden_field_tag :position, params[:position] %>
-            </div>
-          </div>
-
-          <div>
-            <label class="block text-sm font-medium text-gray-400 mb-2">Ordenar por</label>
-            <div class="flex gap-2">
-              <%= select_tag :sort_by,
-                options_for_select([
-                  ['Puntos', 'points'],
-                  ['Media', 'avg'],
-                  ['PPM', 'ppm'],
-                  ['Precio', 'price'],
-                  ['Racha', 'streak']
-                ], params[:sort_by] || 'points'),
-                class: "flex-1 bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500",
-                data: { action: "change->fantasy--team#submitForm" }
-              %>
-
-              <button type="button"
-                      data-action="click->fantasy--team#toggleSortDirection"
-                      class="px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <span class="text-xl leading-none">
-                  <%= params[:sort_direction] == 'asc' ? '↑' : '↓' %>
-                </span>
-              </button>
-              <%= hidden_field_tag :sort_direction, params[:sort_direction] || 'desc' %>
-            </div>
-          </div>
-
-          <div>
-            <label class="block text-sm font-medium text-gray-400 mb-2">Buscar jugador</label>
-            <%= text_field_tag :search,
-              params[:search],
-              placeholder: "Nombre del jugador...",
-              class: "w-full px-4 py-2 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500",
-              data: { action: "input->fantasy--team#submitForm" }
-            %>
-          </div>
-
-          <div>
-            <label class="flex items-center gap-2 text-sm font-medium text-gray-400">
-              <%= check_box_tag :on_sale,
-                "1",
-                params[:on_sale] == "1",
-                class: "w-4 h-4 rounded border-gray-600 text-blue-500 focus:ring-blue-500 focus:ring-offset-gray-800 bg-gray-700",
-                data: { action: "change->fantasy--team#submitForm" }
-              %>
-              <span>Solo jugadores en venta</span>
-            </label>
-          </div>
-        <% end %>
-      </div>
     </div>
-
-    <!-- Team Content -->
-    <div class="lg:col-span-3 bg-gray-800 rounded-lg flex flex-col h-[calc(100vh-16rem)]">
-      <div class="p-4 border-b border-gray-700 flex-shrink-0">
-        <h2 class="text-2xl font-bold">Mi Plantilla</h2>
-      </div>
-
-      <%= turbo_frame_tag "team-content", class: "flex-1 min-h-0 overflow-auto" do %>
-        <div class="p-4 flex flex-col gap-2">
-          <% if @filtered_players.any? %>
-            <% @filtered_players.each do |player| %>
-              <%= render partial: "fantasy/partials/player_card", locals: { player: player } %>
-            <% end %>
-          <% else %>
-            <div class="text-center text-gray-400 py-8">
-              No se encontraron jugadores
-            </div>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</div>
+  <% end,
+  title: "Mi Plantilla",
+  sidebar: render(partial: "fantasy/partials/team/sidebar"),
+  content: render(partial: "fantasy/partials/team/content", locals: { filtered_players: @filtered_players })
+} %>

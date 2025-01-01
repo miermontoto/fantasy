@@ -1,0 +1,14 @@
+<%# Market content with player cards %>
+<%= turbo_frame_tag "market-content", class: "flex-1 min-h-0 overflow-auto" do %>
+  <div class="p-4 flex flex-col gap-2">
+    <% if filtered_market.any? %>
+      <% filtered_market.each do |player| %>
+        <%= render partial: "fantasy/partials/player_card", locals: { player: player } %>
+      <% end %>
+    <% else %>
+      <div class="text-center text-gray-400 py-8">
+        No se encontraron jugadores
+      </div>
+    <% end %>
+  </div>
+<% end %>

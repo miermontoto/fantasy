@@ -202,8 +202,9 @@ class Scraper
         streak: player.css(".streak span").map { |span| span.text.strip },
         status: player.css(".status use")&.attr("href")&.value&.split("#")&.last,
         player_img: player.css(".player-pic.qd-player img").attr("src").value,
-        asked_price: player.css(".btn.btn-popup.btn-bid.btn-green").text.strip,
-        rival_img: player.css(".rival img").attr("src").value
+        asked_price: player.css(".btn.btn-popup").text.strip.gsub(/[^0-9]/, "").to_i,
+        rival_img: player.css(".rival img").attr("src").value,
+        own: player.css(".btn.btn-popup").text.strip.include?(ApplicationHelper::SELLING_TEXT)
       })
     end
 

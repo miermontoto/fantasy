@@ -1,0 +1,28 @@
+<%# Shared layout for market and team views %>
+<div class="container mx-auto h-[calc(100vh-6rem)] flex flex-col">
+  <%# Stats section %>
+  <%= render partial: "fantasy/partials/stats", locals: {
+    info: info,
+    additional_stats: additional_stats
+  } %>
+
+  <%# Main grid layout %>
+  <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 flex-1 min-h-0">
+    <%# Sidebar %>
+    <div class="lg:col-span-1">
+      <%= sidebar %>
+    </div>
+
+    <%# Main content %>
+    <div class="lg:col-span-3 bg-gray-800 rounded-lg flex flex-col h-[calc(100vh-16rem)]">
+      <div class="p-4 border-b border-gray-700 flex-shrink-0">
+        <div class="flex justify-between items-center">
+          <h2 class="text-2xl font-bold"><%= title %></h2>
+          <%= header_actions if defined?(header_actions) %>
+        </div>
+      </div>
+
+      <%= content %>
+    </div>
+  </div>
+</div>

@@ -1,191 +1,176 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["form"]
+  static targets = ["form", "filtersContent", "filtersIcon", "offersContent", "offersIcon"]
 
   connect() {
-    this.debounceTimer = null
+    this.filtersExpanded = localStorage.getItem("filtersExpanded") !== "false"
+    this.offersExpanded = localStorage.getItem("offersExpanded") !== "false"
+    this.updateFiltersVisibility()
+    this.updateOffersVisibility()
+  }
+
+  toggleFilters() {
+    this.filtersExpanded = !this.filtersExpanded
+    localStorage.setItem("filtersExpanded", this.filtersExpanded)
+    this.updateFiltersVisibility()
+  }
+
+  toggleOffers() {
+    this.offersExpanded = !this.offersExpanded
+    localStorage.setItem("offersExpanded", this.offersExpanded)
+    this.updateOffersVisibility()
+  }
+
+  updateFiltersVisibility() {
+    this.filtersContentTarget.classList.toggle("hidden", !this.filtersExpanded)
+    this.filtersIconTarget.innerHTML = this.chevronIcon(this.filtersExpanded)
+  }
+
+  updateOffersVisibility() {
+    if (this.hasOffersContentTarget) {
+      this.offersContentTarget.classList.toggle("hidden", !this.offersExpanded)
+      this.offersIconTarget.innerHTML = this.chevronIcon(this.offersExpanded)
+    }
+  }
+
+  chevronIcon(expanded) {
+    return expanded ? `
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd" />
+      </svg>
+    ` : `
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+      </svg>
+    `
+  }
+
+  resetStyles() {
+    this.formTarget.reset()
+    this.updateButtonStyles()
+    this.submitForm()
+  }
+
+  submitForm() {
+    this.formTarget.requestSubmit()
   }
 
   togglePosition(event) {
     event.preventDefault()
     const button = event.currentTarget
     const position = button.dataset.position
-    const form = this.formTarget
-    const positionInput = form.querySelector('input[name="position"]')
-    const excludeInput = form.querySelector('input[name="exclude_position"]')
+    const currentPosition = this.formTarget.position.value
+    const excludedPositions = this.formTarget.exclude_position.value.split(",").filter(Boolean)
 
-    if (event.shiftKey) {
-      let excluded = excludeInput.value ? excludeInput.value.split(',') : []
-      const index = excluded.indexOf(position)
-
-      // Reset all buttons to default state first
-      form.querySelectorAll('[data-position]').forEach(btn => {
-        const pos = btn.dataset.position
-        btn.classList.remove('bg-yellow-500', 'bg-blue-500', 'bg-green-500', 'bg-red-500')
-        btn.classList.remove('border-yellow-500', 'border-blue-500', 'border-green-500', 'border-red-500')
-        btn.classList.remove('opacity-40')
-        btn.classList.add('bg-gray-700', 'border-gray-600', 'text-white')
-        btn.querySelector('span').classList.remove('text-black')
-        btn.querySelector('span').classList.add('text-white')
-        const line = btn.querySelector('.absolute')
-        if (line) line.remove()
-      })
-
-      if (index === -1) {
-        excluded.push(position)
-        // Add excluded style
-        button.classList.add('opacity-40')
-        const line = document.createElement('div')
-        line.className = 'absolute inset-0 flex items-center justify-center'
-        line.innerHTML = '<div class="w-full h-0.5 bg-gray-300 rotate-45"></div>'
-        button.appendChild(line)
-      } else {
-        excluded.splice(index, 1)
+    if (currentPosition === position) {
+      // If already selected, remove selection and add to excluded
+      this.formTarget.position.value = ""
+      if (!excludedPositions.includes(position)) {
+        excludedPositions.push(position)
       }
-
-      excludeInput.value = excluded.join(',')
-      positionInput.value = ''
+    } else if (excludedPositions.includes(position)) {
+      // If excluded, remove from excluded
+      const index = excludedPositions.indexOf(position)
+      excludedPositions.splice(index, 1)
     } else {
-      // Reset all buttons to default state first
-      form.querySelectorAll('[data-position]').forEach(btn => {
-        const pos = btn.dataset.position
-        btn.classList.remove('bg-yellow-500', 'bg-blue-500', 'bg-green-500', 'bg-red-500')
-        btn.classList.remove('border-yellow-500', 'border-blue-500', 'border-green-500', 'border-red-500')
-        btn.classList.add('bg-gray-700', 'border-gray-600')
-        btn.querySelector('span').classList.remove('text-black')
-        btn.querySelector('span').classList.add('text-white')
-      })
-
-      if (positionInput.value === position) {
-        positionInput.value = ''
-      } else {
-        positionInput.value = position
-        // Add active style based on position
-        const colors = {
-          'PT': ['bg-yellow-500', 'border-yellow-500'],
-          'DF': ['bg-blue-500', 'border-blue-500'],
-          'MC': ['bg-green-500', 'border-green-500'],
-          'DL': ['bg-red-500', 'border-red-500']
-        }
-        button.classList.remove('bg-gray-700', 'border-gray-600')
-        button.classList.add(...colors[position])
-        button.querySelector('span').classList.remove('text-white')
-        button.querySelector('span').classList.add('text-black')
+      // If neither selected nor excluded, select it
+      this.formTarget.position.value = position
+      const index = excludedPositions.indexOf(position)
+      if (index > -1) {
+        excludedPositions.splice(index, 1)
       }
-      excludeInput.value = ''
     }
 
-    this.resetPageAndSubmit()
+    this.formTarget.exclude_position.value = excludedPositions.join(",")
+    this.updateButtonStyles()
+    this.submitForm()
   }
 
   toggleSource(event) {
     event.preventDefault()
     const button = event.currentTarget
     const source = button.dataset.source
-    const form = this.formTarget
-    const sourceInput = form.querySelector('input[name="source"]')
-
-    // Remove active class from all buttons
-    form.querySelectorAll('[data-source]').forEach(btn => {
-      btn.classList.remove('bg-blue-500', 'border-blue-500', 'text-black')
-      btn.classList.add('bg-gray-700', 'border-gray-600', 'text-white')
-    })
-
-    if (sourceInput.value === source) {
-      sourceInput.value = 'all'
-      // Set "all" button as active
-      form.querySelector('[data-source="all"]').classList.remove('bg-gray-700', 'border-gray-600', 'text-white')
-      form.querySelector('[data-source="all"]').classList.add('bg-blue-500', 'border-blue-500', 'text-black')
-    } else {
-      sourceInput.value = source
-      // Set clicked button as active
-      button.classList.remove('bg-gray-700', 'border-gray-600', 'text-white')
-      button.classList.add('bg-blue-500', 'border-blue-500', 'text-black')
-    }
-
-    this.resetPageAndSubmit()
+    this.formTarget.source.value = source
+    this.updateSourceButtonStyles()
+    this.submitForm()
   }
 
   toggleSortDirection(event) {
     event.preventDefault()
-    const form = this.formTarget
-    const directionInput = form.querySelector('input[name="sort_direction"]')
-    const newDirection = directionInput.value === 'asc' ? 'desc' : 'asc'
-    directionInput.value = newDirection
-    event.currentTarget.querySelector('span').textContent = newDirection === 'asc' ? '↑' : '↓'
-    this.resetPageAndSubmit()
-  }
-
-  changePage(event) {
-    event.preventDefault()
-    const page = event.currentTarget.dataset.page
-    if (!page) return
-
-    let pageInput = this.formTarget.querySelector('input[name="page"]')
-    if (!pageInput) {
-      pageInput = document.createElement('input')
-      pageInput.type = 'hidden'
-      pageInput.name = 'page'
-      this.formTarget.appendChild(pageInput)
-    }
-    pageInput.value = page
-
-    // Submit immediately for pagination
-    this.formTarget.requestSubmit()
+    const currentDirection = this.formTarget.sort_direction.value
+    this.formTarget.sort_direction.value = currentDirection === "asc" ? "desc" : "asc"
+    this.submitForm()
   }
 
   updatePriceDisplay(event) {
-    const priceValue = document.getElementById('price-value')
-    if (priceValue) {
-      const formatter = new Intl.NumberFormat('es-ES', {
-        style: 'currency',
-        currency: 'EUR',
-        maximumFractionDigits: 0
-      })
-      priceValue.textContent = formatter.format(event.currentTarget.value)
+    const value = event.target.value
+    const formattedValue = new Intl.NumberFormat("es-ES", {
+      style: "currency",
+      currency: "EUR",
+      maximumFractionDigits: 0
+    }).format(value)
+    document.getElementById("price-value").textContent = formattedValue
+  }
+
+  updateButtonStyles() {
+    const currentPosition = this.formTarget.position.value
+    const excludedPositions = this.formTarget.exclude_position.value.split(",").filter(Boolean)
+    const positionColors = {
+      'PT': ['bg-yellow-500', 'border-yellow-500', 'text-black'],
+      'DF': ['bg-blue-500', 'border-blue-500', 'text-black'],
+      'MC': ['bg-green-500', 'border-green-500', 'text-black'],
+      'DL': ['bg-red-500', 'border-red-500', 'text-black']
     }
-  }
 
-  resetPageAndSubmit() {
-    let pageInput = this.formTarget.querySelector('input[name="page"]')
-    if (!pageInput) {
-      pageInput = document.createElement('input')
-      pageInput.type = 'hidden'
-      pageInput.name = 'page'
-      this.formTarget.appendChild(pageInput)
-    }
-    pageInput.value = '1'
-
-    clearTimeout(this.debounceTimer)
-    this.debounceTimer = setTimeout(() => {
-      this.formTarget.requestSubmit()
-    }, 300)
-  }
-
-  submitForm() {
-    this.resetPageAndSubmit()
-  }
-
-  resetStyles() {
-    const form = this.formTarget
-
-    // Reset position buttons
-    form.querySelectorAll('[data-position]').forEach(btn => {
-      btn.classList.remove('bg-yellow-500', 'bg-blue-500', 'bg-green-500', 'bg-red-500')
-      btn.classList.remove('border-yellow-500', 'border-blue-500', 'border-green-500', 'border-red-500')
-      btn.classList.remove('opacity-40')
-      btn.classList.add('bg-gray-700', 'border-gray-600', 'text-white')
-      btn.querySelector('span').classList.remove('text-black')
-      btn.querySelector('span').classList.add('text-white')
+    this.formTarget.querySelectorAll('[data-position]').forEach(btn => {
+      const pos = btn.dataset.position
+      const span = btn.querySelector('span')
       const line = btn.querySelector('.absolute')
-      if (line) line.remove()
-    })
 
-    // Reset source buttons
-    form.querySelectorAll('[data-source]').forEach(btn => {
-      btn.classList.remove('bg-blue-500', 'border-blue-500', 'text-black')
-      btn.classList.add('bg-gray-700', 'border-gray-600', 'text-white')
+      // Remove all possible styles
+      btn.classList.remove(
+        'bg-yellow-500', 'bg-blue-500', 'bg-green-500', 'bg-red-500',
+        'border-yellow-500', 'border-blue-500', 'border-green-500', 'border-red-500',
+        'bg-gray-700', 'border-gray-600', 'opacity-40'
+      )
+      span.classList.remove('text-black', 'text-white')
+      if (line) line.remove()
+
+      // Add appropriate styles
+      if (pos === currentPosition) {
+        btn.classList.add(...positionColors[pos])
+        span.classList.add('text-black')
+      } else if (excludedPositions.includes(pos)) {
+        btn.classList.add('bg-gray-700', 'border-gray-600', 'opacity-40')
+        span.classList.add('text-white')
+        const lineDiv = document.createElement('div')
+        lineDiv.className = 'absolute inset-0 flex items-center justify-center skew-x-[10deg]'
+        lineDiv.innerHTML = '<div class="w-full h-0.5 bg-gray-300 rotate-45"></div>'
+        btn.appendChild(lineDiv)
+      } else {
+        btn.classList.add('bg-gray-700', 'border-gray-600')
+        span.classList.add('text-white')
+      }
+    })
+  }
+
+  updateSourceButtonStyles() {
+    const currentSource = this.formTarget.source.value
+    this.formTarget.querySelectorAll('[data-source]').forEach(btn => {
+      const source = btn.dataset.source
+      const span = btn.querySelector('span')
+
+      btn.classList.remove('bg-blue-500', 'border-blue-500', 'bg-gray-700', 'border-gray-600')
+      span.classList.remove('text-black', 'text-white')
+
+      if (source === currentSource || (source === 'all' && !currentSource)) {
+        btn.classList.add('bg-blue-500', 'border-blue-500')
+        span.classList.add('text-black')
+      } else {
+        btn.classList.add('bg-gray-700', 'border-gray-600')
+        span.classList.add('text-white')
+      }
     })
   }
 }

@@ -4,7 +4,7 @@ class Player
   include ApplicationHelper
 
   # Atributos comunes a todos los tipos de jugadores
-  attr_accessor :position, :name, :points, :value, :average, :price, :ppm,
+  attr_reader :position, :name, :points, :value, :average, :price, :ppm,
                 :trend, :streak, :status, :player_img, :team_img, :rival_img
 
   # Constructor de la clase, inicializa los atributos del jugador
@@ -23,6 +23,11 @@ class Player
     @player_img = attributes[:player_img] || ""                                 # url de la imagen del jugador
     @team_img = attributes[:team_img] || ""                                     # url de la imagen del equipo del jugador
     @rival_img = attributes[:rival_img] || ""                                   # url de la imagen del próximo equipo rival
+
+    price_trend = @increase_trend ? @increase_trend : parse_trend(@trend)
+    @price_string = "#{@price} "
+    @price_string += price_trend unless price_trend == ""
+    @price_string += " (#{format_num(@variation)}€)" if @variation
 
     # calcular longitudes máximas de los atributos
     max("name", @name)

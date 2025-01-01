@@ -1,53 +1,39 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["form"]
+  static targets = ["form", "filtersContent", "filtersIcon"]
 
   connect() {
-    this.submitForm = this.submitForm.bind(this)
-    this.submitFormWithDelay = this.debounce(this.submitForm, 300)
+    this.filtersExpanded = localStorage.getItem("teamFiltersExpanded") !== "false"
+    this.updateFiltersVisibility()
   }
 
-  togglePosition(event) {
-    event.preventDefault()
-    const button = event.currentTarget
-    const position = button.dataset.position
-    const form = this.formTarget
-    const positionInput = form.querySelector('input[name="position"]')
-
-    // Reset all buttons to default state first
-    form.querySelectorAll('[data-position]').forEach(btn => {
-      const pos = btn.dataset.position
-      btn.classList.remove('bg-yellow-500', 'bg-blue-500', 'bg-green-500', 'bg-red-500')
-      btn.classList.remove('border-yellow-500', 'border-blue-500', 'border-green-500', 'border-red-500')
-      btn.classList.add('bg-gray-700', 'border-gray-600')
-      btn.querySelector('span').classList.remove('text-black')
-      btn.querySelector('span').classList.add('text-white')
-    })
-
-    if (positionInput.value === position) {
-      positionInput.value = ''
-    } else {
-      positionInput.value = position
-      // Add active style based on position
-      const colors = {
-        'PT': ['bg-yellow-500', 'border-yellow-500'],
-        'DF': ['bg-blue-500', 'border-blue-500'],
-        'MC': ['bg-green-500', 'border-green-500'],
-        'DL': ['bg-red-500', 'border-red-500']
-      }
-      button.classList.remove('bg-gray-700', 'border-gray-600')
-      button.classList.add(...colors[position])
-      button.querySelector('span').classList.remove('text-white')
-      button.querySelector('span').classList.add('text-black')
-    }
-
-    this.submitForm()
+  toggleFilters() {
+    this.filtersExpanded = !this.filtersExpanded
+    localStorage.setItem("teamFiltersExpanded", this.filtersExpanded)
+    this.updateFiltersVisibility()
   }
 
-  toggleSortDirection(event) {
-    const directionInput = this.formTarget.querySelector('input[name="sort_direction"]')
-    directionInput.value = directionInput.value === "asc" ? "desc" : "asc"
+  updateFiltersVisibility() {
+    this.filtersContentTarget.classList.toggle("hidden", !this.filtersExpanded)
+    this.filtersIconTarget.innerHTML = this.chevronIcon(this.filtersExpanded)
+  }
+
+  chevronIcon(expanded) {
+    return expanded ? `
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd" />
+      </svg>
+    ` : `
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+      </svg>
+    `
+  }
+
+  resetStyles() {
+    this.formTarget.reset()
+    this.updateButtonStyles()
     this.submitForm()
   }
 
@@ -55,28 +41,53 @@ export default class extends Controller {
     this.formTarget.requestSubmit()
   }
 
-  resetStyles() {
-    this.formTarget.reset()
-    // Reset position button styles
-    this.formTarget.querySelectorAll('[data-position]').forEach(btn => {
-      btn.classList.remove('bg-yellow-500', 'bg-blue-500', 'bg-green-500', 'bg-red-500')
-      btn.classList.remove('border-yellow-500', 'border-blue-500', 'border-green-500', 'border-red-500')
-      btn.classList.add('bg-gray-700', 'border-gray-600')
-      btn.querySelector('span').classList.remove('text-black')
-      btn.querySelector('span').classList.add('text-white')
-    })
+  togglePosition(event) {
+    event.preventDefault()
+    const button = event.currentTarget
+    const position = button.dataset.position
+    const currentPosition = this.formTarget.position.value
+
+    this.formTarget.position.value = currentPosition === position ? "" : position
+    this.updateButtonStyles()
     this.submitForm()
   }
 
-  debounce(func, wait) {
-    let timeout
-    return function executedFunction(...args) {
-      const later = () => {
-        clearTimeout(timeout)
-        func(...args)
-      }
-      clearTimeout(timeout)
-      timeout = setTimeout(later, wait)
+  toggleSortDirection(event) {
+    event.preventDefault()
+    const currentDirection = this.formTarget.sort_direction.value
+    this.formTarget.sort_direction.value = currentDirection === "asc" ? "desc" : "asc"
+    this.submitForm()
+  }
+
+  updateButtonStyles() {
+    const currentPosition = this.formTarget.position.value
+    const positionColors = {
+      'PT': ['bg-yellow-500', 'border-yellow-500', 'text-black'],
+      'DF': ['bg-blue-500', 'border-blue-500', 'text-black'],
+      'MC': ['bg-green-500', 'border-green-500', 'text-black'],
+      'DL': ['bg-red-500', 'border-red-500', 'text-black']
     }
+
+    this.formTarget.querySelectorAll('[data-position]').forEach(btn => {
+      const pos = btn.dataset.position
+      const span = btn.querySelector('span')
+
+      // Remove all possible styles
+      btn.classList.remove(
+        'bg-yellow-500', 'bg-blue-500', 'bg-green-500', 'bg-red-500',
+        'border-yellow-500', 'border-blue-500', 'border-green-500', 'border-red-500',
+        'bg-gray-700', 'border-gray-600'
+      )
+      span.classList.remove('text-black', 'text-white')
+
+      // Add appropriate styles
+      if (pos === currentPosition) {
+        btn.classList.add(...positionColors[pos])
+        span.classList.add('text-black')
+      } else {
+        btn.classList.add('bg-gray-700', 'border-gray-600')
+        span.classList.add('text-white')
+      }
+    })
   }
 }
