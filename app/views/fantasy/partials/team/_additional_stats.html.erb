@@ -1,0 +1,49 @@
+<%# First row %>
+<div class="flex flex-wrap gap-6">
+  <div class="flex items-center gap-6">
+    <div>
+      <span class="text-gray-400 text-sm">Jugadores</span>
+      <p class="text-xl font-semibold">
+        <%= team_data[:players]&.count || 0 %> / 25
+      </p>
+    </div>
+    <div class="h-8 w-px bg-gray-700"></div>
+    <div>
+      <span class="text-gray-400 text-sm">En venta</span>
+      <p class="text-xl font-semibold">
+        <%= team_data[:players]&.count { |p| p.being_sold } || 0 %> / 6
+      </p>
+    </div>
+  </div>
+
+  <%# Second row %>
+  <div class="flex items-center gap-6">
+    <div class="h-8 w-px bg-gray-700"></div>
+
+    <div>
+      <span class="text-gray-400 text-sm">Valor</span>
+      <div class="flex flex-col">
+        <p class="text-xl font-semibold leading-tight">
+          <%= format_value(team_value) %>
+        </p>
+        <p class="text-sm text-gray-400 <%= total_value < 0 ? 'text-red-500' : '' %>">
+          real: <%= format_value(total_value) %>
+        </p>
+      </div>
+    </div>
+    <div class="h-8 w-px bg-gray-700"></div>
+    <div>
+      <span class="text-gray-400 text-sm">Último cambio</span>
+      <% if defined?(total_change) && total_change.present? %>
+        <% total_change_style = total_change < 0 ? 'text-red-500' : 'text-green-500' %>
+        <p class="text-xl font-semibold <%= total_change_style %>">
+          <%= format_value(total_change) %>
+        </p>
+      <% else %>
+        <p class="text-xl font-semibold text-gray-400">
+          ?
+        </p>
+      <% end %>
+    </div>
+  </div>
+</div>

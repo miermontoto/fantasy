@@ -6,34 +6,20 @@
 
 <%= render partial: "fantasy/partials/page_layout", locals: {
   info: @team_data[:info],
-  additional_stats: capture do %>
-    <div>
-      <span class="text-gray-400 text-sm">Jugadores</span>
-      <p class="text-xl font-semibold">
-        <%= @team_data[:players]&.count || 0 %> / 25
-      </p>
-    </div>
-    <div class="h-8 w-px bg-gray-700"></div>
-    <div>
-      <span class="text-gray-400 text-sm">En venta</span>
-      <p class="text-xl font-semibold">
-        <%= @team_data[:players]&.count { |p| p.being_sold } || 0 %> / 6
-      </p>
-    </div>
-    <div class="h-8 w-px bg-gray-700"></div>
-    <div>
-      <span class="text-gray-400 text-sm">Valor</span>
-      <div class="flex flex-col">
-        <p class="text-xl font-semibold leading-tight">
-          <%= format_value(team_value) %>
-        </p>
-        <p class="text-sm text-gray-400 <%= total_value < 0 ? 'text-red-500' : '' %>">
-          real: <%= format_value(total_value) %>
-        </p>
-      </div>
-    </div>
-  <% end,
+  additional_stats: render(partial: "fantasy/partials/team/additional_stats",
+    locals: {
+      team_data: @team_data,
+      team_value: team_value,
+      total_value: total_value,
+    }
+  ),
   title: "Plantilla",
   sidebar: render(partial: "fantasy/partials/team/sidebar"),
   content: render(partial: "fantasy/partials/team/content", locals: { filtered_players: @filtered_players })
 } %>
+
+<%# Request updated data after initial load %>
+<div id="team-content-update"
+     data-controller="fantasy--delayed-load"
+     data-fantasy--delayed-load-url-value="<%= team_path(format: :turbo_stream) %>">
+</div>

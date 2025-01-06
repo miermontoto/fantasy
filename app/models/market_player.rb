@@ -1,5 +1,5 @@
 class MarketPlayer < Player
-  attr_reader :id, :owner, :asked_price, :offered_by, :own
+  attr_reader :id, :owner, :asked_price, :offered_by, :own, :my_bid
 
   def initialize(attributes = {})
     super(attributes)
@@ -9,6 +9,7 @@ class MarketPlayer < Player
     @asked_price = attributes[:asked_price] || @value                           # precio de venta del jugador
     @offered_by = attributes[:offered_by] || ApplicationHelper::FREE_AGENT      # nombre del usuario que ofrece el jugador
     @own = attributes[:own] || @asked_price == 0                                # true si el jugador es propio
+    @my_bid = attributes[:my_bid] || nil                                        # precio de mi oferta
   end
 
   def to_s

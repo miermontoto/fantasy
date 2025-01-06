@@ -27,6 +27,9 @@ gem "bootsnap", require: false
 # Add near the top with other main gems
 gem "dotenv-rails"
 
+# Parallel processing
+gem "parallel"
+
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
   gem "brakeman", require: false

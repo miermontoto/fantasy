@@ -1,0 +1,2895 @@
+{
+  "data": {
+    "avgs": {
+      "avg_away": 56.4444,
+      "avg_home": 79
+    },
+    "gameweeks": [
+      {
+        "away": "Girona",
+        "awayLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20250101",
+        "gameweek": 1,
+        "gameweek_short": "J1",
+        "goals_away": 1,
+        "goals_home": 1,
+        "home": "Betis",
+        "homeLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "id": 2858,
+        "id_away": 222,
+        "id_home": 4,
+        "id_match": 26797,
+        "type": "regular"
+      },
+      {
+        "away": "Betis",
+        "awayLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "gameweek": 2,
+        "gameweek_short": "J2",
+        "goals_away": 0,
+        "goals_home": 0,
+        "home": "Alavés",
+        "homeLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/48.png?version=20250101",
+        "id": 2859,
+        "id_away": 4,
+        "id_home": 48,
+        "id_match": 26809,
+        "type": "regular"
+      },
+      {
+        "away": "Getafe",
+        "awayLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/9.png?version=20250101",
+        "gameweek": 3,
+        "gameweek_short": "J3",
+        "goals_away": 1,
+        "goals_home": 2,
+        "home": "Betis",
+        "homeLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "id": 2860,
+        "id_away": 9,
+        "id_home": 4,
+        "id_match": 26822,
+        "type": "regular"
+      },
+      {
+        "away": "Betis",
+        "awayLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "gameweek": 4,
+        "gameweek_short": "J4",
+        "goals_away": 0,
+        "goals_home": 2,
+        "home": "Real Madrid",
+        "homeLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20250101",
+        "id": 2861,
+        "id_away": 4,
+        "id_home": 15,
+        "id_match": 26833,
+        "type": "regular"
+      },
+      {
+        "away": "Leganés",
+        "awayLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/49.png?version=20250101",
+        "gameweek": 5,
+        "gameweek_short": "J5",
+        "goals_away": 0,
+        "goals_home": 2,
+        "home": "Betis",
+        "homeLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "id": 2862,
+        "id_away": 49,
+        "id_home": 4,
+        "id_match": 26843,
+        "type": "regular"
+      },
+      {
+        "away": "Mallorca",
+        "awayLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20250101",
+        "gameweek": 6,
+        "gameweek_short": "J6",
+        "goals_away": 2,
+        "goals_home": 1,
+        "home": "Betis",
+        "homeLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "id": 2863,
+        "id_away": 408,
+        "id_home": 4,
+        "id_match": 26851,
+        "type": "regular"
+      },
+      {
+        "away": "Betis",
+        "awayLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "gameweek": 7,
+        "gameweek_short": "J7",
+        "goals_away": 1,
+        "goals_home": 1,
+        "home": "Las Palmas",
+        "homeLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20250101",
+        "id": 2864,
+        "id_away": 4,
+        "id_home": 11,
+        "id_match": 26860,
+        "type": "regular"
+      },
+      {
+        "away": "Espanyol",
+        "awayLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/8.png?version=20250101",
+        "gameweek": 8,
+        "gameweek_short": "J8",
+        "goals_away": 0,
+        "goals_home": 1,
+        "home": "Betis",
+        "homeLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "id": 2865,
+        "id_away": 8,
+        "id_home": 4,
+        "id_match": 26872,
+        "type": "regular"
+      },
+      {
+        "away": "Betis",
+        "awayLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "gameweek": 9,
+        "gameweek_short": "J9",
+        "goals_away": 0,
+        "goals_home": 1,
+        "home": "Sevilla",
+        "homeLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20250101",
+        "id": 2866,
+        "id_away": 4,
+        "id_home": 17,
+        "id_match": 26885,
+        "type": "regular"
+      },
+      {
+        "away": "Betis",
+        "awayLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "gameweek": 10,
+        "gameweek_short": "J10",
+        "goals_away": 2,
+        "goals_home": 1,
+        "home": "Osasuna",
+        "homeLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/50.png?version=20250101",
+        "id": 2867,
+        "id_away": 4,
+        "id_home": 50,
+        "id_match": 26893,
+        "type": "regular"
+      },
+      {
+        "away": "Atlético",
+        "awayLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/2.png?version=20250101",
+        "gameweek": 11,
+        "gameweek_short": "J11",
+        "goals_away": 0,
+        "goals_home": 1,
+        "home": "Betis",
+        "homeLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "id": 2868,
+        "id_away": 2,
+        "id_home": 4,
+        "id_match": 26902,
+        "type": "regular"
+      },
+      {
+        "away": "Betis",
+        "awayLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "gameweek": 12,
+        "gameweek_short": "J12",
+        "goals_away": 1,
+        "goals_home": 1,
+        "home": "Athletic Club",
+        "homeLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20250101",
+        "id": 2869,
+        "id_away": 4,
+        "id_home": 1,
+        "id_match": 26906,
+        "type": "regular"
+      },
+      {
+        "away": "Celta",
+        "awayLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20250101",
+        "gameweek": 13,
+        "gameweek_short": "J13",
+        "goals_away": 2,
+        "goals_home": 2,
+        "home": "Betis",
+        "homeLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "id": 2870,
+        "id_away": 5,
+        "id_home": 4,
+        "id_match": 26921,
+        "type": "regular"
+      },
+      {
+        "away": "Betis",
+        "awayLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "gameweek": 14,
+        "gameweek_short": "J14",
+        "goals_away": 2,
+        "goals_home": 4,
+        "home": "Valencia",
+        "homeLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/19.png?version=20250101",
+        "id": 2871,
+        "id_away": 4,
+        "id_home": 19,
+        "id_match": 26935,
+        "type": "regular"
+      },
+      {
+        "away": "Betis",
+        "awayLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "gameweek": 15,
+        "gameweek_short": "J15",
+        "goals_away": 0,
+        "goals_home": 2,
+        "home": "Real Sociedad",
+        "homeLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20250101",
+        "id": 2872,
+        "id_away": 4,
+        "id_home": 16,
+        "id_match": 26942,
+        "type": "regular"
+      },
+      {
+        "away": "Barcelona",
+        "awayLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20250101",
+        "gameweek": 16,
+        "gameweek_short": "J16",
+        "goals_away": 2,
+        "goals_home": 2,
+        "home": "Betis",
+        "homeLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "id": 2873,
+        "id_away": 3,
+        "id_home": 4,
+        "id_match": 26954,
+        "type": "regular"
+      },
+      {
+        "away": "Betis",
+        "awayLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "gameweek": 17,
+        "gameweek_short": "J17",
+        "goals_away": 2,
+        "goals_home": 1,
+        "home": "Villarreal",
+        "homeLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/20.png?version=20250101",
+        "id": 2874,
+        "id_away": 4,
+        "id_home": 20,
+        "id_match": 26965,
+        "type": "regular"
+      },
+      {
+        "away": "Rayo Vallecano",
+        "awayLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/14.png?version=20250101",
+        "gameweek": 18,
+        "gameweek_short": "J18",
+        "goals_away": 1,
+        "goals_home": 1,
+        "home": "Betis",
+        "homeLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "id": 2875,
+        "id_away": 14,
+        "id_home": 4,
+        "id_match": 26973,
+        "type": "regular"
+      }
+    ],
+    "gw": 2875,
+    "lineup": {
+      "bench": [
+        {
+          "bg": 2,
+          "id": 17450,
+          "id_team": 4,
+          "minute": 75,
+          "name": "Aitor Ruibal",
+          "points": 2,
+          "position": 2,
+          "short": "A. Ruibal"
+        },
+        {
+          "bg": 2,
+          "id": 55754,
+          "id_team": 4,
+          "minute": 67,
+          "name": "Assane Diao",
+          "points": 3,
+          "position": 3,
+          "short": "A. Diao"
+        },
+        {
+          "bg": 2,
+          "id": 557,
+          "id_team": 4,
+          "minute": 66,
+          "name": "Pablo Fornals",
+          "points": 3,
+          "position": 3,
+          "short": "P. Fornals"
+        },
+        {
+          "bg": 2,
+          "id": 519,
+          "id_team": 4,
+          "minute": 82,
+          "name": "Cédric Bakambu",
+          "points": 4,
+          "position": 4,
+          "short": "C. Bakambu"
+        },
+        {
+          "bg": 2,
+          "id": 1034,
+          "id_team": 4,
+          "minute": 81,
+          "name": "Juanmi Jiménez",
+          "points": 4,
+          "position": 4,
+          "short": "J. Jiménez"
+        }
+      ],
+      "lines": {
+        "1": [
+          {
+            "bg": 2,
+            "id": 55741,
+            "id_team": 4,
+            "minute": null,
+            "name": "Fran Vieites",
+            "points": 4,
+            "position": 1,
+            "short": "F. Vieites"
+          }
+        ],
+        "2": [
+          {
+            "bg": 3,
+            "id": 306,
+            "id_team": 4,
+            "minute": null,
+            "name": "Diego Llorente",
+            "points": 5,
+            "position": 2,
+            "short": "D. Llorente"
+          },
+          {
+            "bg": 3,
+            "id": 63,
+            "id_team": 4,
+            "minute": null,
+            "name": "Marc Bartra",
+            "points": 5,
+            "position": 2,
+            "short": "M. Bartra"
+          },
+          {
+            "bg": 2,
+            "id": 58818,
+            "id_team": 4,
+            "minute": null,
+            "name": "Romain Perraud",
+            "points": 2,
+            "position": 2,
+            "short": "R. Perraud"
+          },
+          {
+            "bg": 2,
+            "id": 27841,
+            "id_team": 4,
+            "minute": null,
+            "name": "Youssouf Sabaly",
+            "points": 4,
+            "position": 2,
+            "short": "Y. Sabaly"
+          }
+        ],
+        "3": [
+          {
+            "bg": 3,
+            "id": 15109,
+            "id_team": 4,
+            "minute": null,
+            "name": "Giovani Lo Celso",
+            "points": 7,
+            "position": 3,
+            "short": "G. Lo Celso"
+          },
+          {
+            "bg": 4,
+            "id": 340,
+            "id_team": 4,
+            "minute": null,
+            "name": "Isco",
+            "points": 10,
+            "position": 3,
+            "short": "Isco"
+          },
+          {
+            "bg": 3,
+            "id": 56578,
+            "id_team": 4,
+            "minute": null,
+            "name": "Johnny Cardoso",
+            "points": 5,
+            "position": 3,
+            "short": "J. Cardoso"
+          },
+          {
+            "bg": 2,
+            "id": 54831,
+            "id_team": 4,
+            "minute": null,
+            "name": "Sergi Altimira",
+            "points": 4,
+            "position": 3,
+            "short": "S. Altimira"
+          }
+        ],
+        "4": [
+          {
+            "bg": 3,
+            "id": 33734,
+            "id_team": 4,
+            "minute": null,
+            "name": "Abde Ezzalzouli",
+            "points": 6,
+            "position": 4,
+            "short": "A. Ezzalzouli"
+          },
+          {
+            "bg": 3,
+            "id": 56577,
+            "id_team": 4,
+            "minute": null,
+            "name": "Vitor Roque",
+            "points": 6,
+            "position": 4,
+            "short": "V. Roque"
+          }
+        ]
+      }
+    },
+    "loses": 5,
+    "nextMatch": {
+      "away": "Betis",
+      "awayLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+      "date": {
+        "format": "d MMM H:mm",
+        "text": "11 ene 16:15",
+        "ts": 1736608500
+      },
+      "home": "Valladolid",
+      "homeLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/317.png?version=20250101",
+      "id": 26984,
+      "id_away": 4,
+      "id_home": 317,
+      "place": "Fuera",
+      "status": "fixture"
+    },
+    "players": [
+      {
+        "avg": 0,
+        "id": 59013,
+        "id_competition": 1,
+        "id_team": 4,
+        "last_modified": "2024-09-01 23:44:35",
+        "name": "Adrián San Miguel",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/59013.png?version=20240708204937",
+        "points": 0,
+        "position": 1,
+        "status": null,
+        "streak": [
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 0,
+            "points": "-"
+          }
+        ],
+        "streak_sum": 0,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "ts_pic": 1720464577,
+        "value": 381000
+      },
+      {
+        "avg": 4.3,
+        "id": 55741,
+        "id_competition": 1,
+        "id_team": 4,
+        "last_modified": "2024-12-23 10:09:46",
+        "name": "Fran Vieites",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/55741.png?version=20230917130808",
+        "points": 13,
+        "position": 1,
+        "status": null,
+        "streak": [
+          {
+            "color": 2,
+            "points": 4
+          },
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 2,
+            "points": 4
+          }
+        ],
+        "streak_sum": 13,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "ts_pic": 1694948888,
+        "value": 4612000
+      },
+      {
+        "avg": 4.9,
+        "id": 5795,
+        "id_competition": 1,
+        "id_team": 4,
+        "last_modified": "2024-12-23 10:20:46",
+        "name": "Rui Silva",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/5795.png?version=20170130135202",
+        "points": 74,
+        "position": 1,
+        "status": "doubt",
+        "streak": [
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 0,
+            "points": "-"
+          }
+        ],
+        "streak_sum": 0,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "ts_pic": 1485780722,
+        "value": 18452000
+      },
+      {
+        "avg": 3.5,
+        "id": 17450,
+        "id_competition": 1,
+        "id_team": 4,
+        "last_modified": "2024-12-23 10:09:45",
+        "name": "Aitor Ruibal",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/17450.png?version=20231217203932",
+        "points": 52,
+        "position": 2,
+        "status": null,
+        "streak": [
+          {
+            "color": 2,
+            "points": 3
+          },
+          {
+            "color": 2,
+            "points": 1
+          },
+          {
+            "color": 2,
+            "points": 2
+          }
+        ],
+        "streak_sum": 6,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "ts_pic": 1702841972,
+        "value": 4618000
+      },
+      {
+        "avg": 4.5,
+        "id": 306,
+        "id_competition": 1,
+        "id_team": 4,
+        "last_modified": "2024-12-23 10:09:45",
+        "name": "Diego Llorente",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/306.png?version=20240709193836",
+        "points": 77,
+        "position": 2,
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 2,
+            "points": 3
+          },
+          {
+            "color": 3,
+            "points": 5
+          }
+        ],
+        "streak_sum": 13,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "ts_pic": 1720546716,
+        "value": 40304000
+      },
+      {
+        "avg": 4.9,
+        "id": 31496,
+        "id_competition": 1,
+        "id_team": 4,
+        "last_modified": "2024-12-23 10:20:46",
+        "name": "Héctor Bellerín",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/31496.png?version=20241002152301",
+        "points": 34,
+        "position": 2,
+        "status": "doubt",
+        "streak": [
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 0,
+            "points": "-"
+          }
+        ],
+        "streak_sum": 0,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "ts_pic": 1727875381,
+        "value": 329000
+      },
+      {
+        "avg": 6.3,
+        "id": 63,
+        "id_competition": 1,
+        "id_team": 4,
+        "last_modified": "2024-12-23 10:09:45",
+        "name": "Marc Bartra",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/63.png?version=20231218154435",
+        "points": 69,
+        "position": 2,
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 3,
+            "points": 7
+          },
+          {
+            "color": 3,
+            "points": 5
+          }
+        ],
+        "streak_sum": 17,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "ts_pic": 1702910675,
+        "value": 40994000
+      },
+      {
+        "avg": 3.5,
+        "id": 59499,
+        "id_competition": 1,
+        "id_team": 4,
+        "last_modified": "2024-12-23 10:09:46",
+        "name": "Natan Souza",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/59499.png?version=20240815182347",
+        "points": 42,
+        "position": 2,
+        "status": null,
+        "streak": [
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 2,
+            "points": 4
+          },
+          {
+            "color": 0,
+            "points": "-"
+          }
+        ],
+        "streak_sum": 4,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "ts_pic": 1723739027,
+        "value": 1339000
+      },
+      {
+        "avg": 0,
+        "id": 59372,
+        "id_competition": 1,
+        "id_team": 4,
+        "last_modified": "2024-11-20 16:02:09",
+        "name": "Nobel Mendy",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/59372.png?version=20240802120621",
+        "points": 0,
+        "position": 2,
+        "status": "injury",
+        "streak": [
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 0,
+            "points": "-"
+          }
+        ],
+        "streak_sum": 0,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "ts_pic": 1722593181,
+        "value": 501000
+      },
+      {
+        "avg": 4,
+        "id": 59394,
+        "id_competition": 1,
+        "id_team": 4,
+        "last_modified": "2024-12-23 10:20:46",
+        "name": "Ricardo Rodríguez",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/59394.png?version=20240805220410",
+        "points": 20,
+        "position": 2,
+        "status": null,
+        "streak": [
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 0,
+            "points": "-"
+          }
+        ],
+        "streak_sum": 0,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "ts_pic": 1722888250,
+        "value": 501000
+      },
+      {
+        "avg": 3.1,
+        "id": 58818,
+        "id_competition": 1,
+        "id_team": 4,
+        "last_modified": "2024-12-23 10:09:46",
+        "name": "Romain Perraud",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/58818.png?version=20240625113805",
+        "points": 52,
+        "position": 2,
+        "status": null,
+        "streak": [
+          {
+            "color": 2,
+            "points": 3
+          },
+          {
+            "color": 2,
+            "points": 4
+          },
+          {
+            "color": 2,
+            "points": 2
+          }
+        ],
+        "streak_sum": 9,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "ts_pic": 1719308285,
+        "value": 7858000
+      },
+      {
+        "avg": 3.4,
+        "id": 27841,
+        "id_competition": 1,
+        "id_team": 4,
+        "last_modified": "2024-12-23 10:09:46",
+        "name": "Youssouf Sabaly",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/27841.png?version=20231218155630",
+        "points": 37,
+        "position": 2,
+        "status": null,
+        "streak": [
+          {
+            "color": 2,
+            "points": 1
+          },
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 2,
+            "points": 4
+          }
+        ],
+        "streak_sum": 10,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "ts_pic": 1702911390,
+        "value": 5458000
+      },
+      {
+        "avg": 3.7,
+        "id": 55754,
+        "id_competition": 1,
+        "id_team": 4,
+        "last_modified": "2024-12-23 10:09:46",
+        "name": "Assane Diao",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/55754.png?version=20230928180731",
+        "points": 37,
+        "position": 3,
+        "status": null,
+        "streak": [
+          {
+            "color": 4,
+            "points": 10
+          },
+          {
+            "color": 0,
+            "points": 0
+          },
+          {
+            "color": 2,
+            "points": 3
+          }
+        ],
+        "streak_sum": 13,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "ts_pic": 1695917251,
+        "value": 4169000
+      },
+      {
+        "avg": 2.5,
+        "id": 60457,
+        "id_competition": 1,
+        "id_team": 4,
+        "last_modified": "2024-12-23 10:20:46",
+        "name": "Carlos Guirao",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/60457.png?version=20241123134533",
+        "points": 5,
+        "position": 3,
+        "status": null,
+        "streak": [
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 0,
+            "points": "-"
+          }
+        ],
+        "streak_sum": 0,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "ts_pic": 1732365933,
+        "value": 329000
+      },
+      {
+        "avg": 10,
+        "id": 15109,
+        "id_competition": 1,
+        "id_team": 4,
+        "last_modified": "2024-12-23 10:09:45",
+        "name": "Giovani Lo Celso",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/15109.png?version=20240831002341",
+        "points": 120,
+        "position": 3,
+        "status": null,
+        "streak": [
+          {
+            "color": 4,
+            "points": 12
+          },
+          {
+            "color": 4,
+            "points": 11
+          },
+          {
+            "color": 3,
+            "points": 7
+          }
+        ],
+        "streak_sum": 30,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "ts_pic": 1725056621,
+        "value": 56237000
+      },
+      {
+        "avg": 4.7,
+        "id": 340,
+        "id_competition": 1,
+        "id_team": 4,
+        "last_modified": "2024-12-23 10:09:45",
+        "name": "Isco",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/340.png?version=20240517083836",
+        "points": 14,
+        "position": 3,
+        "status": null,
+        "streak": [
+          {
+            "color": 2,
+            "points": 2
+          },
+          {
+            "color": 2,
+            "points": 2
+          },
+          {
+            "color": 4,
+            "points": 10
+          }
+        ],
+        "streak_sum": 14,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "ts_pic": 1715927916,
+        "value": 31123000
+      },
+      {
+        "avg": 4.3,
+        "id": 56578,
+        "id_competition": 1,
+        "id_team": 4,
+        "last_modified": "2024-12-23 10:09:46",
+        "name": "Johnny Cardoso",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/56578.png?version=20231227222718",
+        "points": 47,
+        "position": 3,
+        "status": null,
+        "streak": [
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 2,
+            "points": 3
+          },
+          {
+            "color": 3,
+            "points": 5
+          }
+        ],
+        "streak_sum": 8,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "ts_pic": 1703712438,
+        "value": 19536000
+      },
+      {
+        "avg": 4.6,
+        "id": 3728,
+        "id_competition": 1,
+        "id_team": 4,
+        "last_modified": "2024-12-23 10:20:46",
+        "name": "Marc Roca",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/3728.png?version=20231218160432",
+        "points": 41,
+        "position": 3,
+        "status": "doubt",
+        "streak": [
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 0,
+            "points": "-"
+          }
+        ],
+        "streak_sum": 0,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "ts_pic": 1702911872,
+        "value": 1779000
+      },
+      {
+        "avg": 1.5,
+        "id": 60456,
+        "id_competition": 1,
+        "id_team": 4,
+        "last_modified": "2024-12-23 10:09:46",
+        "name": "Mateo Flores",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/60456.png?version=20241122135652",
+        "points": 3,
+        "position": 3,
+        "status": null,
+        "streak": [
+          {
+            "color": 2,
+            "points": 1
+          },
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 0,
+            "points": "-"
+          }
+        ],
+        "streak_sum": 1,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "ts_pic": 1732280212,
+        "value": 329000
+      },
+      {
+        "avg": 5.4,
+        "id": 557,
+        "id_competition": 1,
+        "id_team": 4,
+        "last_modified": "2024-12-23 10:09:45",
+        "name": "Pablo Fornals",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/557.png?version=20240202181402",
+        "points": 75,
+        "position": 3,
+        "status": null,
+        "streak": [
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 2,
+            "points": 3
+          }
+        ],
+        "streak_sum": 3,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "ts_pic": 1706894042,
+        "value": 22247000
+      },
+      {
+        "avg": 4.7,
+        "id": 54831,
+        "id_competition": 1,
+        "id_team": 4,
+        "last_modified": "2024-12-23 10:09:46",
+        "name": "Sergi Altimira",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/54831.png?version=20231218160712",
+        "points": 71,
+        "position": 3,
+        "status": null,
+        "streak": [
+          {
+            "color": 2,
+            "points": 4
+          },
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 2,
+            "points": 4
+          }
+        ],
+        "streak_sum": 13,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "ts_pic": 1702912032,
+        "value": 15380000
+      },
+      {
+        "avg": 3.8,
+        "id": 13700,
+        "id_competition": 1,
+        "id_team": 4,
+        "last_modified": "2024-09-29 20:46:20",
+        "name": "William Carvalho",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/13700.png?version=20231218160807",
+        "points": 15,
+        "position": 3,
+        "status": "injury",
+        "streak": [
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 0,
+            "points": "-"
+          }
+        ],
+        "streak_sum": 0,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "ts_pic": 1702912087,
+        "value": 329000
+      },
+      {
+        "avg": 4.7,
+        "id": 33734,
+        "id_competition": 1,
+        "id_team": 4,
+        "last_modified": "2024-12-23 10:09:46",
+        "name": "Abde Ezzalzouli",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/33734.png?version=20231217203008",
+        "points": 85,
+        "position": 4,
+        "status": null,
+        "streak": [
+          {
+            "color": 2,
+            "points": 1
+          },
+          {
+            "color": 3,
+            "points": 6
+          },
+          {
+            "color": 3,
+            "points": 6
+          }
+        ],
+        "streak_sum": 13,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "ts_pic": 1702841408,
+        "value": 40279000
+      },
+      {
+        "avg": 2.5,
+        "id": 519,
+        "id_competition": 1,
+        "id_team": 4,
+        "last_modified": "2024-12-23 10:09:45",
+        "name": "Cédric Bakambu",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/519.png?version=20240202084513",
+        "points": 25,
+        "position": 4,
+        "status": null,
+        "streak": [
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 2,
+            "points": 4
+          }
+        ],
+        "streak_sum": 4,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "ts_pic": 1706859913,
+        "value": 329000
+      },
+      {
+        "avg": 4.2,
+        "id": 12916,
+        "id_competition": 1,
+        "id_team": 4,
+        "last_modified": "2024-12-23 10:46:32",
+        "name": "Ezequiel Ávila",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/12916.png?version=20231222192856",
+        "points": 63,
+        "position": 4,
+        "status": null,
+        "streak": [
+          {
+            "color": 2,
+            "points": 4
+          },
+          {
+            "color": 1,
+            "points": -8
+          },
+          {
+            "color": 0,
+            "points": "-"
+          }
+        ],
+        "streak_sum": -4,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "ts_pic": 1703269736,
+        "value": 8377000
+      },
+      {
+        "avg": 2.9,
+        "id": 19524,
+        "id_competition": 1,
+        "id_team": 4,
+        "last_modified": "2024-12-22 23:10:32",
+        "name": "Iker Losada",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/19524.png?version=20240706160939",
+        "points": 26,
+        "position": 4,
+        "status": null,
+        "streak": [
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 0,
+            "points": "-"
+          }
+        ],
+        "streak_sum": 0,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "ts_pic": 1720274979,
+        "value": 345000
+      },
+      {
+        "avg": 3.5,
+        "id": 60479,
+        "id_competition": 1,
+        "id_team": 4,
+        "last_modified": "2024-12-23 10:20:46",
+        "name": "Jesús Rodriguez",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/60479.png?version=20241201205831",
+        "points": 7,
+        "position": 4,
+        "status": null,
+        "streak": [
+          {
+            "color": 2,
+            "points": 4
+          },
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 0,
+            "points": "-"
+          }
+        ],
+        "streak_sum": 4,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "ts_pic": 1733083111,
+        "value": 329000
+      },
+      {
+        "avg": 3.3,
+        "id": 1034,
+        "id_competition": 1,
+        "id_team": 4,
+        "last_modified": "2024-12-23 10:09:45",
+        "name": "Juanmi Jiménez",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/1034.png?version=20240201121646",
+        "points": 30,
+        "position": 4,
+        "status": null,
+        "streak": [
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 2,
+            "points": 4
+          }
+        ],
+        "streak_sum": 4,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "ts_pic": 1706786206,
+        "value": 413000
+      },
+      {
+        "avg": 4.5,
+        "id": 56577,
+        "id_competition": 1,
+        "id_team": 4,
+        "last_modified": "2024-12-23 10:09:46",
+        "name": "Vitor Roque",
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/56577.png?version=20231227102410",
+        "points": 67,
+        "position": 4,
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 4,
+            "points": 10
+          },
+          {
+            "color": 3,
+            "points": 6
+          }
+        ],
+        "streak_sum": 21,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+        "ts_pic": 1703669050,
+        "value": 38655000
+      }
+    ],
+    "statuses": [
+      {
+        "category": "injury",
+        "duration": "Baja hasta principios de Enero",
+        "id": 59372,
+        "name": "Nobel Mendy",
+        "position": 2
+      },
+      {
+        "category": "injury",
+        "duration": "Se pierde el resto de la temporada",
+        "id": 13700,
+        "name": "William Carvalho",
+        "position": 3
+      },
+      {
+        "category": "doubt",
+        "duration": "Duda esta jornada",
+        "id": 5795,
+        "name": "Rui Silva",
+        "position": 1
+      },
+      {
+        "category": "doubt",
+        "duration": "Duda esta jornada",
+        "id": 31496,
+        "name": "Héctor Bellerín",
+        "position": 2
+      },
+      {
+        "category": "doubt",
+        "duration": "Duda esta jornada",
+        "id": 3728,
+        "name": "Marc Roca",
+        "position": 3
+      }
+    ],
+    "tab": "general",
+    "team": {
+      "active": 1,
+      "avg": 41.4138,
+      "created": "2022-12-05 13:17:49",
+      "fav": 0,
+      "id": 4,
+      "id_as": 171,
+      "id_biwenger": 87,
+      "id_competition": 1,
+      "id_gsm": 2025,
+      "id_opta": 185,
+      "id_rf": 486,
+      "id_sofa": 2816,
+      "logo": "cdn://cdn-common/teams/4.png",
+      "md_rss_slug": "betis",
+      "name": "Betis",
+      "players": 29,
+      "points": 1201,
+      "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250101",
+      "ts_pic": 0,
+      "updated": "2022-12-05 13:17:49",
+      "value": 365532000
+    },
+    "values_chart": {
+      "last": {
+        "date": "1 ene 2025",
+        "value": 365532000
+      },
+      "max": {
+        "date": "6 sept 2024",
+        "value": 379797000
+      },
+      "min": {
+        "date": "1 jul 2024",
+        "value": 171868000
+      },
+      "points": [
+        {
+          "date": "1 ene 2024",
+          "value": 205053000
+        },
+        {
+          "date": "2 ene 2024",
+          "value": 206252000
+        },
+        {
+          "date": "3 ene 2024",
+          "value": 207296000
+        },
+        {
+          "date": "4 ene 2024",
+          "value": 207832000
+        },
+        {
+          "date": "5 ene 2024",
+          "value": 207690000
+        },
+        {
+          "date": "6 ene 2024",
+          "value": 208418000
+        },
+        {
+          "date": "7 ene 2024",
+          "value": 209066000
+        },
+        {
+          "date": "8 ene 2024",
+          "value": 208929000
+        },
+        {
+          "date": "9 ene 2024",
+          "value": 209277000
+        },
+        {
+          "date": "10 ene 2024",
+          "value": 209237000
+        },
+        {
+          "date": "11 ene 2024",
+          "value": 208927000
+        },
+        {
+          "date": "12 ene 2024",
+          "value": 208374000
+        },
+        {
+          "date": "13 ene 2024",
+          "value": 206377000
+        },
+        {
+          "date": "14 ene 2024",
+          "value": 205369000
+        },
+        {
+          "date": "15 ene 2024",
+          "value": 205368000
+        },
+        {
+          "date": "16 ene 2024",
+          "value": 205122000
+        },
+        {
+          "date": "17 ene 2024",
+          "value": 204920000
+        },
+        {
+          "date": "18 ene 2024",
+          "value": 204276000
+        },
+        {
+          "date": "19 ene 2024",
+          "value": 204870000
+        },
+        {
+          "date": "20 ene 2024",
+          "value": 204818000
+        },
+        {
+          "date": "21 ene 2024",
+          "value": 205383000
+        },
+        {
+          "date": "22 ene 2024",
+          "value": 205588000
+        },
+        {
+          "date": "23 ene 2024",
+          "value": 204706000
+        },
+        {
+          "date": "24 ene 2024",
+          "value": 204025000
+        },
+        {
+          "date": "25 ene 2024",
+          "value": 203599000
+        },
+        {
+          "date": "26 ene 2024",
+          "value": 203130000
+        },
+        {
+          "date": "27 ene 2024",
+          "value": 201682000
+        },
+        {
+          "date": "28 ene 2024",
+          "value": 201137000
+        },
+        {
+          "date": "29 ene 2024",
+          "value": 200097000
+        },
+        {
+          "date": "30 ene 2024",
+          "value": 200997000
+        },
+        {
+          "date": "31 ene 2024",
+          "value": 201404000
+        },
+        {
+          "date": "1 feb 2024",
+          "value": 202323000
+        },
+        {
+          "date": "2 feb 2024",
+          "value": 226807000
+        },
+        {
+          "date": "3 feb 2024",
+          "value": 229062000
+        },
+        {
+          "date": "4 feb 2024",
+          "value": 231744000
+        },
+        {
+          "date": "5 feb 2024",
+          "value": 234206000
+        },
+        {
+          "date": "6 feb 2024",
+          "value": 236067000
+        },
+        {
+          "date": "7 feb 2024",
+          "value": 237281000
+        },
+        {
+          "date": "8 feb 2024",
+          "value": 238361000
+        },
+        {
+          "date": "9 feb 2024",
+          "value": 239490000
+        },
+        {
+          "date": "10 feb 2024",
+          "value": 239832000
+        },
+        {
+          "date": "11 feb 2024",
+          "value": 240649000
+        },
+        {
+          "date": "12 feb 2024",
+          "value": 241723000
+        },
+        {
+          "date": "13 feb 2024",
+          "value": 243121000
+        },
+        {
+          "date": "14 feb 2024",
+          "value": 245070000
+        },
+        {
+          "date": "15 feb 2024",
+          "value": 247052000
+        },
+        {
+          "date": "16 feb 2024",
+          "value": 249581000
+        },
+        {
+          "date": "17 feb 2024",
+          "value": 250751000
+        },
+        {
+          "date": "18 feb 2024",
+          "value": 252602000
+        },
+        {
+          "date": "19 feb 2024",
+          "value": 254237000
+        },
+        {
+          "date": "20 feb 2024",
+          "value": 254994000
+        },
+        {
+          "date": "21 feb 2024",
+          "value": 255859000
+        },
+        {
+          "date": "22 feb 2024",
+          "value": 256461000
+        },
+        {
+          "date": "23 feb 2024",
+          "value": 257124000
+        },
+        {
+          "date": "24 feb 2024",
+          "value": 257043000
+        },
+        {
+          "date": "25 feb 2024",
+          "value": 256779000
+        },
+        {
+          "date": "26 feb 2024",
+          "value": 257055000
+        },
+        {
+          "date": "27 feb 2024",
+          "value": 257466000
+        },
+        {
+          "date": "28 feb 2024",
+          "value": 257935000
+        },
+        {
+          "date": "29 feb 2024",
+          "value": 258327000
+        },
+        {
+          "date": "1 mar 2024",
+          "value": 258503000
+        },
+        {
+          "date": "2 mar 2024",
+          "value": 258721000
+        },
+        {
+          "date": "3 mar 2024",
+          "value": 259047000
+        },
+        {
+          "date": "4 mar 2024",
+          "value": 260179000
+        },
+        {
+          "date": "5 mar 2024",
+          "value": 260682000
+        },
+        {
+          "date": "6 mar 2024",
+          "value": 261244000
+        },
+        {
+          "date": "7 mar 2024",
+          "value": 262332000
+        },
+        {
+          "date": "8 mar 2024",
+          "value": 263123000
+        },
+        {
+          "date": "9 mar 2024",
+          "value": 263027000
+        },
+        {
+          "date": "10 mar 2024",
+          "value": 262906000
+        },
+        {
+          "date": "11 mar 2024",
+          "value": 262357000
+        },
+        {
+          "date": "12 mar 2024",
+          "value": 261530000
+        },
+        {
+          "date": "13 mar 2024",
+          "value": 260327000
+        },
+        {
+          "date": "14 mar 2024",
+          "value": 259830000
+        },
+        {
+          "date": "15 mar 2024",
+          "value": 259234000
+        },
+        {
+          "date": "16 mar 2024",
+          "value": 257973000
+        },
+        {
+          "date": "17 mar 2024",
+          "value": 256846000
+        },
+        {
+          "date": "18 mar 2024",
+          "value": 255541000
+        },
+        {
+          "date": "19 mar 2024",
+          "value": 253752000
+        },
+        {
+          "date": "20 mar 2024",
+          "value": 252543000
+        },
+        {
+          "date": "21 mar 2024",
+          "value": 250753000
+        },
+        {
+          "date": "22 mar 2024",
+          "value": 249189000
+        },
+        {
+          "date": "23 mar 2024",
+          "value": 247718000
+        },
+        {
+          "date": "24 mar 2024",
+          "value": 245989000
+        },
+        {
+          "date": "25 mar 2024",
+          "value": 244465000
+        },
+        {
+          "date": "26 mar 2024",
+          "value": 242038000
+        },
+        {
+          "date": "27 mar 2024",
+          "value": 239879000
+        },
+        {
+          "date": "28 mar 2024",
+          "value": 238315000
+        },
+        {
+          "date": "29 mar 2024",
+          "value": 237927000
+        },
+        {
+          "date": "30 mar 2024",
+          "value": 236212000
+        },
+        {
+          "date": "31 mar 2024",
+          "value": 235623000
+        },
+        {
+          "date": "1 abr 2024",
+          "value": 234662000
+        },
+        {
+          "date": "2 abr 2024",
+          "value": 233160000
+        },
+        {
+          "date": "3 abr 2024",
+          "value": 231923000
+        },
+        {
+          "date": "4 abr 2024",
+          "value": 231055000
+        },
+        {
+          "date": "5 abr 2024",
+          "value": 230438000
+        },
+        {
+          "date": "6 abr 2024",
+          "value": 229852000
+        },
+        {
+          "date": "7 abr 2024",
+          "value": 229317000
+        },
+        {
+          "date": "8 abr 2024",
+          "value": 229359000
+        },
+        {
+          "date": "9 abr 2024",
+          "value": 229423000
+        },
+        {
+          "date": "10 abr 2024",
+          "value": 229233000
+        },
+        {
+          "date": "11 abr 2024",
+          "value": 228864000
+        },
+        {
+          "date": "12 abr 2024",
+          "value": 228552000
+        },
+        {
+          "date": "13 abr 2024",
+          "value": 227586000
+        },
+        {
+          "date": "14 abr 2024",
+          "value": 226432000
+        },
+        {
+          "date": "15 abr 2024",
+          "value": 225185000
+        },
+        {
+          "date": "16 abr 2024",
+          "value": 223061000
+        },
+        {
+          "date": "17 abr 2024",
+          "value": 221463000
+        },
+        {
+          "date": "18 abr 2024",
+          "value": 220401000
+        },
+        {
+          "date": "19 abr 2024",
+          "value": 220317000
+        },
+        {
+          "date": "20 abr 2024",
+          "value": 218996000
+        },
+        {
+          "date": "21 abr 2024",
+          "value": 217632000
+        },
+        {
+          "date": "22 abr 2024",
+          "value": 216055000
+        },
+        {
+          "date": "23 abr 2024",
+          "value": 215186000
+        },
+        {
+          "date": "24 abr 2024",
+          "value": 215197000
+        },
+        {
+          "date": "25 abr 2024",
+          "value": 216493000
+        },
+        {
+          "date": "26 abr 2024",
+          "value": 216869000
+        },
+        {
+          "date": "27 abr 2024",
+          "value": 216787000
+        },
+        {
+          "date": "28 abr 2024",
+          "value": 216975000
+        },
+        {
+          "date": "29 abr 2024",
+          "value": 216873000
+        },
+        {
+          "date": "30 abr 2024",
+          "value": 215863000
+        },
+        {
+          "date": "1 may 2024",
+          "value": 215782000
+        },
+        {
+          "date": "2 may 2024",
+          "value": 215887000
+        },
+        {
+          "date": "3 may 2024",
+          "value": 215897000
+        },
+        {
+          "date": "4 may 2024",
+          "value": 215119000
+        },
+        {
+          "date": "5 may 2024",
+          "value": 214060000
+        },
+        {
+          "date": "6 may 2024",
+          "value": 213863000
+        },
+        {
+          "date": "7 may 2024",
+          "value": 213522000
+        },
+        {
+          "date": "8 may 2024",
+          "value": 213872000
+        },
+        {
+          "date": "9 may 2024",
+          "value": 214277000
+        },
+        {
+          "date": "10 may 2024",
+          "value": 215309000
+        },
+        {
+          "date": "11 may 2024",
+          "value": 215479000
+        },
+        {
+          "date": "12 may 2024",
+          "value": 215837000
+        },
+        {
+          "date": "13 may 2024",
+          "value": 216227000
+        },
+        {
+          "date": "14 may 2024",
+          "value": 216663000
+        },
+        {
+          "date": "15 may 2024",
+          "value": 216731000
+        },
+        {
+          "date": "16 may 2024",
+          "value": 217842000
+        },
+        {
+          "date": "17 may 2024",
+          "value": 218707000
+        },
+        {
+          "date": "18 may 2024",
+          "value": 220638000
+        },
+        {
+          "date": "19 may 2024",
+          "value": 221302000
+        },
+        {
+          "date": "20 may 2024",
+          "value": 220761000
+        },
+        {
+          "date": "21 may 2024",
+          "value": 219617000
+        },
+        {
+          "date": "22 may 2024",
+          "value": 218936000
+        },
+        {
+          "date": "23 may 2024",
+          "value": 218279000
+        },
+        {
+          "date": "24 may 2024",
+          "value": 218492000
+        },
+        {
+          "date": "25 may 2024",
+          "value": 217169000
+        },
+        {
+          "date": "26 may 2024",
+          "value": 215163000
+        },
+        {
+          "date": "27 may 2024",
+          "value": 213935000
+        },
+        {
+          "date": "28 may 2024",
+          "value": 212469000
+        },
+        {
+          "date": "29 may 2024",
+          "value": 211335000
+        },
+        {
+          "date": "30 may 2024",
+          "value": 209964000
+        },
+        {
+          "date": "31 may 2024",
+          "value": 208595000
+        },
+        {
+          "date": "1 jun 2024",
+          "value": 206934000
+        },
+        {
+          "date": "2 jun 2024",
+          "value": 205413000
+        },
+        {
+          "date": "3 jun 2024",
+          "value": 203783000
+        },
+        {
+          "date": "4 jun 2024",
+          "value": 203091000
+        },
+        {
+          "date": "5 jun 2024",
+          "value": 201698000
+        },
+        {
+          "date": "6 jun 2024",
+          "value": 200889000
+        },
+        {
+          "date": "7 jun 2024",
+          "value": 199468000
+        },
+        {
+          "date": "8 jun 2024",
+          "value": 198677000
+        },
+        {
+          "date": "9 jun 2024",
+          "value": 196892000
+        },
+        {
+          "date": "10 jun 2024",
+          "value": 195311000
+        },
+        {
+          "date": "11 jun 2024",
+          "value": 193962000
+        },
+        {
+          "date": "12 jun 2024",
+          "value": 191935000
+        },
+        {
+          "date": "13 jun 2024",
+          "value": 190962000
+        },
+        {
+          "date": "14 jun 2024",
+          "value": 189189000
+        },
+        {
+          "date": "15 jun 2024",
+          "value": 187370000
+        },
+        {
+          "date": "16 jun 2024",
+          "value": 186211000
+        },
+        {
+          "date": "17 jun 2024",
+          "value": 179905000
+        },
+        {
+          "date": "18 jun 2024",
+          "value": 178649000
+        },
+        {
+          "date": "19 jun 2024",
+          "value": 177885000
+        },
+        {
+          "date": "20 jun 2024",
+          "value": 177030000
+        },
+        {
+          "date": "21 jun 2024",
+          "value": 176414000
+        },
+        {
+          "date": "22 jun 2024",
+          "value": 174865000
+        },
+        {
+          "date": "23 jun 2024",
+          "value": 173901000
+        },
+        {
+          "date": "24 jun 2024",
+          "value": 172930000
+        },
+        {
+          "date": "25 jun 2024",
+          "value": 177563000
+        },
+        {
+          "date": "26 jun 2024",
+          "value": 176345000
+        },
+        {
+          "date": "27 jun 2024",
+          "value": 175478000
+        },
+        {
+          "date": "28 jun 2024",
+          "value": 174142000
+        },
+        {
+          "date": "29 jun 2024",
+          "value": 173082000
+        },
+        {
+          "date": "30 jun 2024",
+          "value": 172059000
+        },
+        {
+          "date": "1 jul 2024",
+          "value": 171868000
+        },
+        {
+          "date": "2 jul 2024",
+          "value": 171890000
+        },
+        {
+          "date": "3 jul 2024",
+          "value": 177572000
+        },
+        {
+          "date": "4 jul 2024",
+          "value": 179060000
+        },
+        {
+          "date": "5 jul 2024",
+          "value": 180715000
+        },
+        {
+          "date": "6 jul 2024",
+          "value": 184412000
+        },
+        {
+          "date": "7 jul 2024",
+          "value": 186064000
+        },
+        {
+          "date": "8 jul 2024",
+          "value": 188404000
+        },
+        {
+          "date": "9 jul 2024",
+          "value": 202168000
+        },
+        {
+          "date": "10 jul 2024",
+          "value": 203710000
+        },
+        {
+          "date": "11 jul 2024",
+          "value": 205866000
+        },
+        {
+          "date": "12 jul 2024",
+          "value": 207926000
+        },
+        {
+          "date": "13 jul 2024",
+          "value": 210082000
+        },
+        {
+          "date": "14 jul 2024",
+          "value": 212338000
+        },
+        {
+          "date": "15 jul 2024",
+          "value": 214597000
+        },
+        {
+          "date": "16 jul 2024",
+          "value": 218098000
+        },
+        {
+          "date": "17 jul 2024",
+          "value": 221442000
+        },
+        {
+          "date": "18 jul 2024",
+          "value": 224692000
+        },
+        {
+          "date": "19 jul 2024",
+          "value": 228040000
+        },
+        {
+          "date": "20 jul 2024",
+          "value": 231223000
+        },
+        {
+          "date": "21 jul 2024",
+          "value": 234563000
+        },
+        {
+          "date": "22 jul 2024",
+          "value": 237895000
+        },
+        {
+          "date": "23 jul 2024",
+          "value": 241143000
+        },
+        {
+          "date": "24 jul 2024",
+          "value": 244087000
+        },
+        {
+          "date": "25 jul 2024",
+          "value": 247025000
+        },
+        {
+          "date": "26 jul 2024",
+          "value": 250127000
+        },
+        {
+          "date": "27 jul 2024",
+          "value": 253317000
+        },
+        {
+          "date": "28 jul 2024",
+          "value": 256688000
+        },
+        {
+          "date": "29 jul 2024",
+          "value": 259804000
+        },
+        {
+          "date": "30 jul 2024",
+          "value": 262996000
+        },
+        {
+          "date": "31 jul 2024",
+          "value": 266028000
+        },
+        {
+          "date": "1 ago 2024",
+          "value": 269401000
+        },
+        {
+          "date": "2 ago 2024",
+          "value": 273840000
+        },
+        {
+          "date": "3 ago 2024",
+          "value": 277656000
+        },
+        {
+          "date": "4 ago 2024",
+          "value": 281332000
+        },
+        {
+          "date": "5 ago 2024",
+          "value": 289029000
+        },
+        {
+          "date": "6 ago 2024",
+          "value": 292018000
+        },
+        {
+          "date": "7 ago 2024",
+          "value": 295619000
+        },
+        {
+          "date": "8 ago 2024",
+          "value": 299270000
+        },
+        {
+          "date": "9 ago 2024",
+          "value": 303007000
+        },
+        {
+          "date": "10 ago 2024",
+          "value": 306266000
+        },
+        {
+          "date": "11 ago 2024",
+          "value": 309733000
+        },
+        {
+          "date": "12 ago 2024",
+          "value": 312755000
+        },
+        {
+          "date": "13 ago 2024",
+          "value": 315661000
+        },
+        {
+          "date": "14 ago 2024",
+          "value": 318717000
+        },
+        {
+          "date": "15 ago 2024",
+          "value": 335967000
+        },
+        {
+          "date": "16 ago 2024",
+          "value": 338462000
+        },
+        {
+          "date": "17 ago 2024",
+          "value": 341094000
+        },
+        {
+          "date": "18 ago 2024",
+          "value": 342521000
+        },
+        {
+          "date": "19 ago 2024",
+          "value": 343475000
+        },
+        {
+          "date": "20 ago 2024",
+          "value": 344179000
+        },
+        {
+          "date": "21 ago 2024",
+          "value": 345845000
+        },
+        {
+          "date": "22 ago 2024",
+          "value": 348152000
+        },
+        {
+          "date": "23 ago 2024",
+          "value": 350510000
+        },
+        {
+          "date": "24 ago 2024",
+          "value": 352320000
+        },
+        {
+          "date": "25 ago 2024",
+          "value": 354184000
+        },
+        {
+          "date": "26 ago 2024",
+          "value": 355412000
+        },
+        {
+          "date": "27 ago 2024",
+          "value": 357264000
+        },
+        {
+          "date": "28 ago 2024",
+          "value": 359543000
+        },
+        {
+          "date": "29 ago 2024",
+          "value": 359099000
+        },
+        {
+          "date": "30 ago 2024",
+          "value": 358430000
+        },
+        {
+          "date": "31 ago 2024",
+          "value": 377795000
+        },
+        {
+          "date": "1 sept 2024",
+          "value": 377905000
+        },
+        {
+          "date": "2 sept 2024",
+          "value": 378008000
+        },
+        {
+          "date": "3 sept 2024",
+          "value": 378554000
+        },
+        {
+          "date": "4 sept 2024",
+          "value": 378816000
+        },
+        {
+          "date": "5 sept 2024",
+          "value": 379492000
+        },
+        {
+          "date": "6 sept 2024",
+          "value": 379797000
+        },
+        {
+          "date": "7 sept 2024",
+          "value": 378975000
+        },
+        {
+          "date": "8 sept 2024",
+          "value": 378417000
+        },
+        {
+          "date": "9 sept 2024",
+          "value": 377429000
+        },
+        {
+          "date": "10 sept 2024",
+          "value": 376338000
+        },
+        {
+          "date": "11 sept 2024",
+          "value": 375633000
+        },
+        {
+          "date": "12 sept 2024",
+          "value": 374745000
+        },
+        {
+          "date": "13 sept 2024",
+          "value": 373937000
+        },
+        {
+          "date": "14 sept 2024",
+          "value": 372480000
+        },
+        {
+          "date": "15 sept 2024",
+          "value": 372280000
+        },
+        {
+          "date": "16 sept 2024",
+          "value": 372772000
+        },
+        {
+          "date": "17 sept 2024",
+          "value": 373758000
+        },
+        {
+          "date": "18 sept 2024",
+          "value": 375047000
+        },
+        {
+          "date": "19 sept 2024",
+          "value": 376385000
+        },
+        {
+          "date": "20 sept 2024",
+          "value": 376675000
+        },
+        {
+          "date": "21 sept 2024",
+          "value": 375923000
+        },
+        {
+          "date": "22 sept 2024",
+          "value": 376720000
+        },
+        {
+          "date": "23 sept 2024",
+          "value": 378265000
+        },
+        {
+          "date": "24 sept 2024",
+          "value": 378498000
+        },
+        {
+          "date": "25 sept 2024",
+          "value": 378535000
+        },
+        {
+          "date": "26 sept 2024",
+          "value": 378488000
+        },
+        {
+          "date": "27 sept 2024",
+          "value": 377964000
+        },
+        {
+          "date": "28 sept 2024",
+          "value": 377584000
+        },
+        {
+          "date": "29 sept 2024",
+          "value": 378069000
+        },
+        {
+          "date": "30 sept 2024",
+          "value": 377941000
+        },
+        {
+          "date": "1 oct 2024",
+          "value": 377335000
+        },
+        {
+          "date": "2 oct 2024",
+          "value": 377220000
+        },
+        {
+          "date": "3 oct 2024",
+          "value": 376689000
+        },
+        {
+          "date": "4 oct 2024",
+          "value": 375843000
+        },
+        {
+          "date": "5 oct 2024",
+          "value": 373898000
+        },
+        {
+          "date": "6 oct 2024",
+          "value": 373469000
+        },
+        {
+          "date": "7 oct 2024",
+          "value": 373191000
+        },
+        {
+          "date": "8 oct 2024",
+          "value": 372411000
+        },
+        {
+          "date": "9 oct 2024",
+          "value": 370974000
+        },
+        {
+          "date": "10 oct 2024",
+          "value": 369102000
+        },
+        {
+          "date": "11 oct 2024",
+          "value": 365529000
+        },
+        {
+          "date": "12 oct 2024",
+          "value": 361958000
+        },
+        {
+          "date": "13 oct 2024",
+          "value": 358728000
+        },
+        {
+          "date": "14 oct 2024",
+          "value": 355165000
+        },
+        {
+          "date": "15 oct 2024",
+          "value": 350886000
+        },
+        {
+          "date": "16 oct 2024",
+          "value": 347103000
+        },
+        {
+          "date": "17 oct 2024",
+          "value": 343597000
+        },
+        {
+          "date": "18 oct 2024",
+          "value": 340238000
+        },
+        {
+          "date": "19 oct 2024",
+          "value": 336196000
+        },
+        {
+          "date": "20 oct 2024",
+          "value": 333997000
+        },
+        {
+          "date": "21 oct 2024",
+          "value": 332593000
+        },
+        {
+          "date": "22 oct 2024",
+          "value": 330898000
+        },
+        {
+          "date": "23 oct 2024",
+          "value": 330233000
+        },
+        {
+          "date": "24 oct 2024",
+          "value": 329687000
+        },
+        {
+          "date": "25 oct 2024",
+          "value": 328836000
+        },
+        {
+          "date": "26 oct 2024",
+          "value": 328157000
+        },
+        {
+          "date": "27 oct 2024",
+          "value": 327781000
+        },
+        {
+          "date": "28 oct 2024",
+          "value": 328559000
+        },
+        {
+          "date": "29 oct 2024",
+          "value": 329920000
+        },
+        {
+          "date": "30 oct 2024",
+          "value": 332003000
+        },
+        {
+          "date": "31 oct 2024",
+          "value": 333540000
+        },
+        {
+          "date": "1 nov 2024",
+          "value": 334867000
+        },
+        {
+          "date": "2 nov 2024",
+          "value": 335970000
+        },
+        {
+          "date": "3 nov 2024",
+          "value": 337092000
+        },
+        {
+          "date": "4 nov 2024",
+          "value": 338205000
+        },
+        {
+          "date": "5 nov 2024",
+          "value": 339468000
+        },
+        {
+          "date": "6 nov 2024",
+          "value": 342180000
+        },
+        {
+          "date": "7 nov 2024",
+          "value": 345157000
+        },
+        {
+          "date": "8 nov 2024",
+          "value": 347150000
+        },
+        {
+          "date": "9 nov 2024",
+          "value": 349042000
+        },
+        {
+          "date": "10 nov 2024",
+          "value": 352081000
+        },
+        {
+          "date": "11 nov 2024",
+          "value": 355161000
+        },
+        {
+          "date": "12 nov 2024",
+          "value": 359591000
+        },
+        {
+          "date": "13 nov 2024",
+          "value": 363960000
+        },
+        {
+          "date": "14 nov 2024",
+          "value": 368313000
+        },
+        {
+          "date": "15 nov 2024",
+          "value": 371697000
+        },
+        {
+          "date": "16 nov 2024",
+          "value": 374535000
+        },
+        {
+          "date": "17 nov 2024",
+          "value": 376709000
+        },
+        {
+          "date": "18 nov 2024",
+          "value": 378812000
+        },
+        {
+          "date": "19 nov 2024",
+          "value": 379218000
+        },
+        {
+          "date": "20 nov 2024",
+          "value": 378882000
+        },
+        {
+          "date": "21 nov 2024",
+          "value": 378572000
+        },
+        {
+          "date": "22 nov 2024",
+          "value": 379534000
+        },
+        {
+          "date": "23 nov 2024",
+          "value": 378640000
+        },
+        {
+          "date": "24 nov 2024",
+          "value": 376487000
+        },
+        {
+          "date": "25 nov 2024",
+          "value": 373965000
+        },
+        {
+          "date": "26 nov 2024",
+          "value": 372169000
+        },
+        {
+          "date": "27 nov 2024",
+          "value": 370521000
+        },
+        {
+          "date": "28 nov 2024",
+          "value": 368584000
+        },
+        {
+          "date": "29 nov 2024",
+          "value": 365832000
+        },
+        {
+          "date": "30 nov 2024",
+          "value": 361686000
+        },
+        {
+          "date": "1 dic 2024",
+          "value": 358435000
+        },
+        {
+          "date": "2 dic 2024",
+          "value": 354226000
+        },
+        {
+          "date": "3 dic 2024",
+          "value": 348158000
+        },
+        {
+          "date": "4 dic 2024",
+          "value": 343654000
+        },
+        {
+          "date": "5 dic 2024",
+          "value": 339672000
+        },
+        {
+          "date": "6 dic 2024",
+          "value": 335718000
+        },
+        {
+          "date": "7 dic 2024",
+          "value": 331117000
+        },
+        {
+          "date": "8 dic 2024",
+          "value": 327643000
+        },
+        {
+          "date": "9 dic 2024",
+          "value": 325772000
+        },
+        {
+          "date": "10 dic 2024",
+          "value": 324941000
+        },
+        {
+          "date": "11 dic 2024",
+          "value": 325023000
+        },
+        {
+          "date": "12 dic 2024",
+          "value": 325055000
+        },
+        {
+          "date": "13 dic 2024",
+          "value": 325539000
+        },
+        {
+          "date": "14 dic 2024",
+          "value": 324589000
+        },
+        {
+          "date": "15 dic 2024",
+          "value": 324555000
+        },
+        {
+          "date": "16 dic 2024",
+          "value": 324849000
+        },
+        {
+          "date": "17 dic 2024",
+          "value": 326723000
+        },
+        {
+          "date": "18 dic 2024",
+          "value": 328720000
+        },
+        {
+          "date": "19 dic 2024",
+          "value": 330989000
+        },
+        {
+          "date": "20 dic 2024",
+          "value": 333495000
+        },
+        {
+          "date": "21 dic 2024",
+          "value": 335294000
+        },
+        {
+          "date": "22 dic 2024",
+          "value": 337591000
+        },
+        {
+          "date": "23 dic 2024",
+          "value": 340199000
+        },
+        {
+          "date": "24 dic 2024",
+          "value": 343569000
+        },
+        {
+          "date": "25 dic 2024",
+          "value": 346563000
+        },
+        {
+          "date": "26 dic 2024",
+          "value": 350003000
+        },
+        {
+          "date": "27 dic 2024",
+          "value": 352592000
+        },
+        {
+          "date": "28 dic 2024",
+          "value": 355835000
+        },
+        {
+          "date": "29 dic 2024",
+          "value": 359351000
+        },
+        {
+          "date": "30 dic 2024",
+          "value": 361951000
+        },
+        {
+          "date": "31 dic 2024",
+          "value": 363629000
+        },
+        {
+          "date": "1 ene 2025",
+          "value": 365532000
+        }
+      ],
+      "prev": {
+        "date": "31 dic 2024",
+        "value": 363629000
+      }
+    },
+    "wins": 6
+  },
+  "status": "ok"
+}

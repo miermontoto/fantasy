@@ -20,3 +20,9 @@
   sidebar: render(partial: "fantasy/partials/market/sidebar", locals: { offers: @offers }),
   content: render(partial: "fantasy/partials/market/content", locals: { filtered_market: @filtered_market })
 } %>
+
+<%# Request updated data after initial load %>
+<div id="market-content-update"
+     data-controller="fantasy--delayed-load"
+     data-fantasy--delayed-load-url-value="<%= market_path(format: :turbo_stream) %>">
+</div>

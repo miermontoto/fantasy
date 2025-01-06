@@ -202,7 +202,8 @@ class Scraper
         streak: player.css(".streak span").map { |span| span.text.strip },
         status: player.css(".status use")&.attr("href")&.value&.split("#")&.last,
         player_img: player.css(".player-pic.qd-player img").attr("src").value,
-        asked_price: player.css(".btn.btn-popup").text.strip.gsub(/[^0-9]/, "").to_i,
+        asked_price: player.css(".btn.btn-popup.btn-grey").text.strip.gsub(/[^0-9]/, "").to_i,
+        my_bid: player.css(".btn.btn-popup.btn-green.btn-bid").text.strip.gsub(/[^0-9]/, "").to_i,
         rival_img: player.css(".rival img").attr("src").value,
         own: player.css(".btn.btn-popup").text.strip.include?(ApplicationHelper::SELLING_TEXT)
       })
@@ -278,6 +279,7 @@ class Scraper
 
     squad_players = doc.css(".player-list.list-team li").map do |player|
       TeamPlayer.new({
+        id: player.css(".player-pic.qd-player").attr("data-id_player").value,
         name: player.css(".name").text.strip.gsub(/\s+/, " "),
         position: player.css(".icons i").attr("class").value,
         points: player.css(".points").text.strip,
@@ -372,11 +374,13 @@ class Scraper
 
     if content.empty? then; return {}; end
 
-    last = content.to_h["last"]
-    prev = content.to_h["prev"]
+    content = content.to_h
+
+    last = content["last"]
+    prev = content["prev"]
     diff = last["value"] - prev["value"]
 
-    positive = content.to_h["players"]["positive"].map do |player|
+    positive = content["players"]["positive"].map do |player|
       Player.new({
         position: "pos-#{player["position"]}",
         id: player["id"],
@@ -391,7 +395,7 @@ class Scraper
       })
     end
 
-    negative = content.to_h["players"]["negative"].map do |player|
+    negative = content["players"]["negative"].map do |player|
       Player.new({
         position: "pos-#{player["position"]}",
         id: player["id"],
@@ -445,6 +449,22 @@ class Scraper
     end
 
     { players: players }
+  end
+
+  def player(json, player = nil)
+    content = check_ajax_response(json)
+    if content.empty? then; return {}; end
+
+    content = {
+      values: content.to_h["values"].to_a,
+      owners: content.to_h["owners"].to_a,
+      goals: content.to_h["player_extra"]["goals"],
+      matches: content.to_h["player_extra"]["matches"],
+      clauses_rank: content.to_h["player"]["clausesRanking"]
+    }
+
+    player.load_additional_attributes(content) unless player.nil?
+    puts content if @print
   end
 
   private

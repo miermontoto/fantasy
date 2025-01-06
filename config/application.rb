@@ -38,5 +38,7 @@ module Fantasy
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.hosts << "ssh.mier.info:3000"
   end
 end

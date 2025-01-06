@@ -1,10 +1,12 @@
 <%# Shared layout for market and team views %>
 <div class="container mx-auto h-[calc(100vh-6rem)] flex flex-col">
   <%# Stats section %>
-  <%= render partial: "fantasy/partials/stats", locals: {
-    info: info,
-    additional_stats: additional_stats
-  } %>
+  <%= turbo_frame_tag "team-stats" do %>
+    <%= render partial: "fantasy/partials/stats", locals: {
+      info: info,
+      additional_stats: additional_stats
+    } %>
+  <% end %>
 
   <%# Main grid layout %>
   <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 flex-1 min-h-0">

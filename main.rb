@@ -18,6 +18,9 @@ else
       response = browser.communities
       scraper.communities(response.body)
     end
+  elsif action == 'player'
+    response = browser.player(ARGV[1])
+    scraper.player(response.body, nil)
   elsif endpoints.include?(action)
     response = browser.send(action)
     scraper.send(action, response.body)

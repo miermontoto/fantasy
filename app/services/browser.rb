@@ -60,7 +60,8 @@ class Browser
 
   # todas las llamadas AJAX requieren el token XAUTH
 
-  def players(id)
+  def player(id)
+    if id.nil? then; puts "error: id no proporcionado".red; return; end
     @conn.post("/ajax/sw") do |req|
       req.body = "post=players&id=#{id}"
     end

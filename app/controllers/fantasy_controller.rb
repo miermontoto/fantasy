@@ -1,4 +1,6 @@
 class FantasyController < ApplicationController
+  include ParallelDataFetcher
+  include ApplicationHelper
   skip_before_action :verify_authenticity_token, only: [ :set_xauth ]
 
   layout "application"
@@ -13,13 +15,13 @@ class FantasyController < ApplicationController
   def index
     raw_data = @scraper.feed(@browser.feed.body)
 
-    @market_data = raw_data[:market]
-    @events_data = raw_data[:events]
-    @standings_data = @scraper.standings(@browser.standings.body)
-    @general_info = raw_data[:info]
+    market_data = raw_data[:market]
+    events_data = raw_data[:events]
+    standings_data = @scraper.standings(@browser.standings.body)
+    general_info = raw_data[:info]
 
     # Sort events by relative time
-    @events_data = @events_data.sort_by do |event|
+    events_data = events_data.sort_by do |event|
       time_str = event.raw_date.downcase
 
       # Convert relative time to minutes
@@ -38,26 +40,35 @@ class FantasyController < ApplicationController
     end
 
     # Get top 5 market players by points
-    @paginated_market_data = @market_data.sort_by { |player| -player.points.to_i }.first(5)
+    paginated_market_data = market_data.sort_by { |player| -player.points.to_i }
 
     # Paginate events data
-    @current_page_feed = [ params[:page_feed].to_i, 1 ].max
-    @per_page_feed = 5
-    @total_pages_feed = [ (@events_data.size.to_f / @per_page_feed).ceil, 1 ].max
-    @current_page_feed = [ @current_page_feed, @total_pages_feed ].min
-    start_idx_feed = (@current_page_feed - 1) * @per_page_feed
-    @paginated_feed_data = @events_data[start_idx_feed, @per_page_feed] || []
+    current_page_feed = [ params[:page_feed].to_i, 1 ].max
+    per_page_feed = 5
+    total_pages_feed = [ (events_data.size.to_f / per_page_feed).ceil, 1 ].max
+    current_page_feed = [ current_page_feed, total_pages_feed ].min
+    start_idx_feed = (current_page_feed - 1) * per_page_feed
+    paginated_feed_data = events_data[start_idx_feed, per_page_feed] || []
 
     respond_to do |format|
-      format.html
+      format.html {
+        render :index, locals: {
+          general_info: general_info,
+          standings_data: standings_data,
+          paginated_feed_data: paginated_feed_data,
+          paginated_market_data: paginated_market_data,
+          current_page_feed: current_page_feed,
+          total_pages_feed: total_pages_feed
+        }
+      }
       format.turbo_stream do
         render turbo_stream: turbo_stream.update("left-container",
           partial: "fantasy/partials/transfer_list",
           locals: {
-            paginated_feed_data: @paginated_feed_data,
-            paginated_market_data: @paginated_market_data,
-            current_page_feed: @current_page_feed,
-            total_pages_feed: @total_pages_feed
+            paginated_feed_data: paginated_feed_data,
+            paginated_market_data: paginated_market_data,
+            current_page_feed: current_page_feed,
+            total_pages_feed: total_pages_feed
           }
         )
       end
@@ -73,23 +84,15 @@ class FantasyController < ApplicationController
 
     @filtered_market = @market_data[:market].dup
 
-    # Apply filters
-    apply_position_filter
-    apply_price_filter
-    apply_search_filter
-    apply_source_filter
-    apply_own_players_filter
-    apply_sorting
-
-    respond_to do |format|
-      format.html
-      format.turbo_stream do
-        render turbo_stream: turbo_stream.update("market-content",
-          partial: "fantasy/partials/market_content",
-          locals: { market_players: @filtered_market }
-        )
-      end
-    end
+    render_with_parallel_update(
+      collection: @filtered_market,
+      update_method: ->(player, browser) { @scraper.player(browser.player(player.id).body, player) },
+      before_filters: [ :apply_position_filter, :apply_price_filter, :apply_search_filter, :apply_source_filter, :apply_own_players_filter, :apply_sorting ],
+      content_id: "market-content",
+      update_id: "market-content-update",
+      partial: "fantasy/partials/market/content",
+      locals: { filtered_market: @filtered_market }
+    )
   end
 
   def team
@@ -97,35 +100,60 @@ class FantasyController < ApplicationController
     return unless @team_data && @team_data[:players]
 
     @filtered_players = @team_data[:players].dup
+    @team_value = @team_data[:players]&.sum(&:value) || 0
+    @current_balance = @team_data[:info][:current_balance].to_s.gsub(/[^\d-]/, "").to_i
+    @total_value = @team_value + @current_balance
 
-    # Apply filters
-    apply_team_position_filter
-    apply_team_search_filter
-    apply_team_sale_filter
-    apply_team_sorting
+    render_with_parallel_update(
+      collection: @filtered_players,
+      update_method: ->(player, browser) { @scraper.player(browser.player(player.id).body, player) },
+      before_filters: [ :apply_team_position_filter, :apply_team_search_filter, :apply_team_sale_filter, :apply_team_sorting ],
+      content_id: "team-content",
+      update_id: "team-content-update",
+      partial: "fantasy/partials/team/content",
+      locals: { filtered_players: @filtered_players },
+      after_update: -> {
+        # Calculate total value change after all players are updated
+        if @filtered_players.all? { |p| p.values&.first&.dig("change").present? }
+          total_change = @filtered_players.sum { |p| p.values&.first&.dig("change").to_i }
+        else
+          total_change = nil
+        end
 
-    respond_to do |format|
-      format.html
-      format.turbo_stream do
-        render turbo_stream: turbo_stream.update("team-content",
-          partial: "fantasy/partials/team_content",
-          locals: { players: @filtered_players }
-        )
-      end
-    end
+        # Add stats update to the turbo stream response
+        [
+          turbo_stream.update("team-stats",
+            partial: "fantasy/partials/stats",
+            locals: {
+              info: @team_data[:info],
+              additional_stats: render_to_string(
+                partial: "fantasy/partials/team/additional_stats",
+                locals: {
+                  team_data: @team_data,
+                  team_value: @team_value,
+                  total_value: @total_value,
+                  total_change: total_change
+                }
+              )
+            }
+          )
+        ]
+      }
+    )
   end
 
   def standings
-    @standings_data = @scraper.standings(@browser.standings.body)
+    standings_data = @scraper.standings(@browser.standings.body)
+    render :standings, locals: { standings_data: standings_data }
   end
 
   def events
     # Get events data from index action
     raw_data = @scraper.feed(@browser.feed.body)
-    @events_data = raw_data[:events]
+    events_data = raw_data[:events]
 
     # Sort events by relative time
-    @events_data = @events_data.sort_by do |event|
+    events_data = events_data.sort_by do |event|
       time_str = event.raw_date.downcase
 
       # Convert relative time to minutes
@@ -144,22 +172,25 @@ class FantasyController < ApplicationController
     end
 
     # Pagination
-    @page = (params[:page] || 1).to_i
-    @per_page = 5
-    @total_pages = (@events_data.size.to_f / @per_page).ceil
-    @page = 1 if @page > @total_pages
+    page = (params[:page] || 1).to_i
+    per_page = 5
+    total_pages = (events_data.size.to_f / per_page).ceil
+    page = 1 if page > total_pages
 
-    start_idx = (@page - 1) * @per_page
-    @paginated_events = @events_data[start_idx, @per_page] || []
+    start_idx = (page - 1) * per_page
+    paginated_events = events_data[start_idx, per_page] || []
 
     respond_to do |format|
       format.html
       format.turbo_stream {
-        render turbo_stream: turbo_stream.update("events-results", partial: "fantasy/partials/events_list", locals: {
-          events_data: @paginated_events,
-          page: @page,
-          total_pages: @total_pages
-        })
+        render turbo_stream: turbo_stream.update("events-results",
+          partial: "fantasy/partials/events_list",
+          locals: {
+            events_data: paginated_events,
+            page: page,
+            total_pages: total_pages
+          }
+        )
       }
     end
   end
@@ -192,21 +223,21 @@ class FantasyController < ApplicationController
   end
 
   def render_events
-    @events_data = JSON.parse(params[:events])
-    @page = params[:page].to_i
-    @total_pages = params[:total_pages].to_i
+    events_data = JSON.parse(params[:events])
+    page = params[:page].to_i
+    total_pages = params[:total_pages].to_i
 
     render turbo_stream: turbo_stream.update("events-content",
-      partial: "fantasy/partials/events_content",
+      partial: "fantasy/partials/events/content",
       locals: {
-        events_data: @events_data,
-        page: @page,
-        total_pages: @total_pages
+        events_data: events_data,
+        page: page,
+        total_pages: total_pages
       }
     )
   rescue JSON::ParserError
     render turbo_stream: turbo_stream.update("events-content",
-      partial: "fantasy/partials/events_content",
+      partial: "fantasy/partials/events/content",
       locals: {
         events_data: [],
         page: 1,
