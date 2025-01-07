@@ -204,7 +204,7 @@ class Scraper
         player_img: player.css(".player-pic.qd-player img").attr("src").value,
         asked_price: player.css(".btn.btn-popup.btn-grey").text.strip.gsub(/[^0-9]/, "").to_i,
         my_bid: player.css(".btn.btn-popup.btn-green.btn-bid").text.strip.gsub(/[^0-9]/, "").to_i,
-        rival_img: player.css(".rival img").attr("src").value,
+        rival_img: player.css(".rival img")&.attr("src")&.value,
         own: player.css(".btn.btn-popup").text.strip.include?(ApplicationHelper::SELLING_TEXT)
       })
     end
@@ -280,7 +280,7 @@ class Scraper
     squad_players = doc.css(".player-list.list-team li").map do |player|
       TeamPlayer.new({
         id: player.css(".player-pic.qd-player").attr("data-id_player").value,
-        name: player.css(".name").text.strip.gsub(/\s+/, " "),
+        name: player.css(".name").text.strip.gsub(/\s+/, " ").strip,
         position: player.css(".icons i").attr("class").value,
         points: player.css(".points").text.strip,
         value: player.css(".underName").text.gsub(/[^\d]/, "").to_i,
@@ -369,7 +369,7 @@ class Scraper
     { communities: communities }
   end
 
-  def top_market(html)
+  def top_market(html, timespan = "D")
     content = check_ajax_response(html)
 
     if content.empty? then; return {}; end
@@ -380,7 +380,7 @@ class Scraper
     prev = content["prev"]
     diff = last["value"] - prev["value"]
 
-    positive = content["players"]["positive"].map do |player|
+    positive = content["players"]["positive"].map.with_index(1) do |player, index|
       Player.new({
         position: "pos-#{player["position"]}",
         id: player["id"],
@@ -391,11 +391,11 @@ class Scraper
         player_img: player["photoUrl"],
         own: player["is_mine"] == 1,
         user: player["uc_name"],
-        offer: true
+        market_ranks: { timespan => index }
       })
     end
 
-    negative = content["players"]["negative"].map do |player|
+    negative = content["players"]["negative"].reverse.map.with_index(1) do |player, index|
       Player.new({
         position: "pos-#{player["position"]}",
         id: player["id"],
@@ -405,7 +405,8 @@ class Scraper
         team_img: player["teamLogoUrl"],
         player_img: player["photoUrl"],
         own: player["is_mine"] == 1,
-        user: player["uc_name"]
+        user: player["uc_name"],
+        market_ranks: { timespan => -index }
       })
     end
 

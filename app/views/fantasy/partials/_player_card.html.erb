@@ -86,11 +86,22 @@
             <span class="truncate block max-w-[100px]"><%= player.offered_by.split(' ').first %></span>
           </div>
         <% end %>
-        <% if player.clauses_rank.present? %>
-          <div class="text-xs text-gray-400 px-2 py-0.5 bg-black/30 rounded whitespace-nowrap">
-            <span class="truncate block max-w-[100px]"><%= player.clauses_rank %> 💥</span>
-          </div>
-        <% end %>
+        <div class="flex gap-1">
+          <% if player.clauses_rank.present? %>
+            <div class="text-xs text-gray-400 px-2 py-0.5 bg-black/30 rounded whitespace-nowrap">
+              <span class="truncate block max-w-[100px]"><%= player.clauses_rank %> 💥</span>
+            </div>
+          <% end %>
+          <% if player.market_ranks.present? %>
+            <% player.market_ranks.each do |timespan, rank| %>
+              <% positive = rank > 0 %>
+              <% next if (positive && rank > 50) || (!positive && rank < -50) %>
+              <div class="text-xs <%= positive ? 'text-green-400' : 'text-red-400' %> px-2 py-0.5 bg-black/30 rounded whitespace-nowrap font-bold">
+                <span class="truncate block max-w-[100px]"><%= rank.to_s.gsub('-', '') %> <%= positive ? '📈' : '📉' %><%= timespan unless timespan == "D" %></span>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
 

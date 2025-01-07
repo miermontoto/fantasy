@@ -24,6 +24,10 @@ module ParallelDataFetcher
         # Apply filters after data update
         options[:before_filters]&.each { |filter| send(filter) }
 
+        if options[:before_update]
+          options[:before_update].call
+        end
+
         # Build turbo stream response
         streams = [
           turbo_stream.update(options[:content_id],

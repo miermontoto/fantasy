@@ -7,7 +7,7 @@ class TeamPlayer < Player
     @selected = attributes[:selected] || false                                  # true si el jugador juega esta jornada
     @achieved = attributes[:achieved] || "?"                                    # puntos del jugador en la jornada actual (si aplica)
     @being_sold = attributes[:being_sold] || false                              # true si el jugador está en venta
-    @own = true                                                                 # siempre es propio
+    @own = attributes[:own] || true                                             # true si el jugador es propio
   end
 
   # Función que convierte un jugador del equipo a string

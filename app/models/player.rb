@@ -6,7 +6,8 @@ class Player
   # Atributos comunes a todos los tipos de jugadores
   attr_reader :id, :position, :name, :points, :value, :average, :price, :ppm,
                 :trend, :streak, :status, :player_img, :team_img, :rival_img,
-                :values, :goals, :matches, :owners, :gpm, :clauses_rank
+                :values, :goals, :matches, :owners, :gpm, :clauses_rank,
+                :market_ranks
 
   # Constructor de la clase, inicializa los atributos del jugador
   # a partir de un hash de atributos proporcionado por el scraper
@@ -25,6 +26,7 @@ class Player
     @player_img = attributes[:player_img] || ""                                 # url de la imagen del jugador
     @team_img = attributes[:team_img] || ""                                     # url de la imagen del equipo del jugador
     @rival_img = attributes[:rival_img] || ""                                   # url de la imagen del próximo equipo rival
+    @market_ranks = attributes[:market_ranks] || {}                             # array de las posiciones en el ranking de subidas y bajadas de valor
 
     if @trend.present? and @trend == "" then; @trend = "~"; end
     get_price_string
@@ -46,11 +48,20 @@ class Player
     @matches = content[:matches]
     @gpm = @goals.to_i.to_f / @matches.to_i unless @matches.to_i == 0
     @clauses_rank = content[:clauses_rank]
+    @market_ranks = content[:market_ranks]
 
     load_relative_values(content[:values]) if content[:values].present?
     load_previous_owners(content[:owners]) if content[:owners].present?
 
     @transfer = content[:transfer]
+  end
+
+  def load_rank(players)
+    same_player = players.find { |player| player.id.to_i == @id.to_i }
+
+    if same_player.present?
+      @market_ranks = same_player.market_ranks
+    end
   end
 
   protected
@@ -104,7 +115,7 @@ class Player
     #
     # [
     #   {
-    #     "tiemspan": 0|1|2|3,
+    #     "timespan": 0|1|2|3,
     #     "value": int,
     #     "change": int,
     #   },

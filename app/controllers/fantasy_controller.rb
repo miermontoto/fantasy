@@ -88,6 +88,13 @@ class FantasyController < ApplicationController
       collection: @filtered_market,
       update_method: ->(player, browser) { @scraper.player(browser.player(player.id).body, player) },
       before_filters: [ :apply_position_filter, :apply_price_filter, :apply_search_filter, :apply_source_filter, :apply_own_players_filter, :apply_sorting ],
+      before_update: -> {
+        day_top_market = @scraper.top_market(@browser.top_market.body)
+        day_top_market = day_top_market[:positive].concat(day_top_market[:negative])
+        @filtered_market.each do |player|
+          player.load_rank(day_top_market)
+        end
+      },
       content_id: "market-content",
       update_id: "market-content-update",
       partial: "fantasy/partials/market/content",
@@ -112,15 +119,22 @@ class FantasyController < ApplicationController
       update_id: "team-content-update",
       partial: "fantasy/partials/team/content",
       locals: { filtered_players: @filtered_players },
+      before_update: -> {
+        day_top_market = @scraper.top_market(@browser.top_market.body)
+        day_top_market = day_top_market[:positive].concat(day_top_market[:negative])
+        @filtered_players.each do |player|
+          player.load_rank(day_top_market)
+        end
+      },
       after_update: -> {
-        # Calculate total value change after all players are updated
+        # obtener el cambio de valor del equipo
         if @filtered_players.all? { |p| p.values&.first&.dig("change").present? }
           total_change = @filtered_players.sum { |p| p.values&.first&.dig("change").to_i }
         else
           total_change = nil
         end
 
-        # Add stats update to the turbo stream response
+        # actualizar el contador de cambio de valor del equipo
         [
           turbo_stream.update("team-stats",
             partial: "fantasy/partials/stats",
