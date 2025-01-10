@@ -46,7 +46,7 @@ class Player
   def load_additional_attributes(content)
     @goals = content[:goals]
     @matches = content[:matches]
-    @gpm = @goals.to_i.to_f / @matches.to_i unless @matches.to_i == 0
+    @gpm = (@goals.to_i.to_f / @matches.to_i).round(3) unless @matches.to_i == 0
     @clauses_rank = content[:clauses_rank]
     @market_ranks = content[:market_ranks]
 

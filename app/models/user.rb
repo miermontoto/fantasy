@@ -9,7 +9,7 @@ class User
     @position = attributes[:position]
     @name = attributes[:name]
     @players = attributes[:players].to_s + " jugadores"
-    @value = "€ " + format_num(attributes[:value]) unless attributes[:value].nil?
+    @value = format_value(attributes[:value]) unless attributes[:value].nil?
     @points = attributes[:points].to_s + " puntos"
     @diff = attributes[:diff]
     @user_img = attributes[:user_img] || "https://mier.info/assets/favicon.svg"

@@ -20,15 +20,15 @@
   <div class="flex-1 overflow-y-auto">
     <%# Standings globales %>
     <div id="general-content" class="content p-4 space-y-4">
-      <% standings[:total].each_with_index do |player, index| %>
-        <%= render partial: "fantasy/partials/standings_card", locals: {player: player, index: index+1} %>
+      <% standings[:total].each.with_index(1) do |player, index| %>
+        <%= render partial: "fantasy/partials/standings_card", locals: {player: player, index: index} %>
       <% end %>
     </div>
 
     <%# Standings de la jornada %>
     <div id="jornada-content" class="content p-4 space-y-4 hidden">
-      <% standings[:gameweek].each_with_index do |player, index| %>
-        <%= render partial: "fantasy/partials/standings_card", locals: {player: player, index: index+1} %>
+      <% standings[:gameweek].each.with_index(1) do |player, index| %>
+        <%= render partial: "fantasy/partials/standings_card", locals: {player: player, index: index} %>
       <% end %>
     </div>
   </div>

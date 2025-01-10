@@ -70,22 +70,32 @@
 
       <%# Badges %>
       <div class="absolute right-0 top-0 flex flex-col items-end gap-1 min-w-fit">
-        <% if player.is_a?(TeamPlayer) && player.being_sold %>
-          <div class="text-xs text-orange-400 px-2 py-0.5 bg-black/30 rounded whitespace-nowrap">
-            <span class="font-medium">En venta</span>
-          </div>
-        <% end %>
-        <% if player.ppm.present? && !player.is_a?(OfferPlayer) %>
-          <div class="text-xs text-gray-400 px-2 py-0.5 bg-black/30 rounded whitespace-nowrap">
-            <span class="font-bold"><%= player.ppm %></span>
-            <span class="ml-1">PPM</span>
-          </div>
-        <% end %>
-        <% if (player.is_a?(MarketPlayer) && player.offered_by != ApplicationHelper::FREE_AGENT) || player.is_a?(OfferPlayer) %>
-          <div class="text-xs text-gray-400 px-2 py-0.5 bg-black/30 rounded whitespace-nowrap">
-            <span class="truncate block max-w-[100px]"><%= player.offered_by.split(' ').first %></span>
-          </div>
-        <% end %>
+        <div class="flex gap-1">
+          <% if player.ppm.present? && !player.is_a?(OfferPlayer) %>
+            <div class="text-xs text-gray-400 px-2 py-0.5 bg-black/30 rounded whitespace-nowrap">
+              <span class="font-bold"><%= player.ppm %></span>
+              <span class="ml-1">PPM</span>
+            </div>
+          <% end %>
+          <% if player.gpm.present? %>
+            <div class="text-xs text-gray-400 px-2 py-0.5 bg-black/30 rounded whitespace-nowrap">
+              <span class="font-bold"><%= player.gpm %></span>
+              <span class="ml-1">GPP</span>
+            </div>
+          <% end %>
+        </div>
+        <div class="flex gap-1">
+          <% if (player.is_a?(MarketPlayer) && player.offered_by != ApplicationHelper::FREE_AGENT) || player.is_a?(OfferPlayer) %>
+            <div class="text-xs text-gray-400 px-2 py-0.5 bg-black/30 rounded whitespace-nowrap">
+              <span class="truncate block max-w-[100px]"><%= player.offered_by.split(' ').first %></span>
+            </div>
+          <% end %>
+          <% if player.is_a?(TeamPlayer) && player.being_sold %>
+            <div class="text-xs text-orange-400 px-2 py-0.5 bg-black/30 rounded whitespace-nowrap">
+              <span class="font-medium">En venta</span>
+            </div>
+          <% end %>
+        </div>
         <div class="flex gap-1">
           <% if player.clauses_rank.present? %>
             <div class="text-xs text-gray-400 px-2 py-0.5 bg-black/30 rounded whitespace-nowrap">
