@@ -24,6 +24,9 @@ else
   elsif endpoints.include?(action)
     response = browser.send(action)
     scraper.send(action, response.body)
+  elsif action == 'user'
+    response = browser.user(ARGV[1])
+    scraper.user(response.body)
   else
     puts "acción inválida [#{endpoints.join(', ')}]"
   end

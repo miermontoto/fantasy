@@ -7,7 +7,7 @@ class Player
   attr_reader :id, :position, :name, :points, :value, :average, :price, :ppm,
                 :trend, :streak, :status, :player_img, :team_img, :rival_img,
                 :values, :goals, :matches, :owners, :gpm, :clauses_rank,
-                :market_ranks
+                :market_ranks, :clause
 
   # Constructor de la clase, inicializa los atributos del jugador
   # a partir de un hash de atributos proporcionado por el scraper
@@ -27,6 +27,7 @@ class Player
     @team_img = attributes[:team_img] || ""                                     # url de la imagen del equipo del jugador
     @rival_img = attributes[:rival_img] || ""                                   # url de la imagen del próximo equipo rival
     @market_ranks = attributes[:market_ranks] || {}                             # array de las posiciones en el ranking de subidas y bajadas de valor
+    @clause = attributes[:clause]                                               # valor de la cláusula de rescisión
 
     if @trend.present? and @trend == "" then; @trend = "~"; end
     get_price_string

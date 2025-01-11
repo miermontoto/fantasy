@@ -1,0 +1,2795 @@
+{
+  "data": {
+    "bench": {
+      "96": {
+        "avg": 4.6,
+        "barter": [],
+        "bg": 2,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 10869000,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 4,
+          "value": 16303500
+        },
+        "clauses_signs": 1,
+        "created": "2024-12-25 17:00:02",
+        "days": null,
+        "default": 0,
+        "floor": 10869000,
+        "id": 96,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 15,
+        "id_uc": 797852,
+        "last_points": 4,
+        "market": {
+          "active": 0,
+          "input": 10869000
+        },
+        "multiplier": 1.5,
+        "name": "Dani Ceballos",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/96.png?version=20231222215443",
+        "played": 1,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 46,
+        "popup": "bid",
+        "position": 3,
+        "prev_value": 10708000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "D. Ceballos",
+        "status": null,
+        "streak": [
+          {
+            "color": 2,
+            "points": 3
+          },
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 2,
+            "points": 4
+          }
+        ],
+        "streak_sum": 12,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20250110",
+        "transfer_origin": "normal",
+        "ts_pic": 1703278483,
+        "type": null,
+        "value": 10869000
+      },
+      "192": {
+        "avg": 4.4,
+        "barter": [],
+        "bg": 0,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 21617000,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 5,
+          "value": 32425500
+        },
+        "clauses_signs": 1,
+        "created": "2024-12-31 05:00:03",
+        "days": null,
+        "default": 0,
+        "floor": 21617000,
+        "id": 192,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 5,
+        "id_uc": 797852,
+        "last_points": "?",
+        "market": {
+          "active": 0,
+          "input": 20636000
+        },
+        "multiplier": 1.5,
+        "name": "Vicente Guaita",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/192.png?version=20230902010651",
+        "played": 0,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 62,
+        "popup": "bid",
+        "position": 1,
+        "prev_value": 20833000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "V. Guaita",
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 9
+          },
+          {
+            "color": 2,
+            "points": 2
+          },
+          {
+            "color": 3,
+            "points": 5
+          }
+        ],
+        "streak_sum": 16,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20250110",
+        "transfer_origin": "normal",
+        "ts_pic": 1693609611,
+        "type": null,
+        "value": 20636000
+      },
+      "14789": {
+        "avg": 6.4,
+        "barter": [],
+        "bg": 2,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 60000006,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 5,
+          "value": 90000009
+        },
+        "clauses_signs": 1,
+        "created": "2024-12-03 21:14:31",
+        "days": null,
+        "default": 0,
+        "floor": 60000006,
+        "id": 14789,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 1,
+        "id_uc": 797852,
+        "last_points": 4,
+        "market": {
+          "active": 0,
+          "input": 43622000
+        },
+        "multiplier": 1.5,
+        "name": "Oihan Sancet",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/14789.png?version=20231214161337",
+        "played": 1,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 103,
+        "popup": "bid",
+        "position": 3,
+        "prev_value": 43875000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "O. Sancet",
+        "status": "doubt",
+        "streak": [
+          {
+            "color": 2,
+            "points": 2
+          },
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 2,
+            "points": 4
+          }
+        ],
+        "streak_sum": 11,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20250110",
+        "transfer_origin": "clause",
+        "ts_pic": 1702566817,
+        "type": null,
+        "value": 43622000
+      },
+      "19562": {
+        "avg": 5.5,
+        "barter": [],
+        "bg": 0,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 56744750,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 5,
+          "value": 85117125
+        },
+        "clauses_signs": 1,
+        "created": "2024-12-22 17:03:45",
+        "days": null,
+        "default": 0,
+        "floor": 56744750,
+        "id": 19562,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 16,
+        "id_uc": 797852,
+        "last_points": "?",
+        "market": {
+          "active": 0,
+          "input": 50966000
+        },
+        "multiplier": 1.5,
+        "name": "Takefusa Kubo",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/19562.png?version=20231119114114",
+        "played": 0,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 99,
+        "popup": "bid",
+        "position": 3,
+        "prev_value": 51265000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "T. Kubo",
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 2,
+            "points": 1
+          },
+          {
+            "color": 0,
+            "points": 0
+          }
+        ],
+        "streak_sum": 6,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20250110",
+        "transfer_origin": "normal",
+        "ts_pic": 1700390474,
+        "type": null,
+        "value": 50966000
+      },
+      "22872": {
+        "avg": 3.1,
+        "barter": [],
+        "bg": 0,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 1320000,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 1,
+          "value": 1980000
+        },
+        "clauses_signs": 1,
+        "created": "2025-01-03 05:00:03",
+        "days": null,
+        "default": 0,
+        "floor": 1320000,
+        "id": 22872,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 8,
+        "id_uc": 797852,
+        "last_points": "?",
+        "market": {
+          "active": 0,
+          "input": 1320000
+        },
+        "multiplier": 1.5,
+        "name": "Brian Oliván",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/22872.png?version=20240626191621",
+        "played": 0,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 44,
+        "popup": "bid",
+        "position": 2,
+        "prev_value": 1453000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "B. Oliván",
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 2,
+            "points": 3
+          }
+        ],
+        "streak_sum": 13,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/8.png?version=20250110",
+        "transfer_origin": "normal",
+        "ts_pic": 1719422181,
+        "type": null,
+        "value": 1320000
+      },
+      "25872": {
+        "avg": 6,
+        "barter": [],
+        "bg": 0,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 43895000,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 5,
+          "value": 65842500
+        },
+        "clauses_signs": 1,
+        "created": "2024-12-25 17:00:02",
+        "days": null,
+        "default": 0,
+        "floor": 43895000,
+        "id": 25872,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 222,
+        "id_uc": 797852,
+        "last_points": "?",
+        "market": {
+          "active": 0,
+          "input": 43895000
+        },
+        "multiplier": 1.5,
+        "name": "Miguel Gutiérrez",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/25872.png?version=20231218195313",
+        "played": 0,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 102,
+        "popup": "bid",
+        "position": 2,
+        "prev_value": 43895000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "M. Gutiérrez",
+        "status": null,
+        "streak": [
+          {
+            "color": 2,
+            "points": 4
+          },
+          {
+            "color": 3,
+            "points": 6
+          },
+          {
+            "color": 4,
+            "points": 11
+          }
+        ],
+        "streak_sum": 21,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20250110",
+        "transfer_origin": "normal",
+        "ts_pic": 1702925593,
+        "type": null,
+        "value": 43895000
+      },
+      "29163": {
+        "avg": 3.4,
+        "barter": [],
+        "bg": 0,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 3042000,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 2,
+          "value": 4563000
+        },
+        "clauses_signs": 1,
+        "created": "2024-12-16 17:00:03",
+        "days": null,
+        "default": 0,
+        "floor": 3042000,
+        "id": 29163,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 8,
+        "id_uc": 797852,
+        "last_points": "?",
+        "market": {
+          "active": 0,
+          "input": 3042000
+        },
+        "multiplier": 1.5,
+        "name": "Omar El Hilali",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/29163.png?version=20240626191545",
+        "played": 0,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 57,
+        "popup": "bid",
+        "position": 2,
+        "prev_value": 2957000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "O. El Hilali",
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 3,
+            "points": 5
+          }
+        ],
+        "streak_sum": 10,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/8.png?version=20250110",
+        "transfer_origin": "normal",
+        "ts_pic": 1719422145,
+        "type": null,
+        "value": 3042000
+      },
+      "49275": {
+        "avg": 3.8,
+        "barter": [],
+        "bg": 0,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 2232000,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 2,
+          "value": 3348000
+        },
+        "clauses_signs": 1,
+        "created": "2025-01-05 17:00:03",
+        "days": null,
+        "default": 0,
+        "floor": 2232000,
+        "id": 49275,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 19,
+        "id_uc": 797852,
+        "last_points": "?",
+        "market": {
+          "active": 0,
+          "input": 2232000
+        },
+        "multiplier": 1.5,
+        "name": "André Almeida",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/49275.png?version=20231217205702",
+        "played": 0,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 57,
+        "popup": "bid",
+        "position": 3,
+        "prev_value": 2198000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "A. Almeida",
+        "status": null,
+        "streak": [
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 2,
+            "points": 3
+          }
+        ],
+        "streak_sum": 8,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/19.png?version=20250110",
+        "transfer_origin": "normal",
+        "ts_pic": 1702843022,
+        "type": null,
+        "value": 2232000
+      },
+      "49382": {
+        "avg": 4.6,
+        "barter": [],
+        "bg": 0,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 26223000,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 5,
+          "value": 39334500
+        },
+        "clauses_signs": 1,
+        "created": "2024-12-30 17:00:02",
+        "days": null,
+        "default": 0,
+        "floor": 26223000,
+        "id": 49382,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 5,
+        "id_uc": 797852,
+        "last_points": "?",
+        "market": {
+          "active": 0,
+          "input": 26223000
+        },
+        "multiplier": 1.5,
+        "name": "Marcos Alonso",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/49382.png?version=20231218004050",
+        "played": 0,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 65,
+        "popup": "bid",
+        "position": 2,
+        "prev_value": 26037000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "M. Alonso",
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 7
+          },
+          {
+            "color": 3,
+            "points": 6
+          },
+          {
+            "color": 3,
+            "points": 7
+          }
+        ],
+        "streak_sum": 20,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20250110",
+        "transfer_origin": "normal",
+        "ts_pic": 1702856450,
+        "type": null,
+        "value": 26223000
+      },
+      "52130": {
+        "avg": 4.6,
+        "barter": [],
+        "bg": 2,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 21402000,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 5,
+          "value": 32103000
+        },
+        "clauses_signs": 1,
+        "created": "2024-12-06 05:00:04",
+        "days": null,
+        "default": 0,
+        "floor": 21402000,
+        "id": 52130,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 408,
+        "id_uc": 797852,
+        "last_points": 2,
+        "market": {
+          "active": 0,
+          "input": 21402000
+        },
+        "multiplier": 1.5,
+        "name": "Cyle Larin",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/52130.png?version=20231218215411",
+        "played": 1,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 73,
+        "popup": "bid",
+        "position": 4,
+        "prev_value": 21326000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "C. Larin",
+        "status": null,
+        "streak": [
+          {
+            "color": 4,
+            "points": 16
+          },
+          {
+            "color": 3,
+            "points": 8
+          },
+          {
+            "color": 2,
+            "points": 2
+          }
+        ],
+        "streak_sum": 26,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20250110",
+        "transfer_origin": "normal",
+        "ts_pic": 1702932851,
+        "type": null,
+        "value": 21402000
+      },
+      "53110": {
+        "avg": 3,
+        "barter": [],
+        "bg": 0,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 6870000,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 2,
+          "value": 10305000
+        },
+        "clauses_signs": 1,
+        "created": "2025-01-01 05:00:03",
+        "days": null,
+        "default": 0,
+        "floor": 6870000,
+        "id": 53110,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 11,
+        "id_uc": 797852,
+        "last_points": "?",
+        "market": {
+          "active": 0,
+          "input": 5474000
+        },
+        "multiplier": 1.5,
+        "name": "Alex Suárez",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/53110.png?version=20230817153632",
+        "played": 0,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 45,
+        "popup": "bid",
+        "position": 2,
+        "prev_value": 5600000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "A. Suárez",
+        "status": null,
+        "streak": [
+          {
+            "color": 2,
+            "points": 3
+          },
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 3,
+            "points": 5
+          }
+        ],
+        "streak_sum": 8,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20250110",
+        "transfer_origin": "normal",
+        "ts_pic": 1692279392,
+        "type": null,
+        "value": 5474000
+      },
+      "59199": {
+        "avg": 4.7,
+        "barter": [],
+        "bg": 0,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 1744000,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 1,
+          "value": 2616000
+        },
+        "clauses_signs": 1,
+        "created": "2024-12-24 17:00:02",
+        "days": null,
+        "default": 0,
+        "floor": 1744000,
+        "id": 59199,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 17,
+        "id_uc": 797852,
+        "last_points": "?",
+        "market": {
+          "active": 0,
+          "input": 1744000
+        },
+        "multiplier": 1.5,
+        "name": "Stanis Idumbo",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/59199.png?version=20240726112544",
+        "played": 0,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 28,
+        "popup": "bid",
+        "position": 3,
+        "prev_value": 1808000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "S. Idumbo",
+        "status": null,
+        "streak": [
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 2,
+            "points": 2
+          },
+          {
+            "color": 3,
+            "points": 7
+          }
+        ],
+        "streak_sum": 9,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20250110",
+        "transfer_origin": "normal",
+        "ts_pic": 1721985944,
+        "type": null,
+        "value": 1744000
+      },
+      "59371": {
+        "avg": 5.7,
+        "barter": [],
+        "bg": 0,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 35364450,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 5,
+          "value": 53046675
+        },
+        "clauses_signs": 1,
+        "created": "2024-12-23 05:00:03",
+        "days": null,
+        "default": 0,
+        "floor": 35364450,
+        "id": 59371,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 16,
+        "id_uc": 797852,
+        "last_points": "?",
+        "market": {
+          "active": 0,
+          "input": 29521000
+        },
+        "multiplier": 1.5,
+        "name": "Luka Sučić",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/59371.png?version=20240802114718",
+        "played": 0,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 80,
+        "popup": "bid",
+        "position": 3,
+        "prev_value": 29927000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "L. Sučić",
+        "status": null,
+        "streak": [
+          {
+            "color": 2,
+            "points": 2
+          },
+          {
+            "color": 3,
+            "points": 9
+          },
+          {
+            "color": 3,
+            "points": 5
+          }
+        ],
+        "streak_sum": 16,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20250110",
+        "transfer_origin": "normal",
+        "ts_pic": 1722592038,
+        "type": null,
+        "value": 29521000
+      },
+      "59593": {
+        "avg": 3.9,
+        "barter": [],
+        "bg": 0,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 21693000,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 3,
+          "value": 32539500
+        },
+        "clauses_signs": 1,
+        "created": "2024-12-07 17:00:02",
+        "days": null,
+        "default": 0,
+        "floor": 21693000,
+        "id": 59593,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 20,
+        "id_uc": 797852,
+        "last_points": "?",
+        "market": {
+          "active": 0,
+          "input": 7378000
+        },
+        "multiplier": 1.5,
+        "name": "Logan Costa",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/59593.png?version=20240822222712",
+        "played": 0,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 54,
+        "popup": "bid",
+        "position": 2,
+        "prev_value": 7627000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "L. Costa",
+        "status": null,
+        "streak": [
+          {
+            "color": 2,
+            "points": 3
+          },
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 0,
+            "points": 0
+          }
+        ],
+        "streak_sum": 3,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/20.png?version=20250110",
+        "transfer_origin": "normal",
+        "ts_pic": 1724358432,
+        "type": null,
+        "value": 7378000
+      },
+      "59792": {
+        "avg": 5.6,
+        "barter": [],
+        "bg": 0,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 50722500,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 5,
+          "value": 76083750
+        },
+        "clauses_signs": 1,
+        "created": "2024-12-03 21:14:09",
+        "days": null,
+        "default": 0,
+        "floor": 50722500,
+        "id": 59792,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 11,
+        "id_uc": 797852,
+        "last_points": "?",
+        "market": {
+          "active": 0,
+          "input": 34818000
+        },
+        "multiplier": 1.5,
+        "name": "Fábio Silva",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/59792.png?version=20240831005559",
+        "played": 0,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 73,
+        "popup": "bid",
+        "position": 4,
+        "prev_value": 35175000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "F. Silva",
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 2,
+            "points": 2
+          }
+        ],
+        "streak_sum": 7,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20250110",
+        "transfer_origin": "clause",
+        "ts_pic": 1725058559,
+        "type": null,
+        "value": 34818000
+      }
+    },
+    "gameweeks": {
+      "2868": {
+        "formation": "1-4-3-3",
+        "gameweek": 11,
+        "id_gameweek": 2868,
+        "negative": 0,
+        "points": 60,
+        "rank": 1,
+        "status": "closed",
+        "type": "regular"
+      },
+      "2869": {
+        "formation": "1-4-4-2",
+        "gameweek": 12,
+        "id_gameweek": 2869,
+        "negative": 0,
+        "points": 32,
+        "rank": 5,
+        "status": "closed",
+        "type": "regular"
+      },
+      "2870": {
+        "formation": "1-3-5-2",
+        "gameweek": 13,
+        "id_gameweek": 2870,
+        "negative": 0,
+        "points": 58,
+        "rank": 1,
+        "status": "closed",
+        "type": "regular"
+      },
+      "2871": {
+        "formation": "1-4-4-2",
+        "gameweek": 14,
+        "id_gameweek": 2871,
+        "negative": 1,
+        "points": 0,
+        "rank": 7,
+        "status": "closed",
+        "type": "regular"
+      },
+      "2872": {
+        "formation": "1-4-4-2",
+        "gameweek": 15,
+        "id_gameweek": 2872,
+        "negative": 0,
+        "points": 40,
+        "rank": 5,
+        "status": "closed",
+        "type": "regular"
+      },
+      "2873": {
+        "formation": "1-3-4-3",
+        "gameweek": 16,
+        "id_gameweek": 2873,
+        "negative": 0,
+        "points": 47,
+        "rank": 5,
+        "status": "closed",
+        "type": "regular"
+      },
+      "2874": {
+        "formation": "1-3-5-2",
+        "gameweek": 17,
+        "id_gameweek": 2874,
+        "negative": 1,
+        "points": 0,
+        "rank": 8,
+        "status": "closed",
+        "type": "regular"
+      },
+      "2875": {
+        "formation": "1-4-3-3",
+        "gameweek": 18,
+        "id_gameweek": 2875,
+        "negative": 0,
+        "points": 43,
+        "rank": 5,
+        "status": "closed",
+        "type": "regular"
+      },
+      "2876": {
+        "formation": "1-4-4-2",
+        "gameweek": 19,
+        "id_gameweek": 2876,
+        "negative": 0,
+        "points": 21,
+        "rank": 1,
+        "status": "partially-closed",
+        "type": "regular"
+      }
+    },
+    "gameweeks_history": {
+      "11": {
+        "color": 3,
+        "negative": 0,
+        "points": 60,
+        "short": "J11",
+        "status": "closed",
+        "width": 60
+      },
+      "12": {
+        "color": 2,
+        "negative": 0,
+        "points": 32,
+        "short": "J12",
+        "status": "closed",
+        "width": 32
+      },
+      "13": {
+        "color": 3,
+        "negative": 0,
+        "points": 58,
+        "short": "J13",
+        "status": "closed",
+        "width": 58
+      },
+      "14": {
+        "color": 0,
+        "negative": 1,
+        "points": 0,
+        "short": "J14",
+        "status": "closed",
+        "width": 0
+      },
+      "15": {
+        "color": 3,
+        "negative": 0,
+        "points": 40,
+        "short": "J15",
+        "status": "closed",
+        "width": 40
+      },
+      "16": {
+        "color": 3,
+        "negative": 0,
+        "points": 47,
+        "short": "J16",
+        "status": "closed",
+        "width": 47
+      },
+      "17": {
+        "color": 0,
+        "negative": 1,
+        "points": 0,
+        "short": "J17",
+        "status": "closed",
+        "width": 0
+      },
+      "18": {
+        "color": 3,
+        "negative": 0,
+        "points": 43,
+        "short": "J18",
+        "status": "closed",
+        "width": 43
+      },
+      "19": {
+        "color": 2,
+        "negative": 0,
+        "points": 21,
+        "short": "J19",
+        "status": "partially-closed",
+        "width": 21
+      }
+    },
+    "gw": 2876,
+    "id": 797852,
+    "lineup": {
+      "count": 11,
+      "positions": {
+        "1": {
+          "1": {
+            "best_xi": "",
+            "bg": 0,
+            "id": 4774,
+            "id_team": 17,
+            "name": "Álvaro Fernández",
+            "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/4774.png?version=20221011223634",
+            "played": 0,
+            "points": "?",
+            "position": 1,
+            "short": "Á. Fernández",
+            "slot": 1,
+            "status": null,
+            "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20250110",
+            "ts_pic": 1665520594
+          }
+        },
+        "2": {
+          "2": {
+            "best_xi": "",
+            "bg": 0,
+            "id": 15285,
+            "id_team": 317,
+            "name": "Javi Sánchez",
+            "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/15285.png?version=20240616125159",
+            "played": 0,
+            "points": "?",
+            "position": 2,
+            "short": "J. Sánchez",
+            "slot": 2,
+            "status": null,
+            "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/317.png?version=20250110",
+            "ts_pic": 1718535119
+          },
+          "3": {
+            "best_xi": "",
+            "bg": 1,
+            "id": 17979,
+            "id_team": 408,
+            "name": "Martin Valjent",
+            "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/17979.png?version=20231218214456",
+            "played": 1,
+            "points": -1,
+            "position": 2,
+            "short": "M. Valjent",
+            "slot": 3,
+            "status": null,
+            "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20250110",
+            "ts_pic": 1702932296
+          },
+          "4": {
+            "best_xi": "",
+            "bg": 0,
+            "id": 14691,
+            "id_team": 17,
+            "name": "Adrià Pedrosa",
+            "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/14691.png?version=20231217203343",
+            "played": 0,
+            "points": "?",
+            "position": 2,
+            "short": "A. Pedrosa",
+            "slot": 4,
+            "status": null,
+            "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20250110",
+            "ts_pic": 1702841623
+          },
+          "5": {
+            "best_xi": "",
+            "bg": 0,
+            "id": 58818,
+            "id_team": 4,
+            "name": "Romain Perraud",
+            "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/58818.png?version=20240625113805",
+            "played": 0,
+            "points": "?",
+            "position": 2,
+            "short": "R. Perraud",
+            "slot": 5,
+            "status": null,
+            "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/4.png?version=20250110",
+            "ts_pic": 1719308285
+          }
+        },
+        "3": {
+          "6": {
+            "best_xi": "",
+            "bg": 0,
+            "id": 14839,
+            "id_team": 408,
+            "name": "Manu Morlanes",
+            "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/14839.png?version=20231218214954",
+            "played": 1,
+            "points": 0,
+            "position": 3,
+            "short": "M. Morlanes",
+            "slot": 6,
+            "status": null,
+            "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20250110",
+            "ts_pic": 1702932594
+          },
+          "7": {
+            "best_xi": "",
+            "bg": 0,
+            "id": 59087,
+            "id_team": 17,
+            "name": "Albert Sambi Lokonga",
+            "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/59087.png?version=20240715135655",
+            "played": 0,
+            "points": "?",
+            "position": 3,
+            "short": "A. Sambi Lokonga",
+            "slot": 7,
+            "status": null,
+            "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20250110",
+            "ts_pic": 1721044615
+          },
+          "8": {
+            "best_xi": "",
+            "bg": 0,
+            "id": 59791,
+            "id_team": 11,
+            "name": "Dário Essugo",
+            "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/59791.png?version=20240831005251",
+            "played": 0,
+            "points": "?",
+            "position": 3,
+            "short": "D. Essugo",
+            "slot": 8,
+            "status": "doubt",
+            "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20250110",
+            "ts_pic": 1725058371
+          },
+          "9": {
+            "best_xi": "",
+            "bg": 3,
+            "id": 59415,
+            "id_team": 3,
+            "name": "Dani Olmo",
+            "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/59415.png?version=20240809151344",
+            "played": 1,
+            "points": 5,
+            "position": 3,
+            "short": "D. Olmo",
+            "slot": 9,
+            "status": null,
+            "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20250110",
+            "ts_pic": 1723209224
+          }
+        },
+        "4": {
+          "10": {
+            "best_xi": "pic-best_xi",
+            "bg": 4,
+            "id": 48657,
+            "id_team": 3,
+            "name": "Raphinha",
+            "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/48657.png?version=20241113124129",
+            "played": 1,
+            "points": 17,
+            "position": 4,
+            "short": "Raphinha",
+            "slot": 10,
+            "status": null,
+            "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/3.png?version=20250110",
+            "ts_pic": 1731498089
+          },
+          "11": {
+            "best_xi": "",
+            "bg": 0,
+            "id": 58954,
+            "id_team": 15,
+            "name": "Kylian Mbappé",
+            "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/58954.png?version=20240702085856",
+            "played": 1,
+            "points": 0,
+            "position": 4,
+            "short": "K. Mbappé",
+            "slot": 11,
+            "status": null,
+            "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20250110",
+            "ts_pic": 1719903536
+          }
+        }
+      }
+    },
+    "season": {
+      "avg": 33.44444,
+      "points": 301
+    },
+    "stats": [],
+    "team_now": [
+      {
+        "avg": 7.8,
+        "barter": [],
+        "bg": 0,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 88894000,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 5,
+          "value": 133341000
+        },
+        "clauses_signs": 1,
+        "created": "2024-10-25 05:00:05",
+        "days": null,
+        "default": 0,
+        "floor": 88894000,
+        "id": 58954,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 15,
+        "id_uc": 797852,
+        "last_points": 0,
+        "market": {
+          "active": 0,
+          "input": 80813000
+        },
+        "multiplier": 1.5,
+        "name": "Kylian Mbappé",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/58954.png?version=20240702085856",
+        "played": 1,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 132,
+        "popup": "bid",
+        "position": 4,
+        "prev_value": 80897000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "K. Mbappé",
+        "status": null,
+        "streak": [
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 4,
+            "points": 14
+          },
+          {
+            "color": 0,
+            "points": 0
+          }
+        ],
+        "streak_sum": 14,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20250110",
+        "transfer_origin": "normal",
+        "ts_pic": 1719903536,
+        "type": null,
+        "value": 80813000
+      },
+      {
+        "avg": 6.4,
+        "barter": [],
+        "bg": 2,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 60000006,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 5,
+          "value": 90000009
+        },
+        "clauses_signs": 1,
+        "created": "2024-12-03 21:14:31",
+        "days": null,
+        "default": 0,
+        "floor": 60000006,
+        "id": 14789,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 1,
+        "id_uc": 797852,
+        "last_points": 4,
+        "market": {
+          "active": 0,
+          "input": 43622000
+        },
+        "multiplier": 1.5,
+        "name": "Oihan Sancet",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/14789.png?version=20231214161337",
+        "played": 1,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 103,
+        "popup": "bid",
+        "position": 3,
+        "prev_value": 43875000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "O. Sancet",
+        "status": "doubt",
+        "streak": [
+          {
+            "color": 2,
+            "points": 2
+          },
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 2,
+            "points": 4
+          }
+        ],
+        "streak_sum": 11,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/1.png?version=20250110",
+        "transfer_origin": "clause",
+        "ts_pic": 1702566817,
+        "type": null,
+        "value": 43622000
+      },
+      {
+        "avg": 6,
+        "barter": [],
+        "bg": 0,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 43895000,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 5,
+          "value": 65842500
+        },
+        "clauses_signs": 1,
+        "created": "2024-12-25 17:00:02",
+        "days": null,
+        "default": 0,
+        "floor": 43895000,
+        "id": 25872,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 222,
+        "id_uc": 797852,
+        "last_points": "?",
+        "market": {
+          "active": 0,
+          "input": 43895000
+        },
+        "multiplier": 1.5,
+        "name": "Miguel Gutiérrez",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/25872.png?version=20231218195313",
+        "played": 0,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 102,
+        "popup": "bid",
+        "position": 2,
+        "prev_value": 43895000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "M. Gutiérrez",
+        "status": null,
+        "streak": [
+          {
+            "color": 2,
+            "points": 4
+          },
+          {
+            "color": 3,
+            "points": 6
+          },
+          {
+            "color": 4,
+            "points": 11
+          }
+        ],
+        "streak_sum": 21,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/222.png?version=20250110",
+        "transfer_origin": "normal",
+        "ts_pic": 1702925593,
+        "type": null,
+        "value": 43895000
+      },
+      {
+        "avg": 5.5,
+        "barter": [],
+        "bg": 0,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 56744750,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 5,
+          "value": 85117125
+        },
+        "clauses_signs": 1,
+        "created": "2024-12-22 17:03:45",
+        "days": null,
+        "default": 0,
+        "floor": 56744750,
+        "id": 19562,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 16,
+        "id_uc": 797852,
+        "last_points": "?",
+        "market": {
+          "active": 0,
+          "input": 50966000
+        },
+        "multiplier": 1.5,
+        "name": "Takefusa Kubo",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/19562.png?version=20231119114114",
+        "played": 0,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 99,
+        "popup": "bid",
+        "position": 3,
+        "prev_value": 51265000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "T. Kubo",
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 2,
+            "points": 1
+          },
+          {
+            "color": 0,
+            "points": 0
+          }
+        ],
+        "streak_sum": 6,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20250110",
+        "transfer_origin": "normal",
+        "ts_pic": 1700390474,
+        "type": null,
+        "value": 50966000
+      },
+      {
+        "avg": 5.7,
+        "barter": [],
+        "bg": 0,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 35364450,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 5,
+          "value": 53046675
+        },
+        "clauses_signs": 1,
+        "created": "2024-12-23 05:00:03",
+        "days": null,
+        "default": 0,
+        "floor": 35364450,
+        "id": 59371,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 16,
+        "id_uc": 797852,
+        "last_points": "?",
+        "market": {
+          "active": 0,
+          "input": 29521000
+        },
+        "multiplier": 1.5,
+        "name": "Luka Sučić",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/59371.png?version=20240802114718",
+        "played": 0,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 80,
+        "popup": "bid",
+        "position": 3,
+        "prev_value": 29927000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "L. Sučić",
+        "status": null,
+        "streak": [
+          {
+            "color": 2,
+            "points": 2
+          },
+          {
+            "color": 3,
+            "points": 9
+          },
+          {
+            "color": 3,
+            "points": 5
+          }
+        ],
+        "streak_sum": 16,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/16.png?version=20250110",
+        "transfer_origin": "normal",
+        "ts_pic": 1722592038,
+        "type": null,
+        "value": 29521000
+      },
+      {
+        "avg": 4.6,
+        "barter": [],
+        "bg": 2,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 21402000,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 5,
+          "value": 32103000
+        },
+        "clauses_signs": 1,
+        "created": "2024-12-06 05:00:04",
+        "days": null,
+        "default": 0,
+        "floor": 21402000,
+        "id": 52130,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 408,
+        "id_uc": 797852,
+        "last_points": 2,
+        "market": {
+          "active": 0,
+          "input": 21402000
+        },
+        "multiplier": 1.5,
+        "name": "Cyle Larin",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/52130.png?version=20231218215411",
+        "played": 1,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 73,
+        "popup": "bid",
+        "position": 4,
+        "prev_value": 21326000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "C. Larin",
+        "status": null,
+        "streak": [
+          {
+            "color": 4,
+            "points": 16
+          },
+          {
+            "color": 3,
+            "points": 8
+          },
+          {
+            "color": 2,
+            "points": 2
+          }
+        ],
+        "streak_sum": 26,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20250110",
+        "transfer_origin": "normal",
+        "ts_pic": 1702932851,
+        "type": null,
+        "value": 21402000
+      },
+      {
+        "avg": 5.6,
+        "barter": [],
+        "bg": 0,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 50722500,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 5,
+          "value": 76083750
+        },
+        "clauses_signs": 1,
+        "created": "2024-12-03 21:14:09",
+        "days": null,
+        "default": 0,
+        "floor": 50722500,
+        "id": 59792,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 11,
+        "id_uc": 797852,
+        "last_points": "?",
+        "market": {
+          "active": 0,
+          "input": 34818000
+        },
+        "multiplier": 1.5,
+        "name": "Fábio Silva",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/59792.png?version=20240831005559",
+        "played": 0,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 73,
+        "popup": "bid",
+        "position": 4,
+        "prev_value": 35175000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "F. Silva",
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 2,
+            "points": 2
+          }
+        ],
+        "streak_sum": 7,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20250110",
+        "transfer_origin": "clause",
+        "ts_pic": 1725058559,
+        "type": null,
+        "value": 34818000
+      },
+      {
+        "avg": 4.6,
+        "barter": [],
+        "bg": 0,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 26223000,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 5,
+          "value": 39334500
+        },
+        "clauses_signs": 1,
+        "created": "2024-12-30 17:00:02",
+        "days": null,
+        "default": 0,
+        "floor": 26223000,
+        "id": 49382,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 5,
+        "id_uc": 797852,
+        "last_points": "?",
+        "market": {
+          "active": 0,
+          "input": 26223000
+        },
+        "multiplier": 1.5,
+        "name": "Marcos Alonso",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/49382.png?version=20231218004050",
+        "played": 0,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 65,
+        "popup": "bid",
+        "position": 2,
+        "prev_value": 26037000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "M. Alonso",
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 7
+          },
+          {
+            "color": 3,
+            "points": 6
+          },
+          {
+            "color": 3,
+            "points": 7
+          }
+        ],
+        "streak_sum": 20,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20250110",
+        "transfer_origin": "normal",
+        "ts_pic": 1702856450,
+        "type": null,
+        "value": 26223000
+      },
+      {
+        "avg": 4.4,
+        "barter": [],
+        "bg": 0,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 21617000,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 5,
+          "value": 32425500
+        },
+        "clauses_signs": 1,
+        "created": "2024-12-31 05:00:03",
+        "days": null,
+        "default": 0,
+        "floor": 21617000,
+        "id": 192,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 5,
+        "id_uc": 797852,
+        "last_points": "?",
+        "market": {
+          "active": 0,
+          "input": 20636000
+        },
+        "multiplier": 1.5,
+        "name": "Vicente Guaita",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/192.png?version=20230902010651",
+        "played": 0,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 62,
+        "popup": "bid",
+        "position": 1,
+        "prev_value": 20833000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "V. Guaita",
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 9
+          },
+          {
+            "color": 2,
+            "points": 2
+          },
+          {
+            "color": 3,
+            "points": 5
+          }
+        ],
+        "streak_sum": 16,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/5.png?version=20250110",
+        "transfer_origin": "normal",
+        "ts_pic": 1693609611,
+        "type": null,
+        "value": 20636000
+      },
+      {
+        "avg": 3.9,
+        "barter": [],
+        "bg": 1,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 16000100,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 4,
+          "value": 24000150
+        },
+        "clauses_signs": 1,
+        "created": "2024-11-08 05:00:05",
+        "days": null,
+        "default": 0,
+        "floor": 16000100,
+        "id": 17979,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 408,
+        "id_uc": 797852,
+        "last_points": -1,
+        "market": {
+          "active": 0,
+          "input": 13279000
+        },
+        "multiplier": 1.5,
+        "name": "Martin Valjent",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/17979.png?version=20231218214456",
+        "played": 1,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 58,
+        "popup": "bid",
+        "position": 2,
+        "prev_value": 13038000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "M. Valjent",
+        "status": null,
+        "streak": [
+          {
+            "color": 2,
+            "points": 4
+          },
+          {
+            "color": 2,
+            "points": 3
+          },
+          {
+            "color": 1,
+            "points": -1
+          }
+        ],
+        "streak_sum": 6,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/408.png?version=20250110",
+        "transfer_origin": "normal",
+        "ts_pic": 1702932296,
+        "type": null,
+        "value": 13279000
+      },
+      {
+        "avg": 3.4,
+        "barter": [],
+        "bg": 0,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 3042000,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 2,
+          "value": 4563000
+        },
+        "clauses_signs": 1,
+        "created": "2024-12-16 17:00:03",
+        "days": null,
+        "default": 0,
+        "floor": 3042000,
+        "id": 29163,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 8,
+        "id_uc": 797852,
+        "last_points": "?",
+        "market": {
+          "active": 0,
+          "input": 3042000
+        },
+        "multiplier": 1.5,
+        "name": "Omar El Hilali",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/29163.png?version=20240626191545",
+        "played": 0,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 57,
+        "popup": "bid",
+        "position": 2,
+        "prev_value": 2957000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "O. El Hilali",
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 3,
+            "points": 5
+          }
+        ],
+        "streak_sum": 10,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/8.png?version=20250110",
+        "transfer_origin": "normal",
+        "ts_pic": 1719422145,
+        "type": null,
+        "value": 3042000
+      },
+      {
+        "avg": 3.8,
+        "barter": [],
+        "bg": 0,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 2232000,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 2,
+          "value": 3348000
+        },
+        "clauses_signs": 1,
+        "created": "2025-01-05 17:00:03",
+        "days": null,
+        "default": 0,
+        "floor": 2232000,
+        "id": 49275,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 19,
+        "id_uc": 797852,
+        "last_points": "?",
+        "market": {
+          "active": 0,
+          "input": 2232000
+        },
+        "multiplier": 1.5,
+        "name": "André Almeida",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/49275.png?version=20231217205702",
+        "played": 0,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 57,
+        "popup": "bid",
+        "position": 3,
+        "prev_value": 2198000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "A. Almeida",
+        "status": null,
+        "streak": [
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 2,
+            "points": 3
+          }
+        ],
+        "streak_sum": 8,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/19.png?version=20250110",
+        "transfer_origin": "normal",
+        "ts_pic": 1702843022,
+        "type": null,
+        "value": 2232000
+      },
+      {
+        "avg": 3.9,
+        "barter": [],
+        "bg": 0,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 21693000,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 3,
+          "value": 32539500
+        },
+        "clauses_signs": 1,
+        "created": "2024-12-07 17:00:02",
+        "days": null,
+        "default": 0,
+        "floor": 21693000,
+        "id": 59593,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 20,
+        "id_uc": 797852,
+        "last_points": "?",
+        "market": {
+          "active": 0,
+          "input": 7378000
+        },
+        "multiplier": 1.5,
+        "name": "Logan Costa",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/59593.png?version=20240822222712",
+        "played": 0,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 54,
+        "popup": "bid",
+        "position": 2,
+        "prev_value": 7627000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "L. Costa",
+        "status": null,
+        "streak": [
+          {
+            "color": 2,
+            "points": 3
+          },
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 0,
+            "points": 0
+          }
+        ],
+        "streak_sum": 3,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/20.png?version=20250110",
+        "transfer_origin": "normal",
+        "ts_pic": 1724358432,
+        "type": null,
+        "value": 7378000
+      },
+      {
+        "avg": 4.6,
+        "barter": [],
+        "bg": 2,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 10869000,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 4,
+          "value": 16303500
+        },
+        "clauses_signs": 1,
+        "created": "2024-12-25 17:00:02",
+        "days": null,
+        "default": 0,
+        "floor": 10869000,
+        "id": 96,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 15,
+        "id_uc": 797852,
+        "last_points": 4,
+        "market": {
+          "active": 0,
+          "input": 10869000
+        },
+        "multiplier": 1.5,
+        "name": "Dani Ceballos",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/96.png?version=20231222215443",
+        "played": 1,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 46,
+        "popup": "bid",
+        "position": 3,
+        "prev_value": 10708000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "D. Ceballos",
+        "status": null,
+        "streak": [
+          {
+            "color": 2,
+            "points": 3
+          },
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 2,
+            "points": 4
+          }
+        ],
+        "streak_sum": 12,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/15.png?version=20250110",
+        "transfer_origin": "normal",
+        "ts_pic": 1703278483,
+        "type": null,
+        "value": 10869000
+      },
+      {
+        "avg": 3,
+        "barter": [],
+        "bg": 0,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 6870000,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 2,
+          "value": 10305000
+        },
+        "clauses_signs": 1,
+        "created": "2025-01-01 05:00:03",
+        "days": null,
+        "default": 0,
+        "floor": 6870000,
+        "id": 53110,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 11,
+        "id_uc": 797852,
+        "last_points": "?",
+        "market": {
+          "active": 0,
+          "input": 5474000
+        },
+        "multiplier": 1.5,
+        "name": "Alex Suárez",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/53110.png?version=20230817153632",
+        "played": 0,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 45,
+        "popup": "bid",
+        "position": 2,
+        "prev_value": 5600000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "A. Suárez",
+        "status": null,
+        "streak": [
+          {
+            "color": 2,
+            "points": 3
+          },
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 3,
+            "points": 5
+          }
+        ],
+        "streak_sum": 8,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/11.png?version=20250110",
+        "transfer_origin": "normal",
+        "ts_pic": 1692279392,
+        "type": null,
+        "value": 5474000
+      },
+      {
+        "avg": 3.1,
+        "barter": [],
+        "bg": 0,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 1320000,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 1,
+          "value": 1980000
+        },
+        "clauses_signs": 1,
+        "created": "2025-01-03 05:00:03",
+        "days": null,
+        "default": 0,
+        "floor": 1320000,
+        "id": 22872,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 8,
+        "id_uc": 797852,
+        "last_points": "?",
+        "market": {
+          "active": 0,
+          "input": 1320000
+        },
+        "multiplier": 1.5,
+        "name": "Brian Oliván",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/22872.png?version=20240626191621",
+        "played": 0,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 44,
+        "popup": "bid",
+        "position": 2,
+        "prev_value": 1453000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "B. Oliván",
+        "status": null,
+        "streak": [
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 3,
+            "points": 5
+          },
+          {
+            "color": 2,
+            "points": 3
+          }
+        ],
+        "streak_sum": 13,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/8.png?version=20250110",
+        "transfer_origin": "normal",
+        "ts_pic": 1719422181,
+        "type": null,
+        "value": 1320000
+      },
+      {
+        "avg": 4.7,
+        "barter": [],
+        "bg": 0,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 1744000,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 1,
+          "value": 2616000
+        },
+        "clauses_signs": 1,
+        "created": "2024-12-24 17:00:02",
+        "days": null,
+        "default": 0,
+        "floor": 1744000,
+        "id": 59199,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 17,
+        "id_uc": 797852,
+        "last_points": "?",
+        "market": {
+          "active": 0,
+          "input": 1744000
+        },
+        "multiplier": 1.5,
+        "name": "Stanis Idumbo",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/59199.png?version=20240726112544",
+        "played": 0,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 28,
+        "popup": "bid",
+        "position": 3,
+        "prev_value": 1808000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "S. Idumbo",
+        "status": null,
+        "streak": [
+          {
+            "color": 0,
+            "points": "-"
+          },
+          {
+            "color": 2,
+            "points": 2
+          },
+          {
+            "color": 3,
+            "points": 7
+          }
+        ],
+        "streak_sum": 9,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20250110",
+        "transfer_origin": "normal",
+        "ts_pic": 1721985944,
+        "type": null,
+        "value": 1744000
+      },
+      {
+        "avg": 3,
+        "barter": [],
+        "bg": 0,
+        "bid": null,
+        "clause": {
+          "default": 0,
+          "floor": 11594000,
+          "multiplier": 1.5,
+          "percentage": 50,
+          "shield": 0,
+          "shield1MonthSku": "shield_2",
+          "shield2WeeksSku": "shield_1",
+          "tier": 4,
+          "value": 17391000
+        },
+        "clauses_signs": 1,
+        "created": "2024-11-03 05:00:04",
+        "days": null,
+        "default": 0,
+        "floor": 11594000,
+        "id": 4774,
+        "id_competition": 1,
+        "id_market": null,
+        "id_team": 17,
+        "id_uc": 797852,
+        "last_points": "?",
+        "market": {
+          "active": 0,
+          "input": 11594000
+        },
+        "multiplier": 1.5,
+        "name": "Álvaro Fernández",
+        "offer": {
+          "active": 0,
+          "input": null
+        },
+        "photoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/players/4774.png?version=20221011223634",
+        "played": 0,
+        "player_1": null,
+        "player_2": null,
+        "player_3": null,
+        "points": 24,
+        "popup": "bid",
+        "position": 1,
+        "prev_value": 11438000,
+        "price": null,
+        "profile": "users",
+        "public": null,
+        "shield": 0,
+        "short": "Á. Fernández",
+        "status": null,
+        "streak": [
+          {
+            "color": 2,
+            "points": 1
+          },
+          {
+            "color": 3,
+            "points": 7
+          },
+          {
+            "color": 0,
+            "points": 0
+          }
+        ],
+        "streak_sum": 8,
+        "teamLogoUrl": "https://cdn-fantasy.marca.com/file/cdn-common/teams/17.png?version=20250110",
+        "transfer_origin": "normal",
+        "ts_pic": 1665520594,
+        "type": null,
+        "value": 11594000
+      }
+    ],
+    "user": {
+      "avatar": "",
+      "id_community": 0,
+      "name": ""
+    },
+    "userInfo": {
+      "avatar": {
+        "color": "#FF8A65",
+        "initials": "M",
+        "pic": "https://cdn-fantasy.marca.com/file/cdn-marca/users/67044de70ee2c.png"
+      },
+      "id_community": 162807,
+      "name": "Marcos "
+    },
+    "value": 408828000
+  },
+  "status": "ok"
+}

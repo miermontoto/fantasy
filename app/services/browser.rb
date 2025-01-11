@@ -156,4 +156,10 @@ class Browser
       req.body = "post=players&filters=#{filters.to_json}"
     end
   end
+
+  def user(id)
+    @conn.post("/ajax/sw/users") do |req|
+      req.body = "post=users&id=#{id}"
+    end
+  end
 end

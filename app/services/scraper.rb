@@ -468,6 +468,40 @@ class Scraper
     puts content if @print
   end
 
+  def user(json)
+    content = check_ajax_response(json)
+    if content.empty? then; return {}; end
+
+    content = content.to_h
+    players = content["team_now"].map do |player|
+      Player.new({
+        id: player["id"],
+        name: player["name"],
+        value: player["value"],
+        average: player["avg"],
+        clause: player["clause"]["value"],
+        streak: player["streak"].map { |s| s["points"] },
+        player_img: player["photoUrl"],
+        team_img: player["teamLogoUrl"],
+        status: player["status"],
+        points: player["points"],
+        position: "pos-#{player["position"]}"
+      })
+    end
+
+    user = User.new({
+      bench: players,
+      name: content["userInfo"]["name"].strip,
+      user_img: content["userInfo"]["avatar"]["pic"],
+      points: content["season"]["points"],
+      value: content["value"],
+      average: content["season"]["avg"]
+    })
+
+    puts user if @print
+    user
+  end
+
   private
 
   def check_ajax_response(response)
