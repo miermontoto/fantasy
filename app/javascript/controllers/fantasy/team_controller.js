@@ -1,11 +1,50 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["form", "filtersContent", "filtersIcon"]
+  static targets = [
+    "form",
+    "userForm",
+    "usersContent",
+    "usersIcon",
+    "filtersContent",
+    "filtersIcon",
+    "sortContent",
+    "sortIcon",
+    "searchContent",
+    "searchIcon",
+    "searchInput",
+    "searchClear",
+    "searchResults",
+    "searchNoResults",
+    "searchLoading"
+  ]
 
   connect() {
-    this.filtersExpanded = localStorage.getItem("teamFiltersExpanded") !== "false"
-    this.updateFiltersVisibility()
+    super.connect()
+    this.usersExpanded = false
+    this.filtersExpanded = false
+    this.sortExpanded = false
+    this.searchExpanded = false
+  }
+
+  handleUserChange(event) {
+    const userId = event.target.value
+    const url = new URL(window.location)
+
+    if (userId) {
+      url.searchParams.set('user_id', userId)
+    } else {
+      url.searchParams.delete('user_id')
+    }
+
+    // Perform a full page reload with the new URL
+    window.location.href = url.toString()
+  }
+
+  toggleUsers() {
+    this.usersExpanded = !this.usersExpanded
+    this.usersContentTarget.classList.toggle("hidden", !this.usersExpanded)
+    this.usersIconTarget.classList.toggle("rotate-180", this.usersExpanded)
   }
 
   toggleFilters() {
@@ -39,6 +78,10 @@ export default class extends Controller {
 
   submitForm() {
     this.formTarget.requestSubmit()
+  }
+
+  submitUserForm() {
+    this.userFormTarget.requestSubmit()
   }
 
   togglePosition(event) {

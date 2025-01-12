@@ -103,13 +103,31 @@ class FantasyController < ApplicationController
   end
 
   def team
-    @team_data = @scraper.team(@browser.team.body)
-    return unless @team_data && @team_data[:players]
+    if params[:user_id].present?
+      # otros jugadores
+      user_data = @scraper.user(@browser.user(params[:user_id]).body)
+      @filtered_players = user_data.bench
+      @team_data = {
+        players: @filtered_players,
+        info: { # no se tiene información sobre el balance de otros jugadores
+          current_balance: nil,
+          future_balance: nil,
+          max_debt: nil
+        }
+      }
+    else
+      # información propia
+      @team_data = @scraper.team(@browser.team.body)
+      return unless @team_data && @team_data[:players]
+      @filtered_players = @team_data[:players].dup
+    end
 
-    @filtered_players = @team_data[:players].dup
-    @team_value = @team_data[:players]&.sum(&:value) || 0
-    @current_balance = @team_data[:info][:current_balance].to_s.gsub(/[^\d-]/, "").to_i
-    @total_value = @team_value + @current_balance
+    # obtener listado de jugadores
+    @standings_data = @scraper.standings(@browser.standings.body)
+
+    team_value = @team_data[:players]&.sum(&:value)
+    current_balance = @team_data[:info][:current_balance].to_s.gsub(/[^\d-]/, '').to_i if @team_data[:info][:current_balance]
+    total_value = team_value + current_balance if current_balance.present?
 
     render_with_parallel_update(
       collection: @filtered_players,
@@ -144,8 +162,8 @@ class FantasyController < ApplicationController
                 partial: "fantasy/partials/team/additional_stats",
                 locals: {
                   team_data: @team_data,
-                  team_value: @team_value,
-                  total_value: @total_value,
+                  team_value: team_value,
+                  total_value: total_value,
                   total_change: total_change
                 }
               )

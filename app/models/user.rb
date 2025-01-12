@@ -4,9 +4,10 @@ class User
   include ApplicationHelper
 
   attr_reader :position, :name, :players, :value, :points, :diff, :user_img,
-                :played, :myself, :bench, :average
+                :played, :myself, :bench, :average, :id
 
   def initialize(attributes = {})
+    @id = attributes[:id]
     @position = attributes[:position]
     @name = attributes[:name]
     @players = attributes[:players].to_s + " jugadores" unless attributes[:players].nil?

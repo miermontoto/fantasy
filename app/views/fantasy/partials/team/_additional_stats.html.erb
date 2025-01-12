@@ -10,9 +10,15 @@
     <div class="h-8 w-px bg-gray-700"></div>
     <div>
       <span class="text-gray-400 text-sm">En venta</span>
-      <p class="text-xl font-semibold">
-        <%= team_data[:players]&.count { |p| p.being_sold } || 0 %> / 6
-      </p>
+      <% if team_data[:players].any? { |p| !p.being_sold.nil? } %>
+        <p class="text-xl font-semibold">
+          <%= team_data[:players]&.count { |p| p.being_sold } || 0 %> / 6
+        </p>
+      <% else %>
+        <p class="text-xl font-semibold text-gray-400">
+          ?
+        </p>
+      <% end %>
     </div>
   </div>
 
@@ -26,9 +32,11 @@
         <p class="text-xl font-semibold leading-tight">
           <%= format_value(team_value) %>
         </p>
-        <p class="text-sm text-gray-400 <%= total_value < 0 ? 'text-red-500' : '' %>">
-          real: <%= format_value(total_value) %>
-        </p>
+        <% if defined?(total_value) && total_value.present? %>
+          <p class="text-sm text-gray-400 <%= total_value < 0 ? 'text-red-500' : '' %>">
+            real: <%= format_value(total_value) %>
+          </p>
+        <% end %>
       </div>
     </div>
     <div class="h-8 w-px bg-gray-700"></div>

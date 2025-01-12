@@ -38,11 +38,13 @@
         <h3 class="font-bold truncate"><%= player.name %></h3>
         <div class="flex items-center gap-1 text-sm">
           <% if player.is_a?(MarketPlayer) && player.asked_price != player.value && !player.own %>
-            <span class="font-small line-through text-2xs whitespace-nowrap text-gray-400">
-              <%= format_value(player.value) %>
-            </span>
             <span class="font-medium whitespace-nowrap text-gray-400">
               <%= format_value(player.asked_price) %>
+              <% if player.is_a?(MarketPlayer) && player.overprice.present? && player.overprice > 0 %>
+                <span class="text-xs font-medium whitespace-nowrap text-gray-500">
+                  (+<%= player.overprice.round %>%)
+                </span>
+              <% end %>
             </span>
           <% else %>
             <span class="font-medium whitespace-nowrap text-gray-400">

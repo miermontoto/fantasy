@@ -1,8 +1,7 @@
-<% content_for :title, "Mi Equipo" %>
+<% content_for :title, params[:user_id].present? ? "Equipo de #{@standings_data[:total].find { |u| u.id == params[:user_id] }&.name}" : "Mi Equipo" %>
 
 <% team_value = @team_data[:players]&.sum(&:value) || 0 %>
-<% current_balance = @team_data[:info][:current_balance].to_s.gsub(/[^\d-]/, '').to_i %>
-<% total_value = team_value + current_balance %>
+<% current_balance = @team_data[:info][:current_balance].to_s.gsub(/[^\d-]/, '').to_i if @team_data[:info][:current_balance] %>
 
 <%= render partial: "fantasy/partials/page_layout", locals: {
   info: @team_data[:info],
@@ -10,10 +9,9 @@
     locals: {
       team_data: @team_data,
       team_value: team_value,
-      total_value: total_value,
     }
   ),
-  title: "Plantilla",
+  title: params[:user_id].present? ? "Plantilla de #{@standings_data[:total].find { |u| u.id == params[:user_id] }&.name}" : "Plantilla",
   sidebar: render(partial: "fantasy/partials/team/sidebar"),
   content: render(partial: "fantasy/partials/team/content", locals: { filtered_players: @filtered_players })
 } %>
@@ -21,5 +19,5 @@
 <%# Request updated data after initial load %>
 <div id="team-content-update"
      data-controller="fantasy--delayed-load"
-     data-fantasy--delayed-load-url-value="<%= team_path(format: :turbo_stream) %>">
+     data-fantasy--delayed-load-url-value="<%= team_path(format: :turbo_stream, user_id: params[:user_id]) %>">
 </div>

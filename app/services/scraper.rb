@@ -237,6 +237,7 @@ class Scraper
 
     total = doc.css(".panel-total li").map do |user|
       User.new({
+        id: user.css(".user").attr("href")&.value&.match(/users\/(\d+)/)&.[](1),
         position: user.css(".position").text.strip,
         name: user.css(".name").text.strip,
         players: user.css(".played").text.split("·").first.strip.split(" ").first.to_i,
@@ -250,6 +251,7 @@ class Scraper
 
     gameweek = doc.css(".panel-gameweek li").map do |user|
       User.new({
+        id: user.css(".user").attr("href")&.value&.match(/users\/(\d+)/)&.[](1),
         position: user.css(".position").text.strip,
         name: user.css(".name").text.strip,
         players: user.css(".played").text.split("·").first.strip.split(" ").first.to_i,
@@ -474,7 +476,7 @@ class Scraper
 
     content = content.to_h
     players = content["team_now"].map do |player|
-      Player.new({
+      TeamPlayer.new({
         id: player["id"],
         name: player["name"],
         value: player["value"],
@@ -485,7 +487,8 @@ class Scraper
         team_img: player["teamLogoUrl"],
         status: player["status"],
         points: player["points"],
-        position: "pos-#{player["position"]}"
+        position: "pos-#{player["position"]}",
+        trend: player["prev_value"] > player["value"] ? "↓" : "↑"
       })
     end
 
