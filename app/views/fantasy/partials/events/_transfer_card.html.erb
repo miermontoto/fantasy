@@ -1,5 +1,6 @@
 <%# Transfer Card %>
-<div class="flex items-center bg-gray-700 rounded-lg p-2 hover:bg-gray-600 transition-colors w-full">
+<div class="flex items-center bg-gray-700 rounded-lg p-2 hover:bg-gray-600 transition-colors w-full"
+  data-controller="collapsible">
   <div class="flex flex-col items-center flex-shrink-0 px-2">
     <img src="<%= event.team_img %>" alt="Team" class="w-5 h-5 mb-1">
     <div class="<%= event.position.browser[:color] %> skew-x-[-10deg] px-2 py-0.5 rounded-sm w-[32px] text-center h-[20px] flex items-center justify-center">
@@ -19,33 +20,68 @@
   </div>
 
   <div class="flex-1 flex flex-col min-w-0">
+    <%# Header with name and date %>
     <div class="flex items-center justify-between gap-2">
-      <div class="flex items-center gap-2 min-w-0">
-        <div class="flex flex-col min-w-0">
-          <h3 class="font-bold truncate"><%= event.name %></h3>
-          <div class="flex items-center gap-1 text-sm">
-            <span class="font-medium whitespace-nowrap text-gray-400">
-              <%= event.price %>
-            </span>
-            <% if event.trend.present? %>
-              <span class="<%= event.trend.include?('up') ? 'text-green-500' : 'text-red-500' %>">
-                <%= event.trend.include?('up') ? '↑' : '↓' %>
-              </span>
-            <% end %>
-          </div>
-          <div class="flex items-center text-sm">
-            <%= render inline: event.transfer_div %>
-          </div>
-        </div>
-      </div>
-
-      <div class="flex flex-col items-end gap-1">
-        <div class="flex items-center gap-1">
-          <div class="text-xs text-gray-400 px-2 py-0.5 bg-black/30 rounded">
-            <span class="text-gray-400 text-xs"><%= event.date %></span>
-          </div>
-        </div>
+      <h3 class="font-bold truncate"><%= event.name %></h3>
+      <div class="text-xs text-gray-400 px-2 py-0.5 bg-black/30 rounded">
+        <span class="text-gray-400 text-xs"><%= event.date %></span>
       </div>
     </div>
+
+    <%# Price and trend %>
+    <div class="flex items-center gap-1 text-sm mt-0.5">
+      <span class="font-medium whitespace-nowrap text-gray-400">
+        <%= event.price %>
+      </span>
+      <% if event.trend.present? %>
+        <span class="<%= event.trend.include?('up') ? 'text-green-500' : 'text-red-500' %>">
+          <%= event.trend.include?('up') ? '↑' : '↓' %>
+        </span>
+      <% end %>
+    </div>
+
+    <%# Transfer direction %>
+    <div class="flex items-center text-sm mt-0.5">
+      <p class="text-sm <%= event.from_market ? 'text-gray-500 italic' : 'text-gray-200' %>">
+        <%= event.from %>
+      </p>
+      <span class="mx-2 text-xl <%= event.from_market ? 'text-green-500' : event.to_market ? 'text-red-500' : 'text-white' %>">
+        <%= event.clause ? "→→→" : "→" %>
+      </span>
+      <p class="text-sm <%= event.to_market ? 'text-gray-500 italic' : 'text-gray-200' %>">
+        <%= event.to %>
+      </p>
+    </div>
+
+    <%# Other bids collapsible section %>
+    <% if event.other_bids.present? %>
+      <div class="relative">
+        <div class="hidden flex flex-col gap-0.5" data-collapsible-target="content">
+          <div class="flex items-center justify-between mb-1">
+            <h4 class="text-xs font-medium text-gray-400">Otras pujas</h4>
+            <div class="flex-grow mx-2 border-t border-gray-600"></div>
+          </div>
+          <div class="pl-2 border-l border-gray-600">
+            <% event.other_bids.each do |bidder, amount| %>
+              <div class="flex items-center gap-1 text-xs">
+                <span class="text-gray-400"><%= bidder %>:</span>
+                <span class="text-gray-300"><%= amount %></span>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+        <button type="button"
+          class="absolute bottom-0 right-0 text-gray-400 hover:text-white transition-colors"
+          data-action="collapsible#toggle">
+          <svg xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4 transition-transform"
+            data-collapsible-target="icon"
+            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+      </div>
+    <% end %>
   </div>
 </div>

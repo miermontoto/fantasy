@@ -49,6 +49,11 @@
           <% else %>
             <span class="font-medium whitespace-nowrap text-gray-400">
               <%= format_value(player.value) %>
+              <% if player.clause.present? && player.clause["percentage"] > 50 %>
+                <span class="text-xs font-medium whitespace-nowrap text-gray-500">
+                  (+<%= player.clause["percentage"] %>%)
+                </span>
+              <% end %>
             </span>
           <% end %>
 

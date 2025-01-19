@@ -53,7 +53,10 @@ class Scraper
           date: date,
           status: transfer.css(".status use")&.attr("href")&.value&.split("#")&.last,
           player_img: transfer.css(".player-pic.qd-player img").attr("src").value,
-          clause: transfer.css(".title").text.include?("por pago de cláusula")
+          clause: transfer.css(".title").text.include?("por pago de cláusula"),
+          other_bids: transfer.css("ul.other-bids li:not(.other-bids-title)").map {
+            |bid| [bid.css("strong").text.strip, bid.text.strip.split("›").last.strip]
+          }
         })
       end
     end
@@ -457,13 +460,15 @@ class Scraper
   def player(json, player = nil)
     content = check_ajax_response(json)
     if content.empty? then; return {}; end
+    content = content.to_h
 
     content = {
-      values: content.to_h["values"].to_a,
-      owners: content.to_h["owners"].to_a,
-      goals: content.to_h["player_extra"]["goals"],
-      matches: content.to_h["player_extra"]["matches"],
-      clauses_rank: content.to_h["player"]["clausesRanking"]
+      values: content["values"].to_a,
+      owners: content["owners"].to_a,
+      goals: content["player_extra"]["goals"],
+      matches: content["player_extra"]["matches"],
+      clauses_rank: content["player"]["clausesRanking"],
+      clause: content["player"]["clause"]
     }
 
     player.load_additional_attributes(content) unless player.nil?
@@ -481,7 +486,7 @@ class Scraper
         name: player["name"],
         value: player["value"],
         average: player["avg"],
-        clause: player["clause"]["value"],
+        clause: player["clause"],
         streak: player["streak"].map { |s| s["points"] },
         player_img: player["photoUrl"],
         team_img: player["teamLogoUrl"],

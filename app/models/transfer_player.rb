@@ -1,5 +1,5 @@
 class TransferPlayer < Player
-  attr_reader :from, :to, :date, :clause, :own, :transfer_div
+  attr_reader :from, :to, :date, :clause, :own, :other_bids, :from_market, :to_market
 
   def initialize(attributes = {})
     super(attributes)
@@ -11,15 +11,7 @@ class TransferPlayer < Player
     @own = attributes[:own] || false                                            # true si el jugador es propio
     @from_market = @from == ApplicationHelper::MARKET_NAME                      # true si el origen es el mercado
     @to_market = @to == ApplicationHelper::MARKET_NAME                          # true si el destino es el mercado
-
-    # HTML para mostrar la transferencia en la interfaz
-    @transfer_div = "
-    <p class=\"text-sm #{@from_market ? 'text-gray-500 italic' : 'text-gray-200'}\">#{@from}</p>
-    <span class=\"mx-2 text-xl #{@from_market ? 'text-green-500' : @to_market ? 'text-red-500' : 'text-white'}\">
-      #{@clause ? "&rarr;&rarr;&rarr;" : "&rarr;"}
-    </span>
-    <p class=\"text-sm #{@to_market ? 'text-gray-500 italic' : 'text-gray-200'}\">#{@to}</p>
-    "
+    @other_bids = attributes[:other_bids]                                       # otras pujas del jugador
   end
 
   def to_s
