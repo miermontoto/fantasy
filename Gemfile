@@ -20,7 +20,7 @@ gem "jbuilder"
 # Fantasy app specific gems
 gem "nokogiri", "~> 1.16"
 gem "httparty", "~> 0.22.0"
-gem "faraday", "~> 2.11"
+gem "faraday", "~> 2.12"
 gem "colorize", "~> 1.1"
 gem "bootsnap", require: false
 
