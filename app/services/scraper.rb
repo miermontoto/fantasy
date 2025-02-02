@@ -40,7 +40,7 @@ class Scraper
 
     # transferencias recientes
     recent_transfers = doc.css(".card-transfer").map do |block|
-      date = block.css(".head>.date").first.text.strip
+      date = block.css(".head>.date").first.text.strip.gsub("hace ", "")
 
       block.css(".player-list>li").map do |transfer|
         TransferPlayer.new({
@@ -218,7 +218,7 @@ class Scraper
       current_balance: format_value(doc.css(".footer-sticky-market .balance-real-current").text.gsub(/\./, "").to_i),
       future_balance: format_value(doc.css(".balance-real-future").text.gsub(/\./, "").to_i),
       max_debt: format_value(doc.css(".balance-real-maxdebt").text.gsub(/\./, "").to_i),
-      next_update: doc.css(".next-update").text.split("en").last.strip
+      # next_update: doc.css(".next-update").text.split("en").last.strip
     }
 
     if @print then

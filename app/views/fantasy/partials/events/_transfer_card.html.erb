@@ -1,87 +1,109 @@
 <%# Transfer Card %>
-<div class="flex items-center bg-gray-700 rounded-lg p-2 hover:bg-gray-600 transition-colors w-full"
-  data-controller="collapsible">
-  <div class="flex flex-col items-center flex-shrink-0 px-2">
-    <img src="<%= event.team_img %>" alt="Team" class="w-5 h-5 mb-1">
-    <div class="<%= event.position.browser[:color] %> skew-x-[-10deg] px-2 py-0.5 rounded-sm w-[32px] text-center h-[20px] flex items-center justify-center">
-      <span class="block skew-x-[10deg] text-xs font-bold text-black"><%= event.position.browser[:position] %></span>
-    </div>
-  </div>
-
-  <div class="relative flex-shrink-0 mr-2 ml-0.5">
-    <img class="w-12 h-12 rounded-lg" src="<%= event.player_img %>" alt="<%= event.name %>" loading="lazy">
-    <% if event.status.present? %>
-      <div class="absolute -top-2 -right-1 <%= event.status.browser[:color] %> skew-x-[-10deg] px-1 py-0.5 rounded-sm w-[16px] h-[16px] flex items-center justify-center">
-        <span class="block skew-x-[10deg] text-[10px] font-bold <%= event.status.browser[:text_color] %>">
-          <%= event.status.browser[:symbol] %>
-        </span>
-      </div>
-    <% end %>
-  </div>
-
-  <div class="flex-1 flex flex-col min-w-0">
-    <%# Header with name and date %>
-    <div class="flex items-center justify-between gap-2">
-      <h3 class="font-bold truncate"><%= event.name %></h3>
-      <div class="text-xs text-gray-400 px-2 py-0.5 bg-black/30 rounded">
-        <span class="text-gray-400 text-xs"><%= event.date %></span>
+<div data-controller="collapsible" class="flex flex-col gap-2">
+  <%# Main card content %>
+  <div class="flex items-center bg-gray-700 rounded-lg p-2 hover:bg-gray-600 transition-colors w-full relative">
+    <div class="flex flex-col items-center flex-shrink-0 px-2">
+      <img src="<%= event.team_img %>" alt="Team" class="w-5 h-5 mb-1">
+      <div class="<%= event.position.browser[:color] %> skew-x-[-10deg] px-2 py-0.5 rounded-sm w-[32px] text-center h-[20px] flex items-center justify-center">
+        <span class="block skew-x-[10deg] text-xs font-bold text-black"><%= event.position.browser[:position] %></span>
       </div>
     </div>
 
-    <%# Price and trend %>
-    <div class="flex items-center gap-1 text-sm mt-0.5">
-      <span class="font-medium whitespace-nowrap text-gray-400">
-        <%= event.price %>
-      </span>
-      <% if event.trend.present? %>
-        <span class="<%= event.trend.include?('up') ? 'text-green-500' : 'text-red-500' %>">
-          <%= event.trend.include?('up') ? '↑' : '↓' %>
-        </span>
+    <div class="relative flex-shrink-0 mr-2 ml-0.5">
+      <img class="w-12 h-12 rounded-lg" src="<%= event.player_img %>" alt="<%= event.name %>" loading="lazy">
+      <% if event.status.present? %>
+        <div class="absolute -top-2 -right-1 <%= event.status.browser[:color] %> skew-x-[-10deg] px-1 py-0.5 rounded-sm w-[16px] h-[16px] flex items-center justify-center">
+          <span class="block skew-x-[10deg] text-[10px] font-bold <%= event.status.browser[:text_color] %>">
+            <%= event.status.browser[:symbol] %>
+          </span>
+        </div>
       <% end %>
     </div>
 
-    <%# Transfer direction %>
-    <div class="flex items-center text-sm mt-0.5">
-      <p class="text-sm <%= event.from_market ? 'text-gray-500 italic' : 'text-gray-200' %>">
-        <%= event.from %>
-      </p>
-      <span class="mx-2 text-xl <%= event.from_market ? 'text-green-500' : event.to_market ? 'text-red-500' : 'text-white' %>">
-        <%= event.clause ? "→→→" : "→" %>
-      </span>
-      <p class="text-sm <%= event.to_market ? 'text-gray-500 italic' : 'text-gray-200' %>">
-        <%= event.to %>
-      </p>
+    <div class="flex-1 flex flex-col min-w-0 pr-8">
+      <div class="flex items-center justify-between gap-2">
+        <h3 class="font-bold truncate"><%= event.name %></h3>
+        <div class="text-xs text-gray-400 px-2 py-0.5 bg-black/30 rounded">
+          <span class="text-gray-400 text-2xs"><%= event.date %></span>
+        </div>
+      </div>
+
+      <%# Price and trend %>
+      <div class="flex items-center gap-1 text-sm mt-0.5">
+        <span class="font-medium whitespace-nowrap text-gray-400">
+          <%= event.price %>
+        </span>
+        <% if event.trend.present? %>
+          <span class="<%= event.trend.include?('up') ? 'text-green-500' : 'text-red-500' %>">
+            <%= event.trend.include?('up') ? '↑' : '↓' %>
+          </span>
+        <% end %>
+      </div>
+
+      <%# Transfer direction %>
+      <div class="flex items-center text-sm mt-0.5">
+        <p class="text-sm <%= event.from_market ? 'text-gray-500 italic' : 'text-gray-200' %>">
+          <%= event.from.split(' ').first.strip %>
+        </p>
+        <span class="mx-2 text-xl <%= event.from_market ? 'text-green-500' : event.to_market ? 'text-red-500' : 'text-white' %>">
+          <%= event.clause ? "→→→" : "→" %>
+        </span>
+        <p class="text-sm <%= event.to_market ? 'text-gray-500 italic' : 'text-gray-200' %>">
+          <%= event.to.split(' ').first.strip %>
+        </p>
+      </div>
     </div>
 
-    <%# Other bids collapsible section %>
+    <%# Toggle button %>
     <% if event.other_bids.present? %>
-      <div class="relative">
-        <div class="hidden flex flex-col gap-0.5" data-collapsible-target="content">
-          <div class="flex items-center justify-between mb-1">
-            <h4 class="text-xs font-medium text-gray-400">Otras pujas</h4>
-            <div class="flex-grow mx-2 border-t border-gray-600"></div>
-          </div>
-          <div class="pl-2 border-l border-gray-600">
-            <% event.other_bids.each do |bidder, amount| %>
-              <div class="flex items-center gap-1 text-xs">
-                <span class="text-gray-400"><%= bidder %>:</span>
-                <span class="text-gray-300"><%= amount %></span>
-              </div>
-            <% end %>
-          </div>
-        </div>
-
-        <button type="button"
-          class="absolute bottom-0 right-0 text-gray-400 hover:text-white transition-colors"
-          data-action="collapsible#toggle">
-          <svg xmlns="http://www.w3.org/2000/svg"
-            class="h-4 w-4 transition-transform"
-            data-collapsible-target="icon"
-            fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-      </div>
+      <button type="button"
+        class="absolute right-0 bottom-0 flex items-center justify-center w-8 h-full bg-black/30 hover:bg-black/50 active:bg-black/70 transition-all duration-150 rounded-r-lg"
+        data-action="collapsible#toggle">
+        <svg xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 text-gray-400 transition-transform duration-150"
+          data-collapsible-target="icon"
+          fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+    <% else %>
+      <button type="button"
+        class="absolute right-0 bottom-0 flex items-center justify-center w-8 h-full bg-black/30 rounded-r-lg cursor-not-allowed opacity-50"
+        disabled>
+        <svg xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 text-gray-400"
+          fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
     <% end %>
   </div>
+
+  <%# Other bids container %>
+  <% if event.other_bids.present? %>
+    <div data-collapsible-target="content" class="hidden bg-gray-700 rounded-lg p-2 -mt-1">
+      <div class="flex flex-col gap-0.5">
+        <div class="flex items-center justify-between mb-1">
+          <h4 class="text-xs font-bold text-gray-400">Otras pujas</h4>
+        </div>
+        <div>
+          <% event.other_bids.each do |bidder, amount| %>
+            <%
+              bid_amount = amount.gsub(/[^\d]/, '').to_i
+              actual_amount = event.price.gsub(/[^\d]/, '').to_i
+              difference = actual_amount - bid_amount
+            %>
+            <div class="flex items-center text-xs">
+              <span class="text-gray-400"><%= bidder.split(" ").first %></span>
+              <div class="flex-grow mx-2 border-t border-gray-600"></div>
+              <span class="text-gray-300"><%= format_value(bid_amount) %></span>
+              <span class="ml-1 text-gray-400 text-[10px]">
+                -<%= format_value(difference) %>
+              </span>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>

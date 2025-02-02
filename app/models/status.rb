@@ -3,7 +3,7 @@ require "colorize"
 $BROWSER_STATUSES = {
   "injury" => { symbol: "+", color: "bg-red-500", text_color: "text-white" },
   "doubt" => { symbol: "?", color: "bg-yellow-500", text_color: "text-black" },
-  "red" => { symbol: "◼", color: "bg-red-500", text_color: "text-white" },
+  "red" => { symbol: "", color: "bg-red-500", text_color: "text-white" },
   "five" => { symbol: "5", color: "bg-yellow-500", text_color: "text-red-500" }
 }
 

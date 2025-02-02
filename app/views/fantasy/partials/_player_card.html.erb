@@ -1,174 +1,206 @@
-<%# Player card container %>
-<div class="flex items-center bg-gray-700 <%=
-  if (player.is_a?(TeamPlayer) && player.being_sold) || (player.is_a?(MarketPlayer) && player.own)
-    'ring-2 ring-orange-500/50'
-  elsif player.is_a?(MarketPlayer) && player.my_bid.present? && player.my_bid > 0
-    'ring-2 ring-green-500/50'
-  end
-%> rounded-lg p-2 hover:bg-gray-600 transition-colors w-full">
-  <%# columna izquierda: equipo, posición, puntos %>
-  <div class="flex flex-col items-center flex-shrink-0 px-2">
-    <img src="<%= player.team_img %>" alt="Team" class="w-5 h-5 mb-1">
-    <div class="<%= player.position.browser[:color] %> skew-x-[-10deg] px-2 py-0.5 rounded-sm w-[32px] text-center h-[20px] flex items-center justify-center">
-      <span class="block skew-x-[10deg] text-xs font-bold text-black"><%= player.position.browser[:position] %></span>
-    </div>
-    <div class="mt-1 bg-white skew-x-[-10deg] px-2 py-0.5 rounded-sm w-[32px] text-center h-[20px] flex items-center justify-center">
-      <span class="block skew-x-[10deg] text-xs font-bold text-black"><%= player.points %></span>
-    </div>
-  </div>
-
-  <%# imagen del jugador + estado (si tiene) %>
-  <div class="relative flex-shrink-0 mr-2 ml-0.5 flex items-center">
-    <img class="w-12 h-12 rounded-lg" src="<%= player.player_img %>" alt="<%= player.name %>" loading="lazy">
-    <% if player.status.present? %>
-      <div class="absolute -top-2 -right-1 <%= player.status.browser[:color] %> skew-x-[-10deg] px-1 py-0.5 rounded-sm w-[16px] h-[16px] flex items-center justify-center">
-        <span class="block skew-x-[10deg] text-[10px] font-bold <%= player.status.browser[:text_color] %>">
-          <%= player.status.browser[:symbol] %>
-        </span>
+<%# Player card container with stats %>
+<div data-controller="collapsible" class="flex flex-col gap-2">
+  <%# Main card content %>
+  <div class="relative flex items-center bg-gray-700 <%=
+    if (player.is_a?(TeamPlayer) && player.being_sold) || (player.is_a?(MarketPlayer) && player.own)
+      'ring-2 ring-orange-500/50'
+    elsif player.is_a?(MarketPlayer) && player.my_bid.present? && player.my_bid > 0
+      'ring-2 ring-green-500/50'
+    end
+  %> rounded-lg hover:bg-gray-600 transition-colors w-full relative p-2">
+    <%# columna izquierda: equipo, posición, puntos %>
+    <div class="flex flex-col items-center flex-shrink-0 px-2">
+      <img src="<%= player.team_img %>" alt="Team" class="w-5 h-5 mb-1">
+      <div class="<%= player.position.browser[:color] %> skew-x-[-10deg] px-2 py-0.5 rounded-sm w-[32px] text-center h-[20px] flex items-center justify-center">
+        <span class="block skew-x-[10deg] text-xs font-bold text-black"><%= player.position.browser[:position] %></span>
       </div>
-    <% end %>
-  </div>
-
-  <%# contenido principal %>
-  <div class="flex-1 flex flex-col min-w-0">
-    <%# fila superior: nombre, valor, badges %>
-    <div class="flex items-start justify-between gap-2 relative">
-      <%# nombre y valor %>
-      <div class="flex flex-col min-w-0 pr-24">
-        <h3 class="font-bold truncate"><%= player.name %></h3>
-        <div class="flex items-center gap-1 text-sm">
-          <% if player.is_a?(MarketPlayer) && player.asked_price != player.value && !player.own %>
-            <span class="font-medium whitespace-nowrap text-gray-400">
-              <%= format_value(player.asked_price) %>
-              <% if player.is_a?(MarketPlayer) && player.overprice.present? && player.overprice > 0 %>
-                <span class="text-xs font-medium whitespace-nowrap text-gray-500">
-                  (+<%= player.overprice.round %>%)
-                </span>
-              <% end %>
-            </span>
-          <% else %>
-            <span class="font-medium whitespace-nowrap text-gray-400">
-              <%= format_value(player.value) %>
-              <% if player.clause.present? && player.clause["percentage"] > 50 %>
-                <span class="text-xs font-medium whitespace-nowrap text-gray-500">
-                  (+<%= player.clause["percentage"] %>%)
-                </span>
-              <% end %>
-            </span>
-          <% end %>
-
-          <% if player.trend.present? %>
-            <% positive = player.trend.to_s.include?('↑') || player.trend.to_s.include?('up') %>
-            <% negative = player.trend.to_s.include?('↓') || player.trend.to_s.include?('down') %>
-            <span class="<%= positive ? 'text-green-500' : (negative ? 'text-red-500' : 'text-yellow-500') %>">
-              <%= positive ? '↑' : (negative ? '↓' : '~') %>
-            </span>
-          <% end %>
-
-          <% if player.values.present? %>
-            <% change = player.values[0]["change"] %>
-            <% style = change > 0 ? 'text-green-500' : (change < 0 ? 'text-red-500' : 'text-yellow-500') %>
-            <span class="text-xs font-small whitespace-nowrap <%= style %>">
-              <%= format_value(change) %>
-            </span>
-          <% end %>
-        </div>
-      </div>
-
-      <%# Badges %>
-      <div class="absolute right-0 top-0 flex flex-col items-end gap-1 min-w-fit">
-        <div class="flex gap-1">
-          <% if player.ppm.present? && !player.is_a?(OfferPlayer) %>
-            <div class="text-xs text-gray-400 px-2 py-0.5 bg-black/30 rounded whitespace-nowrap">
-              <span class="font-bold"><%= player.ppm %></span>
-              <span class="ml-1">PPM</span>
-            </div>
-          <% end %>
-          <% if player.gpm.present? %>
-            <div class="text-xs text-gray-400 px-2 py-0.5 bg-black/30 rounded whitespace-nowrap">
-              <span class="font-bold"><%= player.gpm %></span>
-              <span class="ml-1">GPP</span>
-            </div>
-          <% end %>
-        </div>
-        <div class="flex gap-1">
-          <% if (player.is_a?(MarketPlayer) && player.offered_by != ApplicationHelper::FREE_AGENT) || player.is_a?(OfferPlayer) %>
-            <div class="text-xs text-gray-400 px-2 py-0.5 bg-black/30 rounded whitespace-nowrap">
-              <span class="truncate block max-w-[100px]"><%= player.offered_by.split(' ').first %></span>
-            </div>
-          <% end %>
-          <% if player.is_a?(TeamPlayer) && player.being_sold %>
-            <div class="text-xs text-orange-400 px-2 py-0.5 bg-black/30 rounded whitespace-nowrap">
-              <span class="font-medium">En venta</span>
-            </div>
-          <% end %>
-        </div>
-        <div class="flex gap-1">
-          <% if player.clauses_rank.present? %>
-            <div class="text-xs text-gray-400 px-2 py-0.5 bg-black/30 rounded whitespace-nowrap">
-              <span class="truncate block max-w-[100px]"><%= player.clauses_rank %> 💥</span>
-            </div>
-          <% end %>
-          <% if player.market_ranks.present? %>
-            <% player.market_ranks.each do |timespan, rank| %>
-              <% positive = rank > 0 %>
-              <% next if (positive && rank > 50) || (!positive && rank < -50) %>
-              <div class="text-xs <%= positive ? 'text-green-400' : 'text-red-400' %> px-2 py-0.5 bg-black/30 rounded whitespace-nowrap font-bold">
-                <span class="truncate block max-w-[100px]"><%= rank.to_s.gsub('-', '') %> <%= positive ? '📈' : '📉' %><%= timespan unless timespan == "D" %></span>
-              </div>
-            <% end %>
-          <% end %>
-        </div>
+      <div class="mt-1 bg-white skew-x-[-10deg] px-2 py-0.5 rounded-sm w-[32px] text-center h-[20px] flex items-center justify-center">
+        <span class="block skew-x-[10deg] text-xs font-bold text-black"><%= player.points %></span>
       </div>
     </div>
 
-    <%# Bottom row: streak and rival %>
-    <div class="flex items-center gap-3 mt-1">
-      <% if player.streak.present? && player.average.present? && !player.is_a?(OfferPlayer) %>
-        <div class="flex items-center gap-2">
-          <div class="bg-black/80 skew-x-[-10deg] px-2 py-1 rounded-sm flex items-center">
-            <div class="skew-x-[10deg] text-xs font-bold text-white mr-2">
-              <%= player.average %>
-            </div>
-            <div class="skew-x-[10deg] flex items-center gap-1">
-              <% player.streak.each do |points| %>
-                <% points_value = points == "-" ? 0 : points.to_i %>
-                <% bg_color = if points_value < 0
-                    'bg-red-500'
-                  elsif points_value >= 10
-                    'bg-cyan-500'
-                  elsif points_value >= 5
-                    'bg-green-500'
-                  elsif points_value >= 1
-                    'bg-yellow-500'
-                  else
-                    'bg-gray-500'
-                  end %>
-                <div class="<%= bg_color %> skew-x-[-10deg] w-5 h-5 rounded-sm flex items-center justify-center">
-                  <span class="text-xs font-bold"><%= points %></span>
-                </div>
-              <% end %>
-            </div>
-          </div>
-
-          <% if player.rival_img.present? %>
-            <img src="<%= player.rival_img %>" alt="Rival" class="w-5 h-5">
-          <% end %>
+    <%# imagen del jugador + estado (si tiene) %>
+    <div class="relative flex-shrink-0 mr-2 ml-0.5 flex items-center">
+      <img class="w-12 h-12 rounded-lg" src="<%= player.player_img %>" alt="<%= player.name %>" loading="lazy">
+      <% if player.status.present? %>
+        <div class="absolute -top-2 -right-1 <%= player.status.browser[:color] %> skew-x-[-10deg] px-1 rounded-sm w-4 h-4 flex items-center justify-center">
+          <span class="block skew-x-[10deg] text-[10px] font-bold text-lg <%= player.status.browser[:text_color] %>">
+            <%= player.status.browser[:symbol] %>
+          </span>
         </div>
       <% end %>
+    </div>
 
-      <% if player.is_a?(OfferPlayer) %>
-        <div class="text-right">
-          <p class="text-xs text-gray-400">
-            <%= format_value(player.best_bid) %>
-
-            <% if player.difference.present? %>
-              <span class="text-xs <%= player.difference > 0 ? 'text-green-500' : (player.difference < 0 ? 'text-red-500' : 'text-yellow-500') %>">
-                <%= player.difference > 0 ? '+' : (player.difference == 0 ? '±' : '') %><%= player.difference %>%
+    <%# contenido principal %>
+    <div class="flex-1 flex flex-col min-w-0">
+      <%# fila superior: nombre, valor, badges %>
+      <div class="flex items-start justify-between gap-2 relative">
+        <%# nombre y valor %>
+        <div class="flex flex-col min-w-0 pr-24">
+          <h3 class="font-bold truncate"><%= player.name %></h3>
+          <div class="flex items-center gap-1 text-sm">
+            <% if player.is_a?(MarketPlayer) && player.asked_price != player.value && !player.own %>
+              <span class="font-medium whitespace-nowrap text-gray-400">
+                <%= format_value(player.asked_price) %>
+                <% if player.is_a?(MarketPlayer) && player.overprice.present? && player.overprice > 0 %>
+                  <span class="text-xs font-medium whitespace-nowrap text-gray-500">
+                    (+<%= player.overprice.round %>%)
+                  </span>
+                <% end %>
+              </span>
+            <% else %>
+              <span class="font-medium whitespace-nowrap text-gray-400">
+                <%= format_value(player.value) %>
+                <% if player.clause.present? && player.clause["percentage"] > 50 %>
+                  <span class="text-xs font-medium whitespace-nowrap text-gray-500">
+                    (+<%= player.clause["percentage"] %>%)
+                  </span>
+                <% end %>
               </span>
             <% end %>
-          </p>
+
+            <% if player.trend.present? %>
+              <% positive = player.trend.to_s.include?('↑') || player.trend.to_s.include?('up') %>
+              <% negative = player.trend.to_s.include?('↓') || player.trend.to_s.include?('down') %>
+              <span class="<%= positive ? 'text-green-500' : (negative ? 'text-red-500' : 'text-yellow-500') %>">
+                <%= positive ? '↑' : (negative ? '↓' : '~') %>
+              </span>
+            <% end %>
+
+            <% if player.values.present? %>
+              <% change = player.values[0]["change"] %>
+              <% style = change > 0 ? 'text-green-500' : (change < 0 ? 'text-red-500' : 'text-yellow-500') %>
+              <span class="text-xs font-small whitespace-nowrap <%= style %>">
+                <%= format_value(change) %>
+              </span>
+            <% end %>
+          </div>
         </div>
+
+        <%# Badges %>
+        <div class="absolute right-8 top-0 flex flex-col items-end gap-1 min-w-fit">
+          <div class="flex gap-1">
+            <% if (player.is_a?(MarketPlayer) && player.offered_by != ApplicationHelper::FREE_AGENT) || player.is_a?(OfferPlayer) %>
+              <div class="text-xs text-gray-400 skew-x-[-10deg] px-2 py-0.5 bg-black/30 rounded-sm whitespace-nowrap">
+                <span class="block skew-x-[10deg] truncate max-w-[100px]"><%= player.offered_by.split(' ').first %></span>
+              </div>
+            <% end %>
+            <% if player.is_a?(TeamPlayer) && player.being_sold %>
+              <div class="text-xs text-orange-400 skew-x-[-10deg] px-2 py-0.5 bg-black/30 rounded-sm whitespace-nowrap">
+                <span class="block skew-x-[10deg] font-medium">En venta</span>
+              </div>
+            <% end %>
+          </div>
+          <div class="flex gap-1">
+            <% if player.clauses_rank.present? %>
+              <div class="text-xs text-gray-400 skew-x-[-10deg] px-2 py-0.5 bg-black/30 rounded-sm whitespace-nowrap">
+                <span class="block skew-x-[10deg] truncate max-w-[100px]"><%= player.clauses_rank %> 💥</span>
+              </div>
+            <% end %>
+          </div>
+          <div class="flex gap-1">
+            <% if player.market_ranks.present? %>
+              <% player.market_ranks.each do |timespan, rank| %>
+                <% positive = rank > 0 %>
+                <% next if (positive && rank > 50) || (!positive && rank < -50) %>
+                <div class="text-xs <%= positive ? 'text-green-400' : 'text-red-400' %> skew-x-[-10deg] px-2 py-0.5 bg-black/30 rounded-sm whitespace-nowrap">
+                  <span class="block skew-x-[10deg] font-bold truncate max-w-[100px]"><%= rank.to_s.gsub('-', '') %> <%= positive ? '📈' : '📉' %><%= timespan unless timespan == "D" %></span>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <%# Bottom row: streak and rival %>
+      <div class="flex items-center gap-3 mt-1">
+        <% if player.streak.present? && player.average.present? && !player.is_a?(OfferPlayer) %>
+          <div class="flex items-center gap-2">
+            <div class="bg-black/80 skew-x-[-10deg] px-2 py-1 rounded-sm flex items-center">
+              <div class="skew-x-[10deg] text-xs font-bold text-white mr-2">
+                <%= player.average %>
+              </div>
+              <div class="skew-x-[10deg] flex items-center gap-1">
+                <% player.streak.each do |points| %>
+                  <% points_value = points == "-" ? 0 : points.to_i %>
+                  <% bg_color = if points_value < 0
+                      'bg-red-500'
+                    elsif points_value >= 10
+                      'bg-cyan-500'
+                    elsif points_value >= 5
+                      'bg-green-500'
+                    elsif points_value >= 1
+                      'bg-yellow-500'
+                    else
+                      'bg-gray-500'
+                    end %>
+                  <div class="<%= bg_color %> skew-x-[-10deg] w-5 h-5 rounded-sm flex items-center justify-center">
+                    <span class="text-xs font-bold"><%= points %></span>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+
+            <% if player.rival_img.present? %>
+              <img src="<%= player.rival_img %>" alt="Rival" class="w-5 h-5">
+            <% end %>
+          </div>
+        <% end %>
+
+        <% if player.is_a?(OfferPlayer) %>
+          <div class="text-right">
+            <p class="text-xs text-gray-400">
+              <%= format_value(player.best_bid) %>
+
+              <% if player.difference.present? %>
+                <span class="text-xs <%= player.difference > 0 ? 'text-green-500' : (player.difference < 0 ? 'text-red-500' : 'text-yellow-500') %>">
+                  <%= player.difference > 0 ? '+' : (player.difference == 0 ? '±' : '') %><%= player.difference %>%
+                </span>
+              <% end %>
+            </p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <%# Toggle button %>
+    <button type="button"
+      class="absolute right-0 bottom-0 flex items-center justify-center w-8 h-full bg-black/30 hover:bg-black/50 active:bg-black/70 transition-all duration-150 rounded-r-lg"
+      data-action="collapsible#toggle">
+      <svg xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4 text-gray-400 transition-transform duration-150"
+        data-collapsible-target="icon"
+        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+  </div>
+
+  <%# Stats container %>
+  <div data-collapsible-target="content" class="hidden bg-gray-700 rounded-lg p-2 -mt-1">
+    <div class="flex items-center justify-between gap-2">
+      <%= render partial: "fantasy/partials/stats/stat", locals: {
+        label: "PPM",
+        value: player.ppm
+      } %>
+
+      <% if player.gpm.present? %>
+        <%= render partial: "fantasy/partials/stats/stat", locals: {
+          label: "GPP",
+          value: player.gpm
+        } %>
+      <% end %>
+
+      <% if player.clause.present? %>
+        <%= render partial: "fantasy/partials/stats/stat", locals: {
+          label: "Cláusula",
+          value: format_value(player.clause["value"].to_s.split(".")[0]),
+          extra_info: ->(value) {
+            <<-HTML.html_safe
+              <span class="text-2xs">+#{player.clause["percentage"]}%</span>
+            HTML
+          }
+        } %>
       <% end %>
     </div>
   </div>

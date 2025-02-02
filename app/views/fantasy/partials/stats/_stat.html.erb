@@ -1,0 +1,20 @@
+<%# Individual stat display %>
+<%# Parameters:
+  - label: Label of the stat (e.g., "PPM")
+  - value: Value to display
+  - extra_info: Lambda function that returns the extra information HTML to display (optional)
+%>
+
+<div class="inline-flex items-stretch gap-1">
+  <div class="bg-black/30 skew-x-[-10deg] px-2 py-0.5 rounded-sm flex items-center shrink-0">
+    <span class="block skew-x-[10deg] text-xs font-bold text-gray-400"><%= label %></span>
+  </div>
+  <div class="bg-black/20 skew-x-[-10deg] px-2 py-0.5 rounded-sm flex items-center min-w-0">
+    <div class="flex items-center gap-2 skew-x-[10deg]">
+      <span class="text-xs font-semibold shrink-0"><%= value %></span>
+      <% if defined?(extra_info) && extra_info.present? %>
+        <%= extra_info.call(value) %>
+      <% end %>
+    </div>
+  </div>
+</div>

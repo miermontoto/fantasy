@@ -50,6 +50,7 @@ class Player
     @gpm = (@goals.to_i.to_f / @matches.to_i).round(3) unless @matches.to_i == 0
     @clauses_rank = content[:clauses_rank]
     @market_ranks = content[:market_ranks]
+    @clause = content[:clause]
 
     load_relative_values(content[:values]) if content[:values].present?
     load_previous_owners(content[:owners]) if content[:owners].present?
