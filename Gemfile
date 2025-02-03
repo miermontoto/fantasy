@@ -41,4 +41,4 @@ group :development do
 end
 
 # Add tailwindcss-rails gem
-gem "tailwindcss-rails", "~> 3.3"
+gem "tailwindcss-rails", "~> 4.0"
