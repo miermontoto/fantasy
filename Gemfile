@@ -18,7 +18,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 # Fantasy app specific gems
-gem "nokogiri", "~> 1.16"
+gem "nokogiri", "~> 1.18"
 gem "httparty", "~> 0.22.0"
 gem "faraday", "~> 2.11"
 gem "colorize", "~> 1.1"
