@@ -1,7 +1,8 @@
 <%# Transfer Card %>
+<% grouped ||= false %>
 <div data-controller="collapsible" class="flex flex-col gap-2">
   <%# Main card content %>
-  <div class="flex items-center bg-gray-700 rounded-lg p-2 hover:bg-gray-600 transition-colors w-full relative">
+  <div class="flex items-center bg-gray-700 hover:bg-gray-700/70 transition-colors w-full relative rounded-lg <%= grouped ? 'p-2' : 'p-3' %>">
     <div class="flex flex-col items-center flex-shrink-0 px-2">
       <img src="<%= event.team_img %>" alt="Team" class="w-5 h-5 mb-1">
       <div class="<%= event.position.browser[:color] %> skew-x-[-10deg] px-2 py-0.5 rounded-sm w-[32px] text-center h-[20px] flex items-center justify-center">
@@ -23,9 +24,6 @@
     <div class="flex-1 flex flex-col min-w-0 pr-8">
       <div class="flex items-center justify-between gap-2">
         <h3 class="font-bold truncate"><%= event.name %></h3>
-        <div class="text-xs text-gray-400 px-2 py-0.5 bg-black/30 rounded">
-          <span class="text-gray-400 text-2xs"><%= event.date %></span>
-        </div>
       </div>
 
       <%# Price and trend %>
@@ -81,7 +79,7 @@
 
   <%# Other bids container %>
   <% if event.other_bids.present? %>
-    <div data-collapsible-target="content" class="hidden bg-gray-700 rounded-lg p-2 -mt-1">
+    <div data-collapsible-target="content" class="hidden bg-gray-800/50 rounded p-2 <%= grouped ? '-mt-1' : '-mt-2' %>">
       <div class="flex flex-col gap-0.5">
         <div class="flex items-center justify-between mb-1">
           <h4 class="text-xs font-bold text-gray-400">Otras pujas</h4>

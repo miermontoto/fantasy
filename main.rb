@@ -27,6 +27,8 @@ else
   elsif action == 'user'
     response = browser.user(ARGV[1])
     scraper.user(response.body)
+  elsif action == 'top_claused'
+    scraper.top_claused(browser)
   else
     puts "acción inválida [#{endpoints.join(', ')}]"
   end

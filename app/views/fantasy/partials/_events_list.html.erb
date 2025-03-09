@@ -6,10 +6,81 @@
 
   <%= turbo_frame_tag "events-content", class: "flex flex-col flex-1" do %>
     <div class="overflow-y-auto flex-1 p-4">
-      <div class="space-y-4">
+      <div class="space-y-6">
         <% if events_data.present? %>
-          <% events_data.each do |event| %>
-            <%= render partial: "fantasy/partials/events/#{event.type}_card", locals: { event: event.data } %>
+          <%
+            # Group events by date
+            events_by_date = events_data.group_by { |event| event.raw_date }
+
+            # Display each date group
+            events_by_date.each do |date, events|
+              # Get event types for this group
+              event_types = events.map(&:type).uniq
+
+              # Get the first event of each type for title information
+              first_event_by_type = {}
+              event_types.each do |type|
+                first_event_by_type[type] = events.find { |e| e.type == type }
+              end
+
+              # Generate title based on event types
+              group_title = if event_types.size == 1
+                case event_types.first
+                when :gameweek_start
+                  gameweek = first_event_by_type[:gameweek_start].data[:gameweek]
+                  "#{gameweek}"
+                when :gameweek_end
+                  "Fin de jornada"
+                when :clause_drops
+                  "Bajada de cláusulas"
+                when :transfer
+                  "Transferencias"
+                else
+                  "Eventos"
+                end
+              else
+                "Eventos variados"
+              end
+
+              # Determine the color based on event type
+              event_color = if event_types.size == 1
+                case event_types.first
+                when :gameweek_start
+                  "bg-blue-500"
+                when :gameweek_end
+                  "bg-green-500"
+                when :clause_drops
+                  "bg-red-500"
+                when :transfer
+                  "bg-purple-500"
+                else
+                  "bg-gray-500"
+                end
+              else
+                "bg-gray-500"
+              end
+          %>
+            <div class="bg-gray-875 rounded-lg overflow-hidden shadow-md">
+              <div class="bg-gray-700 p-3 border-b border-gray-600 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="w-1 h-5 <%= event_color %> rounded-full mr-2"></div>
+                  <div class="<%= event_color %> skew-x-[-10deg] px-3 py-1 rounded-sm">
+                    <span class="block skew-x-[10deg] text-sm font-bold text-white"><%= group_title %></span>
+                  </div>
+                  <% if events.count > 1 %>
+                    <div class="text-xs text-gray-400"><%= pluralize(events.count, 'evento', 'eventos') %></div>
+                  <% end %>
+                </div>
+                <h4 class="text-sm font-semibold text-gray-200"><%= date.include?("hace") ? date : "hace #{date}" %></h4>
+              </div>
+              <div>
+                <% events.each_with_index do |event, index| %>
+                  <div class="pt-2 px-3 pb-2">
+                    <%= render partial: "fantasy/partials/events/#{event.type}_card", locals: { event: event.data, grouped: true } %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
           <% end %>
         <% else %>
           <div class="text-center py-8">
@@ -24,8 +95,8 @@
         <%= render partial: "fantasy/partials/pagination",
           locals: {
             id: "events-pagination",
-            current_page: current_page_feed,
-            total_pages: total_pages_feed,
+            current_page: current_page_feed || page,
+            total_pages: total_pages_feed || total_pages,
             type: "events"
           }
         %>

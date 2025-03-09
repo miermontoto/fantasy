@@ -1,15 +1,12 @@
 <%# Gameweek End Card %>
-<div class="flex items-center bg-gray-700 rounded-lg p-2 hover:bg-gray-600 transition-colors w-full">
+<% grouped ||= false %>
+<div class="flex items-center bg-gray-700 hover:bg-gray-700/70 transition-colors w-full rounded <%= grouped ? 'p-2' : 'p-3' %>">
   <div class="flex-1 flex flex-col min-w-0">
     <div class="flex items-center justify-between gap-2 mb-3">
       <div class="flex items-center gap-2">
         <div class="bg-green-500 skew-x-[-10deg] px-3 py-1 rounded-sm">
           <span class="block skew-x-[10deg] text-sm font-bold text-white">Fin de la <%= event[:gameweek] %></span>
         </div>
-      </div>
-
-      <div class="text-xs text-gray-400 px-2 py-0.5 bg-black/30 rounded">
-        <span class="text-gray-400 text-xs"><%= event[:date] %></span>
       </div>
     </div>
 

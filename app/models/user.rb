@@ -21,6 +21,7 @@ class User
 
     @bench = attributes[:bench]
     @players = @bench.size.to_s + " jugadores" if (@bench.present? && @players.nil?)
+    @value = (@points.to_f / @players.split(" ").first.to_f).round(1).to_s + " avg" unless @value.present?
   end
 
   def to_s

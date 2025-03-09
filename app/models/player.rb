@@ -17,7 +17,7 @@ class Player
     @name = attributes[:name].gsub("💥", "")                                    # nombre del jugador
     @points = attributes[:points].to_s || "0"                                   # puntos del jugador en toda la temporada actual
     @value = attributes[:value].to_s.gsub(".", "").to_i || 0                    # valor actual del jugador en el mercado
-    @average = attributes[:average]                                             # media de puntos por partido
+    @average = attributes[:average].to_f.round(2)                               # media de puntos por partidow
     @price = "€ " + format_num(@value)                                          # valor formateado actual del jugador en el mercado
     @ppm = calculate_ppm                                                        # puntos por millón de valor
     @trend = attributes[:trend] || ""                                           # tendencia del jugador

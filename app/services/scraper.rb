@@ -454,7 +454,7 @@ class Scraper
       players.each { |player| puts player }
     end
 
-    { players: players }
+    { players: players, teams: content.to_h["teams"] }
   end
 
   def player(json, player = nil)
@@ -508,6 +508,48 @@ class Scraper
 
     puts user if @print
     user
+  end
+
+  def teams(html)
+    content = check_ajax_response(html)
+    if content.empty? then; return {}; end
+    content.to_h
+  end
+
+  def top_claused(browser)
+    # para sacar los jugadores más clausulados, no hay una petición específica,
+    # sino que hay que sacar todos los jugadores y ordenarlos según si tienen
+    # o no el clause_rank.
+
+    # 1. sacar todos los equipos
+    @print = false
+    teams = self.top_players(browser.top_players.body)[:teams]
+
+    # 2. por cada equipo, sacar los jugadores
+    team_ids = teams.map { |team| team["id"] }
+    players = team_ids.map.with_index do |id, i|
+      Thread.new do
+        players = self.teams(browser.teams(id).body)["players"].to_h
+        puts player_content
+        Player.new({
+          id: player_content["id"],
+          name: player_content["name"],
+          value: player_content["value"],
+          average: player_content["avg"],
+          streak: player_content["streak"],
+          points: player_content["points"],
+          status: player_content["status"]
+        })
+      end
+    end.map(&:value)
+
+    players_full = players.flatten.map.with_index do |player, i|
+      Thread.new do
+        self.player(browser.player(player["id"]).body, player)
+      end
+    end.map(&:value)
+
+    players_full.sort_by { |player| player.clause_rank.nil? ? 1 : 0 }
   end
 
   private

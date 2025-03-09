@@ -63,10 +63,9 @@ class FantasyController < ApplicationController
       }
       format.turbo_stream do
         render turbo_stream: turbo_stream.update("left-container",
-          partial: "fantasy/partials/transfer_list",
+          partial: "fantasy/partials/events_list",
           locals: {
-            paginated_feed_data: paginated_feed_data,
-            paginated_market_data: paginated_market_data,
+            events_data: paginated_feed_data,
             current_page_feed: current_page_feed,
             total_pages_feed: total_pages_feed
           }
