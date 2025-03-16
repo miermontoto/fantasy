@@ -473,6 +473,7 @@ class Scraper
 
     player.load_additional_attributes(content) unless player.nil?
     puts content if @print
+    player
   end
 
   def user(json)
@@ -527,29 +528,75 @@ class Scraper
 
     # 2. por cada equipo, sacar los jugadores
     team_ids = teams.map { |team| team["id"] }
-    players = team_ids.map.with_index do |id, i|
-      Thread.new do
-        players = self.teams(browser.teams(id).body)["players"].to_h
-        puts player_content
-        Player.new({
-          id: player_content["id"],
-          name: player_content["name"],
-          value: player_content["value"],
-          average: player_content["avg"],
-          streak: player_content["streak"],
-          points: player_content["points"],
-          status: player_content["status"]
-        })
-      end
-    end.map(&:value)
+    players = []
 
-    players_full = players.flatten.map.with_index do |player, i|
-      Thread.new do
-        self.player(browser.player(player["id"]).body, player)
-      end
-    end.map(&:value)
+    # limitar el número de threads para evitar overhead
+    max_threads = [team_ids.size, 10].min
+    team_chunks = team_ids.each_slice((team_ids.size.to_f / max_threads).ceil).to_a
 
-    players_full.sort_by { |player| player.clause_rank.nil? ? 1 : 0 }
+    threads = []
+    mutex = Mutex.new
+
+    team_chunks.each do |chunk|
+      threads << Thread.new do
+        chunk_players = []
+
+        chunk.each do |id|
+          team_players = self.teams(browser.teams(id).body)["players"]
+
+          # para cada jugador, crear un objeto Player
+          team_players.each do |player|
+            chunk_players << Player.new({
+              id: player["id"],
+              name: player["name"],
+              value: player["value"],
+              average: player["avg"],
+              streak: player["streak"],
+              points: player["points"],
+              status: player["status"]
+            })
+          end
+        end
+
+        mutex.synchronize { players.concat(chunk_players) }
+      end
+    end
+
+    threads.each(&:join)
+
+    # 3. Get player details in batches with a limited number of concurrent threads
+    max_player_threads = 20
+    player_batches = players.each_slice((players.size.to_f / max_player_threads).ceil).to_a
+
+    player_batches.each do |batch|
+      batch_threads = []
+
+      batch.each do |player|
+        batch_threads << Thread.new do
+          # el player se rellena dentro del método player
+          self.player(browser.player(player.id).body, player)
+        end
+      end
+
+      batch_threads.each(&:join)
+    end
+
+    # 4. Filter and sort players with clause rankings
+    players_with_clauses = players.select { |player| player.clauses_rank.present? }
+    sorted_players = players_with_clauses.sort_by { |player| player.clauses_rank }
+
+    # pretty print results
+    puts "top clausulados".grey.bold
+    sorted_players.each do |player|
+      string_content = [
+        "\#" + player.clauses_rank.to_s.ljust(3),
+        player.to_s
+      ]
+
+      puts concat(string_content)
+    end
+
+    sorted_players
   end
 
   private
