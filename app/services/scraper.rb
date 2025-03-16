@@ -564,7 +564,7 @@ class Scraper
 
     threads.each(&:join)
 
-    # 3. Get player details in batches with a limited number of concurrent threads
+    # 3. sobre cada jugador, obtener toda la info adicional (que incluye el clause_rank)
     max_player_threads = 20
     player_batches = players.each_slice((players.size.to_f / max_player_threads).ceil).to_a
 
@@ -581,7 +581,7 @@ class Scraper
       batch_threads.each(&:join)
     end
 
-    # 4. Filter and sort players with clause rankings
+    # 4. filtrar y ordenar los jugadores según el clause_rank
     players_with_clauses = players.select { |player| player.clauses_rank.present? }
     sorted_players = players_with_clauses.sort_by { |player| player.clauses_rank }
 

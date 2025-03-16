@@ -8,34 +8,6 @@ module ApplicationHelper
   SELLING_TEXT = "En venta"
   FREE_AGENT = "Libre"
 
-  def parse_trend(original)
-    case original
-    when "↑"
-      "↑".green
-    when "↓"
-      "↓".red
-    else
-      "~".yellow
-    end
-  end
-
-  # Devuelve el símbolo de la tendencia de aumento de un valor
-  # La diferencia de valor se mide en euros.
-  # Si el valor es inferior a -250.000€, es muy malo.
-  # Si el valor es negativo, es malo.
-  # Si el valor es 0, es neutro.
-  # Si el valor es inferior a 200.000€, es bueno.
-  # Si el valor es inferior a 500.000€, es muy bueno.
-  # Si el valor es superior a 500.000€, es excelente.
-  def parse_increase_trend(value)
-    if value.nil? || value == 0 then; return "~".yellow; end
-    if value < -250000 then; return "↓↓".red; end
-    if value < 0 then; return "↓".red; end
-    if value < 200000 then; return "↑".green; end
-    if value < 500000 then; return "↑↑".green; end
-    "↑↑↑".green # superior a 500.000€
-  end
-
   # Devuelve el símbolo de la tendencia de diferencia de un valor
   # Los rangos que ofrece el mercado van entre -5% y 5%
   # Si el valor es negativo, en general es malo.

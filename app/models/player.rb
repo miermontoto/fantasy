@@ -20,7 +20,7 @@ class Player
     @average = attributes[:average].to_f.round(2)                               # media de puntos por partidow
     @price = "€ " + format_num(@value)                                          # valor formateado actual del jugador en el mercado
     @ppm = calculate_ppm                                                        # puntos por millón de valor
-    @trend = attributes[:trend] || ""                                           # tendencia del jugador
+    @trend = Trend.new(attributes[:trend])                                      # tendencia del jugador
     @streak = attributes[:streak]                                               # array de los puntos de los últimos tres partidos
     @status = Status.new(attributes[:status])                                   # estado del jugador
     @player_img = attributes[:player_img] || ""                                 # url de la imagen del jugador
@@ -29,7 +29,6 @@ class Player
     @market_ranks = attributes[:market_ranks] || {}                             # array de las posiciones en el ranking de subidas y bajadas de valor
     @clause = attributes[:clause]                                               # valor de la cláusula de rescisión
 
-    if @trend.present? and @trend == "" then; @trend = "~"; end
     get_price_string
 
     # calcular longitudes máximas de los atributos
@@ -41,7 +40,7 @@ class Player
 
   # Función que convierte un jugador a string
   def to_s
-    concat(base_string + [ points_string, @ppm.to_s ])
+    concat(base_string + [ points_string ])
   end
 
   def load_additional_attributes(content)
@@ -51,11 +50,17 @@ class Player
     @clauses_rank = content[:clauses_rank]
     @market_ranks = content[:market_ranks]
     @clause = content[:clause]
+    @transfer = content[:transfer]
 
     load_relative_values(content[:values]) if content[:values].present?
     load_previous_owners(content[:owners]) if content[:owners].present?
 
-    @transfer = content[:transfer]
+    # si se tiene el valor hace un día y no se tiene el trend, aprovechar y
+    # rellenarlo
+    yesterdays_value = @values.find { |item| item["timespan"] == 0 }
+    if yesterdays_value.present? && @trend.neutral?
+      @trend = Trend.new(yesterdays_value["change"])
+    end
   end
 
   def load_rank(players)
@@ -70,9 +75,10 @@ class Player
 
   # Función que devuelve el array base de strings para mostrar un jugador
   def base_string
+    get_price_string
     [
       @position.to_s,
-      @name.ljust(max("name")) + " #{@status == "" ? " " : @status}",
+      @name.ljust(max("name")) + "#{@status.present? ? "#{@status}" : " "}",
       @price_string.rjust(max("price"))
     ]
   end
@@ -90,10 +96,11 @@ class Player
 
   # Función que formatea la tendencia del precio de un jugador
   def get_price_string
-    price_trend = parse_trend(@trend)
     @price_string = "#{@price} "
-    @price_string += price_trend unless price_trend == ""
+    @price_string += @trend.to_s
     @price_string += " (#{format_num(@variation)}€)" if @variation
+
+    @price_string
   end
 
   # Función que procesa el array de valores relativos del jugador
@@ -124,7 +131,7 @@ class Player
     #   ...
     # ]
     @values = arr.each do |item|
-      item["tiemspan"] = case item["time"]
+      item["timespan"] = case item["time"]
       when "Un día" then 0
       when "Una semana" then 1
       when "Un mes" then 2
