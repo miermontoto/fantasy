@@ -32,8 +32,8 @@
           <%= event.price %>
         </span>
         <% if event.trend.present? %>
-          <span class="<%= event.trend.include?('up') ? 'text-green-500' : 'text-red-500' %>">
-            <%= event.trend.include?('up') ? '↑' : '↓' %>
+          <span class="<%= event.trend.browser[:color] %>">
+            <%= event.trend.browser[:symbol] %>
           </span>
         <% end %>
       </div>

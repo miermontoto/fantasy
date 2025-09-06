@@ -62,13 +62,13 @@ class Browser
 
   def player(id)
     if id.nil? then; puts "error: id no proporcionado".red; return; end
-    @conn.post("/ajax/sw") do |req|
+    @conn.post("/ajax/sw/players") do |req|
       req.body = "post=players&id=#{id}"
     end
   end
 
   def teams(id)
-    @conn.post("/ajax/sw") do |req|
+    @conn.post("/ajax/sw/teams") do |req|
       req.body = "post=teams&id=#{id}"
     end
   end

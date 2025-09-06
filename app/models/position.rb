@@ -18,6 +18,10 @@ class Position
   attr_reader :browser, :terminal
 
   def initialize(str)
+    # si el string no viene en formato "pos-X" y solo viene un número, añadir el
+    # prefijo "pos-"
+    str = "pos-#{str}" if str.to_i.to_s == str
+
     @browser = $BROWSER_POSTIIONS[str]
     @terminal = $TERMINAL_POSTIIONS[str]
   end

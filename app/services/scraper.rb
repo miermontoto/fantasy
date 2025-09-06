@@ -14,7 +14,6 @@ class Scraper
 
     # general info
     community_name = doc.css(".feed-top-community .name span").text.strip
-    user_name = doc.css(".header .name").text.strip
     user_balance = doc.css(".balance-real-current").text.strip
     user_credits = doc.css(".credits-count").first.text.strip
 
@@ -23,16 +22,16 @@ class Scraper
     gameweek_status = doc.css(".gameweek__status").text.strip.gsub(/\s+/, " ")
 
     # top market players
-    market_players = doc.css(".card-market_unified .player-list li").map do |player|
+    market_players = doc.css(".card-market_unified .player-list .player-row").map do |player|
       MarketPlayer.new({
         name: player.css(".name").text.strip,
-        team_img: player.css("img.team-logo").attr("src").value,
-        position: player.css(".icons i").attr("class").value,
+        # team_img: player.css(".team-logo").first.attr("src"),
+        position: player.css(".player-position").attr("data-position").value,
         points: player.css(".points").text.strip,
         value: player.css(".underName").text.gsub(/[^0-9]/, "").to_i,
         average: player.css(".avg").text.strip,
         streak: player.css(".streak span").map { |span| span.text.strip },
-        player_img: player.css(".player-pic.qd-player img").attr("src").value,
+        player_img: player.css(".player-avatar img").attr("src").value,
         owner: ApplicationHelper::FREE_AGENT,
         rival_img: player.css(".rival img").attr("src").value
       })
@@ -42,20 +41,20 @@ class Scraper
     recent_transfers = doc.css(".card-transfer").map do |block|
       date = block.css(".head>.date").first.text.strip.gsub("hace ", "")
 
-      block.css(".player-list>li").map do |transfer|
+      block.css(".player-list .item").map do |transfer|
         TransferPlayer.new({
           name: transfer.css(".title strong").first.text.strip,
-          position: transfer.css(".player-row .icons i").attr("class").value,
+          position: transfer.css(".player-position").attr("data-position").value,
           team_img: transfer.css("img.team-logo").attr("src").value,
           from: transfer.css(".title em").first.text.strip,
           to: transfer.css(".title em")[1].text.strip,
           value: transfer.css(".price").first.text.strip,
           date: date,
           status: transfer.css(".status use")&.attr("href")&.value&.split("#")&.last,
-          player_img: transfer.css(".player-pic.qd-player img").attr("src").value,
+          player_img: transfer.css(".player-avatar img").attr("src").value,
           clause: transfer.css(".title").text.include?("por pago de cláusula"),
           other_bids: transfer.css("ul.other-bids li:not(.other-bids-title)").map {
-            |bid| [bid.css("strong").text.strip, bid.text.strip.split("›").last.strip]
+            |bid| [ bid.css("strong").text.strip, bid.text.strip.split("›").last.strip ]
           }
         })
       end
@@ -191,21 +190,21 @@ class Scraper
   def market(html)
     doc = Nokogiri::HTML(html)
 
-    players = doc.css("#list-on-sale li").map do |player|
+    players = doc.css(".player-list li").map do |player|
       MarketPlayer.new({
-        id: player.css(".player-pic.qd-player").attr("data-id_player").value,
+        id: player.css(".player-avatar").attr("data-id_player").value,
         name: player.css(".name").text.strip,
         team_img: player.css("img.team-logo").attr("src").value,
         offered_by: player.css(".date").text.strip.split(",").first,
-        position: player.css(".icons i").attr("class").value,
+        position: player.css(".player-position").attr("data-position").value,
         points: player.css(".points").text.strip.to_i,
         value: player.css(".underName").text.gsub(/[^0-9]/, "").to_i,
         trend: player.css(".value-arrow").text.strip,
         average: player.css(".avg").text.strip,
         streak: player.css(".streak span").map { |span| span.text.strip },
         status: player.css(".status use")&.attr("href")&.value&.split("#")&.last,
-        player_img: player.css(".player-pic.qd-player img").attr("src").value,
-        asked_price: player.css(".btn.btn-popup.btn-grey").text.strip.gsub(/[^0-9]/, "").to_i,
+        player_img: player.css(".player-avatar img").attr("src").value,
+        asked_price: player.css(".btn.btn-popup").text.strip.gsub(/[^0-9]/, "").to_i,
         my_bid: player.css(".btn.btn-popup.btn-green.btn-bid").text.strip.gsub(/[^0-9]/, "").to_i,
         rival_img: player.css(".rival img")&.attr("src")&.value,
         own: player.css(".btn.btn-popup").text.strip.include?(ApplicationHelper::SELLING_TEXT)
@@ -217,7 +216,7 @@ class Scraper
     footer_info = {
       current_balance: format_value(doc.css(".footer-sticky-market .balance-real-current").text.gsub(/\./, "").to_i),
       future_balance: format_value(doc.css(".balance-real-future").text.gsub(/\./, "").to_i),
-      max_debt: format_value(doc.css(".balance-real-maxdebt").text.gsub(/\./, "").to_i),
+      max_debt: format_value(doc.css(".balance-real-maxdebt").text.gsub(/\./, "").to_i)
       # next_update: doc.css(".next-update").text.split("en").last.strip
     }
 
@@ -284,15 +283,15 @@ class Scraper
 
     squad_players = doc.css(".player-list.list-team li").map do |player|
       TeamPlayer.new({
-        id: player.css(".player-pic.qd-player").attr("data-id_player").value,
+        id: player.css(".player-avatar").attr("data-id_player").value,
         name: player.css(".name").text.strip.gsub(/\s+/, " ").strip,
-        position: player.css(".icons i").attr("class").value,
+        position: player.css(".player-position").attr("data-position").value,
         points: player.css(".points").text.strip,
         value: player.css(".underName").text.gsub(/[^\d]/, "").to_i,
         average: player.css(".avg").text.strip,
         streak: player.css(".streak span").map { |span| span.text.strip },
         trend: player.css(".value-arrow").text.strip,
-        player_img: player.css(".player-pic.qd-player img").attr("src").value,
+        player_img: player.css(".player-avatar img").attr("src").value,
         team_img: player.css("img.team-logo").attr("src").value,
         selected: player.attribute_nodes.include?("in-lineup"),
         being_sold: player.css(".btn.btn-popup").text.strip == ApplicationHelper::SELLING_TEXT,
@@ -531,8 +530,10 @@ class Scraper
     players = []
 
     # limitar el número de threads para evitar overhead
-    max_threads = [team_ids.size, 10].min
+    max_threads = [ team_ids.size, 10 ].min
     team_chunks = team_ids.each_slice((team_ids.size.to_f / max_threads).ceil).to_a
+
+    puts "iterando sobre #{team_ids.size} equipos...".grey.italic
 
     threads = []
     mutex = Mutex.new
@@ -565,6 +566,7 @@ class Scraper
     threads.each(&:join)
 
     # 3. sobre cada jugador, obtener toda la info adicional (que incluye el clause_rank)
+    puts "iterando sobre #{players.size} jugadores...".grey.italic
     max_player_threads = 20
     player_batches = players.each_slice((players.size.to_f / max_player_threads).ceil).to_a
 
@@ -602,7 +604,13 @@ class Scraper
   private
 
   def check_ajax_response(response)
-    content = JSON.parse(response)
+    begin
+      content = JSON.parse(response)
+    rescue JSON::ParserError
+      puts "error al parsear JSON (out-of-date?)".red.bold if @print
+      return {}
+    end
+
     status = content["status"]
 
     if status == "error"
